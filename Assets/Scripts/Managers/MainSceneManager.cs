@@ -58,8 +58,8 @@ public class MainSceneManager : MonoBehaviour
             Screen.SetResolution(1280, 720, true);
             dropdown.value = 3;
             toggle.isOn = true;
-            bgm.value = 75f;
-            fxs.value = 75f;
+            bgm.value = 75f / 100f;
+            fxs.value = 75 / 100f;
 
             string getScreenSize = JsonUtility.ToJson(saveOption);
             PlayerPrefs.SetString(saveOptionValue, getScreenSize);
