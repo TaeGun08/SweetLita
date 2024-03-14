@@ -55,14 +55,14 @@ public class MainSceneManager : MonoBehaviour
 
         if (PlayerPrefs.GetString(saveOptionValue) == string.Empty)
         {
+            Screen.SetResolution(saveOption.widthSize, saveOption.heightSize, saveOption.windowOn);
+            dropdown.value = saveOption.dropdownValue;
+            toggle.isOn = saveOption.windowOn;
+            bgm.value = saveOption.bgmValue;
+            fxs.value = saveOption.fxsValue;
+
             string getScreenSize = JsonUtility.ToJson(saveOption);
             PlayerPrefs.SetString(saveOptionValue, getScreenSize);
-
-            Screen.SetResolution(saveOption.widthSize, saveOption.heightSize, saveOption.windowOn);
-            saveOption.dropdownValue = dropdown.value;
-            saveOption.windowOn = toggle.isOn;
-            saveOption.bgmValue = bgm.value;
-            saveOption.fxsValue = fxs.value;
         }
         else
         {
