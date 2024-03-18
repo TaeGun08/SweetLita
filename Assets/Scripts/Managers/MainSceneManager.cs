@@ -17,13 +17,24 @@ public class MainSceneManager : MonoBehaviour
         public float fxsValue = 50f;
     }
 
+    public class SaveScene
+    {
+        public string sceneName = "TestScene";
+    }
+
     private SaveOption saveOption = new SaveOption();
+
+    private SaveScene saveScene = new SaveScene();
 
     [Header("작동하는 버튼")]
     [SerializeField, Tooltip("게임 시작 버튼")] private Button startButton;
     [SerializeField, Tooltip("게임 불러오기 버튼")] private Button loadButton;
     [SerializeField, Tooltip("게임 옵션 버튼")] private Button optionButton;
     [SerializeField, Tooltip("게임 종료 버튼")] private Button exitButton;
+    [Space]
+    [SerializeField, Tooltip("게임 초기화 다시 물어보기")] private GameObject resetChoiceButton;
+    [SerializeField, Tooltip("게임 진짜 초기화 버튼")] private Button resetButton;
+    [SerializeField, Tooltip("게임으로 돌아가기 버튼")] private Button resetBackButton;
     [Space]
     [SerializeField, Tooltip("게임 종료 시 다시 물어보기")] private GameObject choiceButton;
     [SerializeField, Tooltip("게임 진짜 종료 버튼")] private Button endButton;
@@ -35,11 +46,12 @@ public class MainSceneManager : MonoBehaviour
     [SerializeField, Tooltip("해상도 변경을 위한 드롭다운")] private TMP_Dropdown dropdown;
     [SerializeField, Tooltip("창모드 변경을 위한 토글")] private Toggle toggle;
     [Space]
-
     [SerializeField, Tooltip("배경음악")] private Slider bgm;
     [SerializeField, Tooltip("효과음")] private Slider fxs;
 
     private string saveOptionValue = "saveOptionValue"; //스크린 사이즈 키 값을 만들 변수
+
+    private string saveSceneName = "saveSceneName"; //씬을 저장하기 위한 변수
 
     private void Awake()
     {
@@ -73,12 +85,27 @@ public class MainSceneManager : MonoBehaviour
 
         startButton.onClick.AddListener(() => 
         {
-            SceneManager.LoadSceneAsync(1);
+            if (PlayerPrefs.GetString(saveSceneName) == string.Empty)
+            {
+                string setScene = JsonUtility.ToJson(saveScene);
+                PlayerPrefs.SetString(saveSceneName, setScene);
+                SceneManager.LoadSceneAsync("TestScene");
+            }
+            else
+            {
+                resetChoiceButton.SetActive(true);
+            }
         });
 
         loadButton.onClick.AddListener(() =>
         {
+            string loadSceneData = PlayerPrefs.GetString(saveSceneName);
+            saveScene = JsonUtility.FromJson<SaveScene>(loadSceneData);
 
+            if (saveScene != null)
+            {
+                SceneManager.LoadSceneAsync(saveScene.sceneName);
+            }
         });
 
         optionButton.onClick.AddListener(() =>
@@ -89,6 +116,17 @@ public class MainSceneManager : MonoBehaviour
         exitButton.onClick.AddListener(() =>
         {
             choiceButton.SetActive(true);
+        });
+
+        resetButton.onClick.AddListener(() => 
+        {
+            PlayerPrefs.SetString(saveSceneName, string.Empty);
+            resetChoiceButton.SetActive(false);
+        });
+
+        resetBackButton.onClick.AddListener(() =>
+        {
+            resetChoiceButton.SetActive(false);
         });
 
         endButton.onClick.AddListener(() =>
