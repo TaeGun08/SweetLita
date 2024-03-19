@@ -48,6 +48,10 @@ public class MainSceneManager : MonoBehaviour
     [Space]
     [SerializeField, Tooltip("배경음악")] private Slider bgm;
     [SerializeField, Tooltip("효과음")] private Slider fxs;
+    [Space]
+    [SerializeField, Tooltip("페이드인아웃")] private Image fadeInOut;
+    private bool fadeOn = false;
+    private float fadeTimer;
 
     private string saveOptionValue = "saveOptionValue"; //스크린 사이즈 키 값을 만들 변수
 
@@ -89,7 +93,8 @@ public class MainSceneManager : MonoBehaviour
             {
                 string setScene = JsonUtility.ToJson(saveScene);
                 PlayerPrefs.SetString(saveSceneName, setScene);
-                SceneManager.LoadSceneAsync("TestScene");
+
+                fadeOn = true;
             }
             else
             {
@@ -104,7 +109,7 @@ public class MainSceneManager : MonoBehaviour
 
             if (saveScene != null)
             {
-                SceneManager.LoadSceneAsync(saveScene.sceneName);
+                fadeOn = false;
             }
         });
 
@@ -165,6 +170,32 @@ public class MainSceneManager : MonoBehaviour
         {
             option.gameObject.SetActive(false);
         });
+    }
+
+    private void Update()
+    {
+        if (fadeOn)
+        {
+            fadeTimer += Time.deltaTime / 2;
+            Color fadeColor = fadeInOut.color;
+            fadeColor.a = fadeTimer;
+            fadeInOut.color = fadeColor;
+
+            string loadSceneData = PlayerPrefs.GetString(saveSceneName);
+            saveScene = JsonUtility.FromJson<SaveScene>(loadSceneData);
+
+
+            if (PlayerPrefs.GetString(saveSceneName) == string.Empty)
+            {
+                SceneManager.LoadSceneAsync("TestScene");
+            }
+            else
+            {
+                SceneManager.LoadSceneAsync(saveScene.sceneName);
+            }
+
+            fadeOn = false;
+        }
     }
 
     /// <summary>
