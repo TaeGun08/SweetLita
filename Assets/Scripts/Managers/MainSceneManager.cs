@@ -94,6 +94,8 @@ public class MainSceneManager : MonoBehaviour
                 string setScene = JsonUtility.ToJson(saveScene);
                 PlayerPrefs.SetString(saveSceneName, setScene);
 
+                fadeInOut.gameObject.SetActive(true);
+
                 fadeOn = true;
             }
             else
@@ -109,7 +111,9 @@ public class MainSceneManager : MonoBehaviour
 
             if (saveScene != null)
             {
-                fadeOn = false;
+                fadeInOut.gameObject.SetActive(true);
+
+                fadeOn = true;
             }
         });
 
@@ -174,27 +178,35 @@ public class MainSceneManager : MonoBehaviour
 
     private void Update()
     {
-        if (fadeOn)
+        if (fadeOn == true)
         {
             fadeTimer += Time.deltaTime / 2;
             Color fadeColor = fadeInOut.color;
             fadeColor.a = fadeTimer;
             fadeInOut.color = fadeColor;
 
-            string loadSceneData = PlayerPrefs.GetString(saveSceneName);
-            saveScene = JsonUtility.FromJson<SaveScene>(loadSceneData);
-
-
-            if (PlayerPrefs.GetString(saveSceneName) == string.Empty)
+            if (fadeColor.a > 1.0f)
             {
-                SceneManager.LoadSceneAsync("TestScene");
-            }
-            else
-            {
-                SceneManager.LoadSceneAsync(saveScene.sceneName);
+                fadeColor.a = 1.0f;
             }
 
-            fadeOn = false;
+            if (fadeColor.a >= 1.0f)
+            {
+                string loadSceneData = PlayerPrefs.GetString(saveSceneName);
+                saveScene = JsonUtility.FromJson<SaveScene>(loadSceneData);
+
+
+                if (PlayerPrefs.GetString(saveSceneName) == string.Empty)
+                {
+                    SceneManager.LoadSceneAsync("TestScene");
+                }
+                else
+                {
+                    SceneManager.LoadSceneAsync(saveScene.sceneName);
+                }
+
+                fadeOn = false;
+            }
         }
     }
 

@@ -1820,7 +1820,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &480511668
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4911,6 +4911,7 @@ MonoBehaviour:
   toggle: {fileID: 1453653363}
   bgm: {fileID: 2132271443}
   fxs: {fileID: 332022455}
+  fadeInOut: {fileID: 480511669}
 --- !u!1 &1589124473
 GameObject:
   m_ObjectHideFlags: 0
