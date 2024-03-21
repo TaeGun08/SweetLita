@@ -52,6 +52,10 @@ public class GameManager : MonoBehaviour
     [SerializeField, Tooltip("창모드 변경을 위한 토글")] private Toggle toggle;
     [SerializeField, Tooltip("배경음악")] private Slider bgm;
     [SerializeField, Tooltip("효과음")] private Slider fxs;
+    [Space]
+    [SerializeField, Tooltip("페이드 인 아웃")] private Image fadeInOut;
+    private bool fadeOn = false;
+    private float fadeTimer;
 
     private void Awake()
     {
@@ -144,11 +148,37 @@ public class GameManager : MonoBehaviour
         {
             gameExit.SetActive(false);
         });
+
+        fadeOn = true;
+        gamePause = true;
+    }
+
+    private void Start()
+    {
+        Color fadeColor = fadeInOut.color;
+        fadeColor.a = 1f;
+        fadeInOut.color = fadeColor;
+        fadeTimer = 1.0f;
     }
 
     private void Update()
     {
         optionOnOff();
+
+        if (fadeOn == true)
+        {
+            fadeTimer -= Time.deltaTime / 2;
+            Color fadeColor = fadeInOut.color;
+            fadeColor.a = fadeTimer;
+            fadeInOut.color = fadeColor;
+
+            if (fadeColor.a <= 0.0f)
+            {
+                fadeColor.a = 0.0f;
+                gamePause = false;
+                fadeOn = false;
+            }
+        }
     }
 
     /// <summary>

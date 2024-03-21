@@ -185,13 +185,10 @@ public class MainSceneManager : MonoBehaviour
             fadeColor.a = fadeTimer;
             fadeInOut.color = fadeColor;
 
-            if (fadeColor.a > 1.0f)
-            {
-                fadeColor.a = 1.0f;
-            }
-
             if (fadeColor.a >= 1.0f)
             {
+                fadeColor.a = 1.0f;
+
                 string loadSceneData = PlayerPrefs.GetString(saveSceneName);
                 saveScene = JsonUtility.FromJson<SaveScene>(loadSceneData);
 
