@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEditor.AnimatedValues;
+using UnityEditor.UIElements;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -56,6 +58,9 @@ public class GameManager : MonoBehaviour
     [SerializeField, Tooltip("페이드 인 아웃")] private Image fadeInOut;
     private bool fadeOn = false;
     private float fadeTimer;
+
+    private float fadeTimeOut = 5;
+    private float timer = 0.0f;
 
     private void Awake()
     {
@@ -164,6 +169,16 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         optionOnOff();
+
+        //if (fadeOn == false)
+        //{
+        //    int curFrame = (int)(1 / Time.deltaTime);
+        //    timer += Time.deltaTime;
+        //    if (curFrame >= 40 || timer >= fadeTimeOut)
+        //    {
+        //        fadeOn = true;
+        //    }
+        //}
 
         if (fadeOn == true)
         {

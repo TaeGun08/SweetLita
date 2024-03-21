@@ -978,8 +978,29 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2882969443860664668, guid: 313548accdc52e246945d41877d67ebb, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 655018690}
   m_SourcePrefab: {fileID: 100100000, guid: 313548accdc52e246945d41877d67ebb, type: 3}
+--- !u!1 &655018689 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2882969443860664668, guid: 313548accdc52e246945d41877d67ebb, type: 3}
+  m_PrefabInstance: {fileID: 655018688}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &655018690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 655018689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1f04441bbddb9d459c5913623a5a463, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  QuestIndexr: 650000006700000068000000cc0000002c010000
 --- !u!1001 &659807633
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1318,6 +1339,8 @@ MonoBehaviour:
   - {fileID: 169768334}
   - {fileID: 1618634920}
   - {fileID: 533075081}
+  itemIndex: 0
+  slotIndex: 0
 --- !u!1001 &1053854077
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2292,6 +2315,8 @@ MonoBehaviour:
   acceptMainQuest: 0
   mainQuestClearCheck: 0000000000
   chatWindow: {fileID: 176481141}
+  itemIndex: 0
+  itemQuantity: 0
   choiceButton:
   - {fileID: 794147275}
   - {fileID: 113180146}
@@ -2801,7 +2826,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2110580599
 Transform:
   m_ObjectHideFlags: 0
