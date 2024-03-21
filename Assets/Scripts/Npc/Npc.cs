@@ -9,6 +9,7 @@ public class Npc : MonoBehaviour
 
     [Header("Npc ¼³Á¤")]
     [SerializeField] private string npcName;
+    [SerializeField] private int mainQuestIndex;
     [SerializeField] private int intimacy;
     private bool questOn = false;
 
@@ -28,9 +29,13 @@ public class Npc : MonoBehaviour
 
         if (questOn == true)
         {
-            Debug.Log(gameObject.name);
             questManager.MainQuestNpc(npcName);
             questOn = false;
         }
+    }
+
+    public int MainQuestIndex()
+    {
+        return mainQuestIndex;
     }
 }
