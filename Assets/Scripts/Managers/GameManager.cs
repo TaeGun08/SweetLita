@@ -60,7 +60,7 @@ public class GameManager : MonoBehaviour
     private float fadeTimer;
 
     private float fadeTimeOut = 5;
-    private float timer = 0.0f;
+    private float checkTimer = 0.0f;
 
     private void Awake()
     {
@@ -168,41 +168,62 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        gamePauseOnOff();
+
+        fadeIn();
+
         optionOnOff();
+    }
 
-        //if (fadeOn == false)
-        //{
-        //    int curFrame = (int)(1 / Time.deltaTime);
-        //    timer += Time.deltaTime;
-        //    if (curFrame >= 40 || timer >= fadeTimeOut)
-        //    {
-        //        fadeOn = true;
-        //    }
-        //}
-
-        if (fadeOn == true)
+    /// <summary>
+    /// 게임을 멈추거나 실행할 수 있게 하는 함수
+    /// </summary>
+    private void gamePauseOnOff()
+    {
+        if (gamePause == true)
         {
-            fadeTimer -= Time.deltaTime / 2;
-            Color fadeColor = fadeInOut.color;
-            fadeColor.a = fadeTimer;
-            fadeInOut.color = fadeColor;
-
-            if (fadeColor.a <= 0.0f)
+            if (Time.timeScale == 0.0f)
             {
-                fadeColor.a = 0.0f;
-                gamePause = false;
-                fadeOn = false;
+                return;
             }
+
+            Time.timeScale = 0.0f;
+        }
+        else
+        {
+            if (Time.timeScale == 1.0f)
+            {
+                return;
+            }
+
+            Time.timeScale = 1.0f;
         }
     }
 
     /// <summary>
-    /// 게임을 정지 시키기 위한 함수
+    /// 게임을 서서히 보이게 하는 함수
     /// </summary>
-    /// <returns></returns>
-    public bool GetGamePause()
+    private void fadeIn()
     {
-        return gamePause;
+        if (fadeOn == true)
+        {
+            int curFrame = (int)(1 / Time.deltaTime);
+            checkTimer += Time.deltaTime;
+            if (curFrame >= 40 || checkTimer >= fadeTimeOut)
+            {
+                fadeTimer -= Time.deltaTime / 2;
+                Color fadeColor = fadeInOut.color;
+                fadeColor.a = fadeTimer;
+                fadeInOut.color = fadeColor;
+
+                if (fadeColor.a <= 0.0f)
+                {
+                    fadeColor.a = 0.0f;
+                    gamePause = false;
+                    fadeOn = false;
+                }
+            }
+        }
     }
 
     /// <summary>
@@ -255,5 +276,15 @@ public class GameManager : MonoBehaviour
         toggle.isOn = _saveScreenSize.windowOn;
         bgm.value = _saveScreenSize.bgmValue;
         fxs.value = _saveScreenSize.fxsValue;
+    }
+
+
+    /// <summary>
+    /// 게임을 정지 시키기 위한 함수
+    /// </summary>
+    /// <returns></returns>
+    public bool GetGamePause()
+    {
+        return gamePause;
     }
 }

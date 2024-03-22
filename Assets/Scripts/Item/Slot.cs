@@ -4,21 +4,58 @@ using UnityEngine;
 
 public class Slot : MonoBehaviour
 {
-    [SerializeField] private List<GameObject> item;
-    [SerializeField] private int slotIndex;
+    [SerializeField] private int itemIndex;
+    [SerializeField] private int slotQuantity;
+    private bool maxItem = false;
 
-    public void ListItem(GameObject _item)
+    private void Update()
     {
-        if (item.Count == 20)
+        if (slotQuantity == 20)
+        {
+            if (maxItem == true)
+            {
+                return;
+            }
+
+            maxItem = true;
+        }
+        else if (slotQuantity < 20)
+        {
+            if (maxItem == false)
+            {
+                return;
+            }
+
+            maxItem = false;
+        }
+    }
+
+    public void SetSlot(int _itemIndex, GameObject _itemObj)
+    {
+        if (maxItem == true)
         {
             return;
         }
 
-        item.Add(_item);
+        if (itemIndex == 0)
+        {
+            itemIndex = _itemIndex;
+            slotQuantity = 1;
+        }
+        else
+        {
+            ++slotQuantity;
+            Destroy(_itemObj);
+        }
     }
 
-    public int SlotIndex()
+    public int GetItemIndex()
     {
-        return slotIndex = item.Count;
+        return itemIndex;
+    }
+
+    public int GetSlotQuantiry()
+    {
+        return slotQuantity;
     }
 }

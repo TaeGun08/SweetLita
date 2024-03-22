@@ -4,56 +4,48 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-    [Header("아이템 설정")]
-    [SerializeField] private List<GameObject> item;
-    [SerializeField] private List<GameObject> slot;
-    [SerializeField] private int itemIndex = 0;
-    [SerializeField] private int slotIndex = 0;
+    [SerializeField] private GameObject inventory;
+    [SerializeField] private int maxQuantiry;
+    [SerializeField] private List<Slot> slot;
 
-    public void SetItem(GameObject _item)
+    private void Start()
     {
-        if (0 == item.Count)
+        inventory.SetActive(false);
+    }
+
+    private void Update()
+    {
+        inventoryOnOff();
+    }
+
+    /// <summary>
+    /// 인벤토리를 껐다 킬 수 있게 하는 함수
+    /// </summary>
+    private void inventoryOnOff()
+    {
+        if (Input.GetKeyDown(KeyCode.I))
         {
-            item.Add(_item);
-        }
-        else
-        {
-            for (int i = 0; i < item.Count; i++)
-            {
-                for (int j = 0; j < item.Count; j++)
-                {
-                    if (item[i].gameObject.name == item[j].gameObject.name)
-                    {
-                        return;
-                    }
-                    else
-                    {
-                        item.Add(_item);
-                    }
-                }
-            }
+            bool invenOnOff = inventory == inventory.activeSelf ? false : true;
+            inventory.SetActive(invenOnOff);
         }
     }
 
-    public int InventoryCheck()
-    {
-        for (int i = 0; i < item.Count; i++)
-        {
-            Item itemSc = item[i].GetComponent<Item>();
-            itemIndex = itemSc.ItemIndex();
-        }
-
-        return itemIndex;
-    }
-
-    public int SlotCheck()
+    public void SetItem(int _itemIndex, Item.ItemType _itemType, GameObject _itemObj)
     {
         for (int i = 0; i < slot.Count; i++)
         {
-            Slot slotSc = slot[i].GetComponent<Slot>();
-            slotIndex = slotSc.SlotIndex();
-        }
+            Slot slotSc = slot[i];
 
-        return slotIndex;
+            if (slotSc.GetItemIndex() == _itemIndex && slotSc.GetSlotQuantiry() < maxQuantiry)
+            {
+                slotSc.SetSlot(_itemIndex, _itemObj);
+                return;
+            }
+            else if (slotSc.GetItemIndex() == 0 && slotSc.GetSlotQuantiry() < maxQuantiry)
+            {
+                slotSc.SetSlot(_itemIndex, _itemObj);
+                return;
+            }
+        }
     }
 }

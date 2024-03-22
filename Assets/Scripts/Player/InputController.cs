@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class InputController : MonoBehaviour
 {
+    private GameManager gameManager;
     private QuestManager questManager;
-
-    private Inventory inventory;
 
     private Rigidbody2D rigid;
     private Vector3 moveVec;
@@ -19,6 +18,8 @@ public class InputController : MonoBehaviour
     [Header("플레이어 상호작용 영역")]
     [SerializeField] private CircleCollider2D interactionArea;
 
+    [SerializeField] private Inventory inventory;
+
     private void Awake()
     {
         rigid = GetComponent<Rigidbody2D>();
@@ -28,20 +29,13 @@ public class InputController : MonoBehaviour
     {
         mainCam = Camera.main;
 
-        inventory = transform.GetChild(0).GetComponent<Inventory>();
+        gameManager = GameManager.Instance;
 
         questManager = QuestManager.Instance;
     }
 
     private void Update()
     {
-        if (questManager.TalkPlayer() == true)
-        {
-            moveVec = new Vector3(0f, 0f, 0f);
-            rigid.velocity = moveVec;
-            return;
-        }
-
         playerInteraction();
         followCam();
         playerMove();
@@ -51,19 +45,13 @@ public class InputController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Z) && collider.gameObject.layer == LayerMask.NameToLayer("Npc"))
         {
-            Npc npcSc = collider.gameObject.GetComponent<Npc>();
-            questManager.MainQuestIndex(npcSc.MainQuestIndex());
-            questManager.QuestItemCheck(inventory.InventoryCheck(), inventory.SlotCheck());
-            questManager.TalkPlayer(true);
-            npcSc.NpcNameCheck(true);
+
         }
 
         if (Input.GetKeyDown(KeyCode.X) && collider.gameObject.layer == LayerMask.NameToLayer("Item"))
         {
             Item itemSc = collider.gameObject.GetComponent<Item>();
-            GameObject itemObj = Instantiate(collider.gameObject);
-            itemObj.name = "Item";
-            inventory.SetItem(itemObj);
+            inventory.SetItem(itemSc.GetItemIndex(), itemSc.GetItemType(), itemSc.gameObject);
         }
     }
 
@@ -106,5 +94,4 @@ public class InputController : MonoBehaviour
 
         rigid.velocity = moveVec;
     }
-
 }
