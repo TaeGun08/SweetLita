@@ -304,3 +304,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemIndex: 0
   slotQuantity: 0
+  itemImage: {fileID: 5437096885087775126}
+  itemQuantityText: {fileID: 5743664498887445972}
