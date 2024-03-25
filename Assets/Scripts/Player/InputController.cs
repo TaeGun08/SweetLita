@@ -43,12 +43,13 @@ public class InputController : MonoBehaviour
 
     private void OnTrigger(Collider2D collider)
     {
-        if (Input.GetKeyDown(KeyCode.Z) && collider.gameObject.layer == LayerMask.NameToLayer("Npc"))
+        if (Input.GetKeyDown(KeyCode.Space) && collider.gameObject.layer == LayerMask.NameToLayer("Npc"))
         {
-
+            Npc npcSc = collider.gameObject.GetComponent<Npc>();
+            npcSc.NpcQuestChapter1();
         }
 
-        if (Input.GetKeyDown(KeyCode.X) && collider.gameObject.layer == LayerMask.NameToLayer("Item"))
+        if (Input.GetKeyDown(KeyCode.Space) && collider.gameObject.layer == LayerMask.NameToLayer("Item"))
         {
             Item itemSc = collider.gameObject.GetComponent<Item>();
             inventory.SetItem(itemSc.GetItemIndex(), itemSc.GetItemType(), itemSc.gameObject);

@@ -9,6 +9,7 @@ public class Slot : MonoBehaviour
     [SerializeField] private int itemIndex;
     [SerializeField] private int slotQuantity;
     private bool maxItem = false;
+    private int _itemQuantity;
 
     [SerializeField] private Image itemImage;
     [SerializeField] private TMP_Text itemQuantityText;
@@ -53,6 +54,18 @@ public class Slot : MonoBehaviour
             slotQuantity = 0;
             itemQuantityText.text = slotQuantity.ToString();
         }
+
+        if (slotQuantity <= 0)
+        {
+            if (itemImage.sprite == null)
+            {
+                return;
+            }
+
+            slotQuantity = 0;
+            itemImage.sprite = null;
+            itemQuantityText.text = "";
+        }
     }
 
     public void SetSlot(int _itemIndex, GameObject _itemObj)
@@ -88,8 +101,31 @@ public class Slot : MonoBehaviour
         return itemIndex;
     }
 
-    public int GetSlotQuantiry()
+    public int GetSlotQuantity()
     {
         return slotQuantity;
+    }
+
+    public int QuestItem(int _slotQuantity)
+    {
+        for (int i = 0; i < _slotQuantity; i++)
+        {
+            slotQuantity -= 1;
+            itemQuantityText.text = slotQuantity.ToString();
+
+            ++_itemQuantity;
+
+            if (slotQuantity <= 0)
+            {
+                itemIndex = 0;
+                slotQuantity = 0;
+                itemImage.sprite = null;
+                itemQuantityText.text = "";
+
+                return _slotQuantity -= _itemQuantity;
+            }
+        }
+
+        return 0;
     }
 }

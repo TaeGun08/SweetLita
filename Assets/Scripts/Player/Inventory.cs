@@ -4,9 +4,25 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
+    public static Inventory Instance;
+
     [SerializeField] private GameObject inventory;
     [SerializeField] private int maxQuantiry;
     [SerializeField] private List<Slot> slot;
+    private int questItems;
+    private int qeustItemIndex;
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 
     private void Start()
     {
@@ -36,16 +52,65 @@ public class Inventory : MonoBehaviour
         {
             Slot slotSc = slot[i];
 
-            if (slotSc.GetItemIndex() == _itemIndex && slotSc.GetSlotQuantiry() < maxQuantiry)
+            if (slotSc.GetItemIndex() == _itemIndex && slotSc.GetSlotQuantity() < maxQuantiry)
             {
                 slotSc.SetSlot(_itemIndex, _itemObj);
                 return;
             }
-            else if (slotSc.GetItemIndex() == 0 && slotSc.GetSlotQuantiry() < maxQuantiry)
+            else if (slotSc.GetItemIndex() == 0 && slotSc.GetSlotQuantity() < maxQuantiry)
             {
                 slotSc.SetSlot(_itemIndex, _itemObj);
                 return;
             }
         }
+    }
+
+    public bool QuestItemCheck(int _itemIndex , int _itemQuantity)
+    {
+        qeustItemIndex = _itemIndex;
+
+        int itmeQuantity = 0;
+
+        for (int i = 0; i < slot.Count; i++)
+        {
+            Slot slotSc = slot[i];
+
+            if (slotSc.GetItemIndex() == qeustItemIndex)
+            {
+                itmeQuantity += slotSc.GetSlotQuantity();
+            }
+        }
+
+        return itmeQuantity >= _itemQuantity;
+    }
+
+    public void QuestItem(int _itemIndex, int _questItem)
+    {
+        questItems = _questItem;
+
+        for (int i = 0; i < slot.Count; i++)
+        {
+            Slot slotSc = slot[i];
+
+            if (slotSc.GetItemIndex() == _itemIndex && slotSc.GetSlotQuantity() != 0)
+            {
+                if (questItems == 0)
+                {
+                    return;
+                }
+
+                questItems = slotSc.QuestItem(questItems);
+            }
+        }
+    }
+
+    public List<Slot> GetSlot()
+    {
+        return slot;
+    }
+
+    public int QuestItems()
+    {
+        return questItems;
     }
 }
