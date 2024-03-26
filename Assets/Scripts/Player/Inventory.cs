@@ -6,11 +6,12 @@ public class Inventory : MonoBehaviour
 {
     public static Inventory Instance;
 
-    [SerializeField] private GameObject inventory;
-    [SerializeField] private int maxQuantiry;
-    [SerializeField] private List<Slot> slot;
-    private int questItems;
-    private int qeustItemIndex;
+    [Header("인벤토리")]
+    [SerializeField, Tooltip("인벤토리 UI오브젝트")] private GameObject inventory;
+    [SerializeField, Tooltip("인벤토리의 슬롯당 최대 개수")] private int maxQuantiry;
+    [SerializeField, Tooltip("슬롯 리스트")] private List<Slot> slot;
+    private int questItems; //퀘스트 아이템들
+    private int qeustItemIndex; //퀘스트 아이템의 번호
 
     private void Awake()
     {
@@ -46,6 +47,12 @@ public class Inventory : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// 아이템을 넣어줄 함수
+    /// </summary>
+    /// <param name="_itemIndex"></param>
+    /// <param name="_itemType"></param>
+    /// <param name="_itemObj"></param>
     public void SetItem(int _itemIndex, Item.ItemType _itemType, GameObject _itemObj)
     {
         for (int i = 0; i < slot.Count; i++)
@@ -65,6 +72,12 @@ public class Inventory : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// 퀘스트 아이템을 확인하는 함수
+    /// </summary>
+    /// <param name="_itemIndex"></param>
+    /// <param name="_itemQuantity"></param>
+    /// <returns></returns>
     public bool QuestItemCheck(int _itemIndex , int _itemQuantity)
     {
         qeustItemIndex = _itemIndex;
@@ -84,6 +97,11 @@ public class Inventory : MonoBehaviour
         return itmeQuantity >= _itemQuantity;
     }
 
+    /// <summary>
+    /// 퀘스트 아이템을 지우기 위한 함수
+    /// </summary>
+    /// <param name="_itemIndex"></param>
+    /// <param name="_questItem"></param>
     public void QuestItem(int _itemIndex, int _questItem)
     {
         questItems = _questItem;
@@ -102,15 +120,5 @@ public class Inventory : MonoBehaviour
                 questItems = slotSc.QuestItem(questItems);
             }
         }
-    }
-
-    public List<Slot> GetSlot()
-    {
-        return slot;
-    }
-
-    public int QuestItems()
-    {
-        return questItems;
     }
 }

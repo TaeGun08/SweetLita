@@ -6,6 +6,7 @@ public class InputController : MonoBehaviour
 {
     private GameManager gameManager;
     private QuestManager questManager;
+    private TIuBookManager tIuBookManager;
 
     private Rigidbody2D rigid;
     private Vector3 moveVec;
@@ -13,6 +14,7 @@ public class InputController : MonoBehaviour
     private Camera mainCam;
 
     [Header("플레이어의 이동설정")]
+    [SerializeField] private bool moveStop = false;
     [SerializeField] private float moveSpeed;
 
     [Header("플레이어 상호작용 영역")]
@@ -32,6 +34,8 @@ public class InputController : MonoBehaviour
         gameManager = GameManager.Instance;
 
         questManager = QuestManager.Instance;
+
+        tIuBookManager = TIuBookManager.Instance;
     }
 
     private void Update()
@@ -41,18 +45,24 @@ public class InputController : MonoBehaviour
         playerMove();
     }
 
+    /// <summary>
+    /// 상호작용을 위한 콜라이더를 통해 작동시켜주는 함수
+    /// </summary>
+    /// <param name="collider"></param>
     private void OnTrigger(Collider2D collider)
     {
         if (Input.GetKeyDown(KeyCode.Space) && collider.gameObject.layer == LayerMask.NameToLayer("Npc"))
         {
             Npc npcSc = collider.gameObject.GetComponent<Npc>();
             npcSc.NpcQuestChapter1();
+            tIuBookManager.SetNpcIdCheck(npcSc.GetNpcIndex());
         }
 
         if (Input.GetKeyDown(KeyCode.Space) && collider.gameObject.layer == LayerMask.NameToLayer("Item"))
         {
             Item itemSc = collider.gameObject.GetComponent<Item>();
             inventory.SetItem(itemSc.GetItemIndex(), itemSc.GetItemType(), itemSc.gameObject);
+            tIuBookManager.SetItemIdCheck(itemSc.GetItemIndex());
         }
     }
 
@@ -61,7 +71,7 @@ public class InputController : MonoBehaviour
     /// </summary>
     private void playerInteraction()
     {
-        Collider2D npcInteractionColl = Physics2D.OverlapCircle(interactionArea.bounds.center, interactionArea.radius, 
+        Collider2D npcInteractionColl = Physics2D.OverlapCircle(interactionArea.bounds.center, interactionArea.radius,
             LayerMask.GetMask("Npc"));
 
         Collider2D itemInteractionColl = Physics2D.OverlapCircle(interactionArea.bounds.center, interactionArea.radius,
@@ -91,6 +101,14 @@ public class InputController : MonoBehaviour
     /// </summary>
     private void playerMove()
     {
+        moveStop = questManager.PlayerMoveStop();
+
+        if (moveStop == true)
+        {
+            rigid.velocity = Vector3.zero;
+            return;
+        }
+
         moveVec = new Vector3(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"), 0f).normalized * moveSpeed;
 
         rigid.velocity = moveVec;

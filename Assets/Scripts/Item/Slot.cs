@@ -6,13 +6,14 @@ using UnityEngine.UI;
 
 public class Slot : MonoBehaviour
 {
-    [SerializeField] private int itemIndex;
-    [SerializeField] private int slotQuantity;
+    [Header("슬롯 설정")]
+    [SerializeField, Tooltip("현재 가지고 있는 아이템")] private int itemIndex;
+    [SerializeField, Tooltip("현재 가지고 있는 아이템 개수")] private int slotQuantity;
     private bool maxItem = false;
     private int _itemQuantity;
 
-    [SerializeField] private Image itemImage;
-    [SerializeField] private TMP_Text itemQuantityText;
+    [SerializeField, Tooltip("아이템을 보여줄 이미지")] private Image itemImage;
+    [SerializeField, Tooltip("아이템 개수를 표시할 텍스트")] private TMP_Text itemQuantityText;
 
     private void Start()
     {
@@ -68,6 +69,11 @@ public class Slot : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// 슬롯에 아이템을 넣어줄 함수
+    /// </summary>
+    /// <param name="_itemIndex"></param>
+    /// <param name="_itemObj"></param>
     public void SetSlot(int _itemIndex, GameObject _itemObj)
     {
         if (maxItem == true)
@@ -96,16 +102,29 @@ public class Slot : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// 슬롯에 있는 아이템을 보내줄 함수
+    /// </summary>
+    /// <returns></returns>
     public int GetItemIndex()
     {
         return itemIndex;
     }
 
+    /// <summary>
+    /// 슬롯에 있는 아이템의 개수를 보내줄 함수
+    /// </summary>
+    /// <returns></returns>
     public int GetSlotQuantity()
     {
         return slotQuantity;
     }
 
+    /// <summary>
+    /// 퀘스트에 필요한 아이템을 지우기 위한 함수
+    /// </summary>
+    /// <param name="_slotQuantity"></param>
+    /// <returns></returns>
     public int QuestItem(int _slotQuantity)
     {
         for (int i = 0; i < _slotQuantity; i++)

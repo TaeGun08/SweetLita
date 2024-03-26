@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c6212900102c6ad4495ce96bf5d3ac12, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -133,6 +133,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17b522384cc204c478eedf03e54843c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  npcName: "\uAE40\uB355\uC0BC"
-  mainQuestIndex: 0
-  intimacy: 0
+  npcIndex: 0
+  questIndex: 

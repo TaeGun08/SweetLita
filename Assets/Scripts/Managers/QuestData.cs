@@ -10,16 +10,15 @@ public class QuestData : MonoBehaviour
 
     private Inventory inventory;
 
-    [SerializeField] private GameObject NpcNameAndChat;
-    [SerializeField] private GameObject ChoiceButtons;
-    [SerializeField] private Button acceptButton;
-    [SerializeField] private Button notAcceptButton;
-    private TMP_Text ChatWindowText;
-    private TMP_Text NpcNameText;
-    [SerializeField] private int questIndex;
-    [SerializeField] private int questCheckIndex;
-    [SerializeField] private int checkIndex;
-    [SerializeField] private int chatIndex;
+    [Header("퀘스트 데이터 설정")]
+    [SerializeField, Tooltip("Npc이름과 말풍선 오브젝트")] private GameObject NpcNameAndChat;
+    [SerializeField, Tooltip("선택 버튼 오브젝트")] private GameObject ChoiceButtons;
+    [SerializeField, Tooltip("퀘스트 수락버튼")] private Button acceptButton;
+    [SerializeField, Tooltip("퀘스트 거절버튼")] private Button notAcceptButton;
+    private TMP_Text ChatWindowText; //Npc의 말을 표시할 텍스트
+    private TMP_Text NpcNameText; //Npc의 이름을 표시할 텍스트
+    private int chatIndex;  //다음 대화를 진행시켜주기 위한 변수
+    [SerializeField] private bool playerMoveStop = false; //플레이어의 움직임을 멈추게 하는 변수
 
     private void Start()
     {
@@ -32,20 +31,26 @@ public class QuestData : MonoBehaviour
 
         acceptButton.onClick.AddListener(() =>
         {
+            playerMoveStop = false;
             NpcNameAndChat.SetActive(false);
             ChoiceButtons.SetActive(false);
             chatIndex = 100;
-            questManager.SetQuestCheckIndex(checkIndex);
         });
 
         notAcceptButton.onClick.AddListener(() =>
         {
+            playerMoveStop = false;
             NpcNameAndChat.SetActive(false);
             ChoiceButtons.SetActive(false);
             chatIndex = 0;
         });
     }
 
+    /// <summary>
+    /// 퀘스트 챕터 1을 담당하는 함수
+    /// </summary>
+    /// <param name="_npcIndex"></param>
+    /// <param name="_questIndex"></param>
     public void NpcQuestChapter1(int _npcIndex, int _questIndex)
     {
         if (_npcIndex == 10 && _questIndex == 100 
@@ -53,6 +58,7 @@ public class QuestData : MonoBehaviour
         {
             if (chatIndex == 0)
             {
+                playerMoveStop = true;
                 chatIndex++;
                 ChatWindowText.text = $"나 좀 도와줘";
                 NpcNameText.text = $"김덕영";
@@ -60,7 +66,6 @@ public class QuestData : MonoBehaviour
             }
             else if (chatIndex == 1)
             {
-                checkIndex = 100;
                 ChatWindowText.text = $"옆에 보이는 아이템을 22개만 가져다 줘";
                 ChoiceButtons.SetActive(true);
             }
@@ -80,6 +85,7 @@ public class QuestData : MonoBehaviour
         {
             if (chatIndex == 0)
             {
+                playerMoveStop = true;
                 chatIndex++;
                 ChatWindowText.text = $"나 좀 도와줘";
                 NpcNameText.text = $"김덕일";
@@ -87,7 +93,6 @@ public class QuestData : MonoBehaviour
             }
             else if (chatIndex == 1)
             {
-                checkIndex = 101;
                 ChatWindowText.text = $"옆에 보이는 아이템을 12개만 가져다 줘";
                 ChoiceButtons.SetActive(true);
             }
@@ -107,6 +112,7 @@ public class QuestData : MonoBehaviour
         {
             if (chatIndex == 0)
             {
+                playerMoveStop = true;
                 chatIndex++;
                 ChatWindowText.text = $"나 좀 도와줘";
                 NpcNameText.text = $"김덕이";
@@ -114,7 +120,6 @@ public class QuestData : MonoBehaviour
             }
             else if (chatIndex == 1)
             {
-                checkIndex = 102;
                 ChatWindowText.text = $"옆에 보이는 아이템을 6개만 가져다 줘";
                 ChoiceButtons.SetActive(true);
             }
@@ -124,17 +129,27 @@ public class QuestData : MonoBehaviour
             }
             else if (chatIndex == 101)
             {
+                playerMoveStop = false;
                 chatIndex--;
                 NpcNameAndChat.SetActive(false);
             }
         }
         else if (chatIndex == 0)
         {
+            playerMoveStop = false;
             chatIndex = 0;
             NpcNameAndChat.SetActive(false);
         }
     }
 
+    /// <summary>
+    /// 퀘스트 아이템이 모두 모이면 퀘스트가 클리어가 되도록 하는 함수
+    /// </summary>
+    /// <param name="_itemIndex"></param>
+    /// <param name="_itemQuantity"></param>
+    /// <param name="_addIndex"></param>
+    /// <param name="_notClearChat"></param>
+    /// <param name="_clearChat"></param>
     private void questClearIndex(int _itemIndex, int _itemQuantity, int _addIndex, string _notClearChat, 
         string _clearChat)
     {
@@ -152,5 +167,14 @@ public class QuestData : MonoBehaviour
         }
 
         NpcNameAndChat.SetActive(true);
+    }
+
+    /// <summary>
+    /// 플레이어가 대화도중 움직임을 멈춰주는 함수
+    /// </summary>
+    /// <returns></returns>
+    public bool PlayerMoveStop()
+    {
+        return playerMoveStop;
     }
 }
