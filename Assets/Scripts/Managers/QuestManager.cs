@@ -1,17 +1,18 @@
+using Newtonsoft.Json;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class QuestManager : MonoBehaviour
 {
+    public static QuestManager Instance;
+
     public class QuestIndexData
     {
-        public int[] questIndex;
+        public List<int> questIndex = new List<int>();
     }
 
     private QuestIndexData questIndexData = new QuestIndexData();
-
-    public static QuestManager Instance;
 
     private QuestData questData;
 
@@ -37,10 +38,11 @@ public class QuestManager : MonoBehaviour
         if (PlayerPrefs.GetString("saveQuestIndex") != string.Empty)
         {
             string getQeustIndex = PlayerPrefs.GetString("saveQuestIndex");
-            questIndexData = JsonUtility.FromJson<QuestIndexData>(getQeustIndex);
-            if (questIndexData.questIndex != null || questIndexData.questIndex.Length != 0)
+            //questIndexData = JsonUtility.FromJson<QuestIndexData>(getQeustIndex);
+            questIndexData = JsonConvert.DeserializeObject<QuestIndexData>(getQeustIndex);
+            if (questIndexData.questIndex != null && questIndexData.questIndex.Count != 0)
             {
-                for (int i = 0; i < questIndexData.questIndex.Length; i++)
+                for (int i = 0; i < questIndexData.questIndex.Count; i++)
                 {
                     questIndex.Add(questIndexData.questIndex[i]);
                 }
@@ -84,16 +86,10 @@ public class QuestManager : MonoBehaviour
     public void SetQuestIndex(int _questIndex)
     {
         questIndex.Add(_questIndex);
-        int count = questIndex.Count;
-        if (questIndexData.questIndex == null)
-        {
-            for (int i = 0; i < count; i++)
-            {
-                questIndexData.questIndex[i] = questIndex[i];
-            }
-        }
+        questIndexData.questIndex.Add(_questIndex);
 
-        string setQuestIndex = JsonUtility.ToJson(questIndexData.questIndex);
+        //string setQuestIndex = JsonUtility.ToJson(new JosnConvert<int>(questIndexData.questIndex));
+        string setQuestIndex = JsonConvert.SerializeObject(questIndexData); 
         PlayerPrefs.SetString("saveQuestIndex", setQuestIndex);
     }
 
@@ -105,4 +101,11 @@ public class QuestManager : MonoBehaviour
     {
         return questData.PlayerMoveStop();
     }
+
+    //[System.Serializable]
+    //public class JosnConvert<T>
+    //{
+    //    public List<T> questIndex;
+    //    public JosnConvert(List<T> list) => this.questIndex = list;
+    //}
 }

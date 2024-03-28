@@ -1,3 +1,4 @@
+using Newtonsoft.Json;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,6 +6,14 @@ using UnityEngine;
 public class Inventory : MonoBehaviour
 {
     public static Inventory Instance;
+
+    public class InventorySlotData
+    {
+        public List<int> itemIndex = new List<int>();
+        public List<int> itemQuantity = new List<int>();
+    }
+
+    private InventorySlotData inventorySlotData = new InventorySlotData();
 
     [Header("인벤토리")]
     [SerializeField, Tooltip("인벤토리 UI오브젝트")] private GameObject inventory;
@@ -23,11 +32,33 @@ public class Inventory : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        for (int i = 0; i < 20; i++)
+        {
+            inventorySlotData.itemIndex.Add(0);
+            inventorySlotData.itemQuantity.Add(0);
+        }
     }
 
     private void Start()
     {
         inventory.SetActive(false);
+
+        if (PlayerPrefs.GetString("inventoryData") != string.Empty)
+        {
+            string getInventoryItem = PlayerPrefs.GetString("inventoryData");
+            inventorySlotData = JsonConvert.DeserializeObject<InventorySlotData>(getInventoryItem);
+
+            if (inventorySlotData != null && inventorySlotData.itemIndex.Count != 0 
+                && inventorySlotData.itemQuantity.Count != 0)
+            {
+                for (int i = 0; i < slot.Count; i++)
+                {
+                    Slot slotSc = slot[i];
+                    slotSc.SetSlotData(inventorySlotData.itemIndex[i], inventorySlotData.itemQuantity[i]);
+                }
+            }
+        }
     }
 
     private void Update()
@@ -48,6 +79,15 @@ public class Inventory : MonoBehaviour
     }
 
     /// <summary>
+    /// 슬롯에 있는 데이터를 저장하기 위한 함수
+    /// </summary>
+    private void saveInventory()
+    {
+        string setInventoryItem = JsonConvert.SerializeObject(inventorySlotData);
+        PlayerPrefs.SetString("inventoryData", setInventoryItem);
+    }
+
+    /// <summary>
     /// 아이템을 넣어줄 함수
     /// </summary>
     /// <param name="_itemIndex"></param>
@@ -62,11 +102,17 @@ public class Inventory : MonoBehaviour
             if (slotSc.GetItemIndex() == _itemIndex && slotSc.GetSlotQuantity() < maxQuantiry)
             {
                 slotSc.SetSlot(_itemIndex, _itemObj);
+                inventorySlotData.itemIndex[i] = slotSc.GetItemIndex();
+                inventorySlotData.itemQuantity[i] = slotSc.GetSlotQuantity();
+                saveInventory();
                 return;
             }
             else if (slotSc.GetItemIndex() == 0 && slotSc.GetSlotQuantity() < maxQuantiry)
             {
                 slotSc.SetSlot(_itemIndex, _itemObj);
+                inventorySlotData.itemIndex[i] = slotSc.GetItemIndex();
+                inventorySlotData.itemQuantity[i] = slotSc.GetSlotQuantity();
+                saveInventory();
                 return;
             }
         }
@@ -78,7 +124,7 @@ public class Inventory : MonoBehaviour
     /// <param name="_itemIndex"></param>
     /// <param name="_itemQuantity"></param>
     /// <returns></returns>
-    public bool QuestItemCheck(int _itemIndex , int _itemQuantity)
+    public bool QuestItemCheck(int _itemIndex, int _itemQuantity)
     {
         qeustItemIndex = _itemIndex;
 
@@ -92,6 +138,10 @@ public class Inventory : MonoBehaviour
             {
                 itmeQuantity += slotSc.GetSlotQuantity();
             }
+
+            inventorySlotData.itemIndex[i] = slotSc.GetItemIndex();
+            inventorySlotData.itemQuantity[i] = slotSc.GetSlotQuantity();
+            saveInventory();
         }
 
         return itmeQuantity >= _itemQuantity;
@@ -119,6 +169,10 @@ public class Inventory : MonoBehaviour
 
                 questItems = slotSc.QuestItem(questItems);
             }
+
+            inventorySlotData.itemIndex[i] = slotSc.GetItemIndex();
+            inventorySlotData.itemQuantity[i] = slotSc.GetSlotQuantity();
+            saveInventory();
         }
     }
 }

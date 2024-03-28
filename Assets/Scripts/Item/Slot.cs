@@ -147,4 +147,14 @@ public class Slot : MonoBehaviour
 
         return 0;
     }
+
+    /// <summary>
+    /// 저정했던 데이터를 받아올 함수
+    /// </summary>
+    public void SetSlotData(int _itemIndex, int _slotQuantity)
+    {
+        itemIndex = _itemIndex;
+        slotQuantity = _slotQuantity;
+        itemQuantityText.text = slotQuantity.ToString();
+    }
 }
