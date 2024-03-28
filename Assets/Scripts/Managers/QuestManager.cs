@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class QuestManager : MonoBehaviour
 {
+    public class QuestIndexData
+    {
+        public int[] questIndex;
+    }
+
+    private QuestIndexData questIndexData = new QuestIndexData();
+
     public static QuestManager Instance;
 
     private QuestData questData;
@@ -26,6 +33,19 @@ public class QuestManager : MonoBehaviour
     private void Start()
     {
         questData = transform.GetChild(0).GetComponent<QuestData>();
+
+        if (PlayerPrefs.GetString("saveQuestIndex") != string.Empty)
+        {
+            string getQeustIndex = PlayerPrefs.GetString("saveQuestIndex");
+            questIndexData = JsonUtility.FromJson<QuestIndexData>(getQeustIndex);
+            if (questIndexData.questIndex != null || questIndexData.questIndex.Length != 0)
+            {
+                for (int i = 0; i < questIndexData.questIndex.Length; i++)
+                {
+                    questIndex.Add(questIndexData.questIndex[i]);
+                }
+            }
+        }
     }
 
     /// <summary>
@@ -64,6 +84,17 @@ public class QuestManager : MonoBehaviour
     public void SetQuestIndex(int _questIndex)
     {
         questIndex.Add(_questIndex);
+        int count = questIndex.Count;
+        if (questIndexData.questIndex == null)
+        {
+            for (int i = 0; i < count; i++)
+            {
+                questIndexData.questIndex[i] = questIndex[i];
+            }
+        }
+
+        string setQuestIndex = JsonUtility.ToJson(questIndexData.questIndex);
+        PlayerPrefs.SetString("saveQuestIndex", setQuestIndex);
     }
 
     /// <summary>
