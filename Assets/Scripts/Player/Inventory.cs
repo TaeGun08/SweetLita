@@ -15,6 +15,8 @@ public class Inventory : MonoBehaviour
 
     private InventorySlotData inventorySlotData = new InventorySlotData();
 
+    private QuestManager questManager;
+
     [Header("인벤토리")]
     [SerializeField, Tooltip("인벤토리 UI오브젝트")] private GameObject inventory;
     [SerializeField, Tooltip("인벤토리의 슬롯당 최대 개수")] private int maxQuantiry;
@@ -42,23 +44,9 @@ public class Inventory : MonoBehaviour
 
     private void Start()
     {
-        inventory.SetActive(false);
+        questManager = QuestManager.Instance;
 
-        if (PlayerPrefs.GetString("inventoryData") != string.Empty)
-        {
-            string getInventoryItem = PlayerPrefs.GetString("inventoryData");
-            inventorySlotData = JsonConvert.DeserializeObject<InventorySlotData>(getInventoryItem);
-
-            if (inventorySlotData != null && inventorySlotData.itemIndex.Count != 0 
-                && inventorySlotData.itemQuantity.Count != 0)
-            {
-                for (int i = 0; i < slot.Count; i++)
-                {
-                    Slot slotSc = slot[i];
-                    slotSc.SetSlotData(inventorySlotData.itemIndex[i], inventorySlotData.itemQuantity[i]);
-                }
-            }
-        }
+        setInventoryData();
     }
 
     private void Update()
@@ -71,10 +59,33 @@ public class Inventory : MonoBehaviour
     /// </summary>
     private void inventoryOnOff()
     {
-        if (Input.GetKeyDown(KeyCode.I))
+        if (Input.GetKeyDown(KeyCode.I) && questManager.PlayerMoveStop() == false)
         {
             bool invenOnOff = inventory == inventory.activeSelf ? false : true;
             inventory.SetActive(invenOnOff);
+        }
+    }
+
+
+    /// <summary>
+    /// 인벤토리에 저장된 값을 불러오는 함수
+    /// </summary>
+    private void setInventoryData()
+    {
+        if (PlayerPrefs.GetString("inventoryData") != string.Empty)
+        {
+            string getInventoryItem = PlayerPrefs.GetString("inventoryData");
+            inventorySlotData = JsonConvert.DeserializeObject<InventorySlotData>(getInventoryItem);
+
+            if (inventorySlotData != null && inventorySlotData.itemIndex.Count != 0
+                && inventorySlotData.itemQuantity.Count != 0)
+            {
+                for (int i = 0; i < slot.Count; i++)
+                {
+                    Slot slotSc = slot[i];
+                    slotSc.SetSlotData(inventorySlotData.itemIndex[i], inventorySlotData.itemQuantity[i]);
+                }
+            }
         }
     }
 
@@ -174,5 +185,14 @@ public class Inventory : MonoBehaviour
             inventorySlotData.itemQuantity[i] = slotSc.GetSlotQuantity();
             saveInventory();
         }
+    }
+
+    /// <summary>
+    /// 다른 스크립트에서 오브젝트를 확인하기 위한 함수
+    /// </summary>
+    /// <returns></returns>
+    public GameObject InventoryObj()
+    {
+        return inventory;
     }
 }

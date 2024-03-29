@@ -1,3 +1,4 @@
+using Newtonsoft.Json;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,17 @@ using UnityEngine.UI;
 public class TIuBookManager : MonoBehaviour
 {
     public static TIuBookManager Instance;
+
+    public class BookData
+    {
+        public List<int> itemsIndex = new List<int>();
+        public List<int> RecipeIndex = new List<int>();
+        public List<int> npcIndex = new List<int>();
+    }
+
+    private BookData bookData = new BookData();
+
+    private QuestManager questManager;
 
     [Header("도감 설정")]
     [SerializeField] private List<GameObject> bookObj;
@@ -84,8 +96,31 @@ public class TIuBookManager : MonoBehaviour
 
     private void Start()
     {
+        questManager = QuestManager.Instance;
+
         bookObj[0].SetActive(false);
         bookObj[2].SetActive(false);
+
+        if (PlayerPrefs.GetString("bookSaveData") != string.Empty)
+        {
+            string getBookData = PlayerPrefs.GetString("bookSaveData");
+            bookData = JsonConvert.DeserializeObject<BookData>(getBookData);
+
+            int itemCount = bookData.itemsIndex.Count;
+            for (int i = 0; i < itemCount; i++)
+            {
+                itemsIndex.Add(bookData.itemsIndex[i]);
+            }
+
+            int npcCount = bookData.npcIndex.Count;
+            for (int i = 0; i < npcCount; i++)
+            {
+                npcIndex.Add(bookData.npcIndex[i]);
+            }
+
+            itemCheck = true;
+            npcCheck = true;
+        }
     }
 
     private void Update()
@@ -100,7 +135,7 @@ public class TIuBookManager : MonoBehaviour
     /// </summary>
     private void bookOnOff()
     {
-        if (Input.GetKeyDown(KeyCode.B))
+        if (Input.GetKeyDown(KeyCode.B) && questManager.PlayerMoveStop() == false)
         {
             bool onOff = bookObj[0] == bookObj[0].activeSelf ? false : true;
             bookObj[0].SetActive(onOff);
@@ -195,6 +230,9 @@ public class TIuBookManager : MonoBehaviour
         if (SetItemsIndex(_itemId) == false)
         {
             itemsIndex.Add(_itemId);
+            bookData.itemsIndex.Add(_itemId);
+            string setNpcId = JsonConvert.SerializeObject(bookData);
+            PlayerPrefs.SetString("bookSaveData", setNpcId);
             itemCheck = true;
         }
     }
@@ -228,6 +266,9 @@ public class TIuBookManager : MonoBehaviour
         if (SetNpcIndex(_itemId) == false)
         {
             npcIndex.Add(_itemId);
+            bookData.npcIndex.Add(_itemId);
+            string setNpcId = JsonConvert.SerializeObject(bookData);
+            PlayerPrefs.SetString("bookSaveData", setNpcId);
             npcCheck = true;
         }
     }

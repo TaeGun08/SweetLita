@@ -1,3 +1,4 @@
+using Newtonsoft.Json;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -10,6 +11,8 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
+
+    private Inventory inventory;
 
     public class SaveOption
     {
@@ -58,8 +61,10 @@ public class GameManager : MonoBehaviour
     [SerializeField, Tooltip("페이드 인 아웃")] private Image fadeInOut;
     private bool fadeOn = false;
     private float fadeTimer;
+    private bool fadeOff = false;
+    private float fadeOutTimer;
 
-    private float fadeTimeOut = 5;
+    private float fadeTimeOut = 2.0f;
     private float checkTimer = 0.0f;
 
     private void Awake()
@@ -77,7 +82,7 @@ public class GameManager : MonoBehaviour
         setting.SetActive(false);
 
         string saveScreenData = PlayerPrefs.GetString(saveOptionValue);
-        saveOption = JsonUtility.FromJson<SaveOption>(saveScreenData);
+        saveOption = JsonConvert.DeserializeObject<SaveOption>(saveScreenData);
         setSaveOptionData(saveOption);
 
         gameBackButton.onClick.AddListener(() =>
@@ -85,7 +90,7 @@ public class GameManager : MonoBehaviour
             option.SetActive(false);
         });
 
-        mainBackButton[0].onClick.AddListener(() => 
+        mainBackButton[0].onClick.AddListener(() =>
         {
             mainBackChoice.SetActive(true);
         });
@@ -93,9 +98,10 @@ public class GameManager : MonoBehaviour
         mainBackButton[1].onClick.AddListener(() =>
         {
             saveScene.sceneName = curSceneName;
-            string setScene = JsonUtility.ToJson(saveScene);
+            string setScene = JsonConvert.SerializeObject(saveScene);
             PlayerPrefs.SetString(saveSceneName, setScene);
-            SceneManager.LoadSceneAsync("MainScene");
+            gamePause = true;
+            fadeOff = true;
         });
 
         mainBackButton[2].onClick.AddListener(() =>
@@ -103,7 +109,7 @@ public class GameManager : MonoBehaviour
             mainBackChoice.SetActive(false);
         });
 
-        settingButton[0].onClick.AddListener(() => 
+        settingButton[0].onClick.AddListener(() =>
         {
             setting.SetActive(true);
         });
@@ -118,11 +124,11 @@ public class GameManager : MonoBehaviour
             saveOption.bgmValue = bgm.value;
             saveOption.fxsValue = fxs.value;
 
-            string getScreenSize = JsonUtility.ToJson(saveOption);
+            string getScreenSize = JsonConvert.SerializeObject(saveOption);
             PlayerPrefs.SetString(saveOptionValue, getScreenSize);
 
             string saveScreenData = PlayerPrefs.GetString(saveOptionValue);
-            saveOption = JsonUtility.FromJson<SaveOption>(saveScreenData);
+            saveOption = JsonConvert.DeserializeObject<SaveOption>(saveScreenData);
             setSaveOptionData(saveOption);
         });
 
@@ -131,15 +137,15 @@ public class GameManager : MonoBehaviour
             setting.SetActive(false);
         });
 
-        gameExitButton[0].onClick.AddListener(() => 
+        gameExitButton[0].onClick.AddListener(() =>
         {
             gameExit.SetActive(true);
         });
 
-        gameExitButton[1].onClick.AddListener(() => 
+        gameExitButton[1].onClick.AddListener(() =>
         {
             saveScene.sceneName = curSceneName;
-            string setScene = JsonUtility.ToJson(saveScene);
+            string setScene = JsonConvert.SerializeObject(saveScene);
             PlayerPrefs.SetString(saveSceneName, setScene);
 
 #if UNITY_EDITOR
@@ -160,10 +166,15 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        inventory = Inventory.Instance;
+
+        inventory.InventoryObj().SetActive(true);
+
         Color fadeColor = fadeInOut.color;
         fadeColor.a = 1f;
         fadeInOut.color = fadeColor;
         fadeTimer = 1.0f;
+        fadeInOut.gameObject.SetActive(true);
     }
 
     private void Update()
@@ -171,6 +182,7 @@ public class GameManager : MonoBehaviour
         gamePauseOnOff();
 
         fadeIn();
+        fadeOut();
 
         optionOnOff();
     }
@@ -207,21 +219,52 @@ public class GameManager : MonoBehaviour
     {
         if (fadeOn == true)
         {
-            int curFrame = (int)(1 / Time.deltaTime);
-            checkTimer += Time.deltaTime;
-            if (curFrame >= 40 || checkTimer >= fadeTimeOut)
+            //int curFrame = (int)(1 / Time.unscaledDeltaTime);
+            checkTimer += Time.unscaledDeltaTime;
+            //if (curFrame >= 40 || checkTimer >= fadeTimeOut)
+            //{
+            if (checkTimer >= fadeTimeOut)
             {
-                fadeTimer -= Time.deltaTime / 2;
+                fadeTimer -= Time.unscaledDeltaTime / 2;
                 Color fadeColor = fadeInOut.color;
                 fadeColor.a = fadeTimer;
                 fadeInOut.color = fadeColor;
+                inventory.InventoryObj().SetActive(false);
 
                 if (fadeColor.a <= 0.0f)
                 {
+                    fadeInOut.gameObject.SetActive(false);
                     fadeColor.a = 0.0f;
                     gamePause = false;
                     fadeOn = false;
                 }
+            }
+        }
+    }
+
+    /// <summary>
+    /// 게임화면을 서서히 어둡게 하는 함수
+    /// </summary>
+    private void fadeOut()
+    {
+        if (fadeOff == true)
+        {
+            if (fadeInOut.gameObject.activeSelf == false)
+            {
+                fadeInOut.gameObject.SetActive(true);
+            }
+
+            fadeTimer += Time.unscaledDeltaTime / 2;
+            Color fadeColor = fadeInOut.color;
+            fadeColor.a = fadeTimer;
+            fadeInOut.color = fadeColor;
+
+            if (fadeColor.a >= 1.0f)
+            {
+                SceneManager.LoadSceneAsync("MainScene");
+                fadeColor.a = 1.0f;
+                gamePause = false;
+                fadeOff = false;
             }
         }
     }

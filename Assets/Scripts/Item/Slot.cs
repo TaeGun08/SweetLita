@@ -6,17 +6,25 @@ using UnityEngine.UI;
 
 public class Slot : MonoBehaviour
 {
+    private Inventory inventory;
+    private ItemManager itemManager;
+
     [Header("슬롯 설정")]
     [SerializeField, Tooltip("현재 가지고 있는 아이템")] private int itemIndex;
     [SerializeField, Tooltip("현재 가지고 있는 아이템 개수")] private int slotQuantity;
     private bool maxItem = false;
     private int _itemQuantity;
 
-    [SerializeField, Tooltip("아이템을 보여줄 이미지")] private Image itemImage;
+    [SerializeField, Tooltip("아이템을 보여줄 이미지")] private Image itemImag;
     [SerializeField, Tooltip("아이템 개수를 표시할 텍스트")] private TMP_Text itemQuantityText;
+    private bool setImage = false;
 
     private void Start()
     {
+        inventory = Inventory.Instance;
+
+        itemManager = ItemManager.Instance;
+
         if (itemIndex == 0)
         {
             itemQuantityText.text = "";
@@ -24,6 +32,15 @@ public class Slot : MonoBehaviour
     }
 
     private void Update()
+    {
+        slotCheck();
+        changeSprite();
+    }
+
+    /// <summary>
+    /// 슬롯을 체크하고 관리하는 함수
+    /// </summary>
+    private void slotCheck()
     {
         if (slotQuantity == 20)
         {
@@ -46,26 +63,45 @@ public class Slot : MonoBehaviour
 
         if (itemIndex == 0)
         {
-            if (slotQuantity == 0)
+            if (itemImag.sprite == null)
             {
                 return;
             }
 
-            itemImage.sprite = null;
             slotQuantity = 0;
-            itemQuantityText.text = slotQuantity.ToString();
+            itemImag.sprite = null;
+            itemQuantityText.text = "";
         }
 
         if (slotQuantity <= 0)
         {
-            if (itemImage.sprite == null)
+            if (itemImag.sprite == null)
             {
                 return;
             }
 
             slotQuantity = 0;
-            itemImage.sprite = null;
+            itemImag.sprite = null;
             itemQuantityText.text = "";
+        }
+    }
+
+    private void changeSprite()
+    {
+        if (inventory.InventoryObj().activeSelf == true && setImage == false)
+        {
+            if (itemIndex == 0 || slotQuantity == 0)
+            {
+                itemImag.sprite = null;
+                return;
+            }
+
+            itemImag.sprite = itemManager.GetItemSprite(itemIndex);
+            setImage = true;
+        }
+        else if (inventory.InventoryObj().activeSelf == false && setImage == true)
+        {
+            setImage = false;
         }
     }
 
@@ -85,17 +121,19 @@ public class Slot : MonoBehaviour
         {
             itemIndex = _itemIndex;
             slotQuantity = 1;
-            SpriteRenderer itemSpR = _itemObj.GetComponent<SpriteRenderer>();
-            Sprite itemSr = itemSpR.sprite;
-            itemImage.sprite = itemSr;
+            if (inventory.InventoryObj().activeSelf == true)
+            {
+                itemImag.sprite = itemManager.GetItemSprite(itemIndex);
+            }
             itemQuantityText.text = slotQuantity.ToString();
             Destroy(_itemObj);
         }
         else
         {
-            SpriteRenderer itemSpR = _itemObj.GetComponent<SpriteRenderer>();
-            Sprite itemSr = itemSpR.sprite;
-            itemImage.sprite = itemSr;
+            if (inventory.InventoryObj().activeSelf == true)
+            {
+                itemImag.sprite = itemManager.GetItemSprite(itemIndex);
+            }
             ++slotQuantity;
             itemQuantityText.text = slotQuantity.ToString();
             Destroy(_itemObj);
@@ -138,7 +176,6 @@ public class Slot : MonoBehaviour
             {
                 itemIndex = 0;
                 slotQuantity = 0;
-                itemImage.sprite = null;
                 itemQuantityText.text = "";
 
                 return _slotQuantity -= _itemQuantity;
@@ -155,6 +192,7 @@ public class Slot : MonoBehaviour
     {
         itemIndex = _itemIndex;
         slotQuantity = _slotQuantity;
+
         itemQuantityText.text = slotQuantity.ToString();
     }
 }
