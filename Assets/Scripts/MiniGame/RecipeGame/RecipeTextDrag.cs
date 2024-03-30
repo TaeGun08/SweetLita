@@ -6,7 +6,11 @@ using UnityEngine.EventSystems;
 
 public class RecipeTextDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
-    private RectTransform rect;
+    private RecipeGameManager recipeGameManager;
+
+    private RectTransform rectTrs;
+    private Vector3 trsPos;
+    private CanvasGroup canvasGroup;
 
     [SerializeField] private int textIndex;
     private TMP_Text recipeText;
@@ -14,22 +18,39 @@ public class RecipeTextDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
     void IBeginDragHandler.OnBeginDrag(PointerEventData eventData)
     {
         recipeText.fontSize -= 5;
+        trsPos = eventData.position;
+        transform.SetAsLastSibling();
+        transform.SetParent(recipeGameManager.BackGroundTrs());
+        recipeGameManager.SetTextIndex(textIndex);
+        canvasGroup.blocksRaycasts = false;
     }
 
     void IDragHandler.OnDrag(PointerEventData eventData)
     {
-        rect.position = eventData.position;
+        rectTrs.position = eventData.position;
     }
 
     void IEndDragHandler.OnEndDrag(PointerEventData eventData)
     {
         recipeText.fontSize += 5;
+
+        if (recipeGameManager.GetTextIndex() == 0)
+        {
+            rectTrs.position = trsPos;
+            canvasGroup.blocksRaycasts = true;
+        }
     }
 
     private void Awake()
     {
-        rect = GetComponent<RectTransform>();
+        rectTrs = GetComponent<RectTransform>();
         recipeText = GetComponent<TMP_Text>();
+        canvasGroup = GetComponent<CanvasGroup>();
+    }
+
+    private void Start()
+    {
+        recipeGameManager = RecipeGameManager.Instance;
     }
 
     /// <summary>
@@ -41,5 +62,10 @@ public class RecipeTextDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
     {
         textIndex = _textIndex;
         recipeText.text = _recipeText;
+    }
+
+    public int GetTextIndex() 
+    { 
+        return textIndex; 
     }
 }

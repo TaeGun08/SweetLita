@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7214435800723954304}
   - component: {fileID: 1224783823837014361}
   - component: {fileID: 5102742866911048294}
+  - component: {fileID: -4092002217299507399}
   m_Layer: 5
   m_Name: RecipeText
   m_TagString: Untagged
@@ -149,3 +150,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textIndex: 0
+--- !u!225 &-4092002217299507399
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6044379046558822877}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0

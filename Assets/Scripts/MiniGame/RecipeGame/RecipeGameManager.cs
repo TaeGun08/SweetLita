@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class RecipeGameManager : MonoBehaviour
 {
+    public static RecipeGameManager Instance;
+
     [Header("레시피 게임 기본 설정")]
     [SerializeField, Range(0, 2)] private int gameNumber;
     private bool gameStart = false;
@@ -21,11 +23,26 @@ public class RecipeGameManager : MonoBehaviour
     [SerializeField] private GameObject textOb;
     [Space]
     [SerializeField] private List<string> game1Text;
+    [Space]
     [SerializeField] private List<string> game2Text;
+    [Space]
     [SerializeField] private List<string> game3Text;
+    [Space]
+    private int textIndexCheck;
+    private int gameClear;
+    [SerializeField] private GameObject gameClearObj;
 
     private void Awake()
     {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
         gameNumber = Random.Range(0, 2);
         gameStart = true;
         timerBar.fillAmount = 1f;
@@ -34,6 +51,15 @@ public class RecipeGameManager : MonoBehaviour
 
     private void Update()
     {
+        if (gameClear == 5)
+        {
+            if (gameClearObj.activeSelf == false)
+            {
+                gameClearObj.SetActive(true);
+            }
+            return;
+        }
+
         gameTimer -= Time.deltaTime;
         timerBar.fillAmount = gameTimer / 60;
         timerText.text = $"{gameTimer.ToString("F0")} / 60";
@@ -99,5 +125,39 @@ public class RecipeGameManager : MonoBehaviour
         recTrs.x = recX;
         recTrs.y = recY;
         randomTrs.localPosition = recTrs;
+    }
+
+    /// <summary>
+    /// 레시피 텍스트를 다시 백그라운드 위치로 옮기기 위한 함수
+    /// </summary>
+    public Transform BackGroundTrs()
+    {
+        return backGroundTrs;
+    }
+
+    /// <summary>
+    /// 레시피 텍스트의 인덱스를 넣어주기 위한 함수
+    /// </summary>
+    /// <param name="_textIndexCheck"></param>
+    public void SetTextIndex(int _textIndexCheck)
+    {
+        textIndexCheck = _textIndexCheck;
+    }
+
+    /// <summary>
+    /// 레시피 텍스트의 인덱스를 반환하기 위한 함수
+    /// </summary>
+    /// <returns></returns>
+    public int GetTextIndex()
+    {
+        return textIndexCheck;
+    }
+
+    /// <summary>
+    /// 게임 클리어를 위한 함수
+    /// </summary>
+    public void GameClearCheck()
+    {
+        gameClear += 1;
     }
 }
