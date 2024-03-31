@@ -21,6 +21,9 @@ public class RecipeTextCheck : MonoBehaviour, IDropHandler
 
                 eventData.pointerDrag.GetComponent<RectTransform>().position = rect.position;
 
+                RecipeTextDrag textSc = recipeGameManager.GetTextObj().GetComponent<RecipeTextDrag>();
+                textSc.SetTextValue(0);
+
                 recipeGameManager.GameClearCheck();
             }
             else

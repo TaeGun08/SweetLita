@@ -21,6 +21,7 @@ public class RecipeGameManager : MonoBehaviour
     [SerializeField] private Transform backGroundTrs;
     [SerializeField] private RectTransform randomTrs; 
     [SerializeField] private GameObject textOb;
+    private GameObject textGetSetObj;
     [Space]
     [SerializeField] private List<string> game1Text;
     [Space]
@@ -57,6 +58,11 @@ public class RecipeGameManager : MonoBehaviour
             {
                 gameClearObj.SetActive(true);
             }
+            return;
+        }
+
+        if (gameEnd == true)
+        {
             return;
         }
 
@@ -159,5 +165,15 @@ public class RecipeGameManager : MonoBehaviour
     public void GameClearCheck()
     {
         gameClear += 1;
+    }
+
+    public void SetTextObj(GameObject _textGetSetObj)
+    {
+        textGetSetObj = _textGetSetObj;
+    }
+
+    public GameObject GetTextObj() 
+    {
+        return textGetSetObj;
     }
 }

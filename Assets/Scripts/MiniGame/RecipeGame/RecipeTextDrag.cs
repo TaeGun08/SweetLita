@@ -22,6 +22,7 @@ public class RecipeTextDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
         transform.SetAsLastSibling();
         transform.SetParent(recipeGameManager.BackGroundTrs());
         recipeGameManager.SetTextIndex(textIndex);
+        recipeGameManager.SetTextObj(gameObject);
         canvasGroup.blocksRaycasts = false;
     }
 
@@ -34,7 +35,7 @@ public class RecipeTextDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
     {
         recipeText.fontSize += 5;
 
-        if (recipeGameManager.GetTextIndex() == 0)
+        if (textIndex != 0)
         {
             rectTrs.position = trsPos;
             canvasGroup.blocksRaycasts = true;
@@ -51,6 +52,16 @@ public class RecipeTextDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
     private void Start()
     {
         recipeGameManager = RecipeGameManager.Instance;
+    }
+
+    /// <summary>
+    /// 레시피 텍스트 체크 스크립트에서 인덱스를 넣어 주기위한 함수
+    /// </summary>
+    /// <param name="_textIndex"></param>
+    /// <param name="_recipeText"></param>
+    public void SetTextValue(int _textIndex)
+    {
+        textIndex = _textIndex;
     }
 
     /// <summary>
