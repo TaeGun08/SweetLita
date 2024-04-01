@@ -2,8 +2,6 @@ using Newtonsoft.Json;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using UnityEditor.AnimatedValues;
-using UnityEditor.UIElements;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -48,7 +46,7 @@ public class GameManager : MonoBehaviour
     [SerializeField, Tooltip("게임으로 돌아가기 버튼")] private Button gameBackButton;
     [SerializeField, Tooltip("메인으로 돌아가기 버튼")] private List<Button> mainBackButton;
     [SerializeField, Tooltip("메인으로 돌아가는 창")] private GameObject mainBackChoice;
-    [SerializeField, Tooltip("셋팅 버튼")] private List<Button> settingButton;
+    [SerializeField, Tooltip("셋팅 버튼")] private Button settingButton;
     [SerializeField, Tooltip("셋팅 창")] private GameObject setting;
     [SerializeField, Tooltip("게임 종료 버튼")] private List<Button> gameExitButton;
     [SerializeField, Tooltip("게임 종료 창")] private GameObject gameExit;
@@ -79,7 +77,6 @@ public class GameManager : MonoBehaviour
         }
 
         option.SetActive(false);
-        setting.SetActive(false);
 
         string saveScreenData = PlayerPrefs.GetString(saveOptionValue);
         saveOption = JsonConvert.DeserializeObject<SaveOption>(saveScreenData);
@@ -109,32 +106,22 @@ public class GameManager : MonoBehaviour
             mainBackChoice.SetActive(false);
         });
 
-        settingButton[0].onClick.AddListener(() =>
+        settingButton.onClick.AddListener(() =>
         {
-            setting.SetActive(true);
-        });
+            string saveScreenData = PlayerPrefs.GetString(saveOptionValue);
+            saveOption = JsonConvert.DeserializeObject<SaveOption>(saveScreenData);
+            setSaveOptionData(saveOption);
 
-        settingButton[1].onClick.AddListener(() =>
-        {
             dropdownScreenSize();
 
-            Screen.SetResolution(saveOption.widthSize, saveOption.heightSize, saveOption.windowOn);
             saveOption.dropdownValue = dropdown.value;
             saveOption.windowOn = toggle.isOn;
             saveOption.bgmValue = bgm.value;
             saveOption.fxsValue = fxs.value;
+            Screen.SetResolution(saveOption.widthSize, saveOption.heightSize, saveOption.windowOn);
 
             string getScreenSize = JsonConvert.SerializeObject(saveOption);
             PlayerPrefs.SetString(saveOptionValue, getScreenSize);
-
-            string saveScreenData = PlayerPrefs.GetString(saveOptionValue);
-            saveOption = JsonConvert.DeserializeObject<SaveOption>(saveScreenData);
-            setSaveOptionData(saveOption);
-        });
-
-        settingButton[2].onClick.AddListener(() =>
-        {
-            setting.SetActive(false);
         });
 
         gameExitButton[0].onClick.AddListener(() =>

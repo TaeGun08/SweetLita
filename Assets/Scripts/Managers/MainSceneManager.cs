@@ -156,20 +156,20 @@ public class MainSceneManager : MonoBehaviour
 
         optionSave.onClick.AddListener(() => 
         {
+            string saveScreenData = PlayerPrefs.GetString(saveOptionValue);
+            saveOption = JsonConvert.DeserializeObject<SaveOption>(saveScreenData);
+            setSaveOptionData(saveOption);
+
             dropdownScreenSize();
 
-            Screen.SetResolution(saveOption.widthSize, saveOption.heightSize, saveOption.windowOn);
             saveOption.dropdownValue = dropdown.value;
             saveOption.windowOn = toggle.isOn;
             saveOption.bgmValue = bgm.value;
             saveOption.fxsValue = fxs.value;
+            Screen.SetResolution(saveOption.widthSize, saveOption.heightSize, saveOption.windowOn);
 
             string getScreenSize = JsonConvert.SerializeObject(saveOption);
             PlayerPrefs.SetString(saveOptionValue, getScreenSize);
-
-            string saveScreenData = PlayerPrefs.GetString(saveOptionValue);
-            saveOption = JsonConvert.DeserializeObject<SaveOption>(saveScreenData);
-            setSaveOptionData(saveOption);
         });
 
         optionBack.onClick.AddListener(() => 
