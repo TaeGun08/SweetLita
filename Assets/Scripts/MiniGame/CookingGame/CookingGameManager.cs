@@ -102,7 +102,7 @@ public class CookingGameManager : MonoBehaviour
 
     private void nodeIndexCheck()
     {
-        if (destroyTimer >= 1.8f && destroyTimer <= 2.2f)
+        if (destroyTimer >= 1.2f && destroyTimer <= 1.6f)
         {
             if (nodeIndex == 1)
             {
@@ -121,7 +121,7 @@ public class CookingGameManager : MonoBehaviour
                 keyCheck(false, false, false, true);
             }
         }
-        else if (destroyTimer >= 2.3f)
+        else if (destroyTimer >= 1.8f)
         {
             playerLife--;
             Destroy(nodeBox);
