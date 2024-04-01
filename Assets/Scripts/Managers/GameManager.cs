@@ -112,8 +112,8 @@ public class GameManager : MonoBehaviour
 
             saveOption.dropdownValue = dropdown.value;
             saveOption.windowOn = toggle.isOn;
-            saveOption.bgmValue = bgm.value;
-            saveOption.fxsValue = fxs.value;
+            saveOption.bgmValue = bgm.value * 100f;
+            saveOption.fxsValue = fxs.value * 100f;
 
             string getScreenSize = JsonConvert.SerializeObject(saveOption);
             PlayerPrefs.SetString(saveOptionValue, getScreenSize);
@@ -219,6 +219,7 @@ public class GameManager : MonoBehaviour
 
                 if (fadeColor.a <= 0.0f)
                 {
+                    fadeTimer = 0.0f;
                     fadeInOut.gameObject.SetActive(false);
                     fadeColor.a = 0.0f;
                     gamePause = false;
@@ -303,8 +304,8 @@ public class GameManager : MonoBehaviour
         Screen.SetResolution(_saveScreenSize.widthSize, _saveScreenSize.heightSize, _saveScreenSize.windowOn);
         dropdown.value = _saveScreenSize.dropdownValue;
         toggle.isOn = _saveScreenSize.windowOn;
-        bgm.value = _saveScreenSize.bgmValue;
-        fxs.value = _saveScreenSize.fxsValue;
+        bgm.value = _saveScreenSize.bgmValue / 100f;
+        fxs.value = _saveScreenSize.fxsValue / 100f;
     }
 
 

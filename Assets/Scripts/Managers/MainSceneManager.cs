@@ -10,12 +10,12 @@ public class MainSceneManager : MonoBehaviour
 {
     public class SaveOption
     {
-        public int widthSize;
-        public int heightSize;
-        public bool windowOn;
-        public int dropdownValue;
-        public float bgmValue;
-        public float fxsValue;
+        public int widthSize = 1280;
+        public int heightSize = 720;
+        public bool windowOn = true;
+        public int dropdownValue = 3;
+        public float bgmValue = 75f;
+        public float fxsValue = 75f;
     }
 
     public class SaveScene
@@ -162,8 +162,8 @@ public class MainSceneManager : MonoBehaviour
 
             saveOption.dropdownValue = dropdown.value;
             saveOption.windowOn = toggle.isOn;
-            saveOption.bgmValue = bgm.value;
-            saveOption.fxsValue = fxs.value;
+            saveOption.bgmValue = bgm.value * 100;
+            saveOption.fxsValue = fxs.value * 100;
 
             string getScreenSize = JsonConvert.SerializeObject(saveOption);
             PlayerPrefs.SetString(saveOptionValue, getScreenSize);
@@ -294,7 +294,7 @@ public class MainSceneManager : MonoBehaviour
         Screen.SetResolution(_saveScreenSize.widthSize, _saveScreenSize.heightSize, _saveScreenSize.windowOn);
         dropdown.value = _saveScreenSize.dropdownValue;
         toggle.isOn = _saveScreenSize.windowOn;
-        bgm.value = _saveScreenSize.bgmValue;
-        fxs.value = _saveScreenSize.fxsValue;
+        bgm.value = _saveScreenSize.bgmValue / 100f;
+        fxs.value = _saveScreenSize.fxsValue / 100f;
     }
 }
