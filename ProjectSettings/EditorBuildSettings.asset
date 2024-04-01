@@ -6,9 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/MainScene.unity
+    path: Assets/Prefabs/Scenes/World/MainScene.unity
     guid: bfa6385bdff2edc419e7c02df4c52ba7
   - enabled: 1
-    path: Assets/Scenes/TestScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Prefabs/Scenes/World/DessertVillage.unity
+    guid: 4d2e3f903a87b70479b9bcb8767e52e6
+  - enabled: 1
+    path: Assets/Prefabs/Scenes/World/MilkFalls.unity
+    guid: 0ea69c0cc97ed3b47b2f1b429e6482fb
+  - enabled: 1
+    path: Assets/Prefabs/Scenes/World/House.unity
+    guid: 9bd9bc9af3c272849937d7c8c66c1e17
   m_configObjects: {}

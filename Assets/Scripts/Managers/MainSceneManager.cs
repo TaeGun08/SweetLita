@@ -10,12 +10,12 @@ public class MainSceneManager : MonoBehaviour
 {
     public class SaveOption
     {
-        public int widthSize = 1280;
-        public int heightSize = 720;
-        public bool windowOn = true;
-        public int dropdownValue = 3;
-        public float bgmValue = 50f;
-        public float fxsValue = 50f;
+        public int widthSize;
+        public int heightSize;
+        public bool windowOn;
+        public int dropdownValue;
+        public float bgmValue;
+        public float fxsValue;
     }
 
     public class SaveScene
@@ -54,6 +54,8 @@ public class MainSceneManager : MonoBehaviour
     private bool sceneChangefadeOn = false;
     [SerializeField] private float fadeTimer;
     private bool fadeOn = true;
+    [Space]
+    [SerializeField] private string sceneName;
 
     private string saveOptionValue = "saveOptionValue"; //스크린 사이즈 키 값을 만들 변수
 
@@ -156,20 +158,19 @@ public class MainSceneManager : MonoBehaviour
 
         optionSave.onClick.AddListener(() => 
         {
-            string saveScreenData = PlayerPrefs.GetString(saveOptionValue);
-            saveOption = JsonConvert.DeserializeObject<SaveOption>(saveScreenData);
-            setSaveOptionData(saveOption);
-
             dropdownScreenSize();
 
             saveOption.dropdownValue = dropdown.value;
             saveOption.windowOn = toggle.isOn;
             saveOption.bgmValue = bgm.value;
             saveOption.fxsValue = fxs.value;
-            Screen.SetResolution(saveOption.widthSize, saveOption.heightSize, saveOption.windowOn);
 
             string getScreenSize = JsonConvert.SerializeObject(saveOption);
             PlayerPrefs.SetString(saveOptionValue, getScreenSize);
+
+            string saveScreenData = PlayerPrefs.GetString(saveOptionValue);
+            saveOption = JsonConvert.DeserializeObject<SaveOption>(saveScreenData);
+            setSaveOptionData(saveOption);
         });
 
         optionBack.onClick.AddListener(() => 
@@ -217,11 +218,11 @@ public class MainSceneManager : MonoBehaviour
 
                 if (PlayerPrefs.GetString(saveSceneName) == string.Empty)
                 {
-                    saveScene.sceneName = "TestScene";
+                    saveScene.sceneName = sceneName;
                     string setScene = JsonConvert.SerializeObject(saveScene);
                     PlayerPrefs.SetString(saveSceneName, setScene);
 
-                    SceneManager.LoadSceneAsync("TestScene");
+                    SceneManager.LoadSceneAsync(sceneName);
                 }
                 else
                 {
