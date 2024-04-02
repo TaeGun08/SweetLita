@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Prefabs/Scenes/World/MainScene.unity
+    path: Assets/Prefabs/Scenes/MainScene.unity
     guid: bfa6385bdff2edc419e7c02df4c52ba7
   - enabled: 1
     path: Assets/Prefabs/Scenes/World/DessertVillage.unity
