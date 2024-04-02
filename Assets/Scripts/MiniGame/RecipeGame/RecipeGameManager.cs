@@ -44,7 +44,7 @@ public class RecipeGameManager : MonoBehaviour
             Destroy(gameObject);
         }
 
-        gameNumber = Random.Range(0, 2);
+        gameNumber = Random.Range(0, 3);
         gameStart = true;
         timerBar.fillAmount = 1f;
         gameTimer = 60f;

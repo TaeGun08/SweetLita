@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -21,6 +22,10 @@ public class PuzzleGameManager : MonoBehaviour
     [SerializeField] private GameObject claerTextObj; //클리어 했을 때 뜨는 텍스트
     [Space]
     [SerializeField] private List<Sprite> puzzleSprites;
+    private float gameOverTimer;
+    private bool gameOver = false;
+    [SerializeField] private TMP_Text overTimeText;
+    [SerializeField] private GameObject gameOverObj;
 
     private void Awake()
     {
@@ -44,6 +49,9 @@ public class PuzzleGameManager : MonoBehaviour
         }
 
         claerTextObj.SetActive(false);
+        gameOverObj.SetActive(false);
+
+        gameOverTimer = 60f;
     }
 
     private void Update()
@@ -51,6 +59,22 @@ public class PuzzleGameManager : MonoBehaviour
         if (gameClear == true)
         {
             claerTextObj.SetActive(true);
+            return;
+        }
+
+        if (gameOver == false)
+        {
+            gameOverTimer -= Time.deltaTime;
+            overTimeText.text = $"{gameOverTimer.ToString("F0")}";
+            if (gameOverTimer <= 0)
+            {
+                gameOverObj.SetActive(true);
+                gameOver = true;
+                gameOverTimer = 60f;
+            }
+        }
+        else
+        {
             return;
         }
 

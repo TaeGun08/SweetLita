@@ -159,8 +159,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u2191"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 54ed12bcdd66fae4ebe3647ed904b1cc, type: 2}
-  m_sharedMaterial: {fileID: -186205379885170230, guid: 54ed12bcdd66fae4ebe3647ed904b1cc, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ce33c3bf9cb99f844bb6f5a397759f21, type: 2}
+  m_sharedMaterial: {fileID: -5565788023973909070, guid: ce33c3bf9cb99f844bb6f5a397759f21, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

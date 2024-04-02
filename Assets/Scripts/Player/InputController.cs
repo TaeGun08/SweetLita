@@ -7,6 +7,7 @@ public class InputController : MonoBehaviour
     private GameManager gameManager;
     private QuestManager questManager;
     private TIuBookManager tIuBookManager;
+    private PlayerPosManager playerPosManager;
 
     private Rigidbody2D rigid;
     private Vector3 moveVec;
@@ -36,6 +37,10 @@ public class InputController : MonoBehaviour
         questManager = QuestManager.Instance;
 
         tIuBookManager = TIuBookManager.Instance;
+
+        playerPosManager = PlayerPosManager.Instance;
+
+        transform.position = playerPosManager.GetPlayerPos();
     }
 
     private void Update()
