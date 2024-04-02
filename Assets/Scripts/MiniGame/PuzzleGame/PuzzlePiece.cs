@@ -14,7 +14,6 @@ public class PuzzlePiece : MonoBehaviour, IPointerClickHandler
     [SerializeField, Tooltip("퍼즐의 순서")] private int pieceIndex;
     private bool clickCheck = false;
     [SerializeField, Tooltip("퍼즐의 선택시 테두리")] private GameObject frameObj;
-    [SerializeField, Tooltip("퍼즐의 순서를 알려주는 텍스트")] private TMP_Text text;
 
     void IPointerClickHandler.OnPointerClick(PointerEventData eventData)
     {
@@ -40,11 +39,6 @@ public class PuzzlePiece : MonoBehaviour, IPointerClickHandler
         puzzleGameManager = PuzzleGameManager.Instance;
 
         rectTrs = GetComponent<RectTransform>();
-    }
-
-    private void Start()
-    {
-        text.text = pieceIndex.ToString();
     }
 
     /// <summary>

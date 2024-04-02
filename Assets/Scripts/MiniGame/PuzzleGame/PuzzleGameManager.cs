@@ -19,6 +19,8 @@ public class PuzzleGameManager : MonoBehaviour
     private List<bool> clearChecks = new List<bool>(); //클리어를 체크하기 위한 변수, 16개가 모두 true일 때 게임 클리어
     private int clearIndex; //클리어 bool 리스트를 확인해 true인 만큼 인덱스를 받아오기 위한 변수
     [SerializeField] private GameObject claerTextObj; //클리어 했을 때 뜨는 텍스트
+    [Space]
+    [SerializeField] private List<Sprite> puzzleSprites;
 
     private void Awake()
     {
@@ -80,17 +82,10 @@ public class PuzzleGameManager : MonoBehaviour
             for (int i = 0; i < 16; i++)
             {
                 GameObject pieceOb = Instantiate(pieceObj, puzzleBoardTrs);
-                pieceOb.name = $"Piece{pieceIndex[i]}";
-                #region
-                PuzzlePiece puzzlePieceSc = pieceOb.GetComponent<PuzzlePiece>();
                 Image pieceImage = pieceOb.GetComponent<Image>();
-                Vector3 radomColor = new Vector3(Random.Range(0.1f, 1.0f), Random.Range(0.1f, 1.0f), Random.Range(0.1f, 1.0f));
-                Color imageColor = pieceImage.color;
-                imageColor.r = radomColor.x;
-                imageColor.g = radomColor.y;
-                imageColor.b = radomColor.z;
-                pieceImage.color = imageColor;
-                #endregion
+                PuzzlePiece puzzlePieceSc = pieceOb.GetComponent<PuzzlePiece>();
+                pieceOb.name = $"Piece{pieceIndex[i]}";
+                pieceImage.sprite = setPuzzleSprite(pieceIndex[i]);
                 puzzlePieceSc.SetRectTrs(rectPos(i, trsPos));
                 trsPos = rectPos(i, trsPos);
                 puzzlePieceSc.SetPieceIndex(pieceIndex[i]);
@@ -171,6 +166,52 @@ public class PuzzleGameManager : MonoBehaviour
         }
 
         return Vector3.zero;
+    }
+
+    /// <summary>
+    /// 인덱스에 맞는 이미지를 넣어주기 위한 함수
+    /// </summary>
+    /// <param name="_index"></param>
+    /// <returns></returns>
+    private Sprite setPuzzleSprite(int _index)
+    {
+        switch (_index)
+        {
+            case 0:
+                return puzzleSprites[0];
+            case 1:
+                return puzzleSprites[1];
+            case 2:
+                return puzzleSprites[2];
+            case 3:
+                return puzzleSprites[3];
+            case 4:
+                return puzzleSprites[4];
+            case 5:
+                return puzzleSprites[5];
+            case 6:
+                return puzzleSprites[6];
+            case 7:
+                return puzzleSprites[7];
+            case 8:
+                return puzzleSprites[8];
+            case 9:
+                return puzzleSprites[9];
+            case 10:
+                return puzzleSprites[10];
+            case 11:
+                return puzzleSprites[11];
+            case 12:
+                return puzzleSprites[12];
+            case 13:
+                return puzzleSprites[13];
+            case 14:
+                return puzzleSprites[14];
+            case 15:
+                return puzzleSprites[15];
+        }
+
+        return null;
     }
 
     /// <summary>
