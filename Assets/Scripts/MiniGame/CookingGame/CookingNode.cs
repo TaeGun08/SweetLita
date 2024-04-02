@@ -7,8 +7,6 @@ public class CookingNode : MonoBehaviour
 {
     private RectTransform rect;
 
-    [SerializeField] private TMP_Text text;
-
     private void Awake()
     {
         rect = GetComponent<RectTransform>();
@@ -17,10 +15,5 @@ public class CookingNode : MonoBehaviour
     private void Update()
     {
         rect.sizeDelta -= new Vector2(200f, 200f) * Time.deltaTime / 1.5f;
-    }
-
-    public void SetText(string _text)
-    {
-        text.text = _text;
     }
 }

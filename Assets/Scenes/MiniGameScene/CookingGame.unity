@@ -689,7 +689,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvasTrs: {fileID: 746999019}
-  nodeObj: {fileID: 1497779854836248493, guid: 535a0f63b05f03047be6b4da999c3982, type: 3}
+  nodeObj:
+  - {fileID: 1497779854836248493, guid: 535a0f63b05f03047be6b4da999c3982, type: 3}
+  - {fileID: 1497779854836248493, guid: fab28e1826d453b49b4cb13f77f21a45, type: 3}
+  - {fileID: 1497779854836248493, guid: a453fe4b7755e0142b8cb56847a12d84, type: 3}
+  - {fileID: 1497779854836248493, guid: 1af882f97cb56984aa7b5967418e29a5, type: 3}
   randomTrs: {fileID: 1720541228}
   nodeBox: {fileID: 0}
   nodeIndex: 5

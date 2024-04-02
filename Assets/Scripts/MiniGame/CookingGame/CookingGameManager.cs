@@ -9,7 +9,7 @@ public class CookingGameManager : MonoBehaviour
     public static CookingGameManager Instance;
 
     [SerializeField] private Transform canvasTrs;
-    [SerializeField] private GameObject nodeObj;
+    [SerializeField] private List<GameObject> nodeObj;
     [SerializeField] private RectTransform randomTrs;
     [SerializeField] private GameObject nodeBox;
     [SerializeField] private int nodeIndex;
@@ -180,24 +180,7 @@ public class CookingGameManager : MonoBehaviour
             randomNodeTrs();
             int index = Random.Range(1, 5);
             nodeIndex = index;
-            nodeBox = Instantiate(nodeObj, randomTrs.position, Quaternion.identity, canvasTrs);
-            CookingNode nodeSc = nodeBox.GetComponent<CookingNode>();
-            if (nodeIndex == 1)
-            {
-                nodeSc.SetText("ก่");
-            }
-            else if (nodeIndex == 2)
-            {
-                nodeSc.SetText("ก้");
-            }
-            else if (nodeIndex == 3)
-            {
-                nodeSc.SetText("ก็");
-            }
-            else if (nodeIndex == 4)
-            {
-                nodeSc.SetText("กๆ");
-            }
+            nodeBox = Instantiate(nodeObj[index -1], randomTrs.position, Quaternion.identity, canvasTrs);
             nodeCreate = true;
         }
     }
