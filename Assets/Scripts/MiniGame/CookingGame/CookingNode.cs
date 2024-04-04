@@ -14,6 +14,6 @@ public class CookingNode : MonoBehaviour
 
     private void Update()
     {
-        rect.sizeDelta -= new Vector2(200f, 200f) * Time.deltaTime / 1.5f;
+        rect.sizeDelta -= new Vector2(200f, 200f) * Time.deltaTime / 0.9f;
     }
 }
