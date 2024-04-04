@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Spine.Unity;
+using System;
+using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class InputController : MonoBehaviour
 {
@@ -14,6 +17,7 @@ public class InputController : MonoBehaviour
     private Vector3 moveVec;
 
     private Camera mainCam;
+    private SkeletonAnimation skeletonAnim;
 
     [Header("플레이어의 이동설정")]
     [SerializeField] private float moveSpeed;
@@ -43,6 +47,8 @@ public class InputController : MonoBehaviour
         playerPosManager = PlayerPosManager.Instance;
 
         transform.position = playerPosManager.GetPlayerPos();
+
+        skeletonAnim = GetComponent<SkeletonAnimation>();
     }
 
     private void Update()
@@ -110,6 +116,7 @@ public class InputController : MonoBehaviour
     {
         if (questManager.PlayerMoveStop() == true || npcChatManager.GetPlayerMoveStop() == true)
         {
+            skeletonAnim.timeScale = 0;
             rigid.velocity = Vector3.zero;
             return;
         }
@@ -117,5 +124,24 @@ public class InputController : MonoBehaviour
         moveVec = new Vector3(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"), 0f).normalized * moveSpeed;
 
         rigid.velocity = moveVec;
+
+        if (Input.GetAxisRaw("Horizontal") != 0f || Input.GetAxisRaw("Vertical") != 0f)
+        {
+            float scale = transform.localScale.x;
+            if (Input.GetAxisRaw("Horizontal") < 0f && scale > 0f)
+            {
+                scale *= -1;
+            }
+            else if (Input.GetAxisRaw("Horizontal") > 0f && scale < 0f)
+            {
+                scale *= -1;
+            }
+            transform.localScale = new Vector3(scale, transform.localScale.y, transform.localScale.z); ;
+            skeletonAnim.timeScale = 1;
+        }
+        else
+        {
+            skeletonAnim.timeScale = 0;
+        }
     }
 }
