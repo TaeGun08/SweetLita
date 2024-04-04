@@ -18,6 +18,7 @@ public class QuestManager : MonoBehaviour
 
     [Header("퀘스트 설정")]
     [SerializeField, Tooltip("내가 클리어한 퀘스트")] private List<int> questIndex;
+    [SerializeField] private int curQuestIndex;
 
     private void Awake()
     {
@@ -91,6 +92,16 @@ public class QuestManager : MonoBehaviour
         //string setQuestIndex = JsonUtility.ToJson(new JosnConvert<int>(questIndexData.questIndex));
         string setQuestIndex = JsonConvert.SerializeObject(questIndexData); 
         PlayerPrefs.SetString("saveQuestIndex", setQuestIndex);
+    }
+
+    public void SetCurQuestIndex(int _curQuestIndex)
+    {
+        curQuestIndex = _curQuestIndex;
+    }
+
+    public int GetCurQuestIndex()
+    {
+        return curQuestIndex;
     }
 
     /// <summary>

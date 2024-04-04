@@ -5,6 +5,7 @@ using UnityEngine;
 public class InputController : MonoBehaviour
 {
     private GameManager gameManager;
+    private NpcChatManager npcChatManager;
     private QuestManager questManager;
     private TIuBookManager tIuBookManager;
     private PlayerPosManager playerPosManager;
@@ -15,7 +16,6 @@ public class InputController : MonoBehaviour
     private Camera mainCam;
 
     [Header("플레이어의 이동설정")]
-    [SerializeField] private bool moveStop = false;
     [SerializeField] private float moveSpeed;
 
     [Header("플레이어 상호작용 영역")]
@@ -33,6 +33,8 @@ public class InputController : MonoBehaviour
         mainCam = Camera.main;
 
         gameManager = GameManager.Instance;
+
+        npcChatManager = NpcChatManager.Instance;
 
         questManager = QuestManager.Instance;
 
@@ -59,7 +61,7 @@ public class InputController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && collider.gameObject.layer == LayerMask.NameToLayer("Npc"))
         {
             Npc npcSc = collider.gameObject.GetComponent<Npc>();
-            npcSc.NpcQuestChapter1();
+            npcSc.NpcTalk(true);
             tIuBookManager.SetNpcIdCheck(npcSc.GetNpcIndex());
         }
 
@@ -106,9 +108,7 @@ public class InputController : MonoBehaviour
     /// </summary>
     private void playerMove()
     {
-        moveStop = questManager.PlayerMoveStop();
-
-        if (moveStop == true)
+        if (questManager.PlayerMoveStop() == true || npcChatManager.GetPlayerMoveStop() == true)
         {
             rigid.velocity = Vector3.zero;
             return;

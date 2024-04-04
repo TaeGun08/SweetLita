@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class QuestData : MonoBehaviour
 {
+    private NpcChatManager npcChatManager;
     private QuestManager questManager;
 
     private Inventory inventory;
@@ -19,9 +20,13 @@ public class QuestData : MonoBehaviour
     private TMP_Text NpcNameText; //Npc의 이름을 표시할 텍스트
     private int chatIndex;  //다음 대화를 진행시켜주기 위한 변수
     [SerializeField] private bool playerMoveStop = false; //플레이어의 움직임을 멈추게 하는 변수
+    [SerializeField] private Image npcImage;
+    [SerializeField] private List<Sprite> npcSprites;
 
     private void Start()
     {
+        npcChatManager = NpcChatManager.Instance;
+
         questManager = QuestManager.Instance;
 
         inventory = Inventory.Instance;
@@ -43,6 +48,7 @@ public class QuestData : MonoBehaviour
             NpcNameAndChat.SetActive(false);
             ChoiceButtons.SetActive(false);
             chatIndex = 0;
+            questManager.SetCurQuestIndex(0);
         });
     }
 
@@ -56,22 +62,25 @@ public class QuestData : MonoBehaviour
         if (_npcIndex == 10 && _questIndex == 100 
             && questManager.QuestClearCheck(100) == false)
         {
+            questManager.SetCurQuestIndex(100);
+
             if (chatIndex == 0)
             {
+                npcImage.sprite = npcSprites[0];
                 playerMoveStop = true;
                 chatIndex++;
-                ChatWindowText.text = $"나 좀 도와줘";
-                NpcNameText.text = $"김덕영";
+                ChatWindowText.text = $"너무 어려워요..";
+                NpcNameText.text = $"영식이";
                 NpcNameAndChat.SetActive(true);
             }
             else if (chatIndex == 1)
             {
-                ChatWindowText.text = $"옆에 보이는 아이템을 22개만 가져다 줘";
+                ChatWindowText.text = $"퍼즐을 맞추고 있는데 못 맞추겠어요, 도와주시나요..?";
                 ChoiceButtons.SetActive(true);
             }
             else if (chatIndex == 100)
             {
-                questClearIndex(100, 22, 100, $"아직 못 구해온 거야?", $"고마워! 이제 덕일이한테 가봐!");
+                questClearIndex(100, 22, 100, $"다시 도와주실 건가요..?", $"고맙습니다..");
             }
             else if (chatIndex == 101)
             {
@@ -83,22 +92,25 @@ public class QuestData : MonoBehaviour
             && questManager.QuestClearCheck(100) == true 
             && questManager.QuestClearCheck(101) == false)
         {
+            questManager.SetCurQuestIndex(101);
+
             if (chatIndex == 0)
             {
+                npcImage.sprite = npcSprites[1];
                 playerMoveStop = true;
                 chatIndex++;
-                ChatWindowText.text = $"나 좀 도와줘";
-                NpcNameText.text = $"김덕일";
+                ChatWindowText.text = $"나 좀 도와줄 수 있어?";
+                NpcNameText.text = $"꽃분이";
                 NpcNameAndChat.SetActive(true);
             }
             else if (chatIndex == 1)
             {
-                ChatWindowText.text = $"옆에 보이는 아이템을 12개만 가져다 줘";
+                ChatWindowText.text = $"우유 폭포에서 우유를 가져와야 하는데 손이 부족해, 도와줄래?";
                 ChoiceButtons.SetActive(true);
             }
             else if (chatIndex == 100)
             {
-                questClearIndex(101, 12, 101, $"아직 못 구해온 거야?", $"고마워! 이제 덕이한테 가봐!");
+                questClearIndex(101, 1, 101, $"어디가, 도와주기로 했잖아", $"고마워 다음에 도움이 필요하면 나도 도와줄게!");
             }
             else if (chatIndex == 101)
             {
@@ -110,12 +122,15 @@ public class QuestData : MonoBehaviour
             && questManager.QuestClearCheck(101) == true
             && questManager.QuestClearCheck(102) == false)
         {
+            questManager.SetCurQuestIndex(102);
+
             if (chatIndex == 0)
             {
+                npcImage.sprite = npcSprites[0];
                 playerMoveStop = true;
                 chatIndex++;
                 ChatWindowText.text = $"나 좀 도와줘";
-                NpcNameText.text = $"김덕이";
+                NpcNameText.text = $"영식이";
                 NpcNameAndChat.SetActive(true);
             }
             else if (chatIndex == 1)

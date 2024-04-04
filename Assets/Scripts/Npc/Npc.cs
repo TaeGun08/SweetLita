@@ -5,24 +5,46 @@ using UnityEngine;
 
 public class Npc : MonoBehaviour
 {
+    private NpcChatManager npcChatManager;
     private QuestManager questManager;
+
+    private Npc npc;
 
     [SerializeField] private int npcIndex;
     [SerializeField] private List<int> questIndex;
 
+    private void Awake()
+    {
+        npc = GetComponent<Npc>();
+    }
+
     private void Start()
     {
+        npcChatManager = NpcChatManager.Instance;
+
         questManager = QuestManager.Instance;
     }
 
     /// <summary>
-    /// 퀘스트를 실행할 수 있게 하는 함수
+    /// Npc 대화를 실행할 수 있게 하는 함수
     /// </summary>
-    public void NpcQuestChapter1()
+    public void NpcTalk(bool _npcTalkCheck)
     {
-        for (int i = 0; i < questIndex.Count; i++)
+        int count = questIndex.Count;
+        for (int i = 0; i < count; i++)
         {
-            questManager.QuestAccept(npcIndex, questIndex[i]);
+            if (npcChatManager.GetQuestCheck() == true && questManager.GetCurQuestIndex() == questIndex[i])
+            {
+                questManager.QuestAccept(npcIndex, questIndex[i]);
+                return;
+            }
+            else if (npcChatManager.GetQuestCheck() == false || 
+                (npcChatManager.GetQuestCheck() == true && questManager.GetCurQuestIndex() != questIndex[i]))
+            {
+                npcChatManager.SetNpc(npc);
+                npcChatManager.SetNpcTalkCheck(_npcTalkCheck);
+                npcChatManager.SetNpcIndex(npcIndex, questIndex[i]);
+            }
         }
     }
 
@@ -33,5 +55,10 @@ public class Npc : MonoBehaviour
     public int GetNpcIndex()
     {
         return npcIndex;
+    }
+
+    public List<int> GetQuestIndex()
+    {
+        return questIndex;
     }
 }
