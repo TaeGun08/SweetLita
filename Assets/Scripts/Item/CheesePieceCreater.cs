@@ -33,7 +33,7 @@ public class CheesePieceCreater : MonoBehaviour
     {
         if (chnageMove == false)
         {
-            cheesePieceSlider.value += Time.deltaTime / 2f;
+            cheesePieceSlider.value += Time.deltaTime;
 
             if (cheesePieceSlider.value >= 1)
             {
@@ -43,7 +43,7 @@ public class CheesePieceCreater : MonoBehaviour
         }
         else if (chnageMove == true)
         {
-            cheesePieceSlider.value -= Time.deltaTime / 2f;
+            cheesePieceSlider.value -= Time.deltaTime;
 
             if (cheesePieceSlider.value <= 0)
             {

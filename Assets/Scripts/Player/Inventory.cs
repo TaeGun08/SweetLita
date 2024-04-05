@@ -23,6 +23,7 @@ public class Inventory : MonoBehaviour
     [SerializeField, Tooltip("슬롯 리스트")] private List<Slot> slot;
     private int questItems; //퀘스트 아이템들
     private int qeustItemIndex; //퀘스트 아이템의 번호
+    private bool inventoryOnCheck = false;
 
     private void Awake()
     {
@@ -62,6 +63,7 @@ public class Inventory : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.I) && questManager.PlayerMoveStop() == false)
         {
             bool invenOnOff = inventory == inventory.activeSelf ? false : true;
+            inventoryOnCheck = invenOnOff;
             inventory.SetActive(invenOnOff);
         }
     }
@@ -225,5 +227,14 @@ public class Inventory : MonoBehaviour
     public GameObject InventoryObj()
     {
         return inventory;
+    }
+
+    /// <summary>
+    /// 다른 UI(도감, 옵션 등)을 제어하기 위한 bool값을 반환하는 함수
+    /// </summary>
+    /// <returns></returns>
+    public bool GetInventoryOnCheck()
+    {
+        return inventoryOnCheck;
     }
 }

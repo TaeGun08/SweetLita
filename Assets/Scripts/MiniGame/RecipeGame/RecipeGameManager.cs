@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class RecipeGameManager : MonoBehaviour
 {
     public static RecipeGameManager Instance;
+
+    private MiniGameClearCheck miniGame;
 
     [Header("레시피 게임 기본 설정")]
     [SerializeField, Range(0, 2)] private int gameNumber;
@@ -32,6 +35,9 @@ public class RecipeGameManager : MonoBehaviour
     private int textIndexCheck;
     private int gameClear;
     [SerializeField] private GameObject gameClearObj;
+    [SerializeField] private Image fadeImage;
+    private float fadeTimer;
+    private bool fadeIn = false;
 
     private void Awake()
     {
@@ -48,15 +54,55 @@ public class RecipeGameManager : MonoBehaviour
         gameStart = true;
         timerBar.fillAmount = 1f;
         gameTimer = 60f;
+
+        fadeTimer = 1f;
+
+        fadeImage.gameObject.SetActive(true);
+    }
+
+    private void Start()
+    {
+        miniGame = MiniGameClearCheck.Instance;
     }
 
     private void Update()
     {
+        if (fadeIn == false)
+        {
+            fadeTimer -= Time.deltaTime;
+
+            Color imageColor = fadeImage.color;
+            imageColor.a = fadeTimer;
+            fadeImage.color = imageColor;
+
+            if (imageColor.a <= 0)
+            {
+                fadeIn = true;
+                fadeTimer = 0;
+                fadeImage.gameObject.SetActive(false);
+            }
+            return;
+        }
+
         if (gameClear == 5)
         {
             if (gameClearObj.activeSelf == false)
             {
                 gameClearObj.SetActive(true);
+            }
+
+            fadeImage.gameObject.SetActive(true);
+
+            fadeTimer += Time.deltaTime;
+
+            Color imageColor = fadeImage.color;
+            imageColor.a = fadeTimer;
+            fadeImage.color = imageColor;
+
+            if (imageColor.a >= 1)
+            {
+                miniGame.SetSaveMiniCheckData(102);
+                SceneManager.LoadSceneAsync("DessertVillage");
             }
             return;
         }

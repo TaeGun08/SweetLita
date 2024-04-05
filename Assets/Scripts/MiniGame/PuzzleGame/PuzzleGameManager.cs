@@ -32,7 +32,6 @@ public class PuzzleGameManager : MonoBehaviour
     [SerializeField] private Image fadeImage;
     private float fadeTimer;
     private bool fadeIn = false;
-    private float sceneLoadTimer;
 
     private void Awake()
     {
