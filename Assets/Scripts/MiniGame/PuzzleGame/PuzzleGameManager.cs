@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PuzzleGameManager : MonoBehaviour
 {
     public static PuzzleGameManager Instance;
+
+    private MiniGameClearCheck miniGame;
 
     [Header("∆€¡Ò º≥¡§")]
     [SerializeField, Tooltip("∆€¡Ò∫∏µÂ")] private Transform puzzleBoardTrs;
@@ -26,6 +29,10 @@ public class PuzzleGameManager : MonoBehaviour
     private bool gameOver = false;
     [SerializeField] private TMP_Text overTimeText;
     [SerializeField] private GameObject gameOverObj;
+    [SerializeField] private Image fadeImage;
+    private float fadeTimer;
+    private bool fadeIn = false;
+    private float sceneLoadTimer;
 
     private void Awake()
     {
@@ -52,13 +59,52 @@ public class PuzzleGameManager : MonoBehaviour
         gameOverObj.SetActive(false);
 
         gameOverTimer = 60f;
+
+        fadeImage.gameObject.SetActive(true);
+
+        fadeTimer = 1f;
+    }
+
+    private void Start()
+    {
+        miniGame = MiniGameClearCheck.Instance;
     }
 
     private void Update()
     {
+        if (fadeIn == false)
+        {
+            fadeTimer -= Time.deltaTime;
+
+            Color imageColor = fadeImage.color;
+            imageColor.a = fadeTimer;
+            fadeImage.color = imageColor;
+
+            if (imageColor.a <= 0)
+            {
+                fadeIn = true;
+                fadeTimer = 0;
+                fadeImage.gameObject.SetActive(false);
+            }
+            return;
+        }
+
         if (gameClear == true)
         {
             claerTextObj.SetActive(true);
+            fadeImage.gameObject.SetActive(true);
+
+            fadeTimer += Time.deltaTime;
+
+            Color imageColor = fadeImage.color;
+            imageColor.a = fadeTimer;
+            fadeImage.color = imageColor;
+
+            if (imageColor.a >= 1)
+            {
+                miniGame.SetSaveMiniCheckData(100);
+                SceneManager.LoadSceneAsync("DessertVillage");
+            }
             return;
         }
 

@@ -43,7 +43,7 @@ public class Npc : MonoBehaviour
             {
                 npcChatManager.SetNpc(npc);
                 npcChatManager.SetNpcTalkCheck(_npcTalkCheck);
-                npcChatManager.SetNpcIndex(npcIndex, questIndex[i]);
+                npcChatManager.SetNpcIndex(npcIndex);
             }
         }
     }

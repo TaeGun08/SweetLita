@@ -10,6 +10,7 @@ public class QuestManager : MonoBehaviour
     public class QuestIndexData
     {
         public List<int> questIndex = new List<int>();
+        public int curQuestIndex;
     }
 
     private QuestIndexData questIndexData = new QuestIndexData();
@@ -48,6 +49,8 @@ public class QuestManager : MonoBehaviour
                     questIndex.Add(questIndexData.questIndex[i]);
                 }
             }
+
+            curQuestIndex = questIndexData.curQuestIndex;
         }
     }
 

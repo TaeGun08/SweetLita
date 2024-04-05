@@ -1486,6 +1486,7 @@ Transform:
   - {fileID: 1887214155}
   - {fileID: 1332330645}
   - {fileID: 1554824311}
+  - {fileID: 1535610310}
   - {fileID: 1145158591}
   - {fileID: 380656912}
   - {fileID: 988478757}
@@ -1657,8 +1658,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0db1e597414f24c41966cd2fc8685671, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NpcNameAndChat: {fileID: 988478761}
-  ChoiceButtons: {fileID: 988478760}
+  npcNameAndChat: {fileID: 988478761}
+  choiceButton: {fileID: 988478760}
+  talkChoiceButton: {fileID: 1576985654}
   acceptButton: {fileID: 988478759}
   notAcceptButton: {fileID: 988478758}
   playerMoveStop: 0
@@ -5258,6 +5260,51 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2adc91a7640ed424a9be33c403dc51c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1535610309
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1535610310}
+  - component: {fileID: 1535610311}
+  m_Layer: 0
+  m_Name: MiniGameClearCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1535610310
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1535610309}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 383286192}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1535610311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1535610309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4237df6f7f103ae43b6f7d8338dc8fdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  miniGameIndex: 
 --- !u!1 &1548920164
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,7 +9,6 @@ public class NpcChatManager : MonoBehaviour
     private bool npcTalkCheck = false;
     private bool playerMoveStop = false;
     private bool questCheck = false;
-    private int questIndex;
     private Npc npc;
 
     private void Awake()
@@ -24,10 +23,9 @@ public class NpcChatManager : MonoBehaviour
         }
     }
 
-    public void SetNpcIndex(int _npcIndex, int _questIndex)
+    public void SetNpcIndex(int _npcIndex)
     {
         npcIndex = _npcIndex;
-        questIndex = _questIndex;
     }
 
     public int GetNpcIndex()

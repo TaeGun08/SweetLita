@@ -42,14 +42,11 @@ public class NpcChatData : MonoBehaviour
         {
             npcChatManager.SetPlayerMoveStop(false);
             chatIndex = 0;
-            NpcNameAndChat.SetActive(false);
-            ChoiceButtons.SetActive(false);
             npcChatManager.SetQuestCheck(true);
             if (npcChatManager.GetQuestCheck() == true)
             {
                 for (int i = 0; i < npcChatManager.GetNpc().GetQuestIndex().Count; i++)
                 {
-                    NpcNameAndChat.SetActive(true);
                     questManager.QuestAccept(npcChatManager.GetNpc().GetNpcIndex(), npcChatManager.GetNpc().GetQuestIndex()[i]);
                 }
             }

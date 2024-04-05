@@ -17,4 +17,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/World/House.unity
     guid: 9bd9bc9af3c272849937d7c8c66c1e17
+  - enabled: 1
+    path: Assets/Scenes/MiniGameScene/CookingGame.unity
+    guid: 9827c034b0c55324fb570479776501d9
+  - enabled: 1
+    path: Assets/Scenes/MiniGameScene/PuzzleGame.unity
+    guid: 1acad59dc22b0c14f80074b7eb23e17a
+  - enabled: 1
+    path: Assets/Scenes/MiniGameScene/RecipeGame.unity
+    guid: dd8adff1acc4eef4a87748abb4013830
   m_configObjects: {}
