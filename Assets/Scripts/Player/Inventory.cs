@@ -15,7 +15,10 @@ public class Inventory : MonoBehaviour
 
     private InventorySlotData inventorySlotData = new InventorySlotData();
 
+    private GameManager gameManager;
     private QuestManager questManager;
+    private TIuBookManager tIuBookManager;
+    private NpcChatManager npcChatManager;
 
     [Header("인벤토리")]
     [SerializeField, Tooltip("인벤토리 UI오브젝트")] private GameObject inventory;
@@ -45,7 +48,13 @@ public class Inventory : MonoBehaviour
 
     private void Start()
     {
+        gameManager = GameManager.Instance;
+
         questManager = QuestManager.Instance;
+
+        tIuBookManager = TIuBookManager.Instance;
+
+        npcChatManager = NpcChatManager.Instance;
 
         setInventoryData();
     }
@@ -60,6 +69,12 @@ public class Inventory : MonoBehaviour
     /// </summary>
     private void inventoryOnOff()
     {
+        if (gameManager.GetOptionOnCheck() == true || tIuBookManager.GetTiuBookOnCheck() == true ||
+            npcChatManager.GetPlayerMoveStop() == true)
+        {
+            return;
+        }
+
         if (Input.GetKeyDown(KeyCode.I) && questManager.PlayerMoveStop() == false)
         {
             bool invenOnOff = inventory == inventory.activeSelf ? false : true;

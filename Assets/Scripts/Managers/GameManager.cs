@@ -10,8 +10,6 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
-    private Inventory inventory;
-
     public class SaveOption
     {
         public int widthSize;
@@ -27,9 +25,21 @@ public class GameManager : MonoBehaviour
         public string sceneName;
     }
 
+    public class SavePos
+    {
+        public float xPos;
+        public float yPos;
+    }
+
     private SaveOption saveOption = new SaveOption();
 
     private SaveScene saveScene = new SaveScene();
+
+    private SavePos savePos = new SavePos();
+
+    private Inventory inventory;
+    private TIuBookManager tIuBookManager;
+    private NpcChatManager npcChatManager;
 
     [Header("게임 정지")]
     [SerializeField] private bool gamePause;
@@ -65,6 +75,10 @@ public class GameManager : MonoBehaviour
     private float fadeTimeOut = 2.0f;
     private float checkTimer = 0.0f;
 
+    private bool optionOnCheck = false;
+
+    private bool playerPosSave = false;
+
     private void Awake()
     {
         if (Instance == null)
@@ -85,6 +99,7 @@ public class GameManager : MonoBehaviour
         gameBackButton.onClick.AddListener(() =>
         {
             option.SetActive(false);
+            optionOnCheck = false;
         });
 
         mainBackButton[0].onClick.AddListener(() =>
@@ -94,6 +109,7 @@ public class GameManager : MonoBehaviour
 
         mainBackButton[1].onClick.AddListener(() =>
         {
+            playerPosSave = true;
             saveScene.sceneName = curSceneName;
             string setScene = JsonConvert.SerializeObject(saveScene);
             PlayerPrefs.SetString(saveSceneName, setScene);
@@ -130,6 +146,8 @@ public class GameManager : MonoBehaviour
 
         gameExitButton[1].onClick.AddListener(() =>
         {
+            playerPosSave = true;
+
             saveScene.sceneName = curSceneName;
             string setScene = JsonConvert.SerializeObject(saveScene);
             PlayerPrefs.SetString(saveSceneName, setScene);
@@ -153,6 +171,10 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         inventory = Inventory.Instance;
+
+        tIuBookManager = TIuBookManager.Instance;
+
+        npcChatManager = NpcChatManager.Instance;
 
         inventory.InventoryObj().SetActive(true);
 
@@ -261,9 +283,16 @@ public class GameManager : MonoBehaviour
     /// </summary>
     private void optionOnOff()
     {
+        if (inventory.GetInventoryOnCheck() == true || tIuBookManager.GetTiuBookOnCheck() == true ||
+            npcChatManager.GetPlayerMoveStop() == true)
+        {
+            return;
+        }
+
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             bool optionCheck = option == option.activeSelf ? false : true;
+            optionOnCheck = optionCheck;
             option.SetActive(optionCheck);
         }
     }
@@ -316,5 +345,27 @@ public class GameManager : MonoBehaviour
     public bool GetGamePause()
     {
         return gamePause;
+    }
+
+    public bool GetOptionOnCheck()
+    {
+        return optionOnCheck;
+    }
+
+    public void SetSavePos(float _xPos, float _yPos)
+    {
+        if (playerPosSave == true)
+        {
+            savePos.xPos = _xPos;
+            savePos.yPos = _yPos;
+            string setPos = JsonConvert.SerializeObject(savePos);
+            PlayerPrefs.SetString("savePlayerPos", setPos);
+            playerPosSave = false;
+        }
+    }
+
+    public void SetSaveCheck(bool _playerPosSave)
+    {
+        playerPosSave = _playerPosSave;
     }
 }

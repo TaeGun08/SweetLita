@@ -17,7 +17,10 @@ public class TIuBookManager : MonoBehaviour
 
     private BookData bookData = new BookData();
 
+    private GameManager gameManager;
     private QuestManager questManager;
+    private Inventory inventory;
+    private NpcChatManager npcChatManager;
 
     [Header("도감 설정")]
     [SerializeField] private List<GameObject> bookObj;
@@ -38,6 +41,7 @@ public class TIuBookManager : MonoBehaviour
     [Space]
     [SerializeField] private List<int> npcIndex;
     [SerializeField] private List<Image> npcImages;
+    private bool tiuBookOnCheck = false;
 
     private void Awake()
     {
@@ -96,7 +100,13 @@ public class TIuBookManager : MonoBehaviour
 
     private void Start()
     {
+        gameManager = GameManager.Instance;
+
         questManager = QuestManager.Instance;
+
+        inventory = Inventory.Instance;
+
+        npcChatManager = NpcChatManager.Instance;
 
         bookObj[0].SetActive(false);
         bookObj[2].SetActive(false);
@@ -135,9 +145,16 @@ public class TIuBookManager : MonoBehaviour
     /// </summary>
     private void bookOnOff()
     {
+        if (gameManager.GetOptionOnCheck() == true || inventory.GetInventoryOnCheck() == true ||
+            npcChatManager.GetPlayerMoveStop() == true)
+        {
+            return;
+        }
+
         if (Input.GetKeyDown(KeyCode.B) && questManager.PlayerMoveStop() == false)
         {
             bool onOff = bookObj[0] == bookObj[0].activeSelf ? false : true;
+            tiuBookOnCheck = onOff;
             bookObj[0].SetActive(onOff);
 
             if (onOff == false)
@@ -271,5 +288,10 @@ public class TIuBookManager : MonoBehaviour
             PlayerPrefs.SetString("bookSaveData", setNpcId);
             npcCheck = true;
         }
+    }
+
+    public bool GetTiuBookOnCheck()
+    {
+        return tiuBookOnCheck;
     }
 }

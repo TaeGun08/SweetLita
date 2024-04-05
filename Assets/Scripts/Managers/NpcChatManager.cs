@@ -5,6 +5,7 @@ using UnityEngine;
 public class NpcChatManager : MonoBehaviour
 {
     public static NpcChatManager Instance;
+
     [SerializeField] private int npcIndex;
     private bool npcTalkCheck = false;
     private bool playerMoveStop = false;

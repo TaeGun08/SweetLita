@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class QuestData : MonoBehaviour
 {
-    private NpcChatManager npcChatManager;
+    private GameManager gameManager;
     private QuestManager questManager;
     private MiniGameClearCheck miniGame;
 
@@ -28,7 +28,7 @@ public class QuestData : MonoBehaviour
 
     private void Start()
     {
-        npcChatManager = NpcChatManager.Instance;
+        gameManager = GameManager.Instance;
 
         questManager = QuestManager.Instance;
 
@@ -208,6 +208,8 @@ public class QuestData : MonoBehaviour
             chatWindowText.text = $"감사합니다..!";
             chatIndex = 101;
         }
+
+        gameManager.SetSaveCheck(true);
     }
 
     /// <summary>
@@ -235,6 +237,8 @@ public class QuestData : MonoBehaviour
         }
 
         npcNameAndChat.SetActive(true);
+
+        gameManager.SetSaveCheck(true);
     }
 
     /// <summary>

@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Spine.Unity;
-using System;
 
 public class InputController : MonoBehaviour
 {
@@ -115,6 +114,8 @@ public class InputController : MonoBehaviour
     /// </summary>
     private void playerMove()
     {
+        gameManager.SetSavePos(transform.position.x, transform.position.y);
+
         if (questManager.PlayerMoveStop() == true || npcChatManager.GetPlayerMoveStop() == true)
         {
             skeletonAnim.timeScale = 0;
