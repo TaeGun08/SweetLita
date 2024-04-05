@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using Spine.Unity;
 using System;
-using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class InputController : MonoBehaviour
 {
@@ -12,6 +11,8 @@ public class InputController : MonoBehaviour
     private QuestManager questManager;
     private TIuBookManager tIuBookManager;
     private PlayerPosManager playerPosManager;
+
+    private Inventory inventory;
 
     private Rigidbody2D rigid;
     private Vector3 moveVec;
@@ -24,8 +25,6 @@ public class InputController : MonoBehaviour
 
     [Header("플레이어 상호작용 영역")]
     [SerializeField] private CircleCollider2D interactionArea;
-
-    [SerializeField] private Inventory inventory;
 
     private void Awake()
     {
@@ -45,6 +44,8 @@ public class InputController : MonoBehaviour
         tIuBookManager = TIuBookManager.Instance;
 
         playerPosManager = PlayerPosManager.Instance;
+
+        inventory = Inventory.Instance;
 
         transform.position = playerPosManager.GetPlayerPos();
 

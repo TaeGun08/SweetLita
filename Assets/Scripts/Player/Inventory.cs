@@ -104,6 +104,37 @@ public class Inventory : MonoBehaviour
     /// <param name="_itemIndex"></param>
     /// <param name="_itemType"></param>
     /// <param name="_itemObj"></param>
+    public void SetItem(int _itemIndex)
+    {
+        for (int i = 0; i < slot.Count; i++)
+        {
+            Slot slotSc = slot[i];
+
+            if (slotSc.GetItemIndex() == _itemIndex && slotSc.GetSlotQuantity() < maxQuantiry)
+            {
+                slotSc.SetSlot(_itemIndex);
+                inventorySlotData.itemIndex[i] = slotSc.GetItemIndex();
+                inventorySlotData.itemQuantity[i] = slotSc.GetSlotQuantity();
+                saveInventory();
+                return;
+            }
+            else if (slotSc.GetItemIndex() == 0 && slotSc.GetSlotQuantity() < maxQuantiry)
+            {
+                slotSc.SetSlot(_itemIndex);
+                inventorySlotData.itemIndex[i] = slotSc.GetItemIndex();
+                inventorySlotData.itemQuantity[i] = slotSc.GetSlotQuantity();
+                saveInventory();
+                return;
+            }
+        }
+    }
+
+    /// <summary>
+    /// 아이템을 넣어줄 함수
+    /// </summary>
+    /// <param name="_itemIndex"></param>
+    /// <param name="_itemType"></param>
+    /// <param name="_itemObj"></param>
     public void SetItem(int _itemIndex, Item.ItemType _itemType, GameObject _itemObj)
     {
         for (int i = 0; i < slot.Count; i++)

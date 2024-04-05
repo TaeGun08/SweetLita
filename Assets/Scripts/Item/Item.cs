@@ -7,7 +7,6 @@ public class Item : MonoBehaviour
     public enum ItemType
     {
         Ingredient,
-
     }
 
     [Header("아이템 설정")]

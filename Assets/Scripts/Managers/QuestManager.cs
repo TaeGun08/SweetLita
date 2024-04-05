@@ -2,6 +2,7 @@ using Newtonsoft.Json;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static QuestManager;
 
 public class QuestManager : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class QuestManager : MonoBehaviour
 
     private QuestIndexData questIndexData = new QuestIndexData();
 
+    private NpcChatManager npcChatManager;
     private QuestData questData;
 
     [Header("Äù½ºÆ® ¼³Á¤")]
@@ -35,6 +37,8 @@ public class QuestManager : MonoBehaviour
 
     private void Start()
     {
+        npcChatManager = NpcChatManager.Instance;
+
         questData = transform.GetChild(0).GetComponent<QuestData>();
 
         if (PlayerPrefs.GetString("saveQuestIndex") != string.Empty)
@@ -51,6 +55,12 @@ public class QuestManager : MonoBehaviour
             }
 
             curQuestIndex = questIndexData.curQuestIndex;
+
+            if (curQuestIndex != 0)
+            {
+                npcChatManager.SetQuestCheck(true);
+                questData.SetChatIndex(100);
+            }
         }
     }
 
@@ -99,7 +109,11 @@ public class QuestManager : MonoBehaviour
 
     public void SetCurQuestIndex(int _curQuestIndex)
     {
+        questIndexData.curQuestIndex = _curQuestIndex;
         curQuestIndex = _curQuestIndex;
+
+        string setQuestIndex = JsonConvert.SerializeObject(questIndexData);
+        PlayerPrefs.SetString("saveQuestIndex", setQuestIndex);
     }
 
     public int GetCurQuestIndex()

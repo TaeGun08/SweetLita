@@ -110,6 +110,39 @@ public class Slot : MonoBehaviour
     /// </summary>
     /// <param name="_itemIndex"></param>
     /// <param name="_itemObj"></param>
+    public void SetSlot(int _itemIndex)
+    {
+        if (maxItem == true)
+        {
+            return;
+        }
+
+        if (itemIndex == 0)
+        {
+            itemIndex = _itemIndex;
+            slotQuantity = 1;
+            if (inventory.InventoryObj().activeSelf == true)
+            {
+                itemImag.sprite = itemManager.GetItemSprite(itemIndex);
+            }
+            itemQuantityText.text = slotQuantity.ToString();
+        }
+        else
+        {
+            if (inventory.InventoryObj().activeSelf == true)
+            {
+                itemImag.sprite = itemManager.GetItemSprite(itemIndex);
+            }
+            ++slotQuantity;
+            itemQuantityText.text = slotQuantity.ToString();
+        }
+    }
+
+    /// <summary>
+    /// 슬롯에 아이템을 넣어줄 함수
+    /// </summary>
+    /// <param name="_itemIndex"></param>
+    /// <param name="_itemObj"></param>
     public void SetSlot(int _itemIndex, GameObject _itemObj)
     {
         if (maxItem == true)
