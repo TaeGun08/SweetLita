@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/MainScene.unity
     guid: bfa6385bdff2edc419e7c02df4c52ba7
   - enabled: 1
+    path: Assets/Scenes/PrologueScene.unity
+    guid: 0a836bee6a6718b47a8554b2f45fca6a
+  - enabled: 1
     path: Assets/Scenes/World/DessertVillage.unity
     guid: 4d2e3f903a87b70479b9bcb8767e52e6
   - enabled: 1
@@ -26,4 +29,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MiniGameScene/RecipeGame.unity
     guid: dd8adff1acc4eef4a87748abb4013830
+  - enabled: 1
+    path: Assets/Scenes/World/Ruins.unity
+    guid: ec194a4386f07614b8e9c17fa3cc3277
+  - enabled: 1
+    path: Assets/Scenes/World/RuinsQuiz.unity
+    guid: bc97ca6c2584010449723e6ff0490c8f
   m_configObjects: {}

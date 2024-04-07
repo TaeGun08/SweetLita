@@ -5220,7 +5220,7 @@ MonoBehaviour:
   fxs: {fileID: 332022455}
   fadeInOut: {fileID: 480511669}
   fadeTimer: 0
-  sceneName: DessertVillage
+  sceneName: PrologueScene
 --- !u!1 &1589124473
 GameObject:
   m_ObjectHideFlags: 0

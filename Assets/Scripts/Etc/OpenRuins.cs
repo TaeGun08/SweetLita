@@ -1,17 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Spine.Unity;
 
-public class CheesePiece : MonoBehaviour
+public class OpenRuins : MonoBehaviour
 {
-    [SerializeField] private GameObject starForce;
-    private bool playerIn = false;
+    private SkeletonAnimation skeletonAnim;
+
+    private bool open = false;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
-            playerIn = true;
+            open = true;
         }
     }
 
@@ -19,15 +21,22 @@ public class CheesePiece : MonoBehaviour
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
-            playerIn = false;
+            open = false;
         }
+    }
+
+    private void Awake()
+    {
+        skeletonAnim = GetComponent<SkeletonAnimation>();
+
+        skeletonAnim.timeScale = 0;
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && playerIn == true)
+        if (open == true)
         {
-            starForce.SetActive(true);
+            skeletonAnim.timeScale = 1;
         }
     }
 }
