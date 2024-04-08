@@ -42,13 +42,14 @@ public class MainSceneManager : MonoBehaviour
     [SerializeField, Tooltip("게임으로 돌아가기 버튼")] private Button backButton;
     [Space]
     [SerializeField, Tooltip("게임 옵션창")] private GameObject option;
-    [SerializeField, Tooltip("게임 옵션 저장 버튼")] private Button optionSave;
     [SerializeField, Tooltip("게임으로 돌아가기 버튼")] private Button optionBack;
     [SerializeField, Tooltip("해상도 변경을 위한 드롭다운")] private TMP_Dropdown dropdown;
     [SerializeField, Tooltip("창모드 변경을 위한 토글")] private Toggle toggle;
     [Space]
     [SerializeField, Tooltip("배경음악")] private Slider bgm;
     [SerializeField, Tooltip("효과음")] private Slider fxs;
+    [SerializeField] private TMP_Text bgmText;
+    [SerializeField] private TMP_Text fxsText;
     [Space]
     [SerializeField, Tooltip("페이드인아웃")] private Image fadeInOut;
     private bool sceneChangefadeOn = false;
@@ -156,7 +157,7 @@ public class MainSceneManager : MonoBehaviour
             choiceButton.SetActive(false);
         });
 
-        optionSave.onClick.AddListener(() => 
+        optionBack.onClick.AddListener(() => 
         {
             dropdownScreenSize();
 
@@ -171,10 +172,7 @@ public class MainSceneManager : MonoBehaviour
             string saveScreenData = PlayerPrefs.GetString(saveOptionValue);
             saveOption = JsonConvert.DeserializeObject<SaveOption>(saveScreenData);
             setSaveOptionData(saveOption);
-        });
 
-        optionBack.onClick.AddListener(() => 
-        {
             option.gameObject.SetActive(false);
         });
     }
@@ -191,6 +189,9 @@ public class MainSceneManager : MonoBehaviour
 
     private void Update()
     {
+        bgmText.text = $"{(bgm.value * 100).ToString("F0")}";
+        fxsText.text = $"{(fxs.value * 100).ToString("F0")}";
+
         fadeIn();
         fadeOut();
     }

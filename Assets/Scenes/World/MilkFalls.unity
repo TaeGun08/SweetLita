@@ -3411,7 +3411,6 @@ MonoBehaviour:
   - {fileID: 1815569984}
   - {fileID: 1815569983}
   mainBackChoice: {fileID: 1815569982}
-  settingButton: {fileID: 1815569981}
   setting: {fileID: 1815569980}
   gameExitButton:
   - {fileID: 1815569979}
@@ -3422,6 +3421,8 @@ MonoBehaviour:
   toggle: {fileID: 1815569974}
   bgm: {fileID: 1815569973}
   fxs: {fileID: 1815569972}
+  bgmText: {fileID: 1798372255}
+  fxsText: {fileID: 1798372254}
   fadeInOut: {fileID: 1815569971}
 --- !u!1001 &880482271
 PrefabInstance:
@@ -6450,6 +6451,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boxCollider2D: {fileID: 1753770830}
   trsPlayer: {fileID: 630923752}
+--- !u!114 &1798372254 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3836750429864084582, guid: 5b6fa2a6780ef884696c16fb05e4f388, type: 3}
+  m_PrefabInstance: {fileID: 1815569970}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1798372255 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1731574969807805243, guid: 5b6fa2a6780ef884696c16fb05e4f388, type: 3}
+  m_PrefabInstance: {fileID: 1815569970}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1815569970
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6649,17 +6672,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8846314003052740513, guid: 5b6fa2a6780ef884696c16fb05e4f388, type: 3}
   m_PrefabInstance: {fileID: 1815569970}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1815569981 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3366533605643406831, guid: 5b6fa2a6780ef884696c16fb05e4f388, type: 3}
-  m_PrefabInstance: {fileID: 1815569970}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1815569982 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8786432578864451519, guid: 5b6fa2a6780ef884696c16fb05e4f388, type: 3}
@@ -6976,10 +6988,11 @@ MonoBehaviour:
   acceptButton: {fileID: 1864190479}
   notAcceptButton: {fileID: 1864190478}
   playerMoveStop: 0
+  playerImage: {fileID: 0}
   npcImage: {fileID: 1864190481}
-  npcSprites:
-  - {fileID: 21300000, guid: 8384fe46af15b094495e5d1dd86f05c4, type: 3}
-  - {fileID: 21300000, guid: c6212900102c6ad4495ce96bf5d3ac12, type: 3}
+  playerSprites: []
+  npcBoySprites: []
+  npcGirlSprites: []
 --- !u!1 &1831306523
 GameObject:
   m_ObjectHideFlags: 0

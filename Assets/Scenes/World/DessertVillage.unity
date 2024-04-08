@@ -377,7 +377,6 @@ MonoBehaviour:
   - {fileID: 1875477224}
   - {fileID: 1875477223}
   mainBackChoice: {fileID: 1875477222}
-  settingButton: {fileID: 1875477221}
   setting: {fileID: 1875477220}
   gameExitButton:
   - {fileID: 1875477219}
@@ -388,6 +387,8 @@ MonoBehaviour:
   toggle: {fileID: 1875477214}
   bgm: {fileID: 1875477213}
   fxs: {fileID: 1875477212}
+  bgmText: {fileID: 398069039}
+  fxsText: {fileID: 2077134513}
   fadeInOut: {fileID: 1875477211}
 --- !u!1 &51340083
 GameObject:
@@ -2872,6 +2873,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &398069039 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1731574969807805243, guid: 5b6fa2a6780ef884696c16fb05e4f388, type: 3}
+  m_PrefabInstance: {fileID: 1875477210}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &400310784
@@ -13144,17 +13156,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8846314003052740513, guid: 5b6fa2a6780ef884696c16fb05e4f388, type: 3}
   m_PrefabInstance: {fileID: 1875477210}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1875477221 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3366533605643406831, guid: 5b6fa2a6780ef884696c16fb05e4f388, type: 3}
-  m_PrefabInstance: {fileID: 1875477210}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1875477222 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8786432578864451519, guid: 5b6fa2a6780ef884696c16fb05e4f388, type: 3}
@@ -14236,6 +14237,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2077134513 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3836750429864084582, guid: 5b6fa2a6780ef884696c16fb05e4f388, type: 3}
+  m_PrefabInstance: {fileID: 1875477210}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2077304348
 GameObject:
   m_ObjectHideFlags: 0

@@ -240,6 +240,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2adc91a7640ed424a9be33c403dc51c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &117517034 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3836750429864084582, guid: 5b6fa2a6780ef884696c16fb05e4f388, type: 3}
+  m_PrefabInstance: {fileID: 1021480571}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &117517035 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1731574969807805243, guid: 5b6fa2a6780ef884696c16fb05e4f388, type: 3}
+  m_PrefabInstance: {fileID: 1021480571}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &124538534
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -824,7 +846,6 @@ MonoBehaviour:
   - {fileID: 1021480585}
   - {fileID: 1021480584}
   mainBackChoice: {fileID: 1021480583}
-  settingButton: {fileID: 1021480582}
   setting: {fileID: 1021480581}
   gameExitButton:
   - {fileID: 1021480580}
@@ -835,6 +856,8 @@ MonoBehaviour:
   toggle: {fileID: 1021480575}
   bgm: {fileID: 1021480574}
   fxs: {fileID: 1021480573}
+  bgmText: {fileID: 117517035}
+  fxsText: {fileID: 117517034}
   fadeInOut: {fileID: 1021480572}
 --- !u!1 &280785809
 GameObject:
@@ -4163,17 +4186,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8846314003052740513, guid: 5b6fa2a6780ef884696c16fb05e4f388, type: 3}
   m_PrefabInstance: {fileID: 1021480571}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1021480582 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3366533605643406831, guid: 5b6fa2a6780ef884696c16fb05e4f388, type: 3}
-  m_PrefabInstance: {fileID: 1021480571}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1021480583 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8786432578864451519, guid: 5b6fa2a6780ef884696c16fb05e4f388, type: 3}
@@ -6969,6 +6981,7 @@ MonoBehaviour:
   playerMoveStop: 0
   playerImage: {fileID: 0}
   npcImage: {fileID: 1690127051}
+  playerSprites: []
   npcBoySprites: []
   npcGirlSprites: []
 --- !u!1001 &1828026118

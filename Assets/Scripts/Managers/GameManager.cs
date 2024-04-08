@@ -56,7 +56,6 @@ public class GameManager : MonoBehaviour
     [SerializeField, Tooltip("게임으로 돌아가기 버튼")] private Button gameBackButton;
     [SerializeField, Tooltip("메인으로 돌아가기 버튼")] private List<Button> mainBackButton;
     [SerializeField, Tooltip("메인으로 돌아가는 창")] private GameObject mainBackChoice;
-    [SerializeField, Tooltip("셋팅 버튼")] private Button settingButton;
     [SerializeField, Tooltip("셋팅 창")] private GameObject setting;
     [SerializeField, Tooltip("게임 종료 버튼")] private List<Button> gameExitButton;
     [SerializeField, Tooltip("게임 종료 창")] private GameObject gameExit;
@@ -65,6 +64,8 @@ public class GameManager : MonoBehaviour
     [SerializeField, Tooltip("창모드 변경을 위한 토글")] private Toggle toggle;
     [SerializeField, Tooltip("배경음악")] private Slider bgm;
     [SerializeField, Tooltip("효과음")] private Slider fxs;
+    [SerializeField] private TMP_Text bgmText;
+    [SerializeField] private TMP_Text fxsText;
     [Space]
     [SerializeField, Tooltip("페이드 인 아웃")] private Image fadeInOut;
     private bool fadeOn = false;
@@ -98,6 +99,20 @@ public class GameManager : MonoBehaviour
 
         gameBackButton.onClick.AddListener(() =>
         {
+            dropdownScreenSize();
+
+            saveOption.dropdownValue = dropdown.value;
+            saveOption.windowOn = toggle.isOn;
+            saveOption.bgmValue = bgm.value * 100f;
+            saveOption.fxsValue = fxs.value * 100f;
+
+            string getScreenSize = JsonConvert.SerializeObject(saveOption);
+            PlayerPrefs.SetString(saveOptionValue, getScreenSize);
+
+            string saveScreenData = PlayerPrefs.GetString(saveOptionValue);
+            saveOption = JsonConvert.DeserializeObject<SaveOption>(saveScreenData);
+            setSaveOptionData(saveOption);
+
             option.SetActive(false);
             optionOnCheck = false;
         });
@@ -108,21 +123,6 @@ public class GameManager : MonoBehaviour
         });
 
         mainBackButton[1].onClick.AddListener(() =>
-        {
-            playerPosSave = true;
-            saveScene.sceneName = curSceneName;
-            string setScene = JsonConvert.SerializeObject(saveScene);
-            PlayerPrefs.SetString(saveSceneName, setScene);
-            gamePause = true;
-            fadeOff = true;
-        });
-
-        mainBackButton[2].onClick.AddListener(() =>
-        {
-            mainBackChoice.SetActive(false);
-        });
-
-        settingButton.onClick.AddListener(() =>
         {
             dropdownScreenSize();
 
@@ -137,6 +137,18 @@ public class GameManager : MonoBehaviour
             string saveScreenData = PlayerPrefs.GetString(saveOptionValue);
             saveOption = JsonConvert.DeserializeObject<SaveOption>(saveScreenData);
             setSaveOptionData(saveOption);
+
+            playerPosSave = true;
+            saveScene.sceneName = curSceneName;
+            string setScene = JsonConvert.SerializeObject(saveScene);
+            PlayerPrefs.SetString(saveSceneName, setScene);
+            gamePause = true;
+            fadeOff = true;
+        });
+
+        mainBackButton[2].onClick.AddListener(() =>
+        {
+            mainBackChoice.SetActive(false);
         });
 
         gameExitButton[0].onClick.AddListener(() =>
@@ -151,6 +163,20 @@ public class GameManager : MonoBehaviour
             saveScene.sceneName = curSceneName;
             string setScene = JsonConvert.SerializeObject(saveScene);
             PlayerPrefs.SetString(saveSceneName, setScene);
+
+            dropdownScreenSize();
+
+            saveOption.dropdownValue = dropdown.value;
+            saveOption.windowOn = toggle.isOn;
+            saveOption.bgmValue = bgm.value * 100f;
+            saveOption.fxsValue = fxs.value * 100f;
+
+            string getScreenSize = JsonConvert.SerializeObject(saveOption);
+            PlayerPrefs.SetString(saveOptionValue, getScreenSize);
+
+            string saveScreenData = PlayerPrefs.GetString(saveOptionValue);
+            saveOption = JsonConvert.DeserializeObject<SaveOption>(saveScreenData);
+            setSaveOptionData(saveOption);
 
 #if UNITY_EDITOR
             UnityEditor.EditorApplication.isPlaying = false;
@@ -188,6 +214,9 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         gamePauseOnOff();
+
+        bgmText.text = $"{(bgm.value * 100).ToString("F0")}";
+        fxsText.text = $"{(fxs.value * 100).ToString("F0")}";
 
         fadeIn();
         fadeOut();
