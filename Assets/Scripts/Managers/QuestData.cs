@@ -154,30 +154,48 @@ public class QuestData : MonoBehaviour
             && questManager.QuestClearCheck(101) == false)
         {
             talkChoiceButton.SetActive(false);
-            npcNameText.text = $"세리";
-            npcImage.sprite = npcGirlSprites[0];
+            npcNameText.text = $"루미";
 
             if (chatIndex == 0)
             {
+                npcImage.sprite = npcGirlSprites[6];
+                npcImage.gameObject.SetActive(true);
                 questManager.SetCurQuestIndex(101);
                 playerMoveStop = true;
                 chatIndex++;
-                chatWindowText.text = $"나 좀 도와줄 수 있어?";
+                chatWindowText.text = $"어떡하지..., 리타님... 큰일났어요....";
                 npcNameAndChat.SetActive(true);
             }
             else if (chatIndex == 1)
             {
-                chatWindowText.text = $"우유 폭포 근처에서 치즈조각을";
+                npcImage.sprite = npcGirlSprites[2];
+                chatIndex++;
+                chatWindowText.text = $"빵집 아주머니께서 치즈가 필요하다고 하셨는데";
+            }
+            else if (chatIndex == 2)
+            {
+                playerImage.gameObject.SetActive(true);
+                npcImage.gameObject.SetActive(false);
+                chatIndex++;
+                chatWindowText.text = $"제가 깜빡해버렸어요...";
+            }
+            else if (chatIndex == 3)
+            {
+                playerImage.gameObject.SetActive(false);
+                npcImage.gameObject.SetActive(true);
+                chatIndex++;
+                chatWindowText.text = $"도와주실 수 있으신가요...?";
                 choiceButton.SetActive(true);
             }
             else if (chatIndex == 100)
             {
                 questManager.SetCurQuestIndex(101);
                 playerMoveStop = true;
-                questClearIndex(100, 1, 100, $"어디가, 도와주기로 했잖아", $"고마워 다음에 도움이 필요하면 나도 도와줄게!");
+                questClearIndex(100, 1, 100, $"치즈가 부족해요...", $"리타님...! 감사해요!!!");
             }
             else if (chatIndex == 101)
             {
+                npcImage.sprite = npcGirlSprites[3];
                 questManager.SetCurQuestIndex(0);
                 questManager.SetQuestIndex(101);
                 playerMoveStop = false;
@@ -236,7 +254,7 @@ public class QuestData : MonoBehaviour
             else if (chatIndex == 7)
             {
                 chatIndex++;
-                questMiniGame("PuzzleGame", 102, "혼나고 싶지 않아..., 한번만 더 도와줄 수 있어?", "도와줘서 고마워 리타...!");
+                questMiniGame("RecipeGame", 102, "혼나고 싶지 않아..., 한번만 더 도와줄 수 있어?", "도와줘서 고마워 리타...!");
                 chatWindowText.text = $"도와줘";
             }
             else if (chatIndex == 100)
