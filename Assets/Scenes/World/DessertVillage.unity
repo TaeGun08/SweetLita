@@ -1672,10 +1672,23 @@ MonoBehaviour:
   playerMoveStop: 0
   playerImage: {fileID: 854937398}
   npcImage: {fileID: 323290496}
+  playerSprites:
+  - {fileID: 21300000, guid: 3356b2f8363dfe845a2afc0720a7e30c, type: 3}
+  - {fileID: 21300000, guid: 0635083d16faa0340aff89f28d533297, type: 3}
   npcBoySprites:
-  - {fileID: 21300000, guid: 8384fe46af15b094495e5d1dd86f05c4, type: 3}
+  - {fileID: 21300000, guid: dfc2588ba60842e448838e955e32a98c, type: 3}
+  - {fileID: 21300000, guid: 30622475e1ffc254f99994e4a5d327b6, type: 3}
+  - {fileID: 21300000, guid: 2f9be603595eb374da82887e0001b2fa, type: 3}
+  - {fileID: 21300000, guid: 260551aff95d6c14fb15b82c42d1a90a, type: 3}
+  - {fileID: 21300000, guid: 234b64c4cbb30d44d8f1847a23b57570, type: 3}
+  - {fileID: 21300000, guid: 1a9d6accc9f007a46adaf7c6ed0986fc, type: 3}
+  - {fileID: 21300000, guid: d0a8963fce13f0745b7f309c15377bd9, type: 3}
   npcGirlSprites:
-  - {fileID: 21300000, guid: c6212900102c6ad4495ce96bf5d3ac12, type: 3}
+  - {fileID: 21300000, guid: 6376580bce3f19244971ee9aebaf1635, type: 3}
+  - {fileID: 21300000, guid: f1325a0f62ed3f745a1483532bbb70d4, type: 3}
+  - {fileID: 21300000, guid: aa7c755e60a43584fa206cd4cb7f9cca, type: 3}
+  - {fileID: 21300000, guid: 4b60698d35bda3a49a1fc310d9ce2660, type: 3}
+  - {fileID: 21300000, guid: 4bbf214512cd7cf4889a28c2b6cd5fdb, type: 3}
 --- !u!1 &409952034
 GameObject:
   m_ObjectHideFlags: 0
@@ -2180,8 +2193,8 @@ MonoBehaviour:
   playerMoveStop: 0
   npcImage: {fileID: 323290496}
   npcSprites:
-  - {fileID: 21300000, guid: 8384fe46af15b094495e5d1dd86f05c4, type: 3}
-  - {fileID: 21300000, guid: c6212900102c6ad4495ce96bf5d3ac12, type: 3}
+  - {fileID: 21300000, guid: dfc2588ba60842e448838e955e32a98c, type: 3}
+  - {fileID: 21300000, guid: 6376580bce3f19244971ee9aebaf1635, type: 3}
 --- !u!1001 &555998072
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3763,6 +3776,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5064986012380328276, guid: e6ca89978ced5a24c913ac05aa37175a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: dfc2588ba60842e448838e955e32a98c, type: 3}
     - target: {fileID: 6060610172431363923, guid: e6ca89978ced5a24c913ac05aa37175a, type: 3}
       propertyPath: m_LocalScale.x
       value: -1

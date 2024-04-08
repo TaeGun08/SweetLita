@@ -25,7 +25,7 @@ public class PuzzleGameManager : MonoBehaviour
     [SerializeField] private GameObject claerTextObj; //클리어 했을 때 뜨는 텍스트
     [Space]
     [SerializeField] private List<Sprite> puzzleSprites;
-    private float gameOverTimer;
+    [SerializeField] private float gameOverTimer;
     private bool gameOver = false;
     [SerializeField] private TMP_Text overTimeText;
     [SerializeField] private GameObject gameOverObj;
@@ -116,6 +116,7 @@ public class PuzzleGameManager : MonoBehaviour
                 gameOverObj.SetActive(true);
                 gameOver = true;
                 gameOverTimer = 60f;
+                SceneManager.LoadSceneAsync("DessertVillage");
             }
         }
         else

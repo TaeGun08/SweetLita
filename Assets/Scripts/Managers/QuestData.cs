@@ -25,6 +25,7 @@ public class QuestData : MonoBehaviour
     [SerializeField] private bool playerMoveStop = false; //플레이어의 움직임을 멈추게 하는 변수
     [SerializeField] private Image playerImage;
     [SerializeField] private Image npcImage;
+    [SerializeField] private List<Sprite> playerSprites;
     [SerializeField] private List<Sprite> npcBoySprites;
     [SerializeField] private List<Sprite> npcGirlSprites;
 
@@ -72,83 +73,74 @@ public class QuestData : MonoBehaviour
             && questManager.QuestClearCheck(100) == false)
         {
             talkChoiceButton.SetActive(false);
-            npcNameText.text = $"영식이";
+            npcNameText.text = $"피너";
 
             if (chatIndex == 0)
             {
-                playerImage.gameObject.SetActive(true);
-                npcImage.gameObject.SetActive(false);
+                npcImage.sprite = npcBoySprites[4];
+                npcImage.gameObject.SetActive(true);
                 questManager.SetCurQuestIndex(100);
                 playerMoveStop = true;
                 chatIndex++;
-                npcNameText.text = $"리타";
-                chatWindowText.text = $"안녕! 난 리타야";
+                chatWindowText.text = $".....";
                 npcNameAndChat.SetActive(true);
             }
             else if (chatIndex == 1)
             {
+                npcImage.sprite = npcBoySprites[2];
                 chatIndex++;
-                npcNameText.text = $"리타";
-                chatWindowText.text = $"이번에 저기 밑으로 이사 왔어";
+                chatWindowText.text = $".....";
             }
             else if (chatIndex == 2)
             {
-                playerImage.gameObject.SetActive(false);
-                npcImage.gameObject.SetActive(true);
+                playerImage.gameObject.SetActive(true);
+                npcImage.gameObject.SetActive(false);
                 chatIndex++;
-                npcImage.sprite = npcBoySprites[0];
-                chatWindowText.text = $".....";
+                chatWindowText.text = $"무슨 일 있어?";
             }
             else if (chatIndex == 3)
             {
+                playerImage.gameObject.SetActive(false);
+                npcImage.gameObject.SetActive(true);
                 chatIndex++;
-                chatWindowText.text = $".....안녕하세요";
+                chatWindowText.text = $".......퍼즐을";
             }
             else if (chatIndex == 4)
             {
-                playerImage.gameObject.SetActive(true);
-                npcImage.gameObject.SetActive(false);
                 chatIndex++;
-                npcNameText.text = $"리타";
-                chatWindowText.text = $"앞으로 잘 부탁해!";
+                chatWindowText.text = $"완성 못하겠어...";
             }
             else if (chatIndex == 5)
             {
-                playerImage.gameObject.SetActive(false);
-                npcImage.gameObject.SetActive(true);
-                chatIndex++;
-                chatWindowText.text = $".....";
-            }
-            else if (chatIndex == 6)
-            {
                 playerImage.gameObject.SetActive(true);
                 npcImage.gameObject.SetActive(false);
                 chatIndex++;
                 npcNameText.text = $"리타";
-                chatWindowText.text = $"혹시 무슨 일 있어?";
+                chatWindowText.text = $"퍼즐?";
             }
-            else if (chatIndex == 7)
+            else if (chatIndex == 6)
             {
                 playerImage.gameObject.SetActive(false);
                 npcImage.gameObject.SetActive(true);
                 chatIndex++;
-                chatWindowText.text = $"퍼즐을 완성하고 싶은데..";
+                chatWindowText.text = $"혼자서는 너무 어려운데...";
             }
-            else if (chatIndex == 8)
+            else if (chatIndex == 7)
             {
                 chatIndex++;
-                chatWindowText.text = $"도와주실 수 있나요..?";
-                questMiniGame("PuzzleGame", 100);
+                questMiniGame("PuzzleGame", 100, "너무 어려워..., 다시 도와줄거야?", "...대단해! 덕분에 퍼즐이 완성됐어");
+                chatWindowText.text = $"도와줄 수 있어?";
             }
             else if (chatIndex == 100)
             {
                 npcImage.sprite = npcBoySprites[0];
                 npcNameAndChat.SetActive(true);
                 playerMoveStop = true;
-                questMiniGame("PuzzleGame", 100);
+                questMiniGame("PuzzleGame", 100, "너무 어려워..., 다시 도와줄거야?", "...대단해! 덕분에 퍼즐이 완성됐어");
             }
             else if (chatIndex == 101)
             {
+                npcImage.sprite = npcBoySprites[3];
                 questManager.SetCurQuestIndex(0);
                 questManager.SetQuestIndex(100);
                 playerMoveStop = false;
@@ -162,7 +154,7 @@ public class QuestData : MonoBehaviour
             && questManager.QuestClearCheck(101) == false)
         {
             talkChoiceButton.SetActive(false);
-            npcNameText.text = $"꽃분이";
+            npcNameText.text = $"세리";
             npcImage.sprite = npcGirlSprites[0];
 
             if (chatIndex == 0)
@@ -199,30 +191,63 @@ public class QuestData : MonoBehaviour
             && questManager.QuestClearCheck(102) == false)
         {
             talkChoiceButton.SetActive(false);
-            npcNameText.text = $"영식이";
-            npcImage.sprite = npcBoySprites[1];
+            npcNameText.text = $"피너";
 
             if (chatIndex == 0)
             {
+                npcImage.sprite = npcBoySprites[4];
+                npcImage.gameObject.SetActive(true);
                 questManager.SetCurQuestIndex(102);
                 playerMoveStop = true;
                 chatIndex++;
-                chatWindowText.text = $"레시피에 글자가 비어있네..";
+                chatWindowText.text = $"리타...";
                 npcNameAndChat.SetActive(true);
             }
             else if (chatIndex == 1)
             {
-                chatWindowText.text = $"혹시.., 저 좀 도와주실 수 있나요..?";
-                questMiniGame("RecipeGame", 102);
+                chatIndex++;
+                chatWindowText.text = $"......도와줘";
+            }
+            else if (chatIndex == 2)
+            {
+                playerImage.gameObject.SetActive(true);
+                npcImage.gameObject.SetActive(false);
+                chatIndex++;
+                chatWindowText.text = $"무슨 일이야?";
+            }
+            else if (chatIndex == 3)
+            {
+                npcImage.sprite = npcBoySprites[2];
+                playerImage.gameObject.SetActive(false);
+                npcImage.gameObject.SetActive(true);
+                chatIndex++;
+                chatWindowText.text = $"물감 놀이를 하다가...";
+            }
+            else if (chatIndex == 4)
+            {
+                chatIndex++;
+                chatWindowText.text = $"빵집 아주머니 레시피에 쏟아버렸어...";
+            }
+            else if (chatIndex == 5)
+            {
+                chatIndex++;
+                chatWindowText.text = $"아주머니께 혼날 거 같아....";
+            }
+            else if (chatIndex == 7)
+            {
+                chatIndex++;
+                questMiniGame("PuzzleGame", 102, "혼나고 싶지 않아..., 한번만 더 도와줄 수 있어?", "도와줘서 고마워 리타...!");
+                chatWindowText.text = $"도와줘";
             }
             else if (chatIndex == 100)
             {
                 npcNameAndChat.SetActive(true);
                 playerMoveStop = true;
-                questMiniGame("RecipeGame", 102);
+                questMiniGame("RecipeGame", 102, "혼나고 싶지 않아..., 한번만 더 도와줄 수 있어?", "도와줘서 고마워 리타...!");
             }
             else if (chatIndex == 101)
             {
+                npcImage.sprite = npcBoySprites[3];
                 questManager.SetCurQuestIndex(0);
                 questManager.SetQuestIndex(102);
                 playerMoveStop = false;
@@ -238,7 +263,7 @@ public class QuestData : MonoBehaviour
     /// </summary>
     /// <param name="_miniGameSceneName"></param>
     /// <param name="_miniGameClearCheck"></param>
-    private void questMiniGame(string _miniGameSceneName, int _miniGameClearCheck)
+    private void questMiniGame(string _miniGameSceneName, int _miniGameClearCheck, string _talkReTryText, string _clearTalkText)
     {
         if (miniGame.GetSaveMiniCheckData(_miniGameClearCheck) == false)
         {
@@ -248,6 +273,10 @@ public class QuestData : MonoBehaviour
             {
                 SceneManager.LoadSceneAsync(_miniGameSceneName);
             });
+
+            npcImage.sprite = npcBoySprites[2];
+
+            chatWindowText.text = _talkReTryText;
 
             choiceButton.SetActive(true);
         }
@@ -261,7 +290,7 @@ public class QuestData : MonoBehaviour
                 chatIndex = 100;
             });
 
-            chatWindowText.text = $"감사합니다..!";
+            chatWindowText.text = _clearTalkText;
             chatIndex = 101;
         }
 
