@@ -6335,10 +6335,10 @@ MonoBehaviour:
   acceptButton: {fileID: 1003287162}
   notAcceptButton: {fileID: 1003287161}
   playerMoveStop: 0
+  playerImage: {fileID: 0}
   npcImage: {fileID: 1003287164}
-  npcSprites:
-  - {fileID: 21300000, guid: 8384fe46af15b094495e5d1dd86f05c4, type: 3}
-  - {fileID: 21300000, guid: c6212900102c6ad4495ce96bf5d3ac12, type: 3}
+  npcBoySprites: []
+  npcGirlSprites: []
 --- !u!1 &1514300049
 GameObject:
   m_ObjectHideFlags: 0

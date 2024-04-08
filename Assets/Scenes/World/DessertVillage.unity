@@ -1108,10 +1108,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 5001604259471665685, guid: a5dd928cdff155440beade2d37cc3ac2, type: 3}
-      propertyPath: m_SortingOrder
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 5449532439007385131, guid: a5dd928cdff155440beade2d37cc3ac2, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -1674,9 +1670,11 @@ MonoBehaviour:
   acceptButton: {fileID: 988478759}
   notAcceptButton: {fileID: 988478758}
   playerMoveStop: 0
+  playerImage: {fileID: 854937398}
   npcImage: {fileID: 323290496}
-  npcSprites:
+  npcBoySprites:
   - {fileID: 21300000, guid: 8384fe46af15b094495e5d1dd86f05c4, type: 3}
+  npcGirlSprites:
   - {fileID: 21300000, guid: c6212900102c6ad4495ce96bf5d3ac12, type: 3}
 --- !u!1 &409952034
 GameObject:
@@ -3354,14 +3352,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3014611953685349724, guid: d97ffbe57a0d83c43a235df8ab530658, type: 3}
-      propertyPath: questIndex.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3014611953685349724, guid: d97ffbe57a0d83c43a235df8ab530658, type: 3}
-      propertyPath: questIndex.Array.data[1]
-      value: 102
-      objectReference: {fileID: 0}
     - target: {fileID: 6875778880838971932, guid: d97ffbe57a0d83c43a235df8ab530658, type: 3}
       propertyPath: m_Name
       value: "\uC601\uC2DD\uC774"
@@ -3490,6 +3480,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2adc91a7640ed424a9be33c403dc51c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &854937398 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6838946564922090579, guid: e6ca89978ced5a24c913ac05aa37175a, type: 3}
+  m_PrefabInstance: {fileID: 988478756}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &870322583
@@ -3758,6 +3759,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 383286192}
     m_Modifications:
+    - target: {fileID: 2600745615728465302, guid: e6ca89978ced5a24c913ac05aa37175a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6060610172431363923, guid: e6ca89978ced5a24c913ac05aa37175a, type: 3}
+      propertyPath: m_LocalScale.x
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6060610172431363923, guid: e6ca89978ced5a24c913ac05aa37175a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -280
+      objectReference: {fileID: 0}
+    - target: {fileID: 6838946564922090579, guid: e6ca89978ced5a24c913ac05aa37175a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3356b2f8363dfe845a2afc0720a7e30c, type: 3}
     - target: {fileID: 7470590313738201027, guid: e6ca89978ced5a24c913ac05aa37175a, type: 3}
       propertyPath: m_Name
       value: ChatWindowCanvas
@@ -6457,7 +6474,7 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 4
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &1785601183
 MeshFilter:
