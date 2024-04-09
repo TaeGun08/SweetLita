@@ -10,6 +10,7 @@ public class QuestData : MonoBehaviour
     private GameManager gameManager;
     private QuestManager questManager;
     private MiniGameClearCheck miniGame;
+    private NpcChatManager npcChatManager;
 
     private Inventory inventory;
 
@@ -39,6 +40,8 @@ public class QuestData : MonoBehaviour
 
         miniGame = MiniGameClearCheck.Instance;
 
+        npcChatManager = NpcChatManager.Instance;
+
         chatWindowText = npcNameAndChat.transform.Find("ChatWindow/ChatWindowText").GetComponent<TMP_Text>();
         npcNameText = npcNameAndChat.transform.Find("NpcName/NpcNameText").GetComponent<TMP_Text>();
 
@@ -47,6 +50,7 @@ public class QuestData : MonoBehaviour
             playerMoveStop = false;
             npcNameAndChat.SetActive(false);
             choiceButton.SetActive(false);
+            npcChatManager.SetQuestCheck(false);
             chatIndex = 100;
         });
 
@@ -55,6 +59,7 @@ public class QuestData : MonoBehaviour
             playerMoveStop = false;
             npcNameAndChat.SetActive(false);
             choiceButton.SetActive(false);
+            npcChatManager.SetQuestCheck(false);
             chatIndex = 0;
             questManager.SetCurQuestIndex(0);
         });
@@ -148,6 +153,7 @@ public class QuestData : MonoBehaviour
                 chatIndex = 0;
                 choiceButton.SetActive(false);
                 npcNameAndChat.SetActive(false);
+                npcChatManager.SetQuestCheck(false);
             }
         }
         else if (_npcIndex == 11 && _questIndex == 101 
@@ -198,6 +204,7 @@ public class QuestData : MonoBehaviour
                 playerMoveStop = false;
                 chatIndex--;
                 npcNameAndChat.SetActive(false);
+                npcChatManager.SetQuestCheck(false);
             }
             else if (chatIndex == 201)
             {
@@ -208,6 +215,7 @@ public class QuestData : MonoBehaviour
                 questManager.SetQuestIndex(101);
                 choiceButton.SetActive(false);
                 npcNameAndChat.SetActive(false);
+                npcChatManager.SetQuestCheck(false);
             }
         }
         else if (_npcIndex == 10 && _questIndex == 102
@@ -258,7 +266,7 @@ public class QuestData : MonoBehaviour
                 chatIndex++;
                 chatWindowText.text = $"아주머니께 혼날 거 같아....";
             }
-            else if (chatIndex == 7)
+            else if (chatIndex == 6)
             {
                 chatIndex++;
                 questMiniGame("RecipeGame", 102, "혼나고 싶지 않아..., 한번만 더 도와줄 수 있어?", "도와줘서 고마워 리타...!");
@@ -279,6 +287,7 @@ public class QuestData : MonoBehaviour
                 chatIndex = 0;
                 choiceButton.SetActive(false);
                 npcNameAndChat.SetActive(false);
+                npcChatManager.SetQuestCheck(false);
             }
         }
     }
@@ -304,6 +313,8 @@ public class QuestData : MonoBehaviour
             chatWindowText.text = _talkReTryText;
 
             choiceButton.SetActive(true);
+
+            npcChatManager.SetQuestCheck(false);
         }
         else
         {

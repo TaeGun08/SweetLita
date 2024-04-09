@@ -25,6 +25,7 @@ public class CookingGameManager : MonoBehaviour
     private bool gameClear = false;
     [SerializeField] private GameObject gameClearText;
     [SerializeField] private GameObject gameOverText;
+    [SerializeField] private Animator anim;
 
     private void Awake()
     {
@@ -81,6 +82,7 @@ public class CookingGameManager : MonoBehaviour
                 startTimeText.gameObject.SetActive(false);
                 gameStart = true;
                 gameStartTimer = 3f;
+                anim.SetBool("animStart", true);
             }
             return;
         }

@@ -36,6 +36,7 @@ public class NpcChatData : MonoBehaviour
                 ChatWindowText.text = "앞으로 잘부탁드려요!";
             }
             ChoiceButtons.SetActive(false);
+            npcChatManager.SetQuestCheck(false);
         });
 
         qeustButton.onClick.AddListener(() =>
@@ -58,6 +59,7 @@ public class NpcChatData : MonoBehaviour
             chatIndex = 0;
             NpcNameAndChat.SetActive(false);
             ChoiceButtons.SetActive(false);
+            npcChatManager.SetQuestCheck(false);
         });
 
         NpcNameAndChat.SetActive(false);
