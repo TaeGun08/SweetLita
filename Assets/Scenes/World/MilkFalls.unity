@@ -2151,7 +2151,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5001604259471665685, guid: a5dd928cdff155440beade2d37cc3ac2, type: 3}
       propertyPath: m_SortingOrder
-      value: -19
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5449532439007385131, guid: a5dd928cdff155440beade2d37cc3ac2, type: 3}
       propertyPath: m_RootOrder
@@ -5623,6 +5623,7 @@ MonoBehaviour:
   talkChoiceButton: {fileID: 1864190477}
   acceptButton: {fileID: 1864190479}
   notAcceptButton: {fileID: 1864190478}
+  chatIndex: 0
   playerMoveStop: 0
   playerImage: {fileID: 1160934723}
   npcImage: {fileID: 1864190481}

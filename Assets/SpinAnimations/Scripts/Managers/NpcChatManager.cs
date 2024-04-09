@@ -7,9 +7,9 @@ public class NpcChatManager : MonoBehaviour
     public static NpcChatManager Instance;
 
     [SerializeField] private int npcIndex;
-    private bool npcTalkCheck = false;
+    [SerializeField] private bool npcTalkCheck = false;
     private bool playerMoveStop = false;
-    private bool questCheck = false;
+    [SerializeField] private bool questCheck = false;
     private Npc npc;
 
     private void Awake()

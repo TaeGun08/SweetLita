@@ -83,6 +83,11 @@ public class QuestManager : MonoBehaviour
         return false;
     }
 
+    public List<int> GetQuestClearIndex()
+    {
+        return questIndex;
+    }
+
     /// <summary>
     /// 퀘스트를 수락했는지 확인하기 위한 함수
     /// </summary>

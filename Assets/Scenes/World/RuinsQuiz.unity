@@ -8161,6 +8161,7 @@ MonoBehaviour:
   talkChoiceButton: {fileID: 1690127047}
   acceptButton: {fileID: 1690127049}
   notAcceptButton: {fileID: 1690127048}
+  chatIndex: 0
   playerMoveStop: 0
   playerImage: {fileID: 1902231137}
   npcImage: {fileID: 1690127051}
@@ -8595,7 +8596,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5001604259471665685, guid: a5dd928cdff155440beade2d37cc3ac2, type: 3}
       propertyPath: m_SortingOrder
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5449532439007385131, guid: a5dd928cdff155440beade2d37cc3ac2, type: 3}
       propertyPath: m_RootOrder

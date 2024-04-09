@@ -100,15 +100,17 @@ public class Slot : MonoBehaviour
     {
         if (inventory.InventoryObj().activeSelf == true && setImage == false)
         {
+            Color color = itemImag.color;
             if (itemIndex == 0 || slotQuantity == 0)
             {
                 itemImag.sprite = null;
-                Color color = itemImag.color;
                 color.a = 0;
                 itemImag.color = color;
                 return;
             }
 
+            color.a = 1;
+            itemImag.color = color;
             itemImag.sprite = itemManager.GetItemSprite(itemIndex);
             setImage = true;
         }

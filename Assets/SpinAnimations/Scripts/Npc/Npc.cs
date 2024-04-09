@@ -33,6 +33,11 @@ public class Npc : MonoBehaviour
         int count = questIndex.Count;
         for (int i = 0; i < count; i++)
         {
+            if (questManager.GetQuestClearIndex()[i] == questIndex[i])
+            {
+                questIndex.Remove(i);
+            }
+
             if (npcChatManager.GetQuestCheck() == true && questManager.GetCurQuestIndex() == questIndex[i])
             {
                 questManager.QuestAccept(npcIndex, questIndex[i]);

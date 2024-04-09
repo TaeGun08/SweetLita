@@ -29,11 +29,11 @@ public class NpcChatData : MonoBehaviour
             chatIndex = 100;
             if (npcChatManager.GetNpcIndex() == 10)
             {
-                ChatWindowText.text = "저는 영식이라고 해요..";
+                ChatWindowText.text = ".....";
             }
             else if (npcChatManager.GetNpcIndex() == 11)
             {
-                ChatWindowText.text = "오늘도 마을 분위기가 좋네";
+                ChatWindowText.text = "앞으로 잘부탁드려요!";
             }
             ChoiceButtons.SetActive(false);
         });
@@ -90,7 +90,7 @@ public class NpcChatData : MonoBehaviour
         {
             if (npcChatManager.GetNpcIndex() == 10)
             {
-                NpcNameText.text = "영식이";
+                NpcNameText.text = "소년";
                 npcImage.sprite = npcSprites[0];
                 
                 if (chatIndex == 0)
@@ -98,17 +98,17 @@ public class NpcChatData : MonoBehaviour
                     npcChatManager.SetPlayerMoveStop(true);
                     NpcNameAndChat.SetActive(true);
                     chatIndex++;
-                    ChatWindowText.text = "안녕하세요...";
+                    ChatWindowText.text = ".....";
                 }
                 else if (chatIndex == 1)
                 {
                     ChoiceButtons.SetActive(true);
-                    ChatWindowText.text = "저한테 무슨 볼일이라도...";
+                    ChatWindowText.text = ".....";
                 }
                 else if (chatIndex == 100)
                 {
                     chatIndex++;
-                    ChatWindowText.text = "딱히 할 말이 없네요..";
+                    ChatWindowText.text = ".....";
                 }
                 else if (chatIndex == 101)
                 {
@@ -120,7 +120,7 @@ public class NpcChatData : MonoBehaviour
             }
             else if (npcChatManager.GetNpcIndex() == 11)
             {
-                NpcNameText.text = "꽃분이";
+                NpcNameText.text = "소녀";
                 npcImage.sprite = npcSprites[1];
 
                 if (chatIndex == 0)
@@ -128,17 +128,17 @@ public class NpcChatData : MonoBehaviour
                     npcChatManager.SetPlayerMoveStop(true);
                     NpcNameAndChat.SetActive(true);
                     chatIndex++;
-                    ChatWindowText.text = "안녕!";
+                    ChatWindowText.text = "안녕하세요!";
                 }
                 else if (chatIndex == 1)
                 {
                     ChoiceButtons.SetActive(true);
-                    ChatWindowText.text = "너가 새로왔다던 그 친구구나?";
+                    ChatWindowText.text = "무슨 일이신가요?";
                 }
                 else if (chatIndex == 100)
                 {
                     chatIndex++;
-                    ChatWindowText.text = "다음에 보자!";
+                    ChatWindowText.text = "...!";
                 }
                 else if (chatIndex == 101)
                 {

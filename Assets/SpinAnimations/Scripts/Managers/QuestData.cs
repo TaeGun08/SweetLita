@@ -21,7 +21,7 @@ public class QuestData : MonoBehaviour
     [SerializeField, Tooltip("퀘스트 거절버튼")] private Button notAcceptButton;
     private TMP_Text chatWindowText; //Npc의 말을 표시할 텍스트
     private TMP_Text npcNameText; //Npc의 이름을 표시할 텍스트
-    private int chatIndex;  //다음 대화를 진행시켜주기 위한 변수
+    [SerializeField] private int chatIndex;  //다음 대화를 진행시켜주기 위한 변수
     [SerializeField] private bool playerMoveStop = false; //플레이어의 움직임을 멈추게 하는 변수
     [SerializeField] private Image playerImage;
     [SerializeField] private Image npcImage;
@@ -191,8 +191,7 @@ public class QuestData : MonoBehaviour
             else if (chatIndex == 100)
             {
                 playerMoveStop = true;
-                npcNameAndChat.SetActive(true);
-                questClearIndex(100, 5, 101, $"치즈가 부족해요...", $"리타님...! 감사해요!!!");
+                questClearIndex(100, 5, $"치즈가 부족해요...", $"리타님...! 감사해요!!!");
             }
             else if (chatIndex == 101)
             {
@@ -204,9 +203,9 @@ public class QuestData : MonoBehaviour
             {
                 npcImage.sprite = npcGirlSprites[2];
                 questManager.SetCurQuestIndex(0);
-                questManager.SetQuestIndex(101);
                 playerMoveStop = false;
                 chatIndex = 0;
+                questManager.SetQuestIndex(101);
                 choiceButton.SetActive(false);
                 npcNameAndChat.SetActive(false);
             }
@@ -217,6 +216,7 @@ public class QuestData : MonoBehaviour
         {
             talkChoiceButton.SetActive(false);
             npcNameText.text = $"소년";
+            npcImage.sprite = npcBoySprites[4];
 
             if (chatIndex == 0)
             {
@@ -330,7 +330,7 @@ public class QuestData : MonoBehaviour
     /// <param name="_addIndex"></param>
     /// <param name="_notClearChat"></param>
     /// <param name="_clearChat"></param>
-    private void questClearIndex(int _itemIndex, int _itemQuantity, int _addIndex, string _notClearChat, 
+    private void questClearIndex(int _itemIndex, int _itemQuantity, string _notClearChat, 
         string _clearChat)
     {
         chatIndex++;
@@ -340,10 +340,9 @@ public class QuestData : MonoBehaviour
         }
         else
         {
+            chatIndex = 201;
             inventory.QuestItem(_itemIndex, _itemQuantity);
             chatWindowText.text = _clearChat;
-            questManager.SetQuestIndex(_addIndex);
-            chatIndex = 201;
         }
 
         npcNameAndChat.SetActive(true);
