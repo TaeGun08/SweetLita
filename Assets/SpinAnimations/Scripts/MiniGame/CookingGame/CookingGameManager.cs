@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CookingGameManager : MonoBehaviour
 {
@@ -26,6 +27,9 @@ public class CookingGameManager : MonoBehaviour
     [SerializeField] private GameObject gameClearText;
     [SerializeField] private GameObject gameOverText;
     [SerializeField] private Animator anim;
+    [SerializeField] private GameObject recipeObj;
+    [SerializeField] private Button timerButton;
+    private bool timerStart = false;
 
     private void Awake()
     {
@@ -37,6 +41,14 @@ public class CookingGameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        recipeObj.SetActive(true);
+
+        timerButton.onClick.AddListener(() => 
+        {
+            recipeObj.SetActive(false);
+            timerStart = true;
+        });
 
         gameStartTimer = 3f;
     }
@@ -52,6 +64,11 @@ public class CookingGameManager : MonoBehaviour
 
     private void Update()
     {
+        if (timerStart == false)
+        {
+            return;
+        }
+
         if (gameClear == true)
         {
             Destroy(nodeBox);

@@ -76,7 +76,7 @@ public class MainSceneManager : MonoBehaviour
 
         if (PlayerPrefs.GetString(saveOptionValue) == string.Empty)
         {
-            Screen.SetResolution(1280, 720, true);
+            Screen.SetResolution(1280, 720, false);
             dropdown.value = 3;
             toggle.isOn = true;
             bgm.value = 75f / 100f;
@@ -135,6 +135,11 @@ public class MainSceneManager : MonoBehaviour
         resetButton.onClick.AddListener(() => 
         {
             PlayerPrefs.SetString(saveSceneName, string.Empty);
+            PlayerPrefs.SetString("bookSaveData", string.Empty);
+            PlayerPrefs.SetString("savePlayerPos", string.Empty);
+            PlayerPrefs.SetString("saveQuestIndex", string.Empty);
+            PlayerPrefs.SetString("saveMiniData", string.Empty);
+            PlayerPrefs.SetString("inventoryData", string.Empty);
             resetChoiceButton.SetActive(false);
         });
 
@@ -292,7 +297,7 @@ public class MainSceneManager : MonoBehaviour
     /// <param name="_saveScreenSize"></param>
     private void setSaveOptionData(SaveOption _saveScreenSize)
     {
-        Screen.SetResolution(_saveScreenSize.widthSize, _saveScreenSize.heightSize, _saveScreenSize.windowOn);
+        Screen.SetResolution(_saveScreenSize.widthSize, _saveScreenSize.heightSize, false);
         dropdown.value = _saveScreenSize.dropdownValue;
         toggle.isOn = _saveScreenSize.windowOn;
         bgm.value = _saveScreenSize.bgmValue / 100f;

@@ -5,6 +5,7 @@ using UnityEngine;
 public class MapBoundManager : MonoBehaviour
 {
     private Camera mainCam;
+
     [SerializeField] private BoxCollider2D boxCollider2D;
     [SerializeField] private Transform trsPlayer;
     private Bounds bounds;

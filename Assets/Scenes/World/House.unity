@@ -6980,6 +6980,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   npcIndex: 0
+  npcTalkCheck: 0
+  questCheck: 0
 --- !u!1 &1748122304
 GameObject:
   m_ObjectHideFlags: 0
@@ -7646,6 +7648,7 @@ MonoBehaviour:
   talkChoiceButton: {fileID: 508763983}
   acceptButton: {fileID: 508763985}
   notAcceptButton: {fileID: 508763984}
+  chatIndex: 0
   playerMoveStop: 0
   playerImage: {fileID: 791954553}
   npcImage: {fileID: 508763987}
@@ -8320,6 +8323,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fce245d47f5e4614cbeeba28d9650eaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainCam: {fileID: 1931383263}
   boxCollider2D: {fileID: 732254969}
   trsPlayer: {fileID: 380100943}
 --- !u!1 &2098378198

@@ -3431,6 +3431,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fce245d47f5e4614cbeeba28d9650eaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainCam: {fileID: 1158057588}
   boxCollider2D: {fileID: 313237313}
   trsPlayer: {fileID: 1052562621}
 --- !u!1 &644783803
@@ -6732,6 +6733,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   npcIndex: 0
+  npcTalkCheck: 0
+  questCheck: 0
 --- !u!1001 &1312504205
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7721,6 +7724,7 @@ MonoBehaviour:
   talkChoiceButton: {fileID: 1003287160}
   acceptButton: {fileID: 1003287162}
   notAcceptButton: {fileID: 1003287161}
+  chatIndex: 0
   playerMoveStop: 0
   playerImage: {fileID: 838700216}
   npcImage: {fileID: 1003287164}

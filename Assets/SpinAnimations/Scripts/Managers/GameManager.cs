@@ -362,7 +362,7 @@ public class GameManager : MonoBehaviour
     /// <param name="_saveScreenSize"></param>
     private void setSaveOptionData(SaveOption _saveScreenSize)
     {
-        Screen.SetResolution(_saveScreenSize.widthSize, _saveScreenSize.heightSize, _saveScreenSize.windowOn);
+        Screen.SetResolution(_saveScreenSize.widthSize, _saveScreenSize.heightSize, false);
         dropdown.value = _saveScreenSize.dropdownValue;
         toggle.isOn = _saveScreenSize.windowOn;
         bgm.value = _saveScreenSize.bgmValue / 100f;

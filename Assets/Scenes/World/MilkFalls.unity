@@ -5221,6 +5221,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fce245d47f5e4614cbeeba28d9650eaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainCam: {fileID: 200551283}
   boxCollider2D: {fileID: 1753770830}
   trsPlayer: {fileID: 630923752}
 --- !u!1 &1782371912
@@ -6101,6 +6102,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   npcIndex: 0
+  npcTalkCheck: 0
+  questCheck: 0
 --- !u!1001 &1908107808
 PrefabInstance:
   m_ObjectHideFlags: 0

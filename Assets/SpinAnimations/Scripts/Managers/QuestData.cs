@@ -102,6 +102,7 @@ public class QuestData : MonoBehaviour
                 playerImage.gameObject.SetActive(true);
                 npcImage.gameObject.SetActive(false);
                 chatIndex++;
+                npcNameText.text = $"리타";
                 chatWindowText.text = $"무슨 일 있어?";
             }
             else if (chatIndex == 3)
@@ -181,15 +182,11 @@ public class QuestData : MonoBehaviour
             }
             else if (chatIndex == 2)
             {
-                playerImage.gameObject.SetActive(true);
-                npcImage.gameObject.SetActive(false);
                 chatIndex++;
                 chatWindowText.text = $"제가 깜빡해버렸어요...";
             }
             else if (chatIndex == 3)
             {
-                playerImage.gameObject.SetActive(false);
-                npcImage.gameObject.SetActive(true);
                 chatIndex++;
                 chatWindowText.text = $"도와주실 수 있으신가요...?";
                 choiceButton.SetActive(true);
@@ -246,6 +243,7 @@ public class QuestData : MonoBehaviour
                 playerImage.gameObject.SetActive(true);
                 npcImage.gameObject.SetActive(false);
                 chatIndex++;
+                npcNameText.text = $"리타";
                 chatWindowText.text = $"무슨 일이야?";
             }
             else if (chatIndex == 3)

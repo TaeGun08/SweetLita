@@ -106,7 +106,7 @@ public class InputController : MonoBehaviour
     /// </summary>
     private void followCam()
     {
-        mainCam.transform.position = transform.position + new Vector3(0f, 0f, -10f);
+        //mainCam.transform.position = transform.position + new Vector3(0f, 0f, mainCam.transform.position.z);
     }
 
     /// <summary>
