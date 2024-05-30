@@ -6,33 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/MainScene.unity
+    path: Assets/Scenes/Main.unity
     guid: bfa6385bdff2edc419e7c02df4c52ba7
   - enabled: 1
-    path: Assets/Scenes/PrologueScene.unity
-    guid: 0a836bee6a6718b47a8554b2f45fca6a
+    path: Assets/Scenes/Chapter.unity
+    guid: ed61a7e66b8e73a49897ae65ee4564c7
   - enabled: 1
-    path: Assets/Scenes/World/DessertVillage.unity
-    guid: 4d2e3f903a87b70479b9bcb8767e52e6
-  - enabled: 1
-    path: Assets/Scenes/World/MilkFalls.unity
-    guid: 0ea69c0cc97ed3b47b2f1b429e6482fb
-  - enabled: 1
-    path: Assets/Scenes/World/House.unity
-    guid: 9bd9bc9af3c272849937d7c8c66c1e17
-  - enabled: 1
-    path: Assets/Scenes/MiniGameScene/CookingGame.unity
-    guid: 9827c034b0c55324fb570479776501d9
-  - enabled: 1
-    path: Assets/Scenes/MiniGameScene/PuzzleGame.unity
+    path: Assets/Scenes/Puzzle.unity
     guid: 1acad59dc22b0c14f80074b7eb23e17a
-  - enabled: 1
-    path: Assets/Scenes/MiniGameScene/RecipeGame.unity
-    guid: dd8adff1acc4eef4a87748abb4013830
-  - enabled: 1
-    path: Assets/Scenes/World/Ruins.unity
-    guid: ec194a4386f07614b8e9c17fa3cc3277
-  - enabled: 1
-    path: Assets/Scenes/World/RuinsQuiz.unity
-    guid: bc97ca6c2584010449723e6ff0490c8f
   m_configObjects: {}
