@@ -923,22 +923,22 @@ MonoBehaviour:
   pieceObj: {fileID: 582054488277238510, guid: b18100bb1a4c5ff4abe64d93a9394ec8, type: 3}
   claerTextObj: {fileID: 783076339}
   puzzleSprites:
-  - {fileID: 21300000, guid: c03fba7a9b9eae74291dbb0d48241be1, type: 3}
-  - {fileID: 21300000, guid: 45780cd0c1fd33343a37ea05fa88853e, type: 3}
-  - {fileID: 21300000, guid: 8651798df26cb1a489be94ae8aff85fc, type: 3}
-  - {fileID: 21300000, guid: 1eeb8f2f569745d4496e1765b647161c, type: 3}
-  - {fileID: 21300000, guid: 30a4880ca52aea042b69fe9bbe739284, type: 3}
-  - {fileID: 21300000, guid: 0c9755243e9942a41bfb8d4b3a46a254, type: 3}
-  - {fileID: 21300000, guid: 78697278b8e7d9940bf198b43659a8e9, type: 3}
-  - {fileID: 21300000, guid: c7fe962d802d99740a09c17d1eb544bb, type: 3}
-  - {fileID: 21300000, guid: 2ed2a8fd888c2a84ba0401e05257a0d8, type: 3}
-  - {fileID: 21300000, guid: 1389db12abd918d4aae1b10026fcc803, type: 3}
-  - {fileID: 21300000, guid: 39d1c82782dfe8149becc776b46edc2c, type: 3}
-  - {fileID: 21300000, guid: 1e9712b4a2b1fd841a345895d0b4e4a4, type: 3}
-  - {fileID: 21300000, guid: d28cd1fb12de58c4793324d2890286fe, type: 3}
-  - {fileID: 21300000, guid: b60ef4ce276e1864689a4205514c4b84, type: 3}
-  - {fileID: 21300000, guid: 2617157955c1e124db6fbc84716f484e, type: 3}
-  - {fileID: 21300000, guid: 1a7eba37191257e4ca9f300bec21db2d, type: 3}
+  - {fileID: 21300000, guid: 0fb8e61f39e37b44888962b8b54a9549, type: 3}
+  - {fileID: 21300000, guid: d51aef3239aad0846a75d231a74e0e3d, type: 3}
+  - {fileID: 21300000, guid: 6f5455aa6fa8e7640af7e10c3b4e54f4, type: 3}
+  - {fileID: 21300000, guid: 454cfbf9cb64ff74ea82bfc1401f04a9, type: 3}
+  - {fileID: 21300000, guid: 28926419236b5f9418f9712b32ebcb00, type: 3}
+  - {fileID: 21300000, guid: 840c7ab5adf75704285ab0642ec6b4e8, type: 3}
+  - {fileID: 21300000, guid: 2786e1f0cb910754eb2d8c7d4a736a90, type: 3}
+  - {fileID: 21300000, guid: 792c252ccb6bd35409bc3c3566c05b00, type: 3}
+  - {fileID: 21300000, guid: 8ad5342f1e7a28446b3a6df2718fa220, type: 3}
+  - {fileID: 21300000, guid: 9b0b1fa48cce7de4497ad1d8921f25c6, type: 3}
+  - {fileID: 21300000, guid: 5337924e853904a48bc705dca5e68170, type: 3}
+  - {fileID: 21300000, guid: 0247d5fcdf4f66748a8eeb56457880c9, type: 3}
+  - {fileID: 21300000, guid: 1eafc62d9bcd91c428876d42c6ffa0a0, type: 3}
+  - {fileID: 21300000, guid: 45a2c7d4d2820bd4d93accd8608b235f, type: 3}
+  - {fileID: 21300000, guid: d771b7efe7c9b164faa97591ba49ae93, type: 3}
+  - {fileID: 21300000, guid: 832f4274a80d08240ade6aba65b608a5, type: 3}
   gameOverTimer: 0
   timerImage: {fileID: 1791680953}
   gameOverObj: {fileID: 1438166428}

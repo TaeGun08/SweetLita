@@ -60,7 +60,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0.3703339, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -90,3 +90,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nodeNumber: 1
+  nodeImages:
+  - {fileID: 21300000, guid: 8cb8741a4c528c74eaf2081136556abd, type: 3}
+  - {fileID: 21300000, guid: 16be74fc006c39842ad0a5b002b79e38, type: 3}
+  - {fileID: 21300000, guid: 6c60a92fc587820439721fbf0812fc62, type: 3}
+  - {fileID: 21300000, guid: 310157bcdc4e48c4c86fffcd2c146763, type: 3}

@@ -7,12 +7,12 @@ public class MusicNode : MonoBehaviour
 {
     [Header("노드 설정")]
     [SerializeField, Tooltip("노드 번호")] private int nodeNumber;
-
-    private Image nodeColor;
+    [SerializeField, Tooltip("노드 이미지")] private List<Sprite> nodeImages;
+    private Image nodeImage;
 
     private void Awake()
     {
-        nodeColor = GetComponent<Image>();
+        nodeImage = GetComponent<Image>();
     }
 
     /// <summary>
@@ -25,19 +25,19 @@ public class MusicNode : MonoBehaviour
         switch (_number)
         {
             case 0:
-                nodeColor.color = Color.red;
+                nodeImage.sprite = nodeImages[0];
                 nodeNumber = _number;
                 return KeyCode.UpArrow;
             case 1:
-                nodeColor.color = Color.blue;
+                nodeImage.sprite = nodeImages[1];
                 nodeNumber = _number;
                 return KeyCode.DownArrow;
             case 2:
-                nodeColor.color = Color.yellow;
+                nodeImage.sprite = nodeImages[2];
                 nodeNumber = _number;
                 return KeyCode.LeftArrow;
             case 3:
-                nodeColor.color = Color.green;
+                nodeImage.sprite = nodeImages[3];
                 nodeNumber = _number;
                 return KeyCode.RightArrow;
         }

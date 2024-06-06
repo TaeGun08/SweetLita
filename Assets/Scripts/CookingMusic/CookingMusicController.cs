@@ -52,7 +52,7 @@ public class CookingMusicController : MonoBehaviour
     {
         int createNodeNumber = 0;
 
-        Vector3 trsPos = new Vector3(500, 800, 0);
+        Vector3 trsPos = new Vector3(500, 770, 0);
 
         for (int i = 0; i < 23; i++)
         {
