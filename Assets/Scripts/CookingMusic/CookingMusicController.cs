@@ -1,3 +1,4 @@
+using Spine.Unity;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -52,14 +53,15 @@ public class CookingMusicController : MonoBehaviour
     {
         int createNodeNumber = 0;
 
-        Vector3 trsPos = new Vector3(500, 770, 0);
+        //Vector3 trsPos = new Vector3(500, 770, 0);
+        Vector3 trsPos = new Vector3(-2.5f, 1.5f, 0);
 
         for (int i = 0; i < 23; i++)
         {
             int randomNode = Random.Range(0, 4);
 
-            GameObject nodeObj = Instantiate(musicManager.GetNodeObject(), 
-                nodeVec(createNodeNumber, trsPos), Quaternion.identity, musicManager.GetCanvas().transform);
+            GameObject nodeObj = Instantiate(musicManager.GetNodeObject(randomNode), 
+                nodeVec(createNodeNumber, trsPos), Quaternion.identity, transform);
             nodeObject.Add(nodeObj);
 
             MusicNode nodeSc = nodeObj.GetComponent<MusicNode>();
@@ -107,17 +109,29 @@ public class CookingMusicController : MonoBehaviour
     {
         if (Input.GetKeyDown(nodeKey[nextNode]) == Input.GetKeyDown(_keyCode))
         {
-            nodeObject[nextNode].SetActive(false);
+            SkeletonAnimation spineAnim = nodeObject[nextNode].GetComponent<SkeletonAnimation>();
+
             nextNode++;
+
+            if (_keyCode == KeyCode.UpArrow)
+            {
+                spineAnim.AnimationName = "SUp";
+            }
+            else if (_keyCode == KeyCode.DownArrow)
+            {
+                spineAnim.AnimationName = "SDown";
+            }
+            else if (_keyCode == KeyCode.LeftArrow)
+            {
+                spineAnim.AnimationName = "SLeft";
+            }
+            else if (_keyCode == KeyCode.RightArrow)
+            {
+                spineAnim.AnimationName = "SRight";
+            }
         }
         else
         {
-            for (int i = 0; i < 23; i++)
-            {
-                nodeObject[i].SetActive(true);
-            }
-
-            nextNode = 0;
             heartObject[--playerHeart].SetActive(false);
         }
     }
@@ -140,29 +154,29 @@ public class CookingMusicController : MonoBehaviour
             case 4:
             case 5:
             case 6:
-                return new Vector3(_trsPos.x + 150f, _trsPos.y, 0);
+                return new Vector3(_trsPos.x + 1f, _trsPos.y, 0);
             case 7:
-                return new Vector3(_trsPos.x, _trsPos.y - 150f, 0);
+                return new Vector3(_trsPos.x, _trsPos.y - 1f, 0);
             case 8:
-                return new Vector3(_trsPos.x, _trsPos.y - 150f, 0);
+                return new Vector3(_trsPos.x, _trsPos.y - 1f, 0);
             case 9:
             case 10:
             case 11:
             case 12:
             case 13:
             case 14:
-                return new Vector3(_trsPos.x - 150f, _trsPos.y, 0);
+                return new Vector3(_trsPos.x - 1f, _trsPos.y, 0);
             case 15:
-                return new Vector3(_trsPos.x, _trsPos.y - 150f, 0);
+                return new Vector3(_trsPos.x, _trsPos.y - 1f, 0);
             case 16:
-                return new Vector3(_trsPos.x, _trsPos.y - 150f, 0);
+                return new Vector3(_trsPos.x, _trsPos.y - 1f, 0);
             case 17:
             case 18:
             case 19:
             case 20:
             case 21:
             case 22:
-                return new Vector3(_trsPos.x + 150f, _trsPos.y, 0);
+                return new Vector3(_trsPos.x + 1f, _trsPos.y, 0);
         }
 
         return new Vector3(0, 0, 0);

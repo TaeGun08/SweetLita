@@ -9,7 +9,7 @@ public class CookingMusicManager : MonoBehaviour
 
     [Header("ÄíÅ· ¹ÂÁ÷ ¸Å´ÏÀú")]
     [SerializeField, Tooltip("Äµ¹ö½º")] private Canvas canvas;
-    [SerializeField, Tooltip("³ëµå ÇÁ¸®ÆÕ")] private GameObject nodePrefab;
+    [SerializeField, Tooltip("³ëµå ÇÁ¸®ÆÕ")] private List<GameObject> nodePrefab;
 
     private void Awake()
     {
@@ -23,9 +23,9 @@ public class CookingMusicManager : MonoBehaviour
         }
     }
 
-    public GameObject GetNodeObject()
+    public GameObject GetNodeObject(int _nodeIndex)
     {
-        return nodePrefab;
+        return nodePrefab[_nodeIndex];
     }
 
     public Canvas GetCanvas()

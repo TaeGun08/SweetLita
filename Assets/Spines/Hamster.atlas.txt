@@ -1,0 +1,41 @@
+Hamster.png
+	size: 279, 268
+	filter: Linear, Linear
+	pma: true
+	scale: 0.5
+Arm
+	bounds: 254, 107, 36, 22
+	offsets: 1, 1, 38, 24
+	rotate: 90
+Body
+	bounds: 2, 129, 131, 137
+	offsets: 0, 10, 131, 147
+Cloak1
+	bounds: 150, 54, 109, 29
+	offsets: 1, 0, 111, 30
+Cloak2
+	bounds: 2, 70, 146, 57
+	offsets: 1, 1, 148, 59
+Face
+	bounds: 120, 15, 72, 37
+	offsets: 0, 1, 73, 39
+Head
+	bounds: 135, 145, 142, 121
+	offsets: 0, 0, 142, 122
+LegL
+	bounds: 2, 2, 23, 16
+	offsets: 1, 4, 25, 25
+LegR
+	bounds: 252, 27, 25, 23
+	offsets: 0, 1, 25, 25
+	rotate: 90
+Milk
+	bounds: 150, 85, 58, 102
+	offsets: 1, 0, 60, 103
+	rotate: 90
+Ribon
+	bounds: 194, 11, 56, 41
+	offsets: 1, 1, 58, 43
+Shadow
+	bounds: 2, 20, 116, 48
+	offsets: 1, 0, 118, 49

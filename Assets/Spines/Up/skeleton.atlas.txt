@@ -1,0 +1,25 @@
+skeleton.png
+	size: 1929, 1821
+	filter: Linear, Linear
+	pma: true
+	scale: 0.5
+Up
+	bounds: 2, 2, 1219, 1245
+	offsets: 4, 4, 1223, 1249
+	rotate: 90
+Up1
+	bounds: 1250, 574, 677, 1245
+	offsets: 2, 0, 680, 1245
+Up2
+	bounds: 2, 1223, 596, 1246
+	offsets: 2, 2, 600, 1248
+	rotate: 90
+
+skeleton_2.png
+	size: 1223, 1249
+	filter: Linear, Linear
+	pma: true
+	scale: 0.5
+Up0
+	bounds: 2, 2, 1219, 1245
+	offsets: 4, 4, 1223, 1249

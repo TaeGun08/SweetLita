@@ -1,0 +1,138 @@
+{
+"skeleton": {
+	"hash": "DVJuuoP7AEo",
+	"spine": "4.2.29",
+	"x": -1284,
+	"y": -1559.11,
+	"width": 2573.06,
+	"height": 3111.06,
+	"images": "./Image/",
+	"audio": "./audio"
+},
+"bones": [
+	{ "name": "root" },
+	{ "name": "Down2", "parent": "root", "x": 401.2, "y": -225.59 },
+	{ "name": "Down1", "parent": "root", "x": -623.27, "y": -61.67 }
+],
+"slots": [
+	{ "name": "Down", "bone": "root", "attachment": "Down" },
+	{ "name": "Down2", "bone": "Down2", "attachment": "Down2" },
+	{ "name": "Down1", "bone": "Down1", "attachment": "Down1" },
+	{ "name": "Down0", "bone": "root", "attachment": "Down0" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"Down": {
+				"Down": { "width": 2568, "height": 3100 }
+			},
+			"Down0": {
+				"Down0": { "width": 2568, "height": 3100 }
+			},
+			"Down1": {
+				"Down1": { "x": 113.31, "y": 143.63, "width": 1540, "height": 2940 }
+			},
+			"Down2": {
+				"Down2": { "x": 117.86, "y": 216.48, "width": 1540, "height": 3100 }
+			}
+		}
+	}
+],
+"animations": {
+	"FDown": {
+		"slots": {
+			"Down0": {
+				"attachment": [
+					{}
+				]
+			},
+			"Down1": {
+				"attachment": [
+					{}
+				]
+			},
+			"Down2": {
+				"attachment": [
+					{}
+				]
+			}
+		},
+		"bones": {
+			"root": {
+				"rotate": [
+					{ "time": 0.0667, "value": 5 },
+					{ "time": 0.1333 },
+					{ "time": 0.2, "value": -5 },
+					{ "time": 0.2667 },
+					{ "time": 0.3333, "value": 5 }
+				]
+			}
+		}
+	},
+	"SDown": {
+		"slots": {
+			"Down": {
+				"rgba": [
+					{ "time": 0.1, "color": "ffffff64" },
+					{ "time": 0.1667, "color": "ffffff00" }
+				]
+			},
+			"Down0": {
+				"rgba": [
+					{ "time": 0.0333, "color": "ffffff96" }
+				],
+				"attachment": [
+					{},
+					{ "time": 0.0333, "name": "Down0" },
+					{ "time": 0.0667 }
+				]
+			},
+			"Down1": {
+				"rgba": [
+					{ "time": 0.1667, "color": "ffffffff" },
+					{ "time": 0.3333, "color": "ffffff00" }
+				],
+				"attachment": [
+					{},
+					{ "time": 0.0667, "name": "Down1" }
+				]
+			},
+			"Down2": {
+				"rgba": [
+					{ "time": 0.1667, "color": "ffffffff" },
+					{ "time": 0.3333, "color": "ffffff00" }
+				],
+				"attachment": [
+					{},
+					{ "time": 0.0667, "name": "Down2" }
+				]
+			}
+		},
+		"bones": {
+			"Down1": {
+				"rotate": [
+					{ "time": 0.1667 },
+					{ "time": 0.3333, "value": -30 }
+				],
+				"translate": [
+					{ "time": 0.1, "x": 13.66, "y": 121.67 },
+					{ "time": 0.1667, "x": 13.66, "y": 421.67 },
+					{ "time": 0.3333, "x": -464.03, "y": 552.29 }
+				]
+			},
+			"Down2": {
+				"rotate": [
+					{ "time": 0.1667 },
+					{ "time": 0.3333, "value": 30 }
+				],
+				"translate": [
+					{ "time": 0.1, "x": -27.32, "y": -124.41 },
+					{ "time": 0.1667, "x": -27.32, "y": -424.41 },
+					{ "time": 0.3333, "x": 768.77, "y": -431.35 }
+				]
+			}
+		}
+	}
+}
+}

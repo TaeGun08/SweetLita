@@ -1,3 +1,4 @@
+using Spine.Unity;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,14 +6,14 @@ using UnityEngine.UI;
 
 public class MusicNode : MonoBehaviour
 {
+    private SkeletonAnimation spineAnim;
+
     [Header("노드 설정")]
     [SerializeField, Tooltip("노드 번호")] private int nodeNumber;
-    [SerializeField, Tooltip("노드 이미지")] private List<Sprite> nodeImages;
-    private Image nodeImage;
 
-    private void Awake()
+    private void Start()
     {
-        nodeImage = GetComponent<Image>();
+        spineAnim = GetComponent<SkeletonAnimation>();
     }
 
     /// <summary>
@@ -25,23 +26,29 @@ public class MusicNode : MonoBehaviour
         switch (_number)
         {
             case 0:
-                nodeImage.sprite = nodeImages[0];
                 nodeNumber = _number;
                 return KeyCode.UpArrow;
             case 1:
-                nodeImage.sprite = nodeImages[1];
                 nodeNumber = _number;
                 return KeyCode.DownArrow;
             case 2:
-                nodeImage.sprite = nodeImages[2];
                 nodeNumber = _number;
                 return KeyCode.LeftArrow;
             case 3:
-                nodeImage.sprite = nodeImages[3];
                 nodeNumber = _number;
                 return KeyCode.RightArrow;
         }
 
         return KeyCode.None;
+    }
+
+    public SkeletonAnimation SpineAnim()
+    {
+        return spineAnim;
+    }
+
+    public int GetNumber()
+    {
+        return nodeNumber;
     }
 }

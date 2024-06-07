@@ -1,13 +1,16 @@
+using Spine.Unity;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class CowController : MonoBehaviour
 {
+    private SkeletonAnimation spineAnim;
+
     [Header("소 유적 게임 설정")]
     [SerializeField, Tooltip("소 얼굴")] private List<GameObject> cowFace;
     [SerializeField] private GameObject faceCheck;
-    [SerializeField, Tooltip("햄스터")] private GameObject hamsterPrefab;
+    [SerializeField, Tooltip("햄스터")] private GameObject hamsterObject;
     [Space]
     [SerializeField, Tooltip("게임클리어 텍스트")] private GameObject gameClearText;
     [SerializeField, Tooltip("게임오버 텍스트")] private GameObject gameOverText;
@@ -31,6 +34,11 @@ public class CowController : MonoBehaviour
 
         cowFace[1].SetActive(false);
         cowFace[2].SetActive(false);
+    }
+
+    private void Start()
+    {
+        spineAnim = hamsterObject.GetComponent<SkeletonAnimation>();
     }
 
     private void Update()
@@ -108,19 +116,32 @@ public class CowController : MonoBehaviour
     /// </summary>
     private void hamsterMoveCheck()
     {
-        if (Input.GetKeyDown(KeyCode.DownArrow))
+        if (Input.GetKey(KeyCode.DownArrow))
         {
+            spineAnim.AnimationName = "Idle";
             moveCheck = true;
+            return;
+        }
+        else if (Input.GetKeyUp(KeyCode.DownArrow))
+        {
+            moveCheck = false;
             return;
         }
 
         if (milkeGet.ReturnMilkeGet() == false && Input.GetKey(KeyCode.RightArrow))
         {
-            hamsterPrefab.transform.position += new Vector3(1f, 0f, 0f) * 1f * Time.deltaTime;
+            spineAnim.AnimationName = "Walk";
+            hamsterObject.transform.position += new Vector3(1f, 0f, 0f) * 1f * Time.deltaTime;
         }
         else if (milkeGet.ReturnMilkeGet() == true && Input.GetKey(KeyCode.LeftArrow))
         {
-            hamsterPrefab.transform.position += new Vector3(-1f, 0f, 0f) * 1f * Time.deltaTime;
+            spineAnim.AnimationName = "Walk";
+            hamsterObject.transform.position += new Vector3(-1f, 0f, 0f) * 1f * Time.deltaTime;
+            hamsterObject.transform.localScale = new Vector3(-0.4f, 0.4f, 1f);
+        }
+        else
+        {
+            spineAnim.AnimationName = "Idle";
         }
     }
 }
