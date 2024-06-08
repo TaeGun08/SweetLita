@@ -47,7 +47,7 @@ public class PictureChoice : MonoBehaviour, IPointerClickHandler
 
     private void Awake()
     {
-        numberText = transform.GetChild(0).GetComponent<TMP_Text>();
+        numberText = transform.GetChild(1).GetComponent<TMP_Text>();
 
         numberText.gameObject.SetActive(false);
     }

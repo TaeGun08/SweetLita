@@ -16,6 +16,7 @@ public class CookingMusicController : MonoBehaviour
     [SerializeField] private List<GameObject> heartObject;
     [Space]
     [SerializeField] private Image timerImage;
+    [SerializeField] private List<Transform> gridTrs;
 
     private int nextNode;
 
@@ -51,25 +52,16 @@ public class CookingMusicController : MonoBehaviour
     /// </summary>
     private void nodeInstantiate()
     {
-        int createNodeNumber = 0;
-
-        //Vector3 trsPos = new Vector3(500, 770, 0);
-        Vector3 trsPos = new Vector3(-2.5f, 1.5f, 0);
-
-        for (int i = 0; i < 23; i++)
+        for (int iNum = 0; iNum < 20; iNum++)
         {
             int randomNode = Random.Range(0, 4);
 
-            GameObject nodeObj = Instantiate(musicManager.GetNodeObject(randomNode), 
-                nodeVec(createNodeNumber, trsPos), Quaternion.identity, transform);
+            GameObject nodeObj = Instantiate(musicManager.GetNodeObject(randomNode), getGridTrs(iNum));
+
             nodeObject.Add(nodeObj);
 
             MusicNode nodeSc = nodeObj.GetComponent<MusicNode>();
             nodeKey.Add(nodeSc.GetKeyCode(randomNode));
-
-            trsPos = nodeVec(createNodeNumber, trsPos);
-
-            createNodeNumber++;
         }
     }
 
@@ -78,7 +70,7 @@ public class CookingMusicController : MonoBehaviour
     /// </summary>
     private void nodeCheck()
     {
-        if (nextNode > 22 || playerHeart == 0)
+        if (nextNode > 19 || playerHeart == 0)
         {
             return;
         }
@@ -109,76 +101,77 @@ public class CookingMusicController : MonoBehaviour
     {
         if (Input.GetKeyDown(nodeKey[nextNode]) == Input.GetKeyDown(_keyCode))
         {
-            SkeletonAnimation spineAnim = nodeObject[nextNode].GetComponent<SkeletonAnimation>();
+            SkeletonGraphic spineAnim = nodeObject[nextNode].GetComponent<SkeletonGraphic>();
 
             nextNode++;
 
             if (_keyCode == KeyCode.UpArrow)
             {
-                spineAnim.AnimationName = "SUp";
+                spineAnim.startingAnimation = "SUp";
             }
             else if (_keyCode == KeyCode.DownArrow)
             {
-                spineAnim.AnimationName = "SDown";
+                spineAnim.startingAnimation = "SDown";
             }
             else if (_keyCode == KeyCode.LeftArrow)
             {
-                spineAnim.AnimationName = "SLeft";
+                spineAnim.startingAnimation = "SLeft";
             }
             else if (_keyCode == KeyCode.RightArrow)
             {
-                spineAnim.AnimationName = "SRight";
+                spineAnim.startingAnimation = "SRight";
             }
+
+            spineAnim.AnimationState.SetAnimation(0, spineAnim.startingAnimation, false);
         }
         else
         {
+            SkeletonGraphic spineAnim = nodeObject[nextNode].GetComponent<SkeletonGraphic>();
+
+            if (nodeKey[nextNode] == KeyCode.UpArrow)
+            {
+                spineAnim.startingAnimation = "FUp";
+            }
+            else if (nodeKey[nextNode] == KeyCode.DownArrow)
+            {
+                spineAnim.startingAnimation = "FDown";
+            }
+            else if (nodeKey[nextNode] == KeyCode.LeftArrow)
+            {
+                spineAnim.startingAnimation = "FLeft";
+            }
+            else if (nodeKey[nextNode] == KeyCode.RightArrow)
+            {
+                spineAnim.startingAnimation = "FRight";
+            }
+
+            spineAnim.AnimationState.SetAnimation(0, spineAnim.startingAnimation, false);
+
             heartObject[--playerHeart].SetActive(false);
         }
     }
 
-    /// <summary>
-    /// 노드의 위치를 받아오기 위한 함수
-    /// </summary>
-    /// <param name="_number"></param>
-    /// <param name="_trsPos"></param>
-    /// <returns></returns>
-    private Vector3 nodeVec(int _number, Vector3 _trsPos)
+    private Transform getGridTrs(int _iNum)
     {
-        switch (_number)
+        if (_iNum < 6)
         {
-            case 0:
-                return _trsPos;
-            case 1:
-            case 2:
-            case 3:
-            case 4:
-            case 5:
-            case 6:
-                return new Vector3(_trsPos.x + 1f, _trsPos.y, 0);
-            case 7:
-                return new Vector3(_trsPos.x, _trsPos.y - 1f, 0);
-            case 8:
-                return new Vector3(_trsPos.x, _trsPos.y - 1f, 0);
-            case 9:
-            case 10:
-            case 11:
-            case 12:
-            case 13:
-            case 14:
-                return new Vector3(_trsPos.x - 1f, _trsPos.y, 0);
-            case 15:
-                return new Vector3(_trsPos.x, _trsPos.y - 1f, 0);
-            case 16:
-                return new Vector3(_trsPos.x, _trsPos.y - 1f, 0);
-            case 17:
-            case 18:
-            case 19:
-            case 20:
-            case 21:
-            case 22:
-                return new Vector3(_trsPos.x + 1f, _trsPos.y, 0);
+            return gridTrs[0];
         }
-
-        return new Vector3(0, 0, 0);
+        else if (_iNum == 6)
+        {
+            return gridTrs[1];
+        }
+        else if (_iNum > 6 && _iNum < 13)
+        {
+            return gridTrs[2];
+        }
+        else if (_iNum == 13) 
+        {
+            return gridTrs[3];
+        }
+        else
+        {
+            return gridTrs[4];
+        }
     }
 }

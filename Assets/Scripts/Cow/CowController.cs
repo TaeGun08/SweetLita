@@ -2,6 +2,8 @@ using Spine.Unity;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class CowController : MonoBehaviour
 {
@@ -16,7 +18,12 @@ public class CowController : MonoBehaviour
     [SerializeField, Tooltip("게임오버 텍스트")] private GameObject gameOverText;
     [SerializeField] private MilkeGet milkeGet;
     [SerializeField] private ClearCheck check;
- 
+    [Space]
+    [SerializeField] private Image fadeImage;
+    private float fadeTimer;
+    [SerializeField] private bool fadeCheck = false;
+    private bool fadeInOutCheck = false;
+
     private bool changeFace = false;
     private float changeFaceTimer;
     private float randomTime;
@@ -39,12 +46,29 @@ public class CowController : MonoBehaviour
     private void Start()
     {
         spineAnim = hamsterObject.GetComponent<SkeletonAnimation>();
+
+        fadeTimer = 2;
+
+        fadeCheck = true;
+
+        fadeInOutCheck = true;
+
+        moveCheck = true;
     }
 
     private void Update()
     {
+        fadeInOut();
+
+        if (fadeCheck == true)
+        {
+            return;
+        }
+
         if (check.ReturnChear() == true)
         {
+            fadeCheck = true;
+            fadeImage.gameObject.SetActive(true);
             gameClearText.SetActive(true);
             return;
         }
@@ -102,6 +126,7 @@ public class CowController : MonoBehaviour
                 randomTime = cowFaceRandomTime;
                 changeFaceTimer = cowFaceRandomTime;
                 changeFace = false;
+                moveCheck = true;
             }
         }
 
@@ -116,13 +141,7 @@ public class CowController : MonoBehaviour
     /// </summary>
     private void hamsterMoveCheck()
     {
-        if (Input.GetKey(KeyCode.DownArrow))
-        {
-            spineAnim.AnimationName = "Idle";
-            moveCheck = true;
-            return;
-        }
-        else if (Input.GetKeyUp(KeyCode.DownArrow))
+        if (changeFace == true && (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.LeftArrow)))
         {
             moveCheck = false;
             return;
@@ -142,6 +161,44 @@ public class CowController : MonoBehaviour
         else
         {
             spineAnim.AnimationName = "Idle";
+        }
+    }
+
+    private void fadeInOut()
+    {
+        if (fadeCheck == true && fadeImage.gameObject.activeSelf == true)
+        {
+            Color fadeColor = fadeImage.color;
+
+            if (fadeColor.a != 0 && fadeInOutCheck == true)
+            {
+                fadeTimer -= Time.deltaTime;
+                fadeColor.a = fadeTimer;
+                fadeImage.color = fadeColor;
+
+                if (fadeColor.a <= 0)
+                {
+                    fadeTimer = 0;
+                    fadeImage.gameObject.SetActive(false);
+                    fadeInOutCheck = false;
+                    fadeCheck = false;
+                }
+            }
+            else if (fadeColor.a != 1 && fadeInOutCheck == false)
+            {
+                fadeTimer += Time.deltaTime / 2;
+                fadeColor.a = fadeTimer;
+                fadeImage.color = fadeColor;
+
+                if (fadeColor.a >= 1)
+                {
+                    fadeTimer = 2;
+                    fadeImage.gameObject.SetActive(false);
+                    SceneManager.LoadSceneAsync("Chapter");
+                    fadeInOutCheck = true;
+                    fadeCheck = false;
+                }
+            }
         }
     }
 }

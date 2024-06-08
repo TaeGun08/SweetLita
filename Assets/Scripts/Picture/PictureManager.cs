@@ -71,7 +71,7 @@ public class PictureManager : MonoBehaviour
 
     public void PictureCheck(int _index)
     {
-        if (choiceNumber < 4)
+        if (choiceNumber < 3)
         {
             if (pictureIndex[choiceNumber] == _index)
             {
@@ -88,8 +88,20 @@ public class PictureManager : MonoBehaviour
     {
         if (clearCheck[0] == true &&
             clearCheck[1] == true &&
-            clearCheck[2] == true &&
-            clearCheck[3] == true)
+            clearCheck[2] == true)
+        {
+            return true;
+        }
+
+        return false;
+    }
+
+    public bool GameOverCheck()
+    {
+        if (choiceNumber >= 3 && 
+            (clearCheck[0] == false || 
+            clearCheck[1] == false || 
+            clearCheck[2] == false))
         {
             return true;
         }

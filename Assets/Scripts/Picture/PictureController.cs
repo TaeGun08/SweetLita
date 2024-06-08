@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PictureController : MonoBehaviour
 {
@@ -8,26 +10,67 @@ public class PictureController : MonoBehaviour
 
     [Header("그림 설정")]
     [SerializeField, Tooltip("다음 사진까지의 시간")] private float nextTime;
-    private float timer;
+    [SerializeField] private float timer;
     [SerializeField] private List<int> nextNumber = new List<int>();
     private int nextIndex;
     private bool choiceStart = false;
-    [SerializeField] private GameObject clearObject;
+    [SerializeField] private TMP_Text gameClearOverText;
+    [Space]
+    [SerializeField] private Image frameImage;
+    [SerializeField] private List<Sprite> frameSprites;
+    [Space]
+    [SerializeField] private GameObject explanationWindow;
+    [SerializeField] private Button gameStartButton;
+    private bool gameStart = false;
+    [Space]
+    [SerializeField] private Image fadeImage;
+    private float fadeTimer;
+    [SerializeField] private bool fadeCheck = false;
+    private bool fadeInOutCheck = false;
 
     private void Start()
     {
         pictureManager = PictureManager.Instance;
 
-        timer = nextTime;
+        gameStartButton.onClick.AddListener(() => 
+        {
+            explanationWindow.SetActive(false);
+            gameStart = true;
+        });
+
+        timer = 3;
+
+        fadeTimer = 2;
+
+        fadeCheck = true;
+
+        fadeInOutCheck = true;
+
+        frameImage.sprite = frameSprites[0];
     }
 
     private void Update()
     {
-        if (pictureManager.GameClearCheck() == true && clearObject.activeSelf == false)
+        fadeInOut();
+
+        if (gameStart == false && fadeCheck == false)
         {
-            clearObject.SetActive(true);
             return;
         }
+
+        if (pictureManager.GameClearCheck() == true && gameClearOverText.gameObject.activeSelf == false)
+        {
+            gameClearOverText.text = "게임 클리어!";
+            gameClearOverText.gameObject.SetActive(true);
+            return;
+        }
+        else if (pictureManager.GameOverCheck() == true)
+        {
+            gameClearOverText.text = "게임 오버!";
+            gameClearOverText.gameObject.SetActive(true);
+            return;
+        }
+
         nextPicture();
         timerCheck();
     }
@@ -42,6 +85,7 @@ public class PictureController : MonoBehaviour
             {
                 for (int i = 0; i < nextNumber.Count; i++)
                 {
+                    frameImage.sprite = frameSprites[1];
                     pictureManager.GetChoicePictureObject(nextNumber[i]).SetActive(true);
                 }
 
@@ -52,7 +96,7 @@ public class PictureController : MonoBehaviour
             return;
         }
 
-        if (nextNumber.Count >= 4 && choiceStart == false)
+        if (nextNumber.Count >= 3 && choiceStart == false)
         {
             timer -= Time.deltaTime;
 
@@ -75,12 +119,12 @@ public class PictureController : MonoBehaviour
     /// </summary>
     private void nextPicture()
     {
-        if (nextNumber.Count == 4)
+        if (nextNumber.Count == 3)
         {
             return;
         }
 
-        int randomNumber = Random.Range(0, 4);
+        int randomNumber = Random.Range(0, 3);
 
         if (nextNumber.Count == 0)
         {
@@ -113,5 +157,42 @@ public class PictureController : MonoBehaviour
         }
 
         return false;
+    }
+
+    private void fadeInOut()
+    {
+        if (fadeCheck == true && fadeImage.gameObject.activeSelf == true)
+        {
+            Color fadeColor = fadeImage.color;
+
+            if (fadeColor.a != 0 && fadeInOutCheck == true)
+            {
+                fadeTimer -= Time.deltaTime;
+                fadeColor.a = fadeTimer;
+                fadeImage.color = fadeColor;
+
+                if (fadeColor.a <= 0)
+                {
+                    fadeTimer = 2;
+                    fadeImage.gameObject.SetActive(false);
+                    fadeInOutCheck = false;
+                    fadeCheck = false;
+                }
+            }
+            else if (fadeColor.a != 1 && fadeInOutCheck == false)
+            {
+                fadeTimer += Time.deltaTime;
+                fadeColor.a = fadeTimer;
+                fadeImage.color = fadeColor;
+
+                if (fadeColor.a >= 1)
+                {
+                    fadeTimer = 2;
+                    fadeImage.gameObject.SetActive(false);
+                    fadeInOutCheck = true;
+                    fadeCheck = false;
+                }
+            }
+        }
     }
 }

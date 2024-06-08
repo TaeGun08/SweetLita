@@ -14,11 +14,6 @@ public class ClearCheck : MonoBehaviour
         }
     }
 
-    private void Awake()
-    {
-        gameObject.SetActive(false);
-    }
-
     public bool ReturnChear()
     {
         return clear;
