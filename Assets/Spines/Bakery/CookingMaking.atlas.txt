@@ -1,0 +1,121 @@
+CookingMaking.png
+	size: 1237, 775
+	filter: Linear, Linear
+	pma: true
+	scale: 0.5
+1
+	bounds: 1145, 563, 79, 210
+	offsets: 1, 1, 80, 211
+2
+	bounds: 2, 55, 73, 213
+	rotate: 90
+3
+	bounds: 956, 26, 69, 215
+	rotate: 90
+4
+	bounds: 963, 97, 65, 216
+	offsets: 0, 0, 66, 216
+	rotate: 90
+5
+	bounds: 699, 70, 59, 216
+	offsets: 0, 1, 59, 217
+	rotate: 90
+6
+	bounds: 212, 130, 203, 101
+	offsets: 0, 1, 203, 102
+Chocloate5
+	bounds: 699, 7, 61, 100
+	offsets: 0, 1, 62, 102
+	rotate: 90
+Chocloate5-3
+	bounds: 485, 2, 58, 49
+	offsets: 0, 1, 58, 50
+Chocolate0
+	bounds: 581, 131, 316, 100
+Chocolate1
+	bounds: 899, 131, 62, 100
+	offsets: 0, 1, 62, 102
+Chocolate1-1
+	bounds: 964, 164, 260, 101
+	offsets: 1, 0, 261, 101
+Chocolate1-2
+	bounds: 319, 21, 55, 52
+	offsets: 0, 0, 56, 53
+Chocolate1-3
+	bounds: 530, 53, 59, 49
+	offsets: 0, 1, 59, 50
+	rotate: 90
+Chocolate2
+	bounds: 1181, 62, 54, 100
+	offsets: 0, 0, 55, 101
+Chocolate2-1
+	bounds: 2, 130, 208, 101
+	offsets: 1, 0, 209, 102
+Chocolate2-2
+	bounds: 477, 59, 51, 53
+	offsets: 0, 0, 52, 54
+Chocolate2-3
+	bounds: 59, 4, 53, 49
+	offsets: 0, 0, 54, 49
+Chocolate3
+	bounds: 319, 75, 53, 101
+	offsets: 0, 0, 53, 102
+	rotate: 90
+Chocolate3-1
+	bounds: 417, 130, 162, 101
+	offsets: 1, 0, 163, 102
+Chocolate3-2
+	bounds: 376, 6, 51, 52
+	offsets: 0, 0, 51, 53
+	rotate: 90
+Chocolate3-3
+	bounds: 430, 7, 53, 50
+Chocolate4
+	bounds: 801, 11, 57, 101
+	offsets: 0, 1, 57, 102
+	rotate: 90
+Chocolate4-1
+	bounds: 581, 29, 116, 100
+	offsets: 0, 1, 116, 102
+Chocolate4-2
+	bounds: 422, 59, 53, 53
+Chocolate4-3
+	bounds: 2, 4, 55, 49
+	offsets: 0, 1, 55, 50
+Chocolate5-2
+	bounds: 217, 4, 54, 52
+	offsets: 0, 0, 55, 53
+Chocolate6
+	bounds: 217, 58, 70, 100
+	offsets: 1, 1, 71, 102
+	rotate: 90
+Chocolate6-2
+	bounds: 1173, 8, 61, 52
+	offsets: 0, 0, 61, 53
+Chocolate6-3
+	bounds: 1145, 275, 62, 49
+	offsets: 1, 1, 63, 50
+Cut1
+	bounds: 422, 114, 14, 119
+	rotate: 90
+Cut2
+	bounds: 1226, 326, 7, 120
+Cut3
+	bounds: 917, 9, 11, 120
+Cut4
+	bounds: 956, 7, 17, 118
+	rotate: 90
+Cut5
+	bounds: 930, 11, 24, 118
+Cut6
+	bounds: 1226, 448, 325, 7
+	offsets: 1, 0, 326, 7
+	rotate: 90
+Knife1
+	bounds: 1145, 351, 79, 210
+	offsets: 1, 1, 80, 211
+Layer 1
+	bounds: 964, 267, 506, 179
+	rotate: 90
+미니게임_쿠킹_배경
+	bounds: 2, 233, 960, 540

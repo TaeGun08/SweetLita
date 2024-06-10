@@ -1,7 +1,10 @@
+using Newtonsoft.Json;
 using Spine.Unity;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class CookingMusicController : MonoBehaviour
@@ -17,15 +20,67 @@ public class CookingMusicController : MonoBehaviour
     [Space]
     [SerializeField] private Image timerImage;
     [SerializeField] private List<Transform> gridTrs;
+    [Space]
+    [SerializeField] private TMP_Text text;
+    private bool gameClear = false;
 
     private int nextNode;
 
     private List<GameObject> nodeObject = new List<GameObject>();
     private List<KeyCode> nodeKey = new List<KeyCode>();
 
+    [Space]
+    [SerializeField] private Image fadeImage;
+    private float fadeTimer;
+    [SerializeField] private bool fadeCheck = false;
+    private bool fadeInOutCheck = false;
+    [Space]
+    [SerializeField] private GameObject explanationWindow;
+    [SerializeField] private Button gameStartButton;
+    private bool gameStart = false;
+    [Space]
+    [SerializeField] private GameObject gameEndObject;
+    [SerializeField] private List<Button> buttons;
+    private bool retry = false;
+    [Space]
+    [SerializeField] private TMP_Text gameClearOverText;
+    private float textChangeTimer;
+    private bool textChanageOn = false;
+    private float textStartTimer;
+    private bool textStartCheck = false;
+
     private void Awake()
     {
+        gameStartButton.onClick.AddListener(() =>
+        {
+            explanationWindow.SetActive(false);
+            gameStart = true;
+        });
+
+        buttons[0].onClick.AddListener(() =>
+        {
+            fadeCheck = true;
+            fadeImage.gameObject.SetActive(true);
+        });
+
+        buttons[1].onClick.AddListener(() =>
+        {
+            fadeCheck = true;
+            fadeImage.gameObject.SetActive(true);
+            retry = true;
+        });
+
         timer = musicTime;
+
+        fadeTimer = 2;
+
+        fadeCheck = true;
+
+        fadeInOutCheck = true;
+
+        textChangeTimer = 3;
+        gameClearOverText.text = "";
+        gameClearOverText.gameObject.SetActive(true);
     }
 
     private void Start()
@@ -37,8 +92,53 @@ public class CookingMusicController : MonoBehaviour
 
     private void Update()
     {
-        gameTimer();
-        nodeCheck();
+        fadeInOut();
+
+        if (gameStart == true && textChanageOn == false)
+        {
+            textChangeTimer -= Time.deltaTime;
+            gameClearOverText.text = $"{(int)(textChangeTimer + 1)}";
+            if (textChangeTimer <= 0)
+            {
+                gameClearOverText.text = $"";
+                textChanageOn = true;
+            }
+        }
+        else if (gameStart == true && textChanageOn == true)
+        {
+            textStartTimer += Time.deltaTime;
+
+            if (textStartTimer < 1f)
+            {
+                gameClearOverText.text = $"게임 스타트!";
+            }
+            else
+            {
+                gameClearOverText.text = $"";
+                gameClearOverText.gameObject.SetActive(false);
+                textStartCheck = true;
+            }
+        }
+
+        if (gameStart == true && textStartCheck == true)
+        {
+            if (gameClear == true)
+            {
+                gameEndObject.SetActive(true);
+                text.gameObject.SetActive(true);
+                text.text = "게임 클리어!";
+                return;
+            }
+            else if (playerHeart == 0)
+            {
+                gameEndObject.SetActive(true);
+                text.gameObject.SetActive(true);
+                text.text = "게임 오버!";
+                return;
+            }
+            gameTimer();
+            nodeCheck();
+        }
     }
 
     private void gameTimer()
@@ -70,7 +170,12 @@ public class CookingMusicController : MonoBehaviour
     /// </summary>
     private void nodeCheck()
     {
-        if (nextNode > 19 || playerHeart == 0)
+        if (nextNode > 19)
+        {
+            gameClear = true;
+            return;
+        }
+        else if (playerHeart == 0)
         {
             return;
         }
@@ -172,6 +277,59 @@ public class CookingMusicController : MonoBehaviour
         else
         {
             return gridTrs[4];
+        }
+    }
+
+    private void fadeInOut()
+    {
+        if (fadeCheck == true && fadeImage.gameObject.activeSelf == true)
+        {
+            Color fadeColor = fadeImage.color;
+
+            if (fadeColor.a != 0 && fadeInOutCheck == true)
+            {
+                fadeTimer -= Time.deltaTime;
+                fadeColor.a = fadeTimer;
+                fadeImage.color = fadeColor;
+
+                if (fadeColor.a <= 0)
+                {
+                    fadeTimer = 0;
+                    fadeImage.gameObject.SetActive(false);
+                    fadeInOutCheck = false;
+                    fadeCheck = false;
+                }
+            }
+            else if (fadeColor.a != 1 && fadeInOutCheck == false)
+            {
+                fadeTimer += Time.deltaTime / 2;
+                fadeColor.a = fadeTimer;
+                fadeImage.color = fadeColor;
+
+                if (fadeColor.a >= 1)
+                {
+                    if (retry == true && gameClear == true)
+                    {
+                        string getSaveData = JsonConvert.SerializeObject(3);
+                        PlayerPrefs.SetString("saveDataKey", getSaveData);
+                        SceneManager.LoadSceneAsync("CookingMusic");
+                    }
+                    else if (retry == true && gameClear == false)
+                    {
+                        SceneManager.LoadSceneAsync("CookingMusic");
+                    }
+                    else if (gameClear == false)
+                    {
+                        SceneManager.LoadSceneAsync("Chapter1");
+                    }
+                    else if (gameClear == true)
+                    {
+                        string getSaveData = JsonConvert.SerializeObject(3);
+                        PlayerPrefs.SetString("saveDataKey", getSaveData);
+                        SceneManager.LoadSceneAsync("Chapter1");
+                    }
+                }
+            }
         }
     }
 }

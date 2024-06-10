@@ -1,0 +1,59 @@
+TitleLita.png
+	size: 1661, 675
+	filter: Linear, Linear
+	pma: true
+	scale: 0.5
+ArmL
+	bounds: 1538, 236, 112, 183
+ArmR
+	bounds: 761, 97, 210, 250
+BHair
+	bounds: 1182, 130, 232, 103
+Body
+	bounds: 761, 349, 401, 324
+CloakL
+	bounds: 1268, 30, 98, 137
+	rotate: 90
+CloakR
+	bounds: 973, 135, 212, 207
+	rotate: 90
+CloakRibon
+	bounds: 1499, 16, 79, 91
+FHairF
+	bounds: 1416, 109, 168, 124
+FHairL
+	bounds: 1596, 556, 56, 117
+FHairR
+	bounds: 761, 37, 58, 173
+	rotate: 90
+Face
+	bounds: 1407, 2, 105, 90
+	offsets: 1, 0, 106, 91
+	rotate: 90
+HamsterBody
+	bounds: 1596, 473, 81, 56
+	rotate: 90
+HamsterCloak
+	bounds: 1586, 136, 98, 63
+	rotate: 90
+HamsterHead
+	bounds: 1580, 17, 90, 79
+	rotate: 90
+HamsterRibon
+	bounds: 1596, 421, 50, 31
+	offsets: 1, 7, 51, 38
+	rotate: 90
+HatB
+	bounds: 1372, 235, 164, 184
+HatF
+	bounds: 1164, 421, 430, 252
+HatRibon
+	bounds: 1124, 14, 114, 142
+	rotate: 90
+Head
+	bounds: 973, 11, 122, 149
+	rotate: 90
+Leg
+	bounds: 1182, 235, 188, 184
+Stick
+	bounds: 2, 12, 757, 661

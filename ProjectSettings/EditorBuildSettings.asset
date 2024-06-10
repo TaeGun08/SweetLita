@@ -9,9 +9,33 @@ EditorBuildSettings:
     path: Assets/Scenes/Main.unity
     guid: bfa6385bdff2edc419e7c02df4c52ba7
   - enabled: 1
-    path: Assets/Scenes/Chapter.unity
+    path: Assets/Scenes/ChapterChoice.unity
     guid: ed61a7e66b8e73a49897ae65ee4564c7
   - enabled: 1
     path: Assets/Scenes/Puzzle.unity
     guid: 1acad59dc22b0c14f80074b7eb23e17a
+  - enabled: 1
+    path: Assets/Scenes/CookingMusic.unity
+    guid: d338da2aad9a57644a6039144f187019
+  - enabled: 1
+    path: Assets/Scenes/Cow.unity
+    guid: 36a6ad4080d24274baed3e971fb4f871
+  - enabled: 1
+    path: Assets/Scenes/Picture.unity
+    guid: d3acbaf8da4028e418f9bbb1e2d1bf1d
+  - enabled: 1
+    path: Assets/Scenes/Study.unity
+    guid: 79d1d8d0b37be8f48ac804e159565071
+  - enabled: 1
+    path: Assets/Scenes/Chapter1.unity
+    guid: 28b63f633e9970e4d99172d5e9faa05c
+  - enabled: 1
+    path: Assets/Scenes/Prologue.unity
+    guid: bd08420cdb112b546aa6bcc654466a70
+  - enabled: 1
+    path: Assets/Scenes/Clothes.unity
+    guid: e35e6dbce6a3a624b9954caa5707a51c
+  - enabled: 1
+    path: Assets/Scenes/Bakery.unity
+    guid: 17b78e4874314304180f4832d54d1928
   m_configObjects: {}

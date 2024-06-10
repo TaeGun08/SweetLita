@@ -1,3 +1,4 @@
+using Newtonsoft.Json;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -27,9 +28,25 @@ public class PuzzleGameManager : MonoBehaviour
     private bool gameOver = false;
     [SerializeField] private Image timerImage;
     [SerializeField] private GameObject gameOverObj;
+    [Space]
     [SerializeField] private Image fadeImage;
-    private float fadeTimer;
-    private bool fadeIn = false;
+    [SerializeField] private float fadeTimer;
+    [SerializeField] private bool fadeCheck = false;
+    private bool fadeInOutCheck = false;
+    [Space]
+    [SerializeField] private GameObject explanationWindow;
+    [SerializeField] private Button gameStartButton;
+    private bool gameStartCheck = false;
+    [Space]
+    [SerializeField] private GameObject gameEndObject;
+    [SerializeField] private List<Button> buttons;
+    private bool retry = false;
+    [Space]
+    [SerializeField] private TMP_Text gameClearOverText;
+    private float textChangeTimer;
+    private bool textChanageOn = false;
+    private float textStartTimer;
+    private bool textStartCheck = false;
 
     private void Awake()
     {
@@ -47,84 +64,119 @@ public class PuzzleGameManager : MonoBehaviour
             pieceObjCheck.Add(null);
         }
 
-        for(int i = 0; i < 16; i++)
+        for (int i = 0; i < 16; i++)
         {
             clearChecks.Add(false);
         }
 
+        gameStartButton.onClick.AddListener(() =>
+        {
+            explanationWindow.SetActive(false);
+            gameStartCheck = true;
+        });
+
+        buttons[0].onClick.AddListener(() =>
+        {
+            fadeCheck = true;
+            fadeImage.gameObject.SetActive(true);
+        });
+
+        buttons[1].onClick.AddListener(() =>
+        {
+            fadeCheck = true;
+            fadeImage.gameObject.SetActive(true);
+            retry = true;
+        });
+
         claerTextObj.SetActive(false);
         gameOverObj.SetActive(false);
 
-        gameOverTimer = 60f;
+        gameOverTimer = 100f;
 
         fadeImage.gameObject.SetActive(true);
 
-        fadeTimer = 1f;
+        fadeTimer = 2;
+
+        fadeCheck = true;
+
+        fadeInOutCheck = true;
+
+        gameStartCheck = false;
+
+        textChangeTimer = 3;
+        gameClearOverText.text = "";
+        gameClearOverText.gameObject.SetActive(true);
     }
 
     private void Update()
     {
-        if (fadeIn == false)
+        fadeInOut();
+
+        if (gameStartCheck == true && textChanageOn == false)
         {
-            fadeTimer -= Time.deltaTime;
-
-            Color imageColor = fadeImage.color;
-            imageColor.a = fadeTimer;
-            fadeImage.color = imageColor;
-
-            if (imageColor.a <= 0)
+            textChangeTimer -= Time.deltaTime;
+            gameClearOverText.text = $"{(int)(textChangeTimer + 1)}";
+            if (textChangeTimer <= 0)
             {
-                fadeIn = true;
-                fadeTimer = 0;
-                fadeImage.gameObject.SetActive(false);
-            }
-            return;
-        }
-
-        if (gameClear == true)
-        {
-            claerTextObj.SetActive(true);
-            fadeImage.gameObject.SetActive(true);
-
-            fadeTimer += Time.deltaTime;
-
-            Color imageColor = fadeImage.color;
-            imageColor.a = fadeTimer;
-            fadeImage.color = imageColor;
-
-            if (imageColor.a >= 1)
-            {
-                SceneManager.LoadSceneAsync("Chapter");
-            }
-            return;
-        }
-
-        if (gameOver == false)
-        {
-            gameOverTimer -= Time.deltaTime;
-
-            timerImage.fillAmount = gameOverTimer / 60f;
-
-            if (gameOverTimer <= 0)
-            {
-                gameOverObj.SetActive(true);
-                gameOver = true;
-                gameOverTimer = 60f;
-                SceneManager.LoadSceneAsync("Chapter");
+                gameClearOverText.text = $"";
+                textChanageOn = true;
             }
         }
-        else
+        else if (gameStartCheck == true && textChanageOn == true)
         {
-            return;
+            textStartTimer += Time.deltaTime;
+
+            if (textStartTimer < 1f)
+            {
+                gameClearOverText.text = $"게임 스타트!";
+            }
+            else
+            {
+                gameClearOverText.text = $"";
+                gameClearOverText.gameObject.SetActive(false);
+                textStartCheck = true;
+            }
         }
 
-        if (clearIndex == 16)
+        if (gameStartCheck == true && textStartCheck == true)
         {
-            gameClear = true;
-        }
+            if (gameClear == true)
+            {
+                if (claerTextObj.activeSelf == false)
+                {
+                    claerTextObj.SetActive(true);
+                }
 
-        puzzleCreate();
-        piecePosChange();
+                gameEndObject.SetActive(true);
+                return;
+            }
+
+            if (gameOver == false)
+            {
+                gameOverTimer -= Time.deltaTime;
+
+                timerImage.fillAmount = gameOverTimer / 100f;
+
+                if (gameOverTimer <= 0)
+                {
+                    gameEndObject.SetActive(true);
+                    gameOverObj.SetActive(true);
+                    gameOver = true;
+                }
+            }
+            else
+            {
+                return;
+            }
+
+            if (clearIndex == 16)
+            {
+                gameClear = true;
+            }
+
+            puzzleCreate();
+            piecePosChange();
+        }
     }
 
     /// <summary>
@@ -202,7 +254,7 @@ public class PuzzleGameManager : MonoBehaviour
                 _trsPos.y = 100f;
                 return _trsPos;
             case 5:
-            case 6: 
+            case 6:
             case 7:
                 _trsPos.x += 200f;
                 _trsPos.y = 100f;
@@ -211,8 +263,8 @@ public class PuzzleGameManager : MonoBehaviour
                 _trsPos.x = -300f;
                 _trsPos.y = -100f;
                 return _trsPos;
-            case 9: 
-            case 10: 
+            case 9:
+            case 10:
             case 11:
                 _trsPos.x += 200f;
                 _trsPos.y = -100f;
@@ -221,8 +273,8 @@ public class PuzzleGameManager : MonoBehaviour
                 _trsPos.x = -300f;
                 _trsPos.y = -300f;
                 return _trsPos;
-            case 13: 
-            case 14: 
+            case 13:
+            case 14:
             case 15:
                 _trsPos.x += 200f;
                 _trsPos.y = -300f;
@@ -368,6 +420,59 @@ public class PuzzleGameManager : MonoBehaviour
         }
 
         return clearValue;
+    }
+
+    private void fadeInOut()
+    {
+        if (fadeCheck == true && fadeImage.gameObject.activeSelf == true)
+        {
+            Color fadeColor = fadeImage.color;
+
+            if (fadeColor.a != 0 && fadeInOutCheck == true)
+            {
+                fadeTimer -= Time.deltaTime;
+                fadeColor.a = fadeTimer;
+                fadeImage.color = fadeColor;
+
+                if (fadeColor.a <= 0)
+                {
+                    fadeTimer = 0;
+                    fadeImage.gameObject.SetActive(false);
+                    fadeInOutCheck = false;
+                    fadeCheck = false;
+                }
+            }
+            else if (fadeColor.a != 1 && fadeInOutCheck == false)
+            {
+                fadeTimer += Time.deltaTime / 2;
+                fadeColor.a = fadeTimer;
+                fadeImage.color = fadeColor;
+
+                if (fadeColor.a >= 1 && gameClear == true)
+                {
+                    if (retry == true && gameClear == true)
+                    {
+                        string getSaveData = JsonConvert.SerializeObject(2);
+                        PlayerPrefs.SetString("saveDataKey", getSaveData);
+                        SceneManager.LoadSceneAsync("Puzzle");
+                    }
+                    else if (retry == true && gameClear == false)
+                    {
+                        SceneManager.LoadSceneAsync("Puzzle");
+                    }
+                    else if (gameClear == false)
+                    {
+                        SceneManager.LoadSceneAsync("Chapter1");
+                    }
+                    else if (gameClear == true)
+                    {
+                        string getSaveData = JsonConvert.SerializeObject(2);
+                        PlayerPrefs.SetString("saveDataKey", getSaveData);
+                        SceneManager.LoadSceneAsync("Chapter1");
+                    }
+                }
+            }
+        }
     }
 
     /// <summary>

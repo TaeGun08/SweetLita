@@ -1,6 +1,8 @@
+using Newtonsoft.Json;
 using Spine.Unity;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -23,6 +25,16 @@ public class CowController : MonoBehaviour
     private float fadeTimer;
     [SerializeField] private bool fadeCheck = false;
     private bool fadeInOutCheck = false;
+    [Space]
+    [SerializeField] private GameObject explanationWindow;
+    [SerializeField] private Button gameStartButton;
+    private bool gameStart = false;
+    [Space]
+    [SerializeField] private GameObject gameEndObject;
+    [SerializeField] private List<Button> buttons;
+
+    private bool retry = false;
+    private bool gameClear = false;
 
     private bool changeFace = false;
     private float changeFaceTimer;
@@ -34,18 +46,38 @@ public class CowController : MonoBehaviour
 
     private bool moveCheck = false;
 
+    [SerializeField] private TMP_Text gameClearOverText;
+    private float textChangeTimer;
+    private bool textChanageOn = false;
+    private float textStartTimer;
+    private bool textStartCheck = false;
+
     private void Awake()
     {
+        gameStartButton.onClick.AddListener(() =>
+        {
+            explanationWindow.SetActive(false);
+            gameStart = true;
+        });
+
+        buttons[0].onClick.AddListener(() =>
+        {
+            fadeCheck = true;
+            fadeImage.gameObject.SetActive(true);
+        });
+
+        buttons[1].onClick.AddListener(() =>
+        {
+            fadeCheck = true;
+            fadeImage.gameObject.SetActive(true);
+            retry = true;
+        });
+
         changeFaceTimer = 3f;
         randomTime = changeFaceTimer;
 
         cowFace[1].SetActive(false);
         cowFace[2].SetActive(false);
-    }
-
-    private void Start()
-    {
-        spineAnim = hamsterObject.GetComponent<SkeletonAnimation>();
 
         fadeTimer = 2;
 
@@ -54,33 +86,70 @@ public class CowController : MonoBehaviour
         fadeInOutCheck = true;
 
         moveCheck = true;
+
+        textChangeTimer = 3;
+        gameClearOverText.text = "";
+        gameClearOverText.gameObject.SetActive(true);
+    }
+
+    private void Start()
+    {
+        spineAnim = hamsterObject.GetComponent<SkeletonAnimation>();
     }
 
     private void Update()
     {
         fadeInOut();
 
-        if (fadeCheck == true)
+        if (gameStart == true && textChanageOn == false)
         {
-            return;
+            textChangeTimer -= Time.deltaTime;
+            gameClearOverText.text = $"{(int)(textChangeTimer + 1)}";
+            if (textChangeTimer <= 0)
+            {
+                gameClearOverText.text = $"";
+                textChanageOn = true;
+            }
+        }
+        else if (gameStart == true && textChanageOn == true)
+        {
+            textStartTimer += Time.deltaTime;
+
+            if (textStartTimer < 1f)
+            {
+                gameClearOverText.text = $"게임 스타트!";
+            }
+            else
+            {
+                gameClearOverText.text = $"";
+                gameClearOverText.gameObject.SetActive(false);
+                textStartCheck = true;
+            }
         }
 
-        if (check.ReturnChear() == true)
+        if (gameStart == true && textStartCheck == true)
         {
-            fadeCheck = true;
-            fadeImage.gameObject.SetActive(true);
-            gameClearText.SetActive(true);
-            return;
-        }
-        else if (gameOver == true)
-        {
-            cowFace[2].SetActive(true);
-            gameOverText.SetActive(true);
-            return;
-        }
+            if (check.ReturnChear() == true && gameClear == false)
+            {
+                gameClear = true;
+                gameClearText.SetActive(true);
+                gameEndObject.SetActive(true);
+            }
+            else if (gameOver == true)
+            {
+                cowFace[2].SetActive(true);
+                gameOverText.SetActive(true);
+                gameEndObject.SetActive(true);
+            }
 
-        changeCowFace();
-        hamsterMoveCheck();
+            if (gameClear == true || gameOver == true)
+            {
+                return;
+            }
+
+            changeCowFace();
+            hamsterMoveCheck();
+        }
     }
 
     /// <summary>
@@ -141,7 +210,7 @@ public class CowController : MonoBehaviour
     /// </summary>
     private void hamsterMoveCheck()
     {
-        if (changeFace == true && (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.LeftArrow)))
+        if (changeFace == true && Input.GetKey(KeyCode.RightArrow))
         {
             moveCheck = false;
             return;
@@ -151,12 +220,6 @@ public class CowController : MonoBehaviour
         {
             spineAnim.AnimationName = "Walk";
             hamsterObject.transform.position += new Vector3(1f, 0f, 0f) * 1f * Time.deltaTime;
-        }
-        else if (milkeGet.ReturnMilkeGet() == true && Input.GetKey(KeyCode.LeftArrow))
-        {
-            spineAnim.AnimationName = "Walk";
-            hamsterObject.transform.position += new Vector3(-1f, 0f, 0f) * 1f * Time.deltaTime;
-            hamsterObject.transform.localScale = new Vector3(-0.4f, 0.4f, 1f);
         }
         else
         {
@@ -192,11 +255,26 @@ public class CowController : MonoBehaviour
 
                 if (fadeColor.a >= 1)
                 {
-                    fadeTimer = 2;
-                    fadeImage.gameObject.SetActive(false);
-                    SceneManager.LoadSceneAsync("Chapter");
-                    fadeInOutCheck = true;
-                    fadeCheck = false;
+                    if (retry == true && gameClear == true)
+                    {
+                        string getSaveData = JsonConvert.SerializeObject(7);
+                        PlayerPrefs.SetString("saveDataKey", getSaveData);
+                        SceneManager.LoadSceneAsync("Cow");
+                    }
+                    else if (retry == true && gameClear == false)
+                    {
+                        SceneManager.LoadSceneAsync("Cow");
+                    }
+                    else if (gameClear == false)
+                    {
+                        SceneManager.LoadSceneAsync("Chapter1");
+                    }
+                    else if (gameClear == true)
+                    {
+                        string getSaveData = JsonConvert.SerializeObject(7);
+                        PlayerPrefs.SetString("saveDataKey", getSaveData);
+                        SceneManager.LoadSceneAsync("Chapter1");
+                    }
                 }
             }
         }

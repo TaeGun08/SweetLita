@@ -1,0 +1,17 @@
+skeleton.png
+	size: 410, 118
+	filter: Linear, Linear
+	pma: true
+	scale: 0.5
+EHeart
+	bounds: 2, 2, 128, 114
+	offsets: 11, 18, 150, 150
+Heart
+	bounds: 132, 2, 128, 114
+	offsets: 11, 18, 150, 150
+HeartL
+	bounds: 262, 2, 73, 114
+	offsets: 11, 18, 150, 150
+HeartR
+	bounds: 337, 2, 71, 114
+	offsets: 68, 18, 150, 150

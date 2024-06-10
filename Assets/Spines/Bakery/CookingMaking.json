@@ -1,0 +1,3639 @@
+{
+"skeleton": {
+	"hash": "f+qhz/mO0N8",
+	"spine": "4.2.29",
+	"x": -960,
+	"y": -619.49,
+	"width": 1920,
+	"height": 2167.99,
+	"images": "./Images/",
+	"audio": "./audio"
+},
+"bones": [
+	{ "name": "root" },
+	{ "name": "Knife1", "parent": "root", "x": -349.74, "y": -462.47, "color": "b600ffff" },
+	{ "name": "Knife2", "parent": "root", "x": -248.75, "y": -424.15, "color": "b600ffff" },
+	{ "name": "Knife3", "parent": "root", "x": -520.87, "y": -456.07, "color": "b600ffff" },
+	{ "name": "Knife4", "parent": "root", "x": -457.38, "y": -442.85, "color": "b600ffff" },
+	{ "name": "Knife5", "parent": "root", "x": -632.42, "y": -493.21, "color": "b600ffff" },
+	{ "name": "Knife6", "parent": "root", "x": -622.5, "y": -283.11, "color": "b600ffff" },
+	{ "name": "Choco0", "parent": "root", "x": 3.43, "y": 30.76, "color": "fdff00ff" },
+	{ "name": "Choco1", "parent": "root", "x": 91.06, "y": 1446.78, "color": "fdff00ff" },
+	{ "name": "Choco1-1", "parent": "root", "x": 430.67, "y": 1451.63, "color": "fdff00ff" },
+	{ "name": "Choco2", "parent": "root", "x": 24.78, "y": 1195.69, "color": "fdff00ff" },
+	{ "name": "Choco2-1", "parent": "root", "x": 293.34, "y": 1196.86, "color": "fdff00ff" },
+	{ "name": "Choco3", "parent": "root", "x": -60.51, "y": 984.27, "color": "fdff00ff" },
+	{ "name": "Choco3-1", "parent": "root", "x": 157.98, "y": 984.27, "color": "fdff00ff" },
+	{ "name": "Choco4", "parent": "root", "x": -114.76, "y": 765.4, "color": "fdff00ff" },
+	{ "name": "Choco4-1", "parent": "root", "x": 75, "y": 764.29, "color": "fdff00ff" },
+	{ "name": "Choco5", "parent": "root", "x": -204.97, "y": 528.66, "color": "fdff00ff" },
+	{ "name": "Choco5-1", "parent": "root", "x": -87.58, "y": 528.66, "color": "fdff00ff" },
+	{ "name": "C1", "parent": "root", "x": 367.82, "y": -226.09, "color": "ff0000ff" },
+	{ "name": "C2", "parent": "root", "x": 348.83, "y": -318.1, "color": "ff0000ff" },
+	{ "name": "C3", "parent": "root", "x": 463.33, "y": -225.75, "color": "ff0000ff" },
+	{ "name": "C4", "parent": "root", "x": 447.31, "y": -322.82, "color": "ff0000ff" },
+	{ "name": "C5", "parent": "root", "x": 561.34, "y": -226.69, "color": "ff0000ff" },
+	{ "name": "C6", "parent": "root", "x": 553.8, "y": -321.87, "color": "ff0000ff" },
+	{ "name": "C7", "parent": "root", "x": 667.52, "y": -223.56, "color": "ff0000ff" },
+	{ "name": "C8", "parent": "root", "x": 660.49, "y": -322.25, "color": "ff0000ff" },
+	{ "name": "C9", "parent": "root", "x": 765.47, "y": -225.41, "color": "ff0000ff" },
+	{ "name": "C10", "parent": "root", "x": 773.23, "y": -324.84, "color": "ff0000ff" },
+	{ "name": "C11", "parent": "root", "x": 869.71, "y": -227.25, "color": "ff0000ff" },
+	{ "name": "C12", "parent": "root", "x": 878.58, "y": -322.99, "color": "ff0000ff" },
+	{ "name": "Cut1", "parent": "root", "x": 195.07, "y": 37.81, "color": "009fffff" },
+	{ "name": "Cut2", "parent": "root", "x": 96.59, "y": 36.34, "color": "009fffff" },
+	{ "name": "Cut3", "parent": "root", "x": -3.08, "y": 34.66, "color": "009fffff" },
+	{ "name": "Cut4", "parent": "root", "x": -98.79, "y": 35.12, "color": "009fffff" },
+	{ "name": "Cut5", "parent": "root", "x": -198.36, "y": 31.29, "color": "009fffff" },
+	{ "name": "Cut6", "parent": "root", "x": 5.14, "y": 31.51, "color": "009fffff" }
+],
+"slots": [
+	{ "name": "미니게임_쿠킹_배경", "bone": "root", "attachment": "미니게임_쿠킹_배경" },
+	{ "name": "Layer 1", "bone": "root", "attachment": "Layer 1" },
+	{ "name": "Chocolate0", "bone": "Choco0", "attachment": "Chocolate0" },
+	{ "name": "Chocolate1", "bone": "Choco1-1", "attachment": "Chocolate1" },
+	{ "name": "1", "bone": "Knife1", "attachment": "1" },
+	{ "name": "2", "bone": "Knife2", "attachment": "2" },
+	{ "name": "3", "bone": "Knife3", "attachment": "3" },
+	{ "name": "4", "bone": "Knife4", "attachment": "4" },
+	{ "name": "5", "bone": "Knife5", "attachment": "5" },
+	{ "name": "6", "bone": "Knife6", "attachment": "6" },
+	{ "name": "Knife1", "bone": "Knife1", "attachment": "Knife1" },
+	{ "name": "Chocolate1-1", "bone": "Choco1", "attachment": "Chocolate1-1" },
+	{ "name": "Chocolate2-1", "bone": "Choco2", "attachment": "Chocolate2-1" },
+	{ "name": "Chocolate3-1", "bone": "Choco3", "attachment": "Chocolate3-1" },
+	{ "name": "Chocolate4-1", "bone": "Choco4", "attachment": "Chocolate4-1" },
+	{ "name": "Chocolate6", "bone": "Choco5", "attachment": "Chocolate6" },
+	{ "name": "Chocolate6-3", "bone": "C2", "attachment": "Chocolate6-3" },
+	{ "name": "Chocolate6-2", "bone": "C1", "attachment": "Chocolate6-2" },
+	{ "name": "Chocloate5", "bone": "Choco5-1", "attachment": "Chocloate5" },
+	{ "name": "Chocloate5-3", "bone": "C4", "attachment": "Chocloate5-3" },
+	{ "name": "Chocolate5-2", "bone": "C3", "attachment": "Chocolate5-2" },
+	{ "name": "Chocolate4", "bone": "Choco4-1", "attachment": "Chocolate4" },
+	{ "name": "Chocolate4-3", "bone": "C6", "attachment": "Chocolate4-3" },
+	{ "name": "Chocolate4-2", "bone": "C5", "attachment": "Chocolate4-2" },
+	{ "name": "Chocolate3", "bone": "Choco3-1", "attachment": "Chocolate3" },
+	{ "name": "Chocolate3-3", "bone": "C8", "attachment": "Chocolate3-3" },
+	{ "name": "Chocolate3-2", "bone": "C7", "attachment": "Chocolate3-2" },
+	{ "name": "Chocolate2", "bone": "Choco2-1", "attachment": "Chocolate2" },
+	{ "name": "Chocolate2-3", "bone": "C10", "attachment": "Chocolate2-3" },
+	{ "name": "Chocolate2-2", "bone": "C9", "attachment": "Chocolate2-2" },
+	{ "name": "Chocolate1-3", "bone": "C12", "attachment": "Chocolate1-3" },
+	{ "name": "Chocolate1-2", "bone": "C11", "attachment": "Chocolate1-2" },
+	{ "name": "Cut1", "bone": "Cut1", "attachment": "Cut1" },
+	{ "name": "Cut2", "bone": "Cut2", "attachment": "Cut2" },
+	{ "name": "Cut3", "bone": "Cut3", "attachment": "Cut3" },
+	{ "name": "Cut4", "bone": "Cut4", "attachment": "Cut4" },
+	{ "name": "Cut5", "bone": "Cut5", "attachment": "Cut5" },
+	{ "name": "Cut6", "bone": "Cut6", "attachment": "Cut6" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"1": {
+				"1": { "x": -3.79, "y": 82.04, "width": 159, "height": 422 }
+			},
+			"2": {
+				"2": { "x": -1.16, "y": 81.36, "width": 145, "height": 426 }
+			},
+			"3": {
+				"3": { "x": -0.58, "y": 84.81, "width": 137, "height": 429 }
+			},
+			"4": {
+				"4": { "x": -2.44, "y": 91.21, "width": 131, "height": 431 }
+			},
+			"5": {
+				"5": { "x": -4.31, "y": 90.72, "width": 117, "height": 434 }
+			},
+			"6": {
+				"6": { "x": -91.04, "y": -18.14, "width": 406, "height": 203 }
+			},
+			"Chocloate5": {
+				"Chocloate5": { "x": -2.41, "y": -5.6, "width": 124, "height": 203 }
+			},
+			"Chocloate5-3": {
+				"Chocloate5-3": { "x": 2.19, "y": -12.18, "width": 115, "height": 100 }
+			},
+			"Chocolate0": {
+				"Chocolate0": { "x": -7.67, "y": -3.53, "width": 632, "height": 200 }
+			},
+			"Chocolate1": {
+				"Chocolate1": { "x": 10.76, "y": -4.62, "width": 123, "height": 203 }
+			},
+			"Chocolate1-1": {
+				"Chocolate1-1": { "x": -3.08, "y": -8.27, "width": 522, "height": 202 }
+			},
+			"Chocolate1-2": {
+				"Chocolate1-2": { "x": 7.29, "y": -6.75, "width": 112, "height": 106 }
+			},
+			"Chocolate1-3": {
+				"Chocolate1-3": { "x": 5.42, "y": -14.51, "width": 118, "height": 99 }
+			},
+			"Chocolate2": {
+				"Chocolate2": { "x": 4.47, "y": -6, "width": 109, "height": 202 }
+			},
+			"Chocolate2-1": {
+				"Chocolate2-1": { "x": -13.76, "y": -5.38, "width": 418, "height": 203 }
+			},
+			"Chocolate2-2": {
+				"Chocolate2-2": { "x": 5.53, "y": -10.09, "width": 104, "height": 107 }
+			},
+			"Chocolate2-3": {
+				"Chocolate2-3": { "x": -0.23, "y": -13.66, "width": 108, "height": 97 }
+			},
+			"Chocolate3": {
+				"Chocolate3": { "x": -0.09, "y": -6.23, "width": 105, "height": 203 }
+			},
+			"Chocolate3-1": {
+				"Chocolate3-1": { "x": -8.94, "y": -5.81, "width": 325, "height": 203 }
+			},
+			"Chocolate3-2": {
+				"Chocolate3-2": { "x": -1.02, "y": -9.94, "width": 101, "height": 105 }
+			},
+			"Chocolate3-3": {
+				"Chocolate3-3": { "x": 4.01, "y": -15.75, "width": 105, "height": 100 }
+			},
+			"Chocolate4": {
+				"Chocolate4": { "x": -2.22, "y": -6.68, "width": 113, "height": 203 }
+			},
+			"Chocolate4-1": {
+				"Chocolate4-1": { "x": -9.35, "y": -6.74, "width": 231, "height": 203 }
+			},
+			"Chocolate4-2": {
+				"Chocolate4-2": { "x": 0.16, "y": -6.81, "width": 105, "height": 105 }
+			},
+			"Chocolate4-3": {
+				"Chocolate4-3": { "x": 1.7, "y": -16.13, "width": 109, "height": 100 }
+			},
+			"Chocolate5-2": {
+				"Chocolate5-2": { "x": -0.33, "y": -6.75, "width": 110, "height": 105 }
+			},
+			"Chocolate6": {
+				"Chocolate6": { "x": -3.55, "y": -4.9, "width": 141, "height": 203 }
+			},
+			"Chocolate6-2": {
+				"Chocolate6-2": { "x": -7.32, "y": -6.41, "width": 121, "height": 105 }
+			},
+			"Chocolate6-3": {
+				"Chocolate6-3": { "x": -8.58, "y": -15.57, "width": 126, "height": 100 }
+			},
+			"Cut1": {
+				"Cut1": {
+					"type": "mesh",
+					"uvs": [ 0.5954, 0.99368, 0.45624, 0.79968, 0.30317, 0.58266, 0.19184, 0.4051, 0.09443, 0.20782, 0, 0.00724, 0.35883, 0, 0.58148, 0.20124, 0.69281, 0.39853, 0.79022, 0.58266, 0.92938, 0.79968, 1, 0.9871 ],
+					"triangles": [ 5, 6, 7, 4, 5, 7, 4, 7, 8, 3, 4, 8, 2, 3, 8, 9, 2, 8, 1, 2, 9, 1, 9, 10, 11, 0, 1, 11, 1, 10 ],
+					"vertices": [ 2.39, -127.39, -1.51, -81.41, -5.79, -29.98, -8.91, 12.1, -11.64, 58.86, -14.28, 106.39, -4.23, 108.11, 2, 60.41, 5.12, 13.66, 7.85, -29.98, 11.74, -81.41, 13.72, -125.83 ],
+					"hull": 12,
+					"edges": [ 0, 2, 2, 4, 4, 6, 6, 8, 8, 10, 10, 12, 12, 14, 14, 16, 16, 18, 18, 20, 20, 22, 0, 22 ],
+					"width": 28,
+					"height": 237
+				}
+			},
+			"Cut2": {
+				"Cut2": {
+					"type": "mesh",
+					"uvs": [ 1, 0.98542, 1, 0.75164, 1, 0.53084, 1, 0.33602, 1, 0.16717, 1, 0, 0.12378, 0, 0.09595, 0.18665, 0, 0.33277, 0.12378, 0.55032, 0, 0.74352, 0, 1 ],
+					"triangles": [ 6, 5, 4, 7, 6, 4, 7, 4, 3, 8, 7, 3, 8, 3, 2, 2, 9, 8, 9, 2, 1, 10, 9, 1, 10, 1, 0, 11, 10, 0 ],
+					"vertices": [ 6.36, -126.66, 6.36, -70.55, 6.36, -17.56, 6.36, 29.2, 6.36, 69.72, 6.36, 109.84, -5.9, 109.84, -6.29, 65.05, -7.64, 29.98, -5.9, -22.23, -7.64, -68.6, -7.64, -130.16 ],
+					"hull": 12,
+					"edges": [ 0, 2, 2, 4, 4, 6, 6, 8, 8, 10, 10, 12, 12, 14, 14, 16, 16, 18, 18, 20, 20, 22, 0, 22 ],
+					"width": 14,
+					"height": 240
+				}
+			},
+			"Cut3": {
+				"Cut3": {
+					"type": "mesh",
+					"uvs": [ 0.47634, 0.99646, 0.62326, 0.74955, 0.73754, 0.54004, 0.85181, 0.38441, 0.96609, 0.22429, 1, 0.00581, 0.49266, 0.00132, 0.34574, 0.22579, 0.24779, 0.38291, 0.16616, 0.54304, 0.01924, 0.75853, 0, 0.98898 ],
+					"triangles": [ 4, 6, 5, 7, 6, 4, 3, 7, 4, 8, 7, 3, 2, 8, 3, 2, 9, 8, 1, 9, 2, 10, 9, 1, 0, 10, 1, 11, 10, 0 ],
+					"vertices": [ -1.08, -126.82, 2.15, -67.56, 4.67, -17.28, 7.18, 20.07, 9.69, 58.5, 10.44, 110.93, -0.72, 112.01, -3.95, 58.14, -6.11, 20.43, -7.9, -18, -11.14, -69.72, -11.56, -125.03 ],
+					"hull": 12,
+					"edges": [ 0, 2, 2, 4, 4, 6, 6, 8, 8, 10, 10, 12, 12, 14, 14, 16, 16, 18, 18, 20, 20, 22, 0, 22 ],
+					"width": 22,
+					"height": 240
+				}
+			},
+			"Cut4": {
+				"Cut4": {
+					"type": "mesh",
+					"uvs": [ 0, 0.99677, 0.28188, 0.99798, 1, 0.00806, 0.6795, 0 ],
+					"triangles": [ 1, 0, 2, 3, 2, 0 ],
+					"vertices": [ -16.4, -125.47, -7.09, -125.76, 16.6, 107.86, 6.03, 109.76 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 33,
+					"height": 236
+				}
+			},
+			"Cut5": {
+				"Cut5": {
+					"type": "mesh",
+					"uvs": [ 0, 0.98033, 0.20696, 0.99864, 1, 0.00374, 0.77663, 0 ],
+					"triangles": [ 0, 2, 1, 3, 2, 0 ],
+					"vertices": [ -23.74, -116.52, -14.01, -120.82, 23.26, 112.98, 12.76, 113.86 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 47,
+					"height": 235
+				}
+			},
+			"Cut6": {
+				"Cut6": {
+					"type": "mesh",
+					"uvs": [ 0.00407, 0, 0.0887, 0, 0.1877, 0, 0.30266, 0, 0.42321, 0, 0.55973, 0.01728, 0.68108, 0, 0.80723, 0, 0.91398, 0, 0.99724, 0, 1, 1, 0.90281, 1, 0.80563, 1, 0.68428, 1, 0.56293, 1, 0.43279, 1, 0.29787, 0.97827, 0.17412, 1, 0.0895, 1, 0.00327, 1 ],
+					"triangles": [ 16, 2, 3, 17, 18, 1, 19, 0, 1, 18, 19, 1, 2, 17, 1, 17, 2, 16, 15, 4, 5, 16, 3, 4, 15, 16, 4, 14, 5, 6, 15, 5, 14, 13, 6, 7, 14, 6, 13, 12, 13, 7, 11, 7, 8, 12, 7, 11, 8, 9, 10, 11, 8, 10 ],
+					"vertices": [ -325.04, 5.7, -269.87, 5.7, -205.32, 5.7, -130.36, 5.7, -51.76, 5.7, 37.25, 5.47, 116.37, 5.7, 198.61, 5.7, 268.22, 5.7, 322.5, 5.7, 324.3, -7.3, 260.94, -7.3, 197.57, -7.3, 118.45, -7.3, 39.33, -7.3, -45.52, -7.3, -133.49, -7.02, -214.17, -7.3, -269.35, -7.3, -325.56, -7.3 ],
+					"hull": 20,
+					"edges": [ 0, 2, 2, 4, 4, 6, 6, 8, 8, 10, 10, 12, 12, 14, 18, 20, 24, 26, 26, 28, 28, 30, 30, 32, 32, 34, 34, 36, 36, 38, 0, 38, 14, 16, 16, 18, 20, 22, 22, 24 ],
+					"width": 652,
+					"height": 13
+				}
+			},
+			"Knife1": {
+				"Knife1": { "x": -3.79, "y": 82.04, "width": 159, "height": 422 }
+			},
+			"Layer 1": {
+				"Layer 1": { "y": -0.89, "width": 1011, "height": 357 }
+			},
+			"미니게임_쿠킹_배경": {
+				"미니게임_쿠킹_배경": { "y": 284.58, "width": 1920, "height": 1080 }
+			}
+		}
+	}
+],
+"animations": {
+	"0_Idle": {
+		"slots": {
+			"1": {
+				"attachment": [
+					{}
+				]
+			},
+			"2": {
+				"attachment": [
+					{}
+				]
+			},
+			"3": {
+				"attachment": [
+					{}
+				]
+			},
+			"4": {
+				"attachment": [
+					{}
+				]
+			},
+			"5": {
+				"attachment": [
+					{}
+				]
+			},
+			"6": {
+				"attachment": [
+					{},
+					{ "time": 0.3333 }
+				]
+			},
+			"Chocloate5": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocloate5-3": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate1": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate1-1": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate1-2": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate1-3": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate2": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate2-1": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate2-2": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate2-3": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate3": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate3-1": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate3-2": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate3-3": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate4": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate4-1": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate4-2": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate4-3": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate5-2": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate6": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate6-2": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate6-3": {
+				"attachment": [
+					{}
+				]
+			},
+			"Cut1": {
+				"attachment": [
+					{}
+				]
+			},
+			"Cut2": {
+				"attachment": [
+					{}
+				]
+			},
+			"Cut3": {
+				"attachment": [
+					{}
+				]
+			},
+			"Cut4": {
+				"attachment": [
+					{}
+				]
+			},
+			"Cut5": {
+				"attachment": [
+					{}
+				]
+			},
+			"Cut6": {
+				"attachment": [
+					{}
+				]
+			},
+			"Knife1": {
+				"attachment": [
+					{}
+				]
+			}
+		}
+	},
+	"1_Line": {
+		"slots": {
+			"1": {
+				"attachment": [
+					{}
+				]
+			},
+			"2": {
+				"attachment": [
+					{}
+				]
+			},
+			"3": {
+				"attachment": [
+					{}
+				]
+			},
+			"4": {
+				"attachment": [
+					{}
+				]
+			},
+			"5": {
+				"attachment": [
+					{}
+				]
+			},
+			"6": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocloate5": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocloate5-3": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate1": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate1-1": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate1-2": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate1-3": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate2": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate2-1": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate2-2": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate2-3": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate3": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate3-1": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate3-2": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate3-3": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate4": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate4-1": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate4-2": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate4-3": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate5-2": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate6": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate6-2": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate6-3": {
+				"attachment": [
+					{}
+				]
+			},
+			"Cut1": {
+				"rgba": [
+					{ "color": "ffffff00" },
+					{ "time": 0.1667, "color": "ffffffc8", "curve": "stepped" },
+					{ "time": 1, "color": "ffffffc8" },
+					{ "time": 1.1667, "color": "ffffff00" }
+				]
+			},
+			"Cut2": {
+				"attachment": [
+					{}
+				]
+			},
+			"Cut3": {
+				"attachment": [
+					{}
+				]
+			},
+			"Cut4": {
+				"attachment": [
+					{}
+				]
+			},
+			"Cut5": {
+				"attachment": [
+					{}
+				]
+			},
+			"Cut6": {
+				"attachment": [
+					{}
+				]
+			},
+			"Knife1": {
+				"attachment": [
+					{}
+				]
+			}
+		},
+		"attachments": {
+			"default": {
+				"Cut1": {
+					"Cut1": {
+						"deform": [
+							{
+								"vertices": [ -16.04342, 227.4044, -12.56706, 182.55159, -8.3945, 132.32726, -5.37758, 91.87285, -2.72984, 46.37293, 0, 0, 0, 0, -3.76012, 46.90048, -7.39374, 91.37514, -9.86636, 133.49818, -13.41679, 183.70723, -16.21874, 226.38405 ],
+								"curve": "stepped"
+							},
+							{
+								"time": 0.1667,
+								"vertices": [ -16.04342, 227.4044, -12.56706, 182.55159, -8.3945, 132.32726, -5.37758, 91.87285, -2.72984, 46.37293, 0, 0, 0, 0, -3.76012, 46.90048, -7.39374, 91.37514, -9.86636, 133.49818, -13.41679, 183.70723, -16.21874, 226.38405 ]
+							},
+							{
+								"time": 0.3333,
+								"vertices": [ -12.48078, 167.56506, -9.51327, 127.40475, -5.39594, 79.37097, -3.37704, 43.02971, 0, 0, 0, 0, 0, 0, 0, 0, -3.37729, 43.10612, -6.48511, 82.45963, -9.75306, 128.28914, -12.90706, 166.26877 ]
+							},
+							{
+								"time": 0.5,
+								"vertices": [ -10.68098, 128.08669, -6.725, 85.11604, -2.71275, 37.17484, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -2.61229, 38.88287, -6.37627, 85.22922, -8.33258, 126.0136 ]
+							},
+							{
+								"time": 0.6667,
+								"vertices": [ -7.01183, 84.63067, -3.56497, 45.78835, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -3.51237, 44.46284, -5.90356, 83.37523 ]
+							},
+							{
+								"time": 0.8333,
+								"vertices": [ -3.39142, 42.93267, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -2.22624, 41.56577 ]
+							},
+							{ "time": 1 }
+						]
+					}
+				}
+			}
+		}
+	},
+	"2_Cut": {
+		"slots": {
+			"1": {
+				"rgba": [
+					{ "time": 1.3333, "color": "ffffffff" },
+					{ "time": 1.6667, "color": "ffffff00" }
+				],
+				"attachment": [
+					{},
+					{ "time": 1, "name": "1" }
+				]
+			},
+			"2": {
+				"attachment": [
+					{}
+				]
+			},
+			"3": {
+				"attachment": [
+					{}
+				]
+			},
+			"4": {
+				"attachment": [
+					{}
+				]
+			},
+			"5": {
+				"attachment": [
+					{}
+				]
+			},
+			"6": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocloate5": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocloate5-3": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate0": {
+				"attachment": [
+					{ "time": 1 }
+				]
+			},
+			"Chocolate1": {
+				"attachment": [
+					{},
+					{ "time": 1, "name": "Chocolate1" }
+				]
+			},
+			"Chocolate1-1": {
+				"attachment": [
+					{},
+					{ "time": 1, "name": "Chocolate1-1" }
+				]
+			},
+			"Chocolate1-2": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate1-3": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate2": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate2-1": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate2-2": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate2-3": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate3": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate3-1": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate3-2": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate3-3": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate4": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate4-1": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate4-2": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate4-3": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate5-2": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate6": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate6-2": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate6-3": {
+				"attachment": [
+					{}
+				]
+			},
+			"Cut1": {
+				"attachment": [
+					{}
+				]
+			},
+			"Cut2": {
+				"attachment": [
+					{}
+				]
+			},
+			"Cut3": {
+				"attachment": [
+					{}
+				]
+			},
+			"Cut4": {
+				"attachment": [
+					{}
+				]
+			},
+			"Cut5": {
+				"attachment": [
+					{}
+				]
+			},
+			"Cut6": {
+				"attachment": [
+					{}
+				]
+			},
+			"Knife1": {
+				"attachment": [
+					{},
+					{ "time": 0.3333, "name": "Knife1" },
+					{ "time": 1 }
+				]
+			}
+		},
+		"bones": {
+			"Knife1": {
+				"rotate": [
+					{ "time": 0.3333, "value": 45 },
+					{ "time": 0.6667, "value": 25 },
+					{ "time": 1 }
+				],
+				"translate": [
+					{ "time": 0.3333, "x": 770.57, "y": 463.08 },
+					{ "time": 0.6667, "x": 712.03, "y": 389.91 },
+					{ "time": 1, "x": 617.57, "y": 349.07 },
+					{ "time": 1.3333, "x": 658.26, "y": 353.61 },
+					{ "time": 1.6667, "x": 658.94, "y": 348.8 }
+				]
+			},
+			"Choco1": {
+				"translate": [
+					{ "time": 1, "x": -148.8, "y": -1410.99 }
+				]
+			},
+			"Choco1-1": {
+				"translate": [
+					{ "time": 1, "x": -189.67, "y": -1419.18 },
+					{ "time": 1.3333, "x": -142.14, "y": -1418.98 }
+				]
+			}
+		}
+	},
+	"3_Line": {
+		"slots": {
+			"1": {
+				"attachment": [
+					{}
+				]
+			},
+			"2": {
+				"attachment": [
+					{}
+				]
+			},
+			"3": {
+				"attachment": [
+					{}
+				]
+			},
+			"4": {
+				"attachment": [
+					{}
+				]
+			},
+			"5": {
+				"attachment": [
+					{}
+				]
+			},
+			"6": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocloate5": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocloate5-3": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate0": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate1-2": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate1-3": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate2": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate2-1": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate2-2": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate2-3": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate3": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate3-1": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate3-2": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate3-3": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate4": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate4-1": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate4-2": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate4-3": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate5-2": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate6": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate6-2": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate6-3": {
+				"attachment": [
+					{}
+				]
+			},
+			"Cut1": {
+				"attachment": [
+					{}
+				]
+			},
+			"Cut2": {
+				"rgba": [
+					{ "color": "ffffff00" },
+					{ "time": 0.1667, "color": "ffffffc8", "curve": "stepped" },
+					{ "time": 1, "color": "ffffffc8" },
+					{ "time": 1.1667, "color": "ffffff00" }
+				]
+			},
+			"Cut3": {
+				"attachment": [
+					{}
+				]
+			},
+			"Cut4": {
+				"attachment": [
+					{}
+				]
+			},
+			"Cut5": {
+				"attachment": [
+					{}
+				]
+			},
+			"Cut6": {
+				"attachment": [
+					{}
+				]
+			},
+			"Knife1": {
+				"attachment": [
+					{}
+				]
+			}
+		},
+		"bones": {
+			"Choco1": {
+				"translate": [
+					{ "x": -148.8, "y": -1410.99 }
+				]
+			},
+			"Choco1-1": {
+				"translate": [
+					{ "x": -142.14, "y": -1418.98 }
+				]
+			}
+		},
+		"attachments": {
+			"default": {
+				"Cut2": {
+					"Cut2": {
+						"deform": [
+							{
+								"vertices": [ -1.51002, 217.4241, -0.70947, 163.72643, -0.37026, 113.54709, -0.478, 70.34375, -0.1927, 32.81779, 0, 0, 0, 0, -1.11774, 37.92447, -1.68046, 69.41525, -1.88079, 118.86266, -2.40131, 162.19711, -2.01045, 220.80026 ],
+								"curve": "stepped"
+							},
+							{
+								"time": 0.1667,
+								"vertices": [ -1.51002, 217.4241, -0.70947, 163.72643, -0.37026, 113.54709, -0.478, 70.34375, -0.1927, 32.81779, 0, 0, 0, 0, -1.11774, 37.92447, -1.68046, 69.41525, -1.88079, 118.86266, -2.40131, 162.19711, -2.01045, 220.80026 ]
+							},
+							{
+								"time": 0.3333,
+								"vertices": [ -1.88719, 181.56494, -1.75687, 128.32013, -1.18176, 80.3409, -0.75923, 37.68987, -0.70451, 0.15656, 0, 0, 0, 0, -0.54796, 0.62624, -0.69698, 31.99309, -1.41663, 80.82658, -1.25249, 125.11955, -2.01794, 184.33957 ]
+							},
+							{
+								"time": 0.5,
+								"vertices": [ -1.13666, 148.2542, -0.56161, 93.81838, -0.05106, 43.92648, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -0.99961, 0.0833, -1.51285, 49.15562, -2.05296, 92.45869, -1.86485, 151.53784 ]
+							},
+							{
+								"time": 0.6667,
+								"vertices": [ -0.72847, 99.59127, -0.22459, 48.6655, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1.64697, 1.647, -1.90608, 43.96908, -1.58647, 101.84565 ]
+							},
+							{
+								"time": 0.8333,
+								"vertices": [ -0.48949, 50.66378, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.97901, 0, 1.22376, 55.55888 ]
+							},
+							{ "time": 1 }
+						]
+					}
+				}
+			}
+		}
+	},
+	"4_Cut": {
+		"slots": {
+			"1": {
+				"attachment": [
+					{}
+				]
+			},
+			"2": {
+				"rgba": [
+					{ "time": 1.3333, "color": "ffffffff" },
+					{ "time": 1.6667, "color": "ffffff00" }
+				],
+				"attachment": [
+					{},
+					{ "time": 0.3333, "name": "2" }
+				]
+			},
+			"3": {
+				"attachment": [
+					{}
+				]
+			},
+			"4": {
+				"attachment": [
+					{}
+				]
+			},
+			"5": {
+				"attachment": [
+					{}
+				]
+			},
+			"6": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocloate5": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocloate5-3": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate0": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate1-1": {
+				"attachment": [
+					{ "time": 1 }
+				]
+			},
+			"Chocolate1-2": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate1-3": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate2": {
+				"attachment": [
+					{},
+					{ "time": 1, "name": "Chocolate2" }
+				]
+			},
+			"Chocolate2-1": {
+				"attachment": [
+					{},
+					{ "time": 1, "name": "Chocolate2-1" }
+				]
+			},
+			"Chocolate2-2": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate2-3": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate3": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate3-1": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate3-2": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate3-3": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate4": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate4-1": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate4-2": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate4-3": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate5-2": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate6": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate6-2": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate6-3": {
+				"attachment": [
+					{}
+				]
+			},
+			"Cut1": {
+				"attachment": [
+					{}
+				]
+			},
+			"Cut2": {
+				"attachment": [
+					{}
+				]
+			},
+			"Cut3": {
+				"attachment": [
+					{}
+				]
+			},
+			"Cut4": {
+				"attachment": [
+					{}
+				]
+			},
+			"Cut5": {
+				"attachment": [
+					{}
+				]
+			},
+			"Cut6": {
+				"attachment": [
+					{}
+				]
+			},
+			"Knife1": {
+				"attachment": [
+					{}
+				]
+			}
+		},
+		"bones": {
+			"Knife2": {
+				"rotate": [
+					{ "time": 0.3333, "value": 45 },
+					{ "time": 0.6667, "value": 25 },
+					{ "time": 1 }
+				],
+				"translate": [
+					{ "time": 0.3333, "x": 567.44, "y": 417.8 },
+					{ "time": 0.6667, "x": 513.17, "y": 345.68 },
+					{ "time": 1, "x": 406.73, "y": 297.67 },
+					{ "time": 1.3333, "x": 455.6, "y": 300.33 },
+					{ "time": 1.6667, "x": 458.19, "y": 276.15 }
+				]
+			},
+			"Choco1": {
+				"translate": [
+					{ "x": -148.8, "y": -1410.99 }
+				]
+			},
+			"Choco1-1": {
+				"translate": [
+					{ "x": -142.14, "y": -1418.98 }
+				]
+			},
+			"Choco2": {
+				"translate": [
+					{ "time": 1, "x": -123.76, "y": -1162.16 }
+				]
+			},
+			"Choco2-1": {
+				"translate": [
+					{ "time": 1, "x": -150.81, "y": -1162.54 },
+					{ "time": 1.3333, "x": -103.42, "y": -1162.54 }
+				]
+			}
+		},
+		"drawOrder": [
+			{
+				"time": 0.3333,
+				"offsets": [
+					{ "slot": "2", "offset": 6 }
+				]
+			},
+			{
+				"time": 1,
+				"offsets": [
+					{ "slot": "2", "offset": 21 },
+					{ "slot": "Chocolate2-1", "offset": 16 }
+				]
+			}
+		]
+	},
+	"5_Line": {
+		"slots": {
+			"1": {
+				"attachment": [
+					{}
+				]
+			},
+			"2": {
+				"attachment": [
+					{}
+				]
+			},
+			"3": {
+				"attachment": [
+					{}
+				]
+			},
+			"4": {
+				"attachment": [
+					{}
+				]
+			},
+			"5": {
+				"attachment": [
+					{}
+				]
+			},
+			"6": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocloate5": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocloate5-3": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate0": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate1-1": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate1-2": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate1-3": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate2-2": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate2-3": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate3": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate3-1": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate3-2": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate3-3": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate4": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate4-1": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate4-2": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate4-3": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate5-2": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate6": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate6-2": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate6-3": {
+				"attachment": [
+					{}
+				]
+			},
+			"Cut1": {
+				"attachment": [
+					{}
+				]
+			},
+			"Cut2": {
+				"attachment": [
+					{}
+				]
+			},
+			"Cut3": {
+				"rgba": [
+					{ "color": "ffffff00" },
+					{ "time": 0.1667, "color": "ffffffc8", "curve": "stepped" },
+					{ "time": 1, "color": "ffffffc8" },
+					{ "time": 1.1667, "color": "ffffff00" }
+				]
+			},
+			"Cut4": {
+				"attachment": [
+					{}
+				]
+			},
+			"Cut5": {
+				"attachment": [
+					{}
+				]
+			},
+			"Cut6": {
+				"attachment": [
+					{}
+				]
+			},
+			"Knife1": {
+				"attachment": [
+					{}
+				]
+			}
+		},
+		"bones": {
+			"Choco1": {
+				"translate": [
+					{ "x": -148.8, "y": -1410.99 }
+				]
+			},
+			"Choco1-1": {
+				"translate": [
+					{ "x": -142.14, "y": -1418.98 }
+				]
+			},
+			"Choco2": {
+				"translate": [
+					{ "x": -123.76, "y": -1162.16 }
+				]
+			},
+			"Choco2-1": {
+				"translate": [
+					{ "x": -103.42, "y": -1162.54 }
+				]
+			}
+		},
+		"attachments": {
+			"default": {
+				"Cut3": {
+					"Cut3": {
+						"deform": [
+							{
+								"vertices": [ 10.37923, 220.2753, 7.59131, 163.78691, 5.44007, 116.22517, 3.44551, 81.92138, 1.21952, 46.01039, 0, 0, 0, 0, 2.79141, 48.24353, 4.22972, 82.74043, 6.01489, 118.82951, 7.49953, 167.16435, 10.73817, 218.5253 ],
+								"curve": "stepped"
+							},
+							{
+								"time": 0.1667,
+								"vertices": [ 10.37923, 220.2753, 7.59131, 163.78691, 5.44007, 116.22517, 3.44551, 81.92138, 1.21952, 46.01039, 0, 0, 0, 0, 2.79141, 48.24353, 4.22972, 82.74043, 6.01489, 118.82951, 7.49953, 167.16435, 10.73817, 218.5253 ]
+							},
+							{
+								"time": 0.3333,
+								"vertices": [ 7.96586, 169.61272, 5.6703, 113.83569, 3.57966, 68.32731, 1.76732, 35.24518, 0, 0, 0, 0, 0, 0, 0, 0, 1.7657, 34.38019, 3.14391, 69.30045, 5.5287, 116.38792, 7.9552, 168.67473 ]
+							},
+							{
+								"time": 0.5,
+								"vertices": [ 6.67844, 136.40446, 4.15785, 80.31847, 2.09172, 34.66451, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1.76541, 35.40434, 3.6405, 83.55586, 6.14417, 135.42177 ]
+							},
+							{
+								"time": 0.6667,
+								"vertices": [ 4.86877, 101.03864, 2.27464, 46.28938, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2.47393, 48.5441, 4.86842, 99.38232 ]
+							},
+							{
+								"time": 0.8333,
+								"vertices": [ 2.88678, 51.94207, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2.37026, 49.63039 ]
+							},
+							{ "time": 1 }
+						]
+					}
+				}
+			}
+		}
+	},
+	"6_Cut": {
+		"slots": {
+			"1": {
+				"attachment": [
+					{}
+				]
+			},
+			"2": {
+				"attachment": [
+					{}
+				]
+			},
+			"3": {
+				"rgba": [
+					{ "time": 1.3333, "color": "ffffffff" },
+					{ "time": 1.6667, "color": "ffffff00" }
+				],
+				"attachment": [
+					{},
+					{ "time": 0.3333, "name": "3" }
+				]
+			},
+			"4": {
+				"attachment": [
+					{}
+				]
+			},
+			"5": {
+				"attachment": [
+					{}
+				]
+			},
+			"6": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocloate5": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocloate5-3": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate0": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate1-1": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate1-2": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate1-3": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate2-1": {
+				"attachment": [
+					{ "time": 1 }
+				]
+			},
+			"Chocolate2-2": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate2-3": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate3": {
+				"attachment": [
+					{},
+					{ "time": 1, "name": "Chocolate3" }
+				]
+			},
+			"Chocolate3-1": {
+				"attachment": [
+					{},
+					{ "time": 1, "name": "Chocolate3-1" }
+				]
+			},
+			"Chocolate3-2": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate3-3": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate4": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate4-1": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate4-2": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate4-3": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate5-2": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate6": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate6-2": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate6-3": {
+				"attachment": [
+					{}
+				]
+			},
+			"Cut1": {
+				"attachment": [
+					{}
+				]
+			},
+			"Cut2": {
+				"attachment": [
+					{}
+				]
+			},
+			"Cut3": {
+				"attachment": [
+					{}
+				]
+			},
+			"Cut4": {
+				"attachment": [
+					{}
+				]
+			},
+			"Cut5": {
+				"attachment": [
+					{}
+				]
+			},
+			"Cut6": {
+				"attachment": [
+					{}
+				]
+			},
+			"Knife1": {
+				"attachment": [
+					{}
+				]
+			}
+		},
+		"bones": {
+			"Knife3": {
+				"rotate": [
+					{ "time": 0.3333, "value": 45 },
+					{ "time": 0.6667, "value": 25 },
+					{ "time": 1 }
+				],
+				"translate": [
+					{ "time": 0.3333, "x": 754.28, "y": 439.1 },
+					{ "time": 0.6667, "x": 682.66, "y": 364.85 },
+					{ "time": 1, "x": 579.75, "y": 329.08 },
+					{ "time": 1.3333, "x": 622.43, "y": 326.73 }
+				]
+			},
+			"Choco1": {
+				"translate": [
+					{ "x": -148.8, "y": -1410.99 }
+				]
+			},
+			"Choco1-1": {
+				"translate": [
+					{ "x": -142.14, "y": -1418.98 }
+				]
+			},
+			"Choco2": {
+				"translate": [
+					{ "x": -123.76, "y": -1162.16 }
+				]
+			},
+			"Choco2-1": {
+				"translate": [
+					{ "x": -103.42, "y": -1162.54 }
+				]
+			},
+			"Choco3": {
+				"translate": [
+					{ "time": 1, "x": -89.52, "y": -950.03 }
+				]
+			},
+			"Choco3-1": {
+				"translate": [
+					{ "time": 1, "x": -113.66, "y": -949.63 },
+					{ "time": 1.3333, "x": -68.04, "y": -949.06 }
+				]
+			}
+		},
+		"drawOrder": [
+			{
+				"time": 0.3333,
+				"offsets": [
+					{ "slot": "3", "offset": 22 }
+				]
+			},
+			{
+				"time": 1.3333,
+				"offsets": [
+					{ "slot": "3", "offset": 18 }
+				]
+			}
+		]
+	},
+	"7_Line": {
+		"slots": {
+			"1": {
+				"attachment": [
+					{}
+				]
+			},
+			"2": {
+				"attachment": [
+					{}
+				]
+			},
+			"3": {
+				"attachment": [
+					{}
+				]
+			},
+			"4": {
+				"attachment": [
+					{}
+				]
+			},
+			"5": {
+				"attachment": [
+					{}
+				]
+			},
+			"6": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocloate5": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocloate5-3": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate0": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate1-1": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate1-2": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate1-3": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate2-1": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate2-2": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate2-3": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate3-2": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate3-3": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate4": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate4-1": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate4-2": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate4-3": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate5-2": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate6": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate6-2": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate6-3": {
+				"attachment": [
+					{}
+				]
+			},
+			"Cut1": {
+				"attachment": [
+					{}
+				]
+			},
+			"Cut2": {
+				"attachment": [
+					{}
+				]
+			},
+			"Cut3": {
+				"attachment": [
+					{}
+				]
+			},
+			"Cut4": {
+				"rgba": [
+					{ "color": "ffffff00" },
+					{ "time": 0.1667, "color": "ffffffc8", "curve": "stepped" },
+					{ "time": 1, "color": "ffffffc8" },
+					{ "time": 1.1667, "color": "ffffff00" }
+				]
+			},
+			"Cut5": {
+				"attachment": [
+					{}
+				]
+			},
+			"Cut6": {
+				"attachment": [
+					{}
+				]
+			},
+			"Knife1": {
+				"attachment": [
+					{}
+				]
+			}
+		},
+		"bones": {
+			"Choco1": {
+				"translate": [
+					{ "x": -148.8, "y": -1410.99 }
+				]
+			},
+			"Choco1-1": {
+				"translate": [
+					{ "x": -142.14, "y": -1418.98 }
+				]
+			},
+			"Choco2-1": {
+				"translate": [
+					{ "x": -103.42, "y": -1162.54 }
+				]
+			},
+			"Choco3": {
+				"translate": [
+					{ "x": -89.52, "y": -950.03 }
+				]
+			},
+			"Choco3-1": {
+				"translate": [
+					{ "x": -68.04, "y": -949.06 }
+				]
+			}
+		},
+		"attachments": {
+			"default": {
+				"Cut4": {
+					"Cut4": {
+						"deform": [
+							{
+								"vertices": [ 21.54028, 218.67505, 20.75562, 217.76593 ],
+								"curve": "stepped"
+							},
+							{
+								"time": 0.1667,
+								"vertices": [ 21.54028, 218.67505, 20.75562, 217.76593 ]
+							},
+							{
+								"time": 0.3333,
+								"vertices": [ 14.98299, 173.1227, 14.64746, 168.70694 ]
+							},
+							{
+								"time": 0.5,
+								"vertices": [ 13.10536, 136.55936, 11.55501, 132.98978 ]
+							},
+							{
+								"time": 0.6667,
+								"vertices": [ 7.73388, 80.22591, 4.42226, 76.53613 ]
+							},
+							{
+								"time": 0.8333,
+								"vertices": [ 1.04052, 21.85123, 0, 21.33102 ]
+							},
+							{ "time": 1 }
+						]
+					}
+				}
+			}
+		}
+	},
+	"8_Cut": {
+		"slots": {
+			"1": {
+				"attachment": [
+					{}
+				]
+			},
+			"2": {
+				"attachment": [
+					{}
+				]
+			},
+			"3": {
+				"attachment": [
+					{}
+				]
+			},
+			"4": {
+				"rgba": [
+					{ "time": 1.3333, "color": "ffffffff" },
+					{ "time": 1.6667, "color": "ffffff00" }
+				],
+				"attachment": [
+					{},
+					{ "time": 0.3333, "name": "4" }
+				]
+			},
+			"5": {
+				"attachment": [
+					{}
+				]
+			},
+			"6": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocloate5": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocloate5-3": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate0": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate1-1": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate1-2": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate1-3": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate2-1": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate2-2": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate2-3": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate3-1": {
+				"attachment": [
+					{ "time": 1 }
+				]
+			},
+			"Chocolate3-2": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate3-3": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate4": {
+				"attachment": [
+					{},
+					{ "time": 1, "name": "Chocolate4" }
+				]
+			},
+			"Chocolate4-1": {
+				"attachment": [
+					{},
+					{ "time": 1, "name": "Chocolate4-1" }
+				]
+			},
+			"Chocolate4-2": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate4-3": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate5-2": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate6": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate6-2": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate6-3": {
+				"attachment": [
+					{}
+				]
+			},
+			"Cut1": {
+				"attachment": [
+					{}
+				]
+			},
+			"Cut2": {
+				"attachment": [
+					{}
+				]
+			},
+			"Cut3": {
+				"attachment": [
+					{}
+				]
+			},
+			"Cut4": {
+				"attachment": [
+					{}
+				]
+			},
+			"Cut5": {
+				"attachment": [
+					{}
+				]
+			},
+			"Cut6": {
+				"attachment": [
+					{}
+				]
+			},
+			"Knife1": {
+				"attachment": [
+					{}
+				]
+			}
+		},
+		"bones": {
+			"Knife4": {
+				"rotate": [
+					{ "time": 0.3333, "value": 45 },
+					{ "time": 0.6667, "value": 25 },
+					{ "time": 1 }
+				],
+				"translate": [
+					{ "time": 0.3333, "x": 593.88, "y": 411 },
+					{ "time": 0.6667, "x": 519.04, "y": 341.51 },
+					{ "time": 1, "x": 404.22, "y": 297.2 },
+					{ "time": 1.3333, "x": 453.38, "y": 299.49 }
+				]
+			},
+			"Choco1": {
+				"translate": [
+					{ "x": -148.8, "y": -1410.99 }
+				]
+			},
+			"Choco1-1": {
+				"translate": [
+					{ "x": -142.14, "y": -1418.98 }
+				]
+			},
+			"Choco2-1": {
+				"translate": [
+					{ "x": -103.42, "y": -1162.54 }
+				]
+			},
+			"Choco3": {
+				"translate": [
+					{ "x": -89.52, "y": -950.03 }
+				]
+			},
+			"Choco3-1": {
+				"translate": [
+					{ "x": -68.04, "y": -949.06 }
+				]
+			},
+			"Choco4": {
+				"translate": [
+					{ "time": 1, "x": -82.53, "y": -730.69 }
+				]
+			},
+			"Choco4-1": {
+				"translate": [
+					{ "time": 1, "x": -127.51, "y": -730.72 },
+					{ "time": 1.3333, "x": -82.92, "y": -730.15 }
+				]
+			}
+		},
+		"drawOrder": [
+			{
+				"time": 0.3333,
+				"offsets": [
+					{ "slot": "4", "offset": 23 }
+				]
+			},
+			{
+				"time": 1,
+				"offsets": [
+					{ "slot": "4", "offset": 7 },
+					{ "slot": "Chocolate4", "offset": -13 }
+				]
+			}
+		]
+	},
+	"9_Line": {
+		"slots": {
+			"1": {
+				"attachment": [
+					{}
+				]
+			},
+			"2": {
+				"attachment": [
+					{}
+				]
+			},
+			"3": {
+				"attachment": [
+					{}
+				]
+			},
+			"4": {
+				"attachment": [
+					{}
+				]
+			},
+			"5": {
+				"attachment": [
+					{}
+				]
+			},
+			"6": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocloate5": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocloate5-3": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate0": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate1-1": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate1-2": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate1-3": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate2-1": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate2-2": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate2-3": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate3-1": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate3-2": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate3-3": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate4-2": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate4-3": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate5-2": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate6": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate6-2": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate6-3": {
+				"attachment": [
+					{}
+				]
+			},
+			"Cut1": {
+				"attachment": [
+					{}
+				]
+			},
+			"Cut2": {
+				"attachment": [
+					{}
+				]
+			},
+			"Cut3": {
+				"attachment": [
+					{}
+				]
+			},
+			"Cut4": {
+				"attachment": [
+					{}
+				]
+			},
+			"Cut5": {
+				"rgba": [
+					{ "color": "ffffff00" },
+					{ "time": 0.1667, "color": "ffffffc8", "curve": "stepped" },
+					{ "time": 1, "color": "ffffffc8" },
+					{ "time": 1.1667, "color": "ffffff00" }
+				]
+			},
+			"Cut6": {
+				"attachment": [
+					{}
+				]
+			},
+			"Knife1": {
+				"attachment": [
+					{}
+				]
+			}
+		},
+		"bones": {
+			"Choco1": {
+				"translate": [
+					{ "x": -148.8, "y": -1410.99 }
+				]
+			},
+			"Choco1-1": {
+				"translate": [
+					{ "x": -142.14, "y": -1418.98 }
+				]
+			},
+			"Choco2-1": {
+				"translate": [
+					{ "x": -103.42, "y": -1162.54 }
+				]
+			},
+			"Choco3": {
+				"translate": [
+					{ "x": -89.52, "y": -950.03 }
+				]
+			},
+			"Choco3-1": {
+				"translate": [
+					{ "x": -68.04, "y": -949.06 }
+				]
+			},
+			"Choco4": {
+				"translate": [
+					{ "x": -82.53, "y": -730.69 }
+				]
+			},
+			"Choco4-1": {
+				"translate": [
+					{ "x": -82.92, "y": -730.15 }
+				]
+			}
+		},
+		"attachments": {
+			"default": {
+				"Cut5": {
+					"Cut5": {
+						"deform": [
+							{
+								"vertices": [ 33.9046, 214.90953, 33.95096, 217.28606 ],
+								"curve": "stepped"
+							},
+							{
+								"time": 0.1667,
+								"vertices": [ 33.9046, 214.90953, 33.95096, 217.28606 ]
+							},
+							{
+								"time": 0.3333,
+								"vertices": [ 29.34441, 183.6747, 28.51881, 187.40929 ]
+							},
+							{
+								"time": 0.5,
+								"vertices": [ 22.70076, 140.48369, 22.89236, 142.40613 ]
+							},
+							{
+								"time": 0.6667,
+								"vertices": [ 16.05711, 91.18153, 15.95694, 93.70461 ]
+							},
+							{
+								"time": 0.8333,
+								"vertices": [ 9.3862, 53.8942, 9.16676, 55.00058 ]
+							},
+							{ "time": 1 }
+						]
+					}
+				}
+			}
+		}
+	},
+	"10_Cut": {
+		"slots": {
+			"1": {
+				"attachment": [
+					{}
+				]
+			},
+			"2": {
+				"attachment": [
+					{}
+				]
+			},
+			"3": {
+				"attachment": [
+					{}
+				]
+			},
+			"4": {
+				"attachment": [
+					{}
+				]
+			},
+			"5": {
+				"rgba": [
+					{ "time": 1.3333, "color": "ffffffff" },
+					{ "time": 1.6667, "color": "ffffff00" }
+				],
+				"attachment": [
+					{},
+					{ "time": 0.3333, "name": "5" }
+				]
+			},
+			"6": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocloate5": {
+				"attachment": [
+					{},
+					{ "time": 1, "name": "Chocloate5" }
+				]
+			},
+			"Chocloate5-3": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate0": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate1-1": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate1-2": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate1-3": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate2-1": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate2-2": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate2-3": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate3-1": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate3-2": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate3-3": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate4-1": {
+				"attachment": [
+					{ "time": 1 }
+				]
+			},
+			"Chocolate4-2": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate4-3": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate5-2": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate6": {
+				"attachment": [
+					{},
+					{ "time": 1, "name": "Chocolate6" }
+				]
+			},
+			"Chocolate6-2": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate6-3": {
+				"attachment": [
+					{}
+				]
+			},
+			"Cut1": {
+				"attachment": [
+					{}
+				]
+			},
+			"Cut2": {
+				"attachment": [
+					{}
+				]
+			},
+			"Cut3": {
+				"attachment": [
+					{}
+				]
+			},
+			"Cut4": {
+				"attachment": [
+					{}
+				]
+			},
+			"Cut5": {
+				"attachment": [
+					{}
+				]
+			},
+			"Cut6": {
+				"attachment": [
+					{}
+				]
+			},
+			"Knife1": {
+				"attachment": [
+					{}
+				]
+			}
+		},
+		"bones": {
+			"Knife5": {
+				"rotate": [
+					{ "time": 0.3333, "value": 45 },
+					{ "time": 0.6667, "value": 25 },
+					{ "time": 1 }
+				],
+				"translate": [
+					{ "time": 0.3333, "x": 664.83, "y": 439.98 },
+					{ "time": 0.6667, "x": 584.19, "y": 376.7 },
+					{ "time": 1, "x": 472.12, "y": 349.76 },
+					{ "time": 1.3333, "x": 511.43, "y": 351.53 }
+				]
+			},
+			"Choco1": {
+				"translate": [
+					{ "x": -148.8, "y": -1410.99 }
+				]
+			},
+			"Choco1-1": {
+				"translate": [
+					{ "x": -142.14, "y": -1418.98 }
+				]
+			},
+			"Choco2-1": {
+				"translate": [
+					{ "x": -103.42, "y": -1162.54 }
+				]
+			},
+			"Choco3": {
+				"translate": [
+					{ "x": -89.52, "y": -950.03 }
+				]
+			},
+			"Choco3-1": {
+				"translate": [
+					{ "x": -68.04, "y": -949.06 }
+				]
+			},
+			"Choco4": {
+				"translate": [
+					{ "x": -82.53, "y": -730.69 }
+				]
+			},
+			"Choco4-1": {
+				"translate": [
+					{ "x": -82.92, "y": -730.15 }
+				]
+			},
+			"Choco5": {
+				"translate": [
+					{ "time": 1, "x": -43, "y": -495.18 }
+				]
+			},
+			"Choco5-1": {
+				"translate": [
+					{ "time": 1, "x": -62.09, "y": -494.59 },
+					{ "time": 1.3333, "x": -20.07, "y": -494.59 }
+				]
+			}
+		},
+		"drawOrder": [
+			{
+				"time": 0.3333,
+				"offsets": [
+					{ "slot": "5", "offset": 21 }
+				]
+			},
+			{
+				"time": 1,
+				"offsets": [
+					{ "slot": "5", "offset": 7 },
+					{ "slot": "Chocloate5", "offset": -4 }
+				]
+			}
+		]
+	},
+	"11_Line": {
+		"slots": {
+			"1": {
+				"attachment": [
+					{}
+				]
+			},
+			"2": {
+				"attachment": [
+					{}
+				]
+			},
+			"3": {
+				"attachment": [
+					{}
+				]
+			},
+			"4": {
+				"attachment": [
+					{}
+				]
+			},
+			"5": {
+				"attachment": [
+					{}
+				]
+			},
+			"6": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocloate5-3": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate0": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate1-1": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate1-2": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate1-3": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate2-1": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate2-2": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate2-3": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate3-1": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate3-2": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate3-3": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate4-1": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate4-2": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate4-3": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate5-2": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate6-2": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate6-3": {
+				"attachment": [
+					{}
+				]
+			},
+			"Cut1": {
+				"attachment": [
+					{}
+				]
+			},
+			"Cut2": {
+				"attachment": [
+					{}
+				]
+			},
+			"Cut3": {
+				"attachment": [
+					{}
+				]
+			},
+			"Cut4": {
+				"attachment": [
+					{}
+				]
+			},
+			"Cut5": {
+				"attachment": [
+					{}
+				]
+			},
+			"Cut6": {
+				"rgba": [
+					{ "time": 1.1667, "color": "ffffffc8" },
+					{ "time": 1.3333, "color": "ffffff00" }
+				],
+				"attachment": [
+					{},
+					{ "time": 0.1667, "name": "Cut6" }
+				]
+			},
+			"Knife1": {
+				"attachment": [
+					{}
+				]
+			}
+		},
+		"bones": {
+			"Choco1": {
+				"translate": [
+					{ "x": -148.8, "y": -1410.99 }
+				]
+			},
+			"Choco1-1": {
+				"translate": [
+					{ "x": -178.45, "y": -1418.98 }
+				]
+			},
+			"Choco2-1": {
+				"translate": [
+					{ "x": -139.73, "y": -1163.03 }
+				]
+			},
+			"Choco3": {
+				"translate": [
+					{ "x": -89.52, "y": -950.03 }
+				]
+			},
+			"Choco3-1": {
+				"translate": [
+					{ "x": -105.81, "y": -949.54 }
+				]
+			},
+			"Choco4": {
+				"translate": [
+					{ "x": -82.53, "y": -730.69 }
+				]
+			},
+			"Choco4-1": {
+				"translate": [
+					{ "x": -121.17, "y": -729.67 }
+				]
+			},
+			"Choco5": {
+				"translate": [
+					{ "x": -43, "y": -495.18 }
+				]
+			},
+			"Choco5-1": {
+				"translate": [
+					{ "x": -58.33, "y": -494.59 }
+				]
+			}
+		},
+		"attachments": {
+			"default": {
+				"Cut6": {
+					"Cut6": {
+						"deform": [
+							{
+								"time": 0.1667,
+								"offset": 2,
+								"vertices": [ -53.12515, 0, -114.97166, -0.17634, -187.89386, -0.09323, -264.94745, 0.08309, -350.98688, -0.08806, -428.04538, -0.57665, -508.58035, -0.71173, -576.4718, -0.59255, -628.4946, -0.71017, -631.0139, -0.08445, -568.7986, 0.03798, -506.5212, 0.02707, -429.3425, 0.09056, -351.8984, 0.07067, -269.28226, 0.07055, -183.74306, 1.0E-5, -106.50749, 0, -53.6275, -0.12558 ]
+							},
+							{
+								"time": 0.3333,
+								"offset": 4,
+								"vertices": [ -58.78918, -0.15804, -127.71773, 0.05833, -197.93442, -0.2801, -280.65717, -0.10233, -346.30444, -0.71472, -418.13116, -0.86739, -477.18164, -1.13303, -522.72577, -1.65471, -524.9947, -0.7737, -472.31763, -0.51299, -417.74847, -0.38415, -347.9187, -0.66595, -279.50797, -0.49991, -205.17606, -0.05016, -124.37389, 0, -50.57133, 0.15803 ]
+							},
+							{
+								"time": 0.5,
+								"offset": 8,
+								"vertices": [ -75.02631, -0.27787, -158.8395, -0.07318, -231.95096, -0.47333, -312.18576, -0.61779, -379.0236, -0.7856, -429.41602, -0.56559, -431.7309, -0.08199, -373.81396, -0.29209, -313.0656, -0.041, -237.30466, -0.1399, -166.10211, -0.14677, -85.53914 ]
+							},
+							{
+								"time": 0.6667,
+								"offset": 12,
+								"vertices": [ -76.06273, -0.16253, -154.47635, -0.0798, -220.31879, 1.0E-5, -271.4325, -0.4369, -272.45193, 0.17393, -210.8054, 0.15502, -149.9616, 0, -76.22527 ]
+							},
+							{
+								"time": 0.8333,
+								"offset": 14,
+								"vertices": [ -77.94076, 0, -142.91254, 0, -190.04457, -0.53233, -191.1959, 0.06492, -134.78647, 0.17666, -75.24283 ]
+							},
+							{
+								"time": 1,
+								"offset": 18,
+								"vertices": [ -51.52072, 0, -59.37332 ]
+							},
+							{ "time": 1.1667 }
+						]
+					}
+				}
+			}
+		}
+	},
+	"12_Cut": {
+		"slots": {
+			"1": {
+				"attachment": [
+					{}
+				]
+			},
+			"2": {
+				"attachment": [
+					{}
+				]
+			},
+			"3": {
+				"attachment": [
+					{}
+				]
+			},
+			"4": {
+				"attachment": [
+					{}
+				]
+			},
+			"5": {
+				"attachment": [
+					{}
+				]
+			},
+			"6": {
+				"rgba": [
+					{ "time": 1.3333, "color": "ffffffff" },
+					{ "time": 1.5, "color": "ffffff00", "curve": "stepped" },
+					{ "time": 1.6667, "color": "ffffff00" }
+				],
+				"attachment": [
+					{},
+					{ "time": 0.3333, "name": "6" }
+				]
+			},
+			"Chocloate5": {
+				"attachment": [
+					{ "time": 1 }
+				]
+			},
+			"Chocloate5-3": {
+				"attachment": [
+					{},
+					{ "time": 1, "name": "Chocloate5-3" }
+				]
+			},
+			"Chocolate0": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate1": {
+				"attachment": [
+					{ "time": 1 }
+				]
+			},
+			"Chocolate1-1": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate1-2": {
+				"attachment": [
+					{},
+					{ "time": 1, "name": "Chocolate1-2" }
+				]
+			},
+			"Chocolate1-3": {
+				"attachment": [
+					{},
+					{ "time": 1, "name": "Chocolate1-3" }
+				]
+			},
+			"Chocolate2": {
+				"attachment": [
+					{ "time": 1 }
+				]
+			},
+			"Chocolate2-1": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate2-2": {
+				"attachment": [
+					{},
+					{ "time": 1, "name": "Chocolate2-2" }
+				]
+			},
+			"Chocolate2-3": {
+				"attachment": [
+					{},
+					{ "time": 1, "name": "Chocolate2-3" }
+				]
+			},
+			"Chocolate3": {
+				"attachment": [
+					{ "time": 1 }
+				]
+			},
+			"Chocolate3-1": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate3-2": {
+				"attachment": [
+					{},
+					{ "time": 1, "name": "Chocolate3-2" }
+				]
+			},
+			"Chocolate3-3": {
+				"attachment": [
+					{},
+					{ "time": 1, "name": "Chocolate3-3" }
+				]
+			},
+			"Chocolate4": {
+				"attachment": [
+					{ "time": 1 }
+				]
+			},
+			"Chocolate4-1": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate4-2": {
+				"attachment": [
+					{},
+					{ "time": 1, "name": "Chocolate4-2" }
+				]
+			},
+			"Chocolate4-3": {
+				"attachment": [
+					{},
+					{ "time": 1, "name": "Chocolate4-3" }
+				]
+			},
+			"Chocolate5-2": {
+				"attachment": [
+					{},
+					{ "time": 1, "name": "Chocolate5-2" }
+				]
+			},
+			"Chocolate6": {
+				"attachment": [
+					{ "time": 1 }
+				]
+			},
+			"Chocolate6-2": {
+				"attachment": [
+					{},
+					{ "time": 1, "name": "Chocolate6-2" }
+				]
+			},
+			"Chocolate6-3": {
+				"attachment": [
+					{},
+					{ "time": 1, "name": "Chocolate6-3" }
+				]
+			},
+			"Cut1": {
+				"attachment": [
+					{}
+				]
+			},
+			"Cut2": {
+				"attachment": [
+					{}
+				]
+			},
+			"Cut3": {
+				"attachment": [
+					{}
+				]
+			},
+			"Cut4": {
+				"attachment": [
+					{}
+				]
+			},
+			"Cut5": {
+				"attachment": [
+					{}
+				]
+			},
+			"Cut6": {
+				"attachment": [
+					{}
+				]
+			},
+			"Knife1": {
+				"attachment": [
+					{}
+				]
+			}
+		},
+		"bones": {
+			"C1": {
+				"translate": [
+					{ "time": 1, "x": -603.67, "y": 308.98 },
+					{ "time": 1.0667, "x": -603.67, "y": 313.12 }
+				]
+			},
+			"C2": {
+				"translate": [
+					{ "time": 1, "x": -600.56, "y": 310.82 },
+					{ "time": 1.0667, "x": -602.93, "y": 304.32 }
+				]
+			},
+			"C3": {
+				"translate": [
+					{ "time": 1, "x": -604.56, "y": 310.05 },
+					{ "time": 1.0667, "x": -604.56, "y": 314.19 }
+				]
+			},
+			"C4": {
+				"translate": [
+					{ "time": 1, "x": -602.5, "y": 312.78 },
+					{ "time": 1.0667, "x": -604.27, "y": 305.69 }
+				]
+			},
+			"C8": {
+				"translate": [
+					{ "time": 1, "x": -611.87, "y": 315.1, "curve": "stepped" },
+					{ "time": 1.0667, "x": -611.87, "y": 315.1 },
+					{ "time": 1.1333, "x": -611.87, "y": 309.78 }
+				]
+			},
+			"C5": {
+				"translate": [
+					{ "time": 1, "x": -605.77, "y": 310.19 },
+					{ "time": 1.0667, "x": -605.77, "y": 313.15 }
+				]
+			},
+			"C6": {
+				"translate": [
+					{ "time": 1, "x": -606.03, "y": 315.09 },
+					{ "time": 1.0667, "x": -606.03, "y": 309.18 }
+				]
+			},
+			"C7": {
+				"translate": [
+					{ "time": 1, "x": -613.03, "y": 310.9, "curve": "stepped" },
+					{ "time": 1.0667, "x": -613.03, "y": 310.9 },
+					{ "time": 1.1333, "x": -613.03, "y": 313.85 }
+				]
+			},
+			"C9": {
+				"translate": [
+					{ "time": 1, "x": -615.18, "y": 311.57, "curve": "stepped" },
+					{ "time": 1.1333, "x": -615.18, "y": 311.57 },
+					{ "time": 1.2, "x": -615.18, "y": 315.11 }
+				]
+			},
+			"C10": {
+				"translate": [
+					{ "time": 1, "x": -614.31, "y": 314.82, "curve": "stepped" },
+					{ "time": 1.1333, "x": -614.31, "y": 314.82 },
+					{ "time": 1.2, "x": -614.31, "y": 309.5 }
+				]
+			},
+			"C12": {
+				"translate": [
+					{ "time": 1, "x": -617.98, "y": 313.6, "curve": "stepped" },
+					{ "time": 1.2, "x": -617.98, "y": 313.6 },
+					{ "time": 1.2667, "x": -617.98, "y": 308.87 }
+				]
+			},
+			"C11": {
+				"translate": [
+					{ "time": 1, "x": -619.63, "y": 310.4, "curve": "stepped" },
+					{ "time": 1.2, "x": -619.63, "y": 310.4 },
+					{ "time": 1.2667, "x": -619.63, "y": 313.36 }
+				]
+			},
+			"Knife6": {
+				"rotate": [
+					{ "time": 0.3333, "value": 25 },
+					{ "time": 0.6667 },
+					{ "time": 1, "value": -10 }
+				],
+				"translate": [
+					{ "time": 0.3333, "x": 508.08, "y": 527 },
+					{ "time": 0.6667, "x": 575.98, "y": 429.23 },
+					{ "time": 1, "x": 594.93, "y": 372.58 },
+					{ "time": 1.3333, "x": 1121.19, "y": 366.69 }
+				]
+			},
+			"Choco1": {
+				"translate": [
+					{ "x": -148.8, "y": -1410.99 }
+				]
+			},
+			"Choco1-1": {
+				"translate": [
+					{ "x": -178.45, "y": -1418.98 }
+				]
+			},
+			"Choco2-1": {
+				"translate": [
+					{ "x": -139.73, "y": -1163.03 }
+				]
+			},
+			"Choco3": {
+				"translate": [
+					{ "x": -89.52, "y": -950.03 }
+				]
+			},
+			"Choco3-1": {
+				"translate": [
+					{ "x": -105.81, "y": -949.54 }
+				]
+			},
+			"Choco4": {
+				"translate": [
+					{ "x": -82.53, "y": -730.69 }
+				]
+			},
+			"Choco4-1": {
+				"translate": [
+					{ "x": -121.17, "y": -729.67 }
+				]
+			},
+			"Choco5": {
+				"translate": [
+					{ "x": -43, "y": -495.18 }
+				]
+			},
+			"Choco5-1": {
+				"translate": [
+					{ "x": -58.33, "y": -494.59 }
+				]
+			}
+		},
+		"drawOrder": [
+			{
+				"time": 0.3333,
+				"offsets": [
+					{ "slot": "6", "offset": 22 }
+				]
+			},
+			{
+				"time": 1,
+				"offsets": [
+					{ "slot": "6", "offset": 16 },
+					{ "slot": "Chocolate6-3", "offset": 10 },
+					{ "slot": "Chocloate5-3", "offset": 8 },
+					{ "slot": "Chocolate4-3", "offset": 6 },
+					{ "slot": "Chocolate3-3", "offset": 4 },
+					{ "slot": "Chocolate2-3", "offset": 2 },
+					{ "slot": "Chocolate1-3", "offset": 1 }
+				]
+			}
+		]
+	},
+	"13_Idle": {
+		"slots": {
+			"1": {
+				"attachment": [
+					{}
+				]
+			},
+			"2": {
+				"attachment": [
+					{}
+				]
+			},
+			"3": {
+				"attachment": [
+					{}
+				]
+			},
+			"4": {
+				"attachment": [
+					{}
+				]
+			},
+			"5": {
+				"attachment": [
+					{}
+				]
+			},
+			"6": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocloate5": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate0": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate1": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate1-1": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate2": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate2-1": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate3": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate3-1": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate4": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate4-1": {
+				"attachment": [
+					{}
+				]
+			},
+			"Chocolate6": {
+				"attachment": [
+					{}
+				]
+			},
+			"Cut1": {
+				"attachment": [
+					{}
+				]
+			},
+			"Cut2": {
+				"attachment": [
+					{}
+				]
+			},
+			"Cut3": {
+				"attachment": [
+					{}
+				]
+			},
+			"Cut4": {
+				"attachment": [
+					{}
+				]
+			},
+			"Cut5": {
+				"attachment": [
+					{}
+				]
+			},
+			"Cut6": {
+				"attachment": [
+					{}
+				]
+			},
+			"Knife1": {
+				"attachment": [
+					{}
+				]
+			}
+		},
+		"bones": {
+			"C1": {
+				"translate": [
+					{ "x": -603.67, "y": 313.12 }
+				]
+			},
+			"C2": {
+				"translate": [
+					{ "x": -602.93, "y": 304.32 }
+				]
+			},
+			"C3": {
+				"translate": [
+					{ "x": -604.56, "y": 314.19 }
+				]
+			},
+			"C4": {
+				"translate": [
+					{ "x": -604.27, "y": 305.69 }
+				]
+			},
+			"C8": {
+				"translate": [
+					{ "x": -611.87, "y": 309.78 }
+				]
+			},
+			"C5": {
+				"translate": [
+					{ "x": -605.77, "y": 313.15 }
+				]
+			},
+			"C6": {
+				"translate": [
+					{ "x": -606.03, "y": 309.18 }
+				]
+			},
+			"C7": {
+				"translate": [
+					{ "x": -613.03, "y": 313.85 }
+				]
+			},
+			"C9": {
+				"translate": [
+					{ "x": -615.18, "y": 315.11 }
+				]
+			},
+			"C10": {
+				"translate": [
+					{ "x": -614.31, "y": 309.5 }
+				]
+			},
+			"C12": {
+				"translate": [
+					{ "x": -617.98, "y": 308.87 }
+				]
+			},
+			"C11": {
+				"translate": [
+					{ "x": -619.63, "y": 313.36 }
+				]
+			},
+			"Knife6": {
+				"rotate": [
+					{ "value": -10 }
+				],
+				"translate": [
+					{ "x": 594.93, "y": 372.58 }
+				]
+			},
+			"Choco1": {
+				"translate": [
+					{ "x": -148.8, "y": -1410.99 }
+				]
+			},
+			"Choco1-1": {
+				"translate": [
+					{ "x": -178.45, "y": -1418.98 }
+				]
+			},
+			"Choco2-1": {
+				"translate": [
+					{ "x": -139.73, "y": -1163.03 }
+				]
+			},
+			"Choco3": {
+				"translate": [
+					{ "x": -89.52, "y": -950.03 }
+				]
+			},
+			"Choco3-1": {
+				"translate": [
+					{ "x": -105.81, "y": -949.54 }
+				]
+			},
+			"Choco4": {
+				"translate": [
+					{ "x": -82.53, "y": -730.69 }
+				]
+			},
+			"Choco4-1": {
+				"translate": [
+					{ "x": -121.17, "y": -729.67 }
+				]
+			},
+			"Choco5": {
+				"translate": [
+					{ "x": -43, "y": -495.18 }
+				]
+			},
+			"Choco5-1": {
+				"translate": [
+					{ "x": -58.33, "y": -494.59 }
+				]
+			}
+		},
+		"drawOrder": [
+			{
+				"offsets": [
+					{ "slot": "6", "offset": 16 },
+					{ "slot": "Chocolate6-3", "offset": 10 },
+					{ "slot": "Chocloate5-3", "offset": 8 },
+					{ "slot": "Chocolate4-3", "offset": 6 },
+					{ "slot": "Chocolate3-3", "offset": 4 },
+					{ "slot": "Chocolate2-3", "offset": 2 },
+					{ "slot": "Chocolate1-3", "offset": 1 }
+				]
+			},
+			{
+				"time": 0.3333,
+				"offsets": [
+					{ "slot": "6", "offset": 16 },
+					{ "slot": "Chocolate6-3", "offset": 10 },
+					{ "slot": "Chocloate5-3", "offset": 8 },
+					{ "slot": "Chocolate4-3", "offset": 6 },
+					{ "slot": "Chocolate3-3", "offset": 4 },
+					{ "slot": "Chocolate2-3", "offset": 2 },
+					{ "slot": "Chocolate1-3", "offset": 1 }
+				]
+			}
+		]
+	}
+}
+}

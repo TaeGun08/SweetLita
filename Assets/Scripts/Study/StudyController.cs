@@ -1,7 +1,10 @@
+using Newtonsoft.Json;
+using Spine.Unity;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class StudyController : MonoBehaviour
@@ -9,13 +12,14 @@ public class StudyController : MonoBehaviour
     [Header("공부 게임 설정")]
     [SerializeField] private List<Button> answerButtons;
     [SerializeField] private Image timerImage;
-    [SerializeField] private TMP_Text text;
     [Space]
     [SerializeField] private List<GameObject> lifeImage;
     [Space]
     [SerializeField] private List<GameObject> clearTextAndOverText;
     [Space]
     [SerializeField] private TMP_Text roundText;
+    [Space]
+    [SerializeField] private List<ChangeAnswer> changeAnswers;
 
     private int life = 3;
 
@@ -27,79 +31,179 @@ public class StudyController : MonoBehaviour
 
     private bool check = false;
 
+    private int randomA;
+    private int randomB;
+    private int randomC;
+
+    [Space]
+    [SerializeField] private Image fadeImage;
+    private float fadeTimer;
+    [SerializeField] private bool fadeCheck = false;
+    private bool fadeInOutCheck = false;
+    [Space]
+    [SerializeField] private GameObject explanationWindow;
+    [SerializeField] private Button gameStartButton;
+    private bool gameStart = false;
+    [Space]
+    [SerializeField] private GameObject gameEndObject;
+    [SerializeField] private List<Button> buttons;
+    private bool retry = false;
+    private bool gameClear = false;
+    [Space]
+    [SerializeField] private TMP_Text gameClearOverText;
+    private float textChangeTimer;
+    private bool textChanageOn = false;
+    private float textStartTimer;
+    private bool textStartCheck = false;
+
     private void Awake()
     {
+        gameStartButton.onClick.AddListener(() =>
+        {
+            explanationWindow.SetActive(false);
+            gameStart = true;
+        });
+
+        buttons[0].onClick.AddListener(() =>
+        {
+            fadeCheck = true;
+            fadeImage.gameObject.SetActive(true);
+        });
+
+        buttons[1].onClick.AddListener(() =>
+        {
+            fadeCheck = true;
+            fadeImage.gameObject.SetActive(true);
+            retry = true;
+        });
+
         timer = 80f;
 
         buttonCheck();
+
+        fadeTimer = 2;
+
+        fadeCheck = true;
+
+        fadeInOutCheck = true;
+
+        textChangeTimer = 3;
+        gameClearOverText.text = "";
+        gameClearOverText.gameObject.SetActive(true);
     }
 
     private void Update()
     {
-        if (round == 3)
+        fadeInOut();
+
+        if (gameStart == true && textChanageOn == false)
         {
-            clearTextAndOverText[0].SetActive(true);
-            return;
+            textChangeTimer -= Time.deltaTime;
+            gameClearOverText.text = $"{(int)(textChangeTimer + 1)}";
+            if (textChangeTimer <= 0)
+            {
+                gameClearOverText.text = $"";
+                textChanageOn = true;
+            }
         }
-        else if (life == 0)
+        else if (gameStart == true && textChanageOn == true)
         {
-            clearTextAndOverText[1].SetActive(true);
-            return;
+            textStartTimer += Time.deltaTime;
+
+            if (textStartTimer < 1f)
+            {
+                gameClearOverText.text = $"게임 스타트!";
+            }
+            else
+            {
+                gameClearOverText.text = $"";
+                gameClearOverText.gameObject.SetActive(false);
+                textStartCheck = true;
+            }
         }
 
-        if (round == 0)
+        if (gameStart == true && textStartCheck == true)
         {
-            roundText.text = $"1 라운드";
-        }
-        else if (round == 1)
-        {
-            roundText.text = $"2 라운드";
-        }
-        else
-        {
-            roundText.text = $"마지막 라운드";
-        }
+            if (round == 3)
+            {
+                gameEndObject.SetActive(true);
+                clearTextAndOverText[0].SetActive(true);
+                gameClear = true;
+                return;
+            }
+            else if (life == 0)
+            {
+                gameEndObject.SetActive(true);
+                clearTextAndOverText[1].SetActive(true);
+                return;
+            }
 
-        gameStart();
+            if (round == 0)
+            {
+                roundText.text = $"1 라운드";
+            }
+            else if (round == 1)
+            {
+                roundText.text = $"2 라운드";
+            }
+            else
+            {
+                roundText.text = $"마지막 라운드";
+            }
+
+            gameStartCheck();
+        }
     }
 
-    private void gameStart()
+    private void gameStartCheck()
     {
         timer -= Time.deltaTime;
         timerImage.fillAmount = timer / 80f;
 
         if (check == false)
         {
-            int randomA = Random.Range(0, 11);
-            int randomB = Random.Range(0, 11);
-            int randomC = Random.Range(0, 4);
+            randomA = Random.Range(0, 10);
+            randomC = Random.Range(0, 4);
+            answerCheck(randomA, randomC);
             int buttonRandom = Random.Range(0, 3);
 
             if (randomC == 0)
             {
                 buttonCheck(buttonRandom, randomA + randomB);
-                text.text = $"{randomA} + {randomB} = ?";
+
+                changeAnswers[0].SetSpriteNumber(randomA);
+                changeAnswers[1].SetSpriteNumber(0);
+                changeAnswers[2].SetSpriteNumber(randomB);
 
                 answerInt = randomA + randomB;
             }
             else if (randomC == 1)
             {
                 buttonCheck(buttonRandom, randomA - randomB);
-                text.text = $"{randomA} - {randomB} = ?";
+
+                changeAnswers[0].SetSpriteNumber(randomA);
+                changeAnswers[1].SetSpriteNumber(1);
+                changeAnswers[2].SetSpriteNumber(randomB);
 
                 answerInt = randomA - randomB;
             }
             else if (randomC == 2)
             {
                 buttonCheck(buttonRandom, randomA * randomB);
-                text.text = $"{randomA} × {randomB} = ?";
+
+                changeAnswers[0].SetSpriteNumber(randomA);
+                changeAnswers[1].SetSpriteNumber(2);
+                changeAnswers[2].SetSpriteNumber(randomB);
 
                 answerInt = randomA * randomB;
             }
-            else if (randomC == 3) 
+            else if (randomC == 3)
             {
                 buttonCheck(buttonRandom, randomA / randomB);
-                text.text = $"{randomA} ÷ {randomB} = ?";
+
+                changeAnswers[0].SetSpriteNumber(randomA);
+                changeAnswers[1].SetSpriteNumber(3);
+                changeAnswers[2].SetSpriteNumber(randomB);
 
                 answerInt = randomA / randomB;
             }
@@ -108,66 +212,311 @@ public class StudyController : MonoBehaviour
         }
     }
 
+    private void answerCheck(int _number, int _randomC)
+    {
+        if (_randomC == 0)
+        {
+            #region
+            if (_number == 0)
+            {
+                randomB = Random.Range(0, 10);
+            }
+            else if (_number == 1)
+            {
+                randomB = Random.Range(0, 9);
+            }
+            else if (_number == 2)
+            {
+                randomB = Random.Range(0, 8);
+            }
+            else if (_number == 3)
+            {
+                randomB = Random.Range(0, 7);
+            }
+            else if (_number == 4)
+            {
+                randomB = Random.Range(0, 6);
+            }
+            else if (_number == 5)
+            {
+                randomB = Random.Range(0, 5);
+            }
+            else if (_number == 6)
+            {
+                randomB = Random.Range(0, 4);
+            }
+            else if (_number == 7)
+            {
+                randomB = Random.Range(0, 3);
+            }
+            else if (_number == 8)
+            {
+                randomB = Random.Range(0, 2);
+            }
+            else if (_number == 9)
+            {
+                randomB = Random.Range(0, 1);
+            }
+            #endregion
+        }
+        else if (_randomC == 1)
+        {
+            randomB = Random.Range(0, _number);
+        }
+        else if (_randomC == 2)
+        {
+            #region
+            if (_number == 0)
+            {
+                randomB = Random.Range(0, 10);
+            }
+            else if (_number == 1)
+            {
+                randomB = Random.Range(0, 10);
+            }
+            else if (_number == 2)
+            {
+                randomB = Random.Range(0, 5);
+            }
+            else if (_number == 3)
+            {
+                randomB = Random.Range(0, 4);
+            }
+            else if (_number == 4)
+            {
+                randomB = Random.Range(0, 3);
+            }
+            else if (_number == 5)
+            {
+                randomB = Random.Range(0, 2);
+            }
+            else if (_number == 6)
+            {
+                randomB = Random.Range(0, 2);
+            }
+            else if (_number == 7)
+            {
+                randomB = Random.Range(0, 2);
+            }
+            else if (_number == 8)
+            {
+                randomB = Random.Range(0, 2);
+            }
+            else if (_number == 9)
+            {
+                randomB = Random.Range(0, 2);
+            }
+            #endregion
+        }
+        else
+        {
+            randomB = Random.Range(1, _number);
+        }
+    }
+
     private void buttonCheck(int _check, int _number)
     {
         if (_check == 0)
         {
-            int ranA = Random.Range(0, 11);
-            int ranB = Random.Range(0, 11);
+            int ranA = Random.Range(0, 10);
+            int ranB = Random.Range(0, 10);
 
-            int ranC = Random.Range(0, 11);
-            int ranD = Random.Range(0, 11);
+            #region
+            if (_number == 0)
+            {
+                ranA = Random.Range(1, 5);
+                ranB = Random.Range(5, 10);
+            }
+            else if (_number == 9)
+            {
+                ranA = Random.Range(5, 9);
+                ranB = Random.Range(0, 5);
+            }
+            else
+            {
+                ranA = Random.Range(1, 5);
+                ranB = Random.Range(5, 10);
+
+                if (ranA == _number)
+                {
+                    ranA--;
+                    if (ranA < 0)
+                    {
+                        ranA = 2;
+                    }
+                }
+
+                if (ranB == _number)
+                {
+                    ranB++;
+
+                    if (ranB > 9)
+                    {
+                        ranB = 8;
+                    }
+
+                    if (ranA == ranB)
+                    {
+                        ranB -= 2;
+
+                        if (ranB < 0)
+                        {
+                            ranB += 5;
+                        }
+                    }
+                }
+            }
+            #endregion
 
             Answer scA = answerButtons[0].GetComponent<Answer>();
             scA.SetCheck(_number);
+            scA.SetSpriteNumber(_number);
 
             Answer scB = answerButtons[1].GetComponent<Answer>();
-            scB.SetCheck(ranA + ranB);
+            scB.SetCheck(ranA);
+            scB.SetSpriteNumber(ranA);
 
             Answer scC = answerButtons[2].GetComponent<Answer>();
-            scC.SetCheck(ranC + ranD);
+            scC.SetCheck(ranB);
+            scC.SetSpriteNumber(ranB);
         }
         else if (_check == 1)
         {
-            int ranA = Random.Range(0, 11);
-            int ranB = Random.Range(0, 11);
+            int ranA = Random.Range(0, 10);
+            int ranB = Random.Range(0, 10);
+            #region
+            if (_number == 0)
+            {
+                ranA = Random.Range(1, 5);
+                ranB = Random.Range(5, 10);
+            }
+            else if (_number == 9)
+            {
+                ranA = Random.Range(5, 9);
+                ranB = Random.Range(0, 5);
+            }
+            else
+            {
+                ranA = Random.Range(1, 5);
+                ranB = Random.Range(5, 10);
 
-            int ranC = Random.Range(0, 11);
-            int ranD = Random.Range(0, 11);
+                if (ranA == _number)
+                {
+                    ranA--;
+                    if (ranA < 0)
+                    {
+                        ranA = 2;
+                    }
+                }
+
+                if (ranB == _number)
+                {
+                    ranB++;
+
+                    if (ranB > 9)
+                    {
+                        ranB = 8;
+                    }
+
+                    if (ranA == ranB)
+                    {
+                        ranB -= 2;
+
+                        if (ranB < 0)
+                        {
+                            ranB += 5;
+                        }
+                    }
+                }
+            }
+            #endregion
 
             Answer scA = answerButtons[0].GetComponent<Answer>();
-            scA.SetCheck(ranA + ranB);
+            scA.SetCheck(ranA);
+            scA.SetSpriteNumber(ranA);
 
             Answer scB = answerButtons[1].GetComponent<Answer>();
             scB.SetCheck(_number);
+            scB.SetSpriteNumber(_number);
 
             Answer scC = answerButtons[2].GetComponent<Answer>();
-            scC.SetCheck(ranC + ranD);
+            scC.SetCheck(ranB);
+            scC.SetSpriteNumber(ranB);
         }
         else
         {
-            int ranA = Random.Range(0, 11);
-            int ranB = Random.Range(0, 11);
+            int ranA = Random.Range(0, 10);
+            int ranB = Random.Range(0, 10);
 
-            int ranC = Random.Range(0, 11);
-            int ranD = Random.Range(0, 11);
+            #region
+            if (_number == 0)
+            {
+                ranA = Random.Range(1, 5);
+                ranB = Random.Range(5, 10);
+            }
+            else if (_number == 9)
+            {
+                ranA = Random.Range(5, 9);
+                ranB = Random.Range(0, 5);
+            }
+            else
+            {
+                ranA = Random.Range(1, 5);
+                ranB = Random.Range(5, 10);
+
+                if (ranA == _number)
+                {
+                    ranA--;
+                    if (ranA < 0)
+                    {
+                        ranA = 2;
+                    }
+                }
+
+                if (ranB == _number)
+                {
+                    ranB++;
+
+                    if (ranB > 9)
+                    {
+                        ranB = 8;
+                    }
+
+                    if (ranA == ranB)
+                    {
+                        ranB -= 2;
+
+                        if (ranB < 0)
+                        {
+                            ranB += 5;
+                        }
+                    }
+                }
+            }
+            #endregion
 
             Answer scA = answerButtons[0].GetComponent<Answer>();
-            scA.SetCheck(ranC + ranD);
+            scA.SetCheck(ranA);
+            scA.SetSpriteNumber(ranA);
 
             Answer scB = answerButtons[1].GetComponent<Answer>();
-            scB.SetCheck(ranA + ranB);
+            scB.SetCheck(ranB);
+            scB.SetSpriteNumber(ranB);
 
             Answer scC = answerButtons[2].GetComponent<Answer>();
             scC.SetCheck(_number);
+            scC.SetSpriteNumber(_number);
         }
     }
 
     private void buttonCheck()
     {
-        answerButtons[0].onClick.AddListener(() => 
+        answerButtons[0].onClick.AddListener(() =>
         {
             Answer sc = answerButtons[0].GetComponent<Answer>();
+
+            SkeletonGraphic spine = lifeImage[life - 1].GetComponent<SkeletonGraphic>();
+
             if (answerInt == sc.Check())
             {
                 round++;
@@ -177,13 +526,18 @@ public class StudyController : MonoBehaviour
             else
             {
                 life--;
-                lifeImage[life].SetActive(false);
+                spine.startingAnimation = "Break";
+
+                spine.AnimationState.SetAnimation(0, spine.startingAnimation, false);
             }
         });
 
         answerButtons[1].onClick.AddListener(() =>
         {
             Answer sc = answerButtons[1].GetComponent<Answer>();
+
+            SkeletonGraphic spine = lifeImage[life - 1].GetComponent<SkeletonGraphic>();
+
             if (answerInt == sc.Check())
             {
                 round++;
@@ -193,13 +547,18 @@ public class StudyController : MonoBehaviour
             else
             {
                 life--;
-                lifeImage[life].SetActive(false);
+                spine.startingAnimation = "Break";
+
+                spine.AnimationState.SetAnimation(0, spine.startingAnimation, false);
             }
         });
 
         answerButtons[2].onClick.AddListener(() =>
         {
             Answer sc = answerButtons[2].GetComponent<Answer>();
+
+            SkeletonGraphic spine = lifeImage[life - 1].GetComponent<SkeletonGraphic>();
+
             if (answerInt == sc.Check())
             {
                 round++;
@@ -209,8 +568,63 @@ public class StudyController : MonoBehaviour
             else
             {
                 life--;
-                lifeImage[life].SetActive(false);
+                spine.startingAnimation = "Break";
+
+                spine.AnimationState.SetAnimation(0, spine.startingAnimation, false);
             }
         });
+    }
+
+    private void fadeInOut()
+    {
+        if (fadeCheck == true && fadeImage.gameObject.activeSelf == true)
+        {
+            Color fadeColor = fadeImage.color;
+
+            if (fadeColor.a != 0 && fadeInOutCheck == true)
+            {
+                fadeTimer -= Time.deltaTime;
+                fadeColor.a = fadeTimer;
+                fadeImage.color = fadeColor;
+
+                if (fadeColor.a <= 0)
+                {
+                    fadeTimer = 0;
+                    fadeImage.gameObject.SetActive(false);
+                    fadeInOutCheck = false;
+                    fadeCheck = false;
+                }
+            }
+            else if (fadeColor.a != 1 && fadeInOutCheck == false)
+            {
+                fadeTimer += Time.deltaTime / 2;
+                fadeColor.a = fadeTimer;
+                fadeImage.color = fadeColor;
+
+                if (fadeColor.a >= 1)
+                {
+                    if (retry == true && gameClear == true)
+                    {
+                        string getSaveData = JsonConvert.SerializeObject(8);
+                        PlayerPrefs.SetString("saveDataKey", getSaveData);
+                        SceneManager.LoadSceneAsync("Study");
+                    }
+                    else if (retry == true && gameClear == false)
+                    {
+                        SceneManager.LoadSceneAsync("Study");
+                    }
+                    else if (gameClear == false)
+                    {
+                        SceneManager.LoadSceneAsync("Chapter1");
+                    }
+                    else if (gameClear == true)
+                    {
+                        string getSaveData = JsonConvert.SerializeObject(8);
+                        PlayerPrefs.SetString("saveDataKey", getSaveData);
+                        SceneManager.LoadSceneAsync("Chapter1");
+                    }
+                }
+            }
+        }
     }
 }
