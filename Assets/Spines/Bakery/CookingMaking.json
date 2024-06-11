@@ -1,45 +1,45 @@
 {
 "skeleton": {
-	"hash": "f+qhz/mO0N8",
+	"hash": "atcS6bp7dm8",
 	"spine": "4.2.29",
-	"x": -960,
+	"x": -961.2,
 	"y": -619.49,
-	"width": 1920,
+	"width": 1922.4,
 	"height": 2167.99,
 	"images": "./Images/",
 	"audio": "./audio"
 },
 "bones": [
 	{ "name": "root" },
-	{ "name": "Knife1", "parent": "root", "x": -349.74, "y": -462.47, "color": "b600ffff" },
-	{ "name": "Knife2", "parent": "root", "x": -248.75, "y": -424.15, "color": "b600ffff" },
-	{ "name": "Knife3", "parent": "root", "x": -520.87, "y": -456.07, "color": "b600ffff" },
-	{ "name": "Knife4", "parent": "root", "x": -457.38, "y": -442.85, "color": "b600ffff" },
-	{ "name": "Knife5", "parent": "root", "x": -632.42, "y": -493.21, "color": "b600ffff" },
-	{ "name": "Knife6", "parent": "root", "x": -622.5, "y": -283.11, "color": "b600ffff" },
-	{ "name": "Choco0", "parent": "root", "x": 3.43, "y": 30.76, "color": "fdff00ff" },
-	{ "name": "Choco1", "parent": "root", "x": 91.06, "y": 1446.78, "color": "fdff00ff" },
-	{ "name": "Choco1-1", "parent": "root", "x": 430.67, "y": 1451.63, "color": "fdff00ff" },
-	{ "name": "Choco2", "parent": "root", "x": 24.78, "y": 1195.69, "color": "fdff00ff" },
-	{ "name": "Choco2-1", "parent": "root", "x": 293.34, "y": 1196.86, "color": "fdff00ff" },
-	{ "name": "Choco3", "parent": "root", "x": -60.51, "y": 984.27, "color": "fdff00ff" },
-	{ "name": "Choco3-1", "parent": "root", "x": 157.98, "y": 984.27, "color": "fdff00ff" },
-	{ "name": "Choco4", "parent": "root", "x": -114.76, "y": 765.4, "color": "fdff00ff" },
-	{ "name": "Choco4-1", "parent": "root", "x": 75, "y": 764.29, "color": "fdff00ff" },
-	{ "name": "Choco5", "parent": "root", "x": -204.97, "y": 528.66, "color": "fdff00ff" },
-	{ "name": "Choco5-1", "parent": "root", "x": -87.58, "y": 528.66, "color": "fdff00ff" },
-	{ "name": "C1", "parent": "root", "x": 367.82, "y": -226.09, "color": "ff0000ff" },
-	{ "name": "C2", "parent": "root", "x": 348.83, "y": -318.1, "color": "ff0000ff" },
-	{ "name": "C3", "parent": "root", "x": 463.33, "y": -225.75, "color": "ff0000ff" },
-	{ "name": "C4", "parent": "root", "x": 447.31, "y": -322.82, "color": "ff0000ff" },
-	{ "name": "C5", "parent": "root", "x": 561.34, "y": -226.69, "color": "ff0000ff" },
-	{ "name": "C6", "parent": "root", "x": 553.8, "y": -321.87, "color": "ff0000ff" },
-	{ "name": "C7", "parent": "root", "x": 667.52, "y": -223.56, "color": "ff0000ff" },
-	{ "name": "C8", "parent": "root", "x": 660.49, "y": -322.25, "color": "ff0000ff" },
-	{ "name": "C9", "parent": "root", "x": 765.47, "y": -225.41, "color": "ff0000ff" },
-	{ "name": "C10", "parent": "root", "x": 773.23, "y": -324.84, "color": "ff0000ff" },
-	{ "name": "C11", "parent": "root", "x": 869.71, "y": -227.25, "color": "ff0000ff" },
-	{ "name": "C12", "parent": "root", "x": 878.58, "y": -322.99, "color": "ff0000ff" },
+	{ "name": "Knife1", "parent": "root", "x": -349.74, "y": -462.47, "skin": true, "color": "b600ffff" },
+	{ "name": "Knife2", "parent": "root", "x": -248.75, "y": -424.15, "skin": true, "color": "b600ffff" },
+	{ "name": "Knife3", "parent": "root", "x": -520.87, "y": -456.07, "skin": true, "color": "b600ffff" },
+	{ "name": "Knife4", "parent": "root", "x": -457.38, "y": -442.85, "skin": true, "color": "b600ffff" },
+	{ "name": "Knife5", "parent": "root", "x": -632.42, "y": -493.21, "skin": true, "color": "b600ffff" },
+	{ "name": "Knife6", "parent": "root", "x": -622.5, "y": -283.11, "skin": true, "color": "b600ffff" },
+	{ "name": "Choco0", "parent": "root", "x": 3.43, "y": 30.76, "skin": true, "color": "fdff00ff" },
+	{ "name": "Choco1", "parent": "root", "x": 91.06, "y": 1446.78, "skin": true, "color": "fdff00ff" },
+	{ "name": "Choco1-1", "parent": "root", "x": 430.67, "y": 1451.63, "skin": true, "color": "fdff00ff" },
+	{ "name": "Choco2", "parent": "root", "x": 24.78, "y": 1195.69, "skin": true, "color": "fdff00ff" },
+	{ "name": "Choco2-1", "parent": "root", "x": 293.34, "y": 1196.86, "skin": true, "color": "fdff00ff" },
+	{ "name": "Choco3", "parent": "root", "x": -60.51, "y": 984.27, "skin": true, "color": "fdff00ff" },
+	{ "name": "Choco3-1", "parent": "root", "x": 157.98, "y": 984.27, "skin": true, "color": "fdff00ff" },
+	{ "name": "Choco4", "parent": "root", "x": -114.76, "y": 765.4, "skin": true, "color": "fdff00ff" },
+	{ "name": "Choco4-1", "parent": "root", "x": 75, "y": 764.29, "skin": true, "color": "fdff00ff" },
+	{ "name": "Choco5", "parent": "root", "x": -204.97, "y": 528.66, "skin": true, "color": "fdff00ff" },
+	{ "name": "Choco5-1", "parent": "root", "x": -87.58, "y": 528.66, "skin": true, "color": "fdff00ff" },
+	{ "name": "C1", "parent": "root", "x": 367.82, "y": -226.09, "skin": true, "color": "ff0000ff" },
+	{ "name": "C2", "parent": "root", "x": 348.83, "y": -318.1, "skin": true, "color": "ff0000ff" },
+	{ "name": "C3", "parent": "root", "x": 463.33, "y": -225.75, "skin": true, "color": "ff0000ff" },
+	{ "name": "C4", "parent": "root", "x": 447.31, "y": -322.82, "skin": true, "color": "ff0000ff" },
+	{ "name": "C5", "parent": "root", "x": 561.34, "y": -226.69, "skin": true, "color": "ff0000ff" },
+	{ "name": "C6", "parent": "root", "x": 553.8, "y": -321.87, "skin": true, "color": "ff0000ff" },
+	{ "name": "C7", "parent": "root", "x": 667.52, "y": -223.56, "skin": true, "color": "ff0000ff" },
+	{ "name": "C8", "parent": "root", "x": 660.49, "y": -322.25, "skin": true, "color": "ff0000ff" },
+	{ "name": "C9", "parent": "root", "x": 765.47, "y": -225.41, "skin": true, "color": "ff0000ff" },
+	{ "name": "C10", "parent": "root", "x": 773.23, "y": -324.84, "skin": true, "color": "ff0000ff" },
+	{ "name": "C11", "parent": "root", "x": 869.71, "y": -227.25, "skin": true, "color": "ff0000ff" },
+	{ "name": "C12", "parent": "root", "x": 878.58, "y": -322.99, "skin": true, "color": "ff0000ff" },
 	{ "name": "Cut1", "parent": "root", "x": 195.07, "y": 37.81, "color": "009fffff" },
 	{ "name": "Cut2", "parent": "root", "x": 96.59, "y": 36.34, "color": "009fffff" },
 	{ "name": "Cut3", "parent": "root", "x": -3.08, "y": 34.66, "color": "009fffff" },
@@ -48,38 +48,38 @@
 	{ "name": "Cut6", "parent": "root", "x": 5.14, "y": 31.51, "color": "009fffff" }
 ],
 "slots": [
-	{ "name": "미니게임_쿠킹_배경", "bone": "root", "attachment": "미니게임_쿠킹_배경" },
-	{ "name": "Layer 1", "bone": "root", "attachment": "Layer 1" },
-	{ "name": "Chocolate0", "bone": "Choco0", "attachment": "Chocolate0" },
-	{ "name": "Chocolate1", "bone": "Choco1-1", "attachment": "Chocolate1" },
-	{ "name": "1", "bone": "Knife1", "attachment": "1" },
-	{ "name": "2", "bone": "Knife2", "attachment": "2" },
-	{ "name": "3", "bone": "Knife3", "attachment": "3" },
-	{ "name": "4", "bone": "Knife4", "attachment": "4" },
-	{ "name": "5", "bone": "Knife5", "attachment": "5" },
-	{ "name": "6", "bone": "Knife6", "attachment": "6" },
-	{ "name": "Knife1", "bone": "Knife1", "attachment": "Knife1" },
-	{ "name": "Chocolate1-1", "bone": "Choco1", "attachment": "Chocolate1-1" },
-	{ "name": "Chocolate2-1", "bone": "Choco2", "attachment": "Chocolate2-1" },
-	{ "name": "Chocolate3-1", "bone": "Choco3", "attachment": "Chocolate3-1" },
-	{ "name": "Chocolate4-1", "bone": "Choco4", "attachment": "Chocolate4-1" },
-	{ "name": "Chocolate6", "bone": "Choco5", "attachment": "Chocolate6" },
-	{ "name": "Chocolate6-3", "bone": "C2", "attachment": "Chocolate6-3" },
-	{ "name": "Chocolate6-2", "bone": "C1", "attachment": "Chocolate6-2" },
-	{ "name": "Chocloate5", "bone": "Choco5-1", "attachment": "Chocloate5" },
-	{ "name": "Chocloate5-3", "bone": "C4", "attachment": "Chocloate5-3" },
-	{ "name": "Chocolate5-2", "bone": "C3", "attachment": "Chocolate5-2" },
-	{ "name": "Chocolate4", "bone": "Choco4-1", "attachment": "Chocolate4" },
-	{ "name": "Chocolate4-3", "bone": "C6", "attachment": "Chocolate4-3" },
-	{ "name": "Chocolate4-2", "bone": "C5", "attachment": "Chocolate4-2" },
-	{ "name": "Chocolate3", "bone": "Choco3-1", "attachment": "Chocolate3" },
-	{ "name": "Chocolate3-3", "bone": "C8", "attachment": "Chocolate3-3" },
-	{ "name": "Chocolate3-2", "bone": "C7", "attachment": "Chocolate3-2" },
-	{ "name": "Chocolate2", "bone": "Choco2-1", "attachment": "Chocolate2" },
-	{ "name": "Chocolate2-3", "bone": "C10", "attachment": "Chocolate2-3" },
-	{ "name": "Chocolate2-2", "bone": "C9", "attachment": "Chocolate2-2" },
-	{ "name": "Chocolate1-3", "bone": "C12", "attachment": "Chocolate1-3" },
-	{ "name": "Chocolate1-2", "bone": "C11", "attachment": "Chocolate1-2" },
+	{ "name": "BackGround", "bone": "root", "attachment": "BackGround" },
+	{ "name": "Board", "bone": "root", "attachment": "Board" },
+	{ "name": "Choco0", "bone": "Choco0", "attachment": "Skin" },
+	{ "name": "Choco1-1", "bone": "Choco1-1", "attachment": "Skin" },
+	{ "name": "Knife1", "bone": "Knife1", "attachment": "Skin" },
+	{ "name": "Knife2", "bone": "Knife2", "attachment": "Skin" },
+	{ "name": "Knife3", "bone": "Knife3", "attachment": "Skin" },
+	{ "name": "Knife4", "bone": "Knife4", "attachment": "Skin" },
+	{ "name": "Knife5", "bone": "Knife5", "attachment": "Skin" },
+	{ "name": "Knife6", "bone": "Knife6", "attachment": "Skin" },
+	{ "name": "Knife", "bone": "Knife1", "attachment": "Knife" },
+	{ "name": "Choco1", "bone": "Choco1", "attachment": "Skin" },
+	{ "name": "Choco2", "bone": "Choco2", "attachment": "Skin" },
+	{ "name": "Choco3", "bone": "Choco3", "attachment": "Skin" },
+	{ "name": "Choco4", "bone": "Choco4", "attachment": "Skin" },
+	{ "name": "Choco5", "bone": "Choco5", "attachment": "Skin" },
+	{ "name": "C2", "bone": "C2", "attachment": "Skin" },
+	{ "name": "C1", "bone": "C1", "attachment": "Skin" },
+	{ "name": "Choco5-1", "bone": "Choco5-1", "attachment": "Skin" },
+	{ "name": "C4", "bone": "C4", "attachment": "Skin" },
+	{ "name": "C3", "bone": "C3", "attachment": "Skin" },
+	{ "name": "Choco4-1", "bone": "Choco4-1", "attachment": "Skin" },
+	{ "name": "C6", "bone": "C6", "attachment": "Skin" },
+	{ "name": "C5", "bone": "C5", "attachment": "Skin" },
+	{ "name": "Choco3-1", "bone": "Choco3-1", "attachment": "Skin" },
+	{ "name": "C8", "bone": "C8", "attachment": "Skin" },
+	{ "name": "C7", "bone": "C7", "attachment": "Skin" },
+	{ "name": "Choco2-1", "bone": "Choco2-1", "attachment": "Skin" },
+	{ "name": "C10", "bone": "C10", "attachment": "Skin" },
+	{ "name": "C9", "bone": "C9", "attachment": "Skin" },
+	{ "name": "C12", "bone": "C12", "attachment": "Skin" },
+	{ "name": "C11", "bone": "C11", "attachment": "Skin" },
 	{ "name": "Cut1", "bone": "Cut1", "attachment": "Cut1" },
 	{ "name": "Cut2", "bone": "Cut2", "attachment": "Cut2" },
 	{ "name": "Cut3", "bone": "Cut3", "attachment": "Cut3" },
@@ -91,92 +91,11 @@
 	{
 		"name": "default",
 		"attachments": {
-			"1": {
-				"1": { "x": -3.79, "y": 82.04, "width": 159, "height": 422 }
+			"BackGround": {
+				"BackGround": { "y": 286.98, "scaleX": 1.8, "scaleY": 1.8, "width": 1068, "height": 602 }
 			},
-			"2": {
-				"2": { "x": -1.16, "y": 81.36, "width": 145, "height": 426 }
-			},
-			"3": {
-				"3": { "x": -0.58, "y": 84.81, "width": 137, "height": 429 }
-			},
-			"4": {
-				"4": { "x": -2.44, "y": 91.21, "width": 131, "height": 431 }
-			},
-			"5": {
-				"5": { "x": -4.31, "y": 90.72, "width": 117, "height": 434 }
-			},
-			"6": {
-				"6": { "x": -91.04, "y": -18.14, "width": 406, "height": 203 }
-			},
-			"Chocloate5": {
-				"Chocloate5": { "x": -2.41, "y": -5.6, "width": 124, "height": 203 }
-			},
-			"Chocloate5-3": {
-				"Chocloate5-3": { "x": 2.19, "y": -12.18, "width": 115, "height": 100 }
-			},
-			"Chocolate0": {
-				"Chocolate0": { "x": -7.67, "y": -3.53, "width": 632, "height": 200 }
-			},
-			"Chocolate1": {
-				"Chocolate1": { "x": 10.76, "y": -4.62, "width": 123, "height": 203 }
-			},
-			"Chocolate1-1": {
-				"Chocolate1-1": { "x": -3.08, "y": -8.27, "width": 522, "height": 202 }
-			},
-			"Chocolate1-2": {
-				"Chocolate1-2": { "x": 7.29, "y": -6.75, "width": 112, "height": 106 }
-			},
-			"Chocolate1-3": {
-				"Chocolate1-3": { "x": 5.42, "y": -14.51, "width": 118, "height": 99 }
-			},
-			"Chocolate2": {
-				"Chocolate2": { "x": 4.47, "y": -6, "width": 109, "height": 202 }
-			},
-			"Chocolate2-1": {
-				"Chocolate2-1": { "x": -13.76, "y": -5.38, "width": 418, "height": 203 }
-			},
-			"Chocolate2-2": {
-				"Chocolate2-2": { "x": 5.53, "y": -10.09, "width": 104, "height": 107 }
-			},
-			"Chocolate2-3": {
-				"Chocolate2-3": { "x": -0.23, "y": -13.66, "width": 108, "height": 97 }
-			},
-			"Chocolate3": {
-				"Chocolate3": { "x": -0.09, "y": -6.23, "width": 105, "height": 203 }
-			},
-			"Chocolate3-1": {
-				"Chocolate3-1": { "x": -8.94, "y": -5.81, "width": 325, "height": 203 }
-			},
-			"Chocolate3-2": {
-				"Chocolate3-2": { "x": -1.02, "y": -9.94, "width": 101, "height": 105 }
-			},
-			"Chocolate3-3": {
-				"Chocolate3-3": { "x": 4.01, "y": -15.75, "width": 105, "height": 100 }
-			},
-			"Chocolate4": {
-				"Chocolate4": { "x": -2.22, "y": -6.68, "width": 113, "height": 203 }
-			},
-			"Chocolate4-1": {
-				"Chocolate4-1": { "x": -9.35, "y": -6.74, "width": 231, "height": 203 }
-			},
-			"Chocolate4-2": {
-				"Chocolate4-2": { "x": 0.16, "y": -6.81, "width": 105, "height": 105 }
-			},
-			"Chocolate4-3": {
-				"Chocolate4-3": { "x": 1.7, "y": -16.13, "width": 109, "height": 100 }
-			},
-			"Chocolate5-2": {
-				"Chocolate5-2": { "x": -0.33, "y": -6.75, "width": 110, "height": 105 }
-			},
-			"Chocolate6": {
-				"Chocolate6": { "x": -3.55, "y": -4.9, "width": 141, "height": 203 }
-			},
-			"Chocolate6-2": {
-				"Chocolate6-2": { "x": -7.32, "y": -6.41, "width": 121, "height": 105 }
-			},
-			"Chocolate6-3": {
-				"Chocolate6-3": { "x": -8.58, "y": -15.57, "width": 126, "height": 100 }
+			"Board": {
+				"Board": { "y": -0.89, "width": 1011, "height": 357 }
 			},
 			"Cut1": {
 				"Cut1": {
@@ -250,14 +169,287 @@
 					"height": 13
 				}
 			},
+			"Knife": {
+				"Knife": { "x": -3.79, "y": 82.04, "width": 159, "height": 422 }
+			}
+		}
+	},
+	{
+		"name": "Skin1",
+		"bones": [ "C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8", "C9", "C10", "C11", "C12", "Choco0", "Choco1", "Choco1-1", "Choco2", "Choco2-1", "Choco3", "Choco3-1", "Choco4", "Choco4-1", "Choco5", "Choco5-1", "Knife1", "Knife2", "Knife3", "Knife4", "Knife5", "Knife6" ],
+		"attachments": {
+			"C1": {
+				"Skin": { "name": "C1", "path": "Skin1/MC1", "x": -7.32, "y": -6.41, "width": 121, "height": 105 }
+			},
+			"C2": {
+				"Skin": { "name": "C2", "path": "Skin1/MC2", "x": -8.58, "y": -15.57, "width": 126, "height": 100 }
+			},
+			"C3": {
+				"Skin": { "name": "C3", "path": "Skin1/MC3", "x": -0.33, "y": -6.75, "width": 110, "height": 105 }
+			},
+			"C4": {
+				"Skin": { "name": "C4", "path": "Skin1/MC4", "x": 2.19, "y": -12.18, "width": 115, "height": 100 }
+			},
+			"C5": {
+				"Skin": { "name": "C5", "path": "Skin1/MC5", "x": 0.16, "y": -6.81, "width": 105, "height": 105 }
+			},
+			"C6": {
+				"Skin": { "name": "C6", "path": "Skin1/MC6", "x": 1.7, "y": -16.13, "width": 109, "height": 100 }
+			},
+			"C7": {
+				"Skin": { "name": "C7", "path": "Skin1/MC7", "x": -1.02, "y": -9.94, "width": 101, "height": 105 }
+			},
+			"C8": {
+				"Skin": { "name": "C8", "path": "Skin1/MC8", "x": 4.01, "y": -15.75, "width": 105, "height": 100 }
+			},
+			"C9": {
+				"Skin": { "name": "C9", "path": "Skin1/MC9", "x": 5.53, "y": -10.09, "width": 104, "height": 107 }
+			},
+			"C10": {
+				"Skin": { "name": "C10", "path": "Skin1/MC10", "x": -0.23, "y": -13.66, "width": 108, "height": 97 }
+			},
+			"C11": {
+				"Skin": { "name": "C11", "path": "Skin1/MC11", "x": 7.29, "y": -6.75, "width": 112, "height": 106 }
+			},
+			"C12": {
+				"Skin": { "name": "C12", "path": "Skin1/MC12", "x": 5.42, "y": -14.51, "width": 118, "height": 99 }
+			},
+			"Choco0": {
+				"Skin": { "name": "Choco0", "path": "Skin1/MChoco0", "x": -7.67, "y": -3.53, "width": 632, "height": 200 }
+			},
+			"Choco1": {
+				"Skin": { "name": "Choco1", "path": "Skin1/MChoco1", "x": -3.08, "y": -8.27, "width": 522, "height": 202 }
+			},
+			"Choco1-1": {
+				"Skin": { "name": "Choco1-1", "path": "Skin1/MChoco1-1", "x": 10.76, "y": -4.62, "width": 123, "height": 203 }
+			},
+			"Choco2": {
+				"Skin": { "name": "Choco2", "path": "Skin1/MChoco2", "x": -13.76, "y": -5.38, "width": 418, "height": 203 }
+			},
+			"Choco2-1": {
+				"Skin": { "name": "Choco2-1", "path": "Skin1/MChoco2-1", "x": 4.47, "y": -6, "width": 109, "height": 202 }
+			},
+			"Choco3": {
+				"Skin": { "name": "Choco3", "path": "Skin1/MChoco3", "x": -8.94, "y": -5.81, "width": 325, "height": 203 }
+			},
+			"Choco3-1": {
+				"Skin": { "name": "Choco3-1", "path": "Skin1/MChoco3-1", "x": -0.09, "y": -6.23, "width": 105, "height": 203 }
+			},
+			"Choco4": {
+				"Skin": { "name": "Choco4", "path": "Skin1/MChoco4", "x": -9.35, "y": -6.74, "width": 231, "height": 203 }
+			},
+			"Choco4-1": {
+				"Skin": { "name": "Choco4-1", "path": "Skin1/MChoco4-1", "x": -2.22, "y": -6.68, "width": 113, "height": 203 }
+			},
+			"Choco5": {
+				"Skin": { "name": "Choco5", "path": "Skin1/MChoco5", "x": -3.55, "y": -4.9, "width": 141, "height": 203 }
+			},
+			"Choco5-1": {
+				"Skin": { "name": "Choco5-1", "path": "Skin1/MChoco5-1", "x": -2.41, "y": -5.6, "width": 124, "height": 203 }
+			},
 			"Knife1": {
-				"Knife1": { "x": -3.79, "y": 82.04, "width": 159, "height": 422 }
+				"Skin": { "name": "Knife1", "path": "Skin1/MKnife1", "x": -3.79, "y": 82.04, "width": 159, "height": 422 }
 			},
-			"Layer 1": {
-				"Layer 1": { "y": -0.89, "width": 1011, "height": 357 }
+			"Knife2": {
+				"Skin": { "name": "Knife2", "path": "Skin1/MKnife2", "x": -1.16, "y": 81.36, "width": 145, "height": 426 }
 			},
-			"미니게임_쿠킹_배경": {
-				"미니게임_쿠킹_배경": { "y": 284.58, "width": 1920, "height": 1080 }
+			"Knife3": {
+				"Skin": { "name": "Knife3", "path": "Skin1/MKnife3", "x": -0.58, "y": 84.81, "width": 137, "height": 429 }
+			},
+			"Knife4": {
+				"Skin": { "name": "Knife4", "path": "Skin1/MKnife4", "x": -2.44, "y": 91.21, "width": 131, "height": 431 }
+			},
+			"Knife5": {
+				"Skin": { "name": "Knife5", "path": "Skin1/MKnife5", "x": -4.31, "y": 90.72, "width": 117, "height": 434 }
+			},
+			"Knife6": {
+				"Skin": { "name": "Knife6", "path": "Skin1/MKnife6", "x": -91.04, "y": -18.14, "width": 406, "height": 203 }
+			}
+		}
+	},
+	{
+		"name": "Skin2",
+		"bones": [ "C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8", "C9", "C10", "C11", "C12", "Choco0", "Choco1", "Choco1-1", "Choco2", "Choco2-1", "Choco3", "Choco3-1", "Choco4", "Choco4-1", "Choco5", "Choco5-1", "Knife1", "Knife2", "Knife3", "Knife4", "Knife5", "Knife6" ],
+		"attachments": {
+			"C1": {
+				"Skin": { "name": "C1", "path": "Skin2/DC1", "x": -7.32, "y": -6.41, "width": 121, "height": 105 }
+			},
+			"C2": {
+				"Skin": { "name": "C2", "path": "Skin2/DC2", "x": -8.58, "y": -15.57, "width": 126, "height": 100 }
+			},
+			"C3": {
+				"Skin": { "name": "C3", "path": "Skin2/DC3", "x": -0.33, "y": -6.75, "width": 110, "height": 105 }
+			},
+			"C4": {
+				"Skin": { "name": "C4", "path": "Skin2/DC4", "x": 2.19, "y": -12.18, "width": 115, "height": 100 }
+			},
+			"C5": {
+				"Skin": { "name": "C5", "path": "Skin2/DC5", "x": 0.16, "y": -6.81, "width": 105, "height": 105 }
+			},
+			"C6": {
+				"Skin": { "name": "C6", "path": "Skin2/DC6", "x": 1.7, "y": -16.13, "width": 109, "height": 100 }
+			},
+			"C7": {
+				"Skin": { "name": "C7", "path": "Skin2/DC7", "x": -1.02, "y": -9.94, "width": 101, "height": 105 }
+			},
+			"C8": {
+				"Skin": { "name": "C8", "path": "Skin2/DC8", "x": 4.01, "y": -15.75, "width": 105, "height": 100 }
+			},
+			"C9": {
+				"Skin": { "name": "C9", "path": "Skin2/DC9", "x": 5.53, "y": -10.09, "width": 104, "height": 107 }
+			},
+			"C10": {
+				"Skin": { "name": "C10", "path": "Skin2/DC10", "x": -0.23, "y": -13.66, "width": 108, "height": 97 }
+			},
+			"C11": {
+				"Skin": { "name": "C11", "path": "Skin2/DC11", "x": 7.29, "y": -6.75, "width": 112, "height": 106 }
+			},
+			"C12": {
+				"Skin": { "name": "C12", "path": "Skin2/DC12", "x": 5.42, "y": -14.51, "width": 118, "height": 99 }
+			},
+			"Choco0": {
+				"Skin": { "name": "Choco0", "path": "Skin2/DChoco0", "x": -7.67, "y": -3.53, "width": 632, "height": 200 }
+			},
+			"Choco1": {
+				"Skin": { "name": "Choco1", "path": "Skin2/DChoco1", "x": -3.08, "y": -8.27, "width": 522, "height": 202 }
+			},
+			"Choco1-1": {
+				"Skin": { "name": "Choco1-1", "path": "Skin2/DChoco1-1", "x": 10.76, "y": -4.62, "width": 123, "height": 203 }
+			},
+			"Choco2": {
+				"Skin": { "name": "Choco2", "path": "Skin2/DChoco2", "x": -13.76, "y": -5.38, "width": 418, "height": 203 }
+			},
+			"Choco2-1": {
+				"Skin": { "name": "Choco2-1", "path": "Skin2/DChoco2-1", "x": 4.47, "y": -6, "width": 109, "height": 202 }
+			},
+			"Choco3": {
+				"Skin": { "name": "Choco3", "path": "Skin2/DChoco3", "x": -8.94, "y": -5.81, "width": 325, "height": 203 }
+			},
+			"Choco3-1": {
+				"Skin": { "name": "Choco3-1", "path": "Skin2/DChoco3-1", "x": -0.09, "y": -6.23, "width": 105, "height": 203 }
+			},
+			"Choco4": {
+				"Skin": { "name": "Choco4", "path": "Skin2/DChoco4", "x": -9.35, "y": -6.74, "width": 231, "height": 203 }
+			},
+			"Choco4-1": {
+				"Skin": { "name": "Choco4-1", "path": "Skin2/DChoco4-1", "x": -2.22, "y": -6.68, "width": 113, "height": 203 }
+			},
+			"Choco5": {
+				"Skin": { "name": "Choco5", "path": "Skin2/DChoco5", "x": -3.55, "y": -4.9, "width": 141, "height": 203 }
+			},
+			"Choco5-1": {
+				"Skin": { "name": "Choco5-1", "path": "Skin2/DChoco5-1", "x": -2.41, "y": -5.6, "width": 124, "height": 203 }
+			},
+			"Knife1": {
+				"Skin": { "name": "Knife1", "path": "Skin2/DKnife1", "x": -3.79, "y": 82.04, "width": 159, "height": 422 }
+			},
+			"Knife2": {
+				"Skin": { "name": "Knife2", "path": "Skin2/DKnife2", "x": -1.16, "y": 81.36, "width": 145, "height": 426 }
+			},
+			"Knife3": {
+				"Skin": { "name": "Knife3", "path": "Skin2/DKnife3", "x": -0.58, "y": 84.81, "width": 137, "height": 429 }
+			},
+			"Knife4": {
+				"Skin": { "name": "Knife4", "path": "Skin2/DKnife4", "x": -2.44, "y": 91.21, "width": 131, "height": 431 }
+			},
+			"Knife5": {
+				"Skin": { "name": "Knife5", "path": "Skin2/DKnife5", "x": -4.31, "y": 90.72, "width": 117, "height": 434 }
+			},
+			"Knife6": {
+				"Skin": { "name": "Knife6", "path": "Skin2/DKnife6", "x": -91.04, "y": -18.14, "width": 406, "height": 203 }
+			}
+		}
+	},
+	{
+		"name": "Skin3",
+		"bones": [ "C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8", "C9", "C10", "C11", "C12", "Choco0", "Choco1", "Choco1-1", "Choco2", "Choco2-1", "Choco3", "Choco3-1", "Choco4", "Choco4-1", "Choco5", "Choco5-1", "Knife1", "Knife2", "Knife3", "Knife4", "Knife5", "Knife6" ],
+		"attachments": {
+			"C1": {
+				"Skin": { "name": "C1", "path": "Skin3/GC1", "x": -7.32, "y": -6.41, "width": 121, "height": 105 }
+			},
+			"C2": {
+				"Skin": { "name": "C2", "path": "Skin3/GC2", "x": -8.58, "y": -15.57, "width": 126, "height": 100 }
+			},
+			"C3": {
+				"Skin": { "name": "C3", "path": "Skin3/GC3", "x": -0.33, "y": -6.75, "width": 110, "height": 105 }
+			},
+			"C4": {
+				"Skin": { "name": "C4", "path": "Skin3/GC4", "x": 2.19, "y": -12.18, "width": 115, "height": 100 }
+			},
+			"C5": {
+				"Skin": { "name": "C5", "path": "Skin3/GC5", "x": 0.16, "y": -6.81, "width": 105, "height": 105 }
+			},
+			"C6": {
+				"Skin": { "name": "C6", "path": "Skin3/GC6", "x": 1.7, "y": -16.13, "width": 109, "height": 100 }
+			},
+			"C7": {
+				"Skin": { "name": "C7", "path": "Skin3/GC7", "x": -1.02, "y": -9.94, "width": 101, "height": 105 }
+			},
+			"C8": {
+				"Skin": { "name": "C8", "path": "Skin3/GC8", "x": 4.01, "y": -15.75, "width": 105, "height": 100 }
+			},
+			"C9": {
+				"Skin": { "name": "C9", "path": "Skin3/GC9", "x": 5.53, "y": -10.09, "width": 104, "height": 107 }
+			},
+			"C10": {
+				"Skin": { "name": "C10", "path": "Skin3/GC10", "x": -0.23, "y": -13.66, "width": 108, "height": 97 }
+			},
+			"C11": {
+				"Skin": { "name": "C11", "path": "Skin3/GC11", "x": 7.29, "y": -6.75, "width": 112, "height": 106 }
+			},
+			"C12": {
+				"Skin": { "name": "C12", "path": "Skin3/GC12", "x": 5.42, "y": -14.51, "width": 118, "height": 99 }
+			},
+			"Choco0": {
+				"Skin": { "name": "Choco0", "path": "Skin3/GChoco0", "x": -7.67, "y": -3.53, "width": 632, "height": 200 }
+			},
+			"Choco1": {
+				"Skin": { "name": "Choco1", "path": "Skin3/GChoco1", "x": -3.08, "y": -8.27, "width": 522, "height": 202 }
+			},
+			"Choco1-1": {
+				"Skin": { "name": "Choco1-1", "path": "Skin3/GChoco1-1", "x": 10.76, "y": -4.62, "width": 123, "height": 203 }
+			},
+			"Choco2": {
+				"Skin": { "name": "Choco2", "path": "Skin3/GChoco2", "x": -13.76, "y": -5.38, "width": 418, "height": 203 }
+			},
+			"Choco2-1": {
+				"Skin": { "name": "Choco2-1", "path": "Skin3/GChoco2-1", "x": 4.47, "y": -6, "width": 109, "height": 202 }
+			},
+			"Choco3": {
+				"Skin": { "name": "Choco3", "path": "Skin3/GChoco3", "x": -8.94, "y": -5.81, "width": 325, "height": 203 }
+			},
+			"Choco3-1": {
+				"Skin": { "name": "Choco3-1", "path": "Skin3/GChoco3-1", "x": -0.09, "y": -6.23, "width": 105, "height": 203 }
+			},
+			"Choco4": {
+				"Skin": { "name": "Choco4", "path": "Skin3/GChoco4", "x": -9.35, "y": -6.74, "width": 231, "height": 203 }
+			},
+			"Choco4-1": {
+				"Skin": { "name": "Choco4-1", "path": "Skin3/GChoco4-1", "x": -2.22, "y": -6.68, "width": 113, "height": 203 }
+			},
+			"Choco5": {
+				"Skin": { "name": "Choco5", "path": "Skin3/GChoco5", "x": -3.55, "y": -4.9, "width": 141, "height": 203 }
+			},
+			"Choco5-1": {
+				"Skin": { "name": "Choco5-1", "path": "Skin3/GChoco5-1", "x": -2.41, "y": -5.6, "width": 124, "height": 203 }
+			},
+			"Knife1": {
+				"Skin": { "name": "Knife1", "path": "Skin3/GKnife1", "x": -3.79, "y": 82.04, "width": 159, "height": 422 }
+			},
+			"Knife2": {
+				"Skin": { "name": "Knife2", "path": "Skin3/GKnife2", "x": -1.16, "y": 81.36, "width": 145, "height": 426 }
+			},
+			"Knife3": {
+				"Skin": { "name": "Knife3", "path": "Skin3/GKnife3", "x": -0.58, "y": 84.81, "width": 137, "height": 429 }
+			},
+			"Knife4": {
+				"Skin": { "name": "Knife4", "path": "Skin3/GKnife4", "x": -2.44, "y": 91.21, "width": 131, "height": 431 }
+			},
+			"Knife5": {
+				"Skin": { "name": "Knife5", "path": "Skin3/GKnife5", "x": -4.31, "y": 90.72, "width": 117, "height": 434 }
+			},
+			"Knife6": {
+				"Skin": { "name": "Knife6", "path": "Skin3/GKnife6", "x": -91.04, "y": -18.14, "width": 406, "height": 203 }
 			}
 		}
 	}
@@ -265,143 +457,112 @@
 "animations": {
 	"0_Idle": {
 		"slots": {
-			"1": {
+			"C1": {
 				"attachment": [
 					{}
 				]
 			},
-			"2": {
+			"C2": {
 				"attachment": [
 					{}
 				]
 			},
-			"3": {
+			"C3": {
 				"attachment": [
 					{}
 				]
 			},
-			"4": {
+			"C4": {
 				"attachment": [
 					{}
 				]
 			},
-			"5": {
+			"C5": {
 				"attachment": [
 					{}
 				]
 			},
-			"6": {
-				"attachment": [
-					{},
-					{ "time": 0.3333 }
-				]
-			},
-			"Chocloate5": {
+			"C6": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocloate5-3": {
+			"C7": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate1": {
+			"C8": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate1-1": {
+			"C9": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate1-2": {
+			"C10": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate1-3": {
+			"C11": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate2": {
+			"C12": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate2-1": {
+			"Choco1": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate2-2": {
+			"Choco1-1": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate2-3": {
+			"Choco2": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate3": {
+			"Choco2-1": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate3-1": {
+			"Choco3": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate3-2": {
+			"Choco3-1": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate3-3": {
+			"Choco4": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate4": {
+			"Choco4-1": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate4-1": {
+			"Choco5": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate4-2": {
-				"attachment": [
-					{}
-				]
-			},
-			"Chocolate4-3": {
-				"attachment": [
-					{}
-				]
-			},
-			"Chocolate5-2": {
-				"attachment": [
-					{}
-				]
-			},
-			"Chocolate6": {
-				"attachment": [
-					{}
-				]
-			},
-			"Chocolate6-2": {
-				"attachment": [
-					{}
-				]
-			},
-			"Chocolate6-3": {
+			"Choco5-1": {
 				"attachment": [
 					{}
 				]
@@ -436,151 +597,152 @@
 					{}
 				]
 			},
+			"Knife": {
+				"attachment": [
+					{}
+				]
+			},
 			"Knife1": {
 				"attachment": [
 					{}
+				]
+			},
+			"Knife2": {
+				"attachment": [
+					{}
+				]
+			},
+			"Knife3": {
+				"attachment": [
+					{}
+				]
+			},
+			"Knife4": {
+				"attachment": [
+					{}
+				]
+			},
+			"Knife5": {
+				"attachment": [
+					{}
+				]
+			},
+			"Knife6": {
+				"attachment": [
+					{},
+					{ "time": 0.3333 }
 				]
 			}
 		}
 	},
 	"1_Line": {
 		"slots": {
-			"1": {
+			"C1": {
 				"attachment": [
 					{}
 				]
 			},
-			"2": {
+			"C2": {
 				"attachment": [
 					{}
 				]
 			},
-			"3": {
+			"C3": {
 				"attachment": [
 					{}
 				]
 			},
-			"4": {
+			"C4": {
 				"attachment": [
 					{}
 				]
 			},
-			"5": {
+			"C5": {
 				"attachment": [
 					{}
 				]
 			},
-			"6": {
+			"C6": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocloate5": {
+			"C7": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocloate5-3": {
+			"C8": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate1": {
+			"C9": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate1-1": {
+			"C10": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate1-2": {
+			"C11": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate1-3": {
+			"C12": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate2": {
+			"Choco1": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate2-1": {
+			"Choco1-1": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate2-2": {
+			"Choco2": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate2-3": {
+			"Choco2-1": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate3": {
+			"Choco3": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate3-1": {
+			"Choco3-1": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate3-2": {
+			"Choco4": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate3-3": {
+			"Choco4-1": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate4": {
+			"Choco5": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate4-1": {
-				"attachment": [
-					{}
-				]
-			},
-			"Chocolate4-2": {
-				"attachment": [
-					{}
-				]
-			},
-			"Chocolate4-3": {
-				"attachment": [
-					{}
-				]
-			},
-			"Chocolate5-2": {
-				"attachment": [
-					{}
-				]
-			},
-			"Chocolate6": {
-				"attachment": [
-					{}
-				]
-			},
-			"Chocolate6-2": {
-				"attachment": [
-					{}
-				]
-			},
-			"Chocolate6-3": {
+			"Choco5-1": {
 				"attachment": [
 					{}
 				]
@@ -618,7 +780,37 @@
 					{}
 				]
 			},
+			"Knife": {
+				"attachment": [
+					{}
+				]
+			},
 			"Knife1": {
+				"attachment": [
+					{}
+				]
+			},
+			"Knife2": {
+				"attachment": [
+					{}
+				]
+			},
+			"Knife3": {
+				"attachment": [
+					{}
+				]
+			},
+			"Knife4": {
+				"attachment": [
+					{}
+				]
+			},
+			"Knife5": {
+				"attachment": [
+					{}
+				]
+			},
+			"Knife6": {
 				"attachment": [
 					{}
 				]
@@ -662,154 +854,119 @@
 	},
 	"2_Cut": {
 		"slots": {
-			"1": {
-				"rgba": [
-					{ "time": 1.3333, "color": "ffffffff" },
-					{ "time": 1.6667, "color": "ffffff00" }
-				],
-				"attachment": [
-					{},
-					{ "time": 1, "name": "1" }
-				]
-			},
-			"2": {
+			"C1": {
 				"attachment": [
 					{}
 				]
 			},
-			"3": {
+			"C2": {
 				"attachment": [
 					{}
 				]
 			},
-			"4": {
+			"C3": {
 				"attachment": [
 					{}
 				]
 			},
-			"5": {
+			"C4": {
 				"attachment": [
 					{}
 				]
 			},
-			"6": {
+			"C5": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocloate5": {
+			"C6": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocloate5-3": {
+			"C7": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate0": {
+			"C8": {
+				"attachment": [
+					{}
+				]
+			},
+			"C9": {
+				"attachment": [
+					{}
+				]
+			},
+			"C10": {
+				"attachment": [
+					{}
+				]
+			},
+			"C11": {
+				"attachment": [
+					{}
+				]
+			},
+			"C12": {
+				"attachment": [
+					{}
+				]
+			},
+			"Choco0": {
 				"attachment": [
 					{ "time": 1 }
 				]
 			},
-			"Chocolate1": {
+			"Choco1": {
 				"attachment": [
 					{},
-					{ "time": 1, "name": "Chocolate1" }
+					{ "time": 1, "name": "Skin" }
 				]
 			},
-			"Chocolate1-1": {
+			"Choco1-1": {
 				"attachment": [
 					{},
-					{ "time": 1, "name": "Chocolate1-1" }
+					{ "time": 1, "name": "Skin" }
 				]
 			},
-			"Chocolate1-2": {
+			"Choco2": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate1-3": {
+			"Choco2-1": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate2": {
+			"Choco3": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate2-1": {
+			"Choco3-1": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate2-2": {
+			"Choco4": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate2-3": {
+			"Choco4-1": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate3": {
+			"Choco5": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate3-1": {
-				"attachment": [
-					{}
-				]
-			},
-			"Chocolate3-2": {
-				"attachment": [
-					{}
-				]
-			},
-			"Chocolate3-3": {
-				"attachment": [
-					{}
-				]
-			},
-			"Chocolate4": {
-				"attachment": [
-					{}
-				]
-			},
-			"Chocolate4-1": {
-				"attachment": [
-					{}
-				]
-			},
-			"Chocolate4-2": {
-				"attachment": [
-					{}
-				]
-			},
-			"Chocolate4-3": {
-				"attachment": [
-					{}
-				]
-			},
-			"Chocolate5-2": {
-				"attachment": [
-					{}
-				]
-			},
-			"Chocolate6": {
-				"attachment": [
-					{}
-				]
-			},
-			"Chocolate6-2": {
-				"attachment": [
-					{}
-				]
-			},
-			"Chocolate6-3": {
+			"Choco5-1": {
 				"attachment": [
 					{}
 				]
@@ -844,11 +1001,46 @@
 					{}
 				]
 			},
-			"Knife1": {
+			"Knife": {
 				"attachment": [
 					{},
-					{ "time": 0.3333, "name": "Knife1" },
+					{ "time": 0.3333, "name": "Knife" },
 					{ "time": 1 }
+				]
+			},
+			"Knife1": {
+				"rgba": [
+					{ "time": 1.3333, "color": "ffffffff" },
+					{ "time": 1.6667, "color": "ffffff00" }
+				],
+				"attachment": [
+					{},
+					{ "time": 1, "name": "Skin" }
+				]
+			},
+			"Knife2": {
+				"attachment": [
+					{}
+				]
+			},
+			"Knife3": {
+				"attachment": [
+					{}
+				]
+			},
+			"Knife4": {
+				"attachment": [
+					{}
+				]
+			},
+			"Knife5": {
+				"attachment": [
+					{}
+				]
+			},
+			"Knife6": {
+				"attachment": [
+					{}
 				]
 			}
 		},
@@ -882,137 +1074,107 @@
 	},
 	"3_Line": {
 		"slots": {
-			"1": {
+			"C1": {
 				"attachment": [
 					{}
 				]
 			},
-			"2": {
+			"C2": {
 				"attachment": [
 					{}
 				]
 			},
-			"3": {
+			"C3": {
 				"attachment": [
 					{}
 				]
 			},
-			"4": {
+			"C4": {
 				"attachment": [
 					{}
 				]
 			},
-			"5": {
+			"C5": {
 				"attachment": [
 					{}
 				]
 			},
-			"6": {
+			"C6": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocloate5": {
+			"C7": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocloate5-3": {
+			"C8": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate0": {
+			"C9": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate1-2": {
+			"C10": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate1-3": {
+			"C11": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate2": {
+			"C12": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate2-1": {
+			"Choco0": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate2-2": {
+			"Choco2": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate2-3": {
+			"Choco2-1": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate3": {
+			"Choco3": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate3-1": {
+			"Choco3-1": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate3-2": {
+			"Choco4": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate3-3": {
+			"Choco4-1": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate4": {
+			"Choco5": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate4-1": {
-				"attachment": [
-					{}
-				]
-			},
-			"Chocolate4-2": {
-				"attachment": [
-					{}
-				]
-			},
-			"Chocolate4-3": {
-				"attachment": [
-					{}
-				]
-			},
-			"Chocolate5-2": {
-				"attachment": [
-					{}
-				]
-			},
-			"Chocolate6": {
-				"attachment": [
-					{}
-				]
-			},
-			"Chocolate6-2": {
-				"attachment": [
-					{}
-				]
-			},
-			"Chocolate6-3": {
+			"Choco5-1": {
 				"attachment": [
 					{}
 				]
@@ -1050,7 +1212,37 @@
 					{}
 				]
 			},
+			"Knife": {
+				"attachment": [
+					{}
+				]
+			},
 			"Knife1": {
+				"attachment": [
+					{}
+				]
+			},
+			"Knife2": {
+				"attachment": [
+					{}
+				]
+			},
+			"Knife3": {
+				"attachment": [
+					{}
+				]
+			},
+			"Knife4": {
+				"attachment": [
+					{}
+				]
+			},
+			"Knife5": {
+				"attachment": [
+					{}
+				]
+			},
+			"Knife6": {
 				"attachment": [
 					{}
 				]
@@ -1106,149 +1298,114 @@
 	},
 	"4_Cut": {
 		"slots": {
-			"1": {
+			"C1": {
 				"attachment": [
 					{}
 				]
 			},
-			"2": {
-				"rgba": [
-					{ "time": 1.3333, "color": "ffffffff" },
-					{ "time": 1.6667, "color": "ffffff00" }
-				],
-				"attachment": [
-					{},
-					{ "time": 0.3333, "name": "2" }
-				]
-			},
-			"3": {
+			"C2": {
 				"attachment": [
 					{}
 				]
 			},
-			"4": {
+			"C3": {
 				"attachment": [
 					{}
 				]
 			},
-			"5": {
+			"C4": {
 				"attachment": [
 					{}
 				]
 			},
-			"6": {
+			"C5": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocloate5": {
+			"C6": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocloate5-3": {
+			"C7": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate0": {
+			"C8": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate1-1": {
+			"C9": {
+				"attachment": [
+					{}
+				]
+			},
+			"C10": {
+				"attachment": [
+					{}
+				]
+			},
+			"C11": {
+				"attachment": [
+					{}
+				]
+			},
+			"C12": {
+				"attachment": [
+					{}
+				]
+			},
+			"Choco0": {
+				"attachment": [
+					{}
+				]
+			},
+			"Choco1": {
 				"attachment": [
 					{ "time": 1 }
 				]
 			},
-			"Chocolate1-2": {
-				"attachment": [
-					{}
-				]
-			},
-			"Chocolate1-3": {
-				"attachment": [
-					{}
-				]
-			},
-			"Chocolate2": {
+			"Choco2": {
 				"attachment": [
 					{},
-					{ "time": 1, "name": "Chocolate2" }
+					{ "time": 1, "name": "Skin" }
 				]
 			},
-			"Chocolate2-1": {
+			"Choco2-1": {
 				"attachment": [
 					{},
-					{ "time": 1, "name": "Chocolate2-1" }
+					{ "time": 1, "name": "Skin" }
 				]
 			},
-			"Chocolate2-2": {
+			"Choco3": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate2-3": {
+			"Choco3-1": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate3": {
+			"Choco4": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate3-1": {
+			"Choco4-1": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate3-2": {
+			"Choco5": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate3-3": {
-				"attachment": [
-					{}
-				]
-			},
-			"Chocolate4": {
-				"attachment": [
-					{}
-				]
-			},
-			"Chocolate4-1": {
-				"attachment": [
-					{}
-				]
-			},
-			"Chocolate4-2": {
-				"attachment": [
-					{}
-				]
-			},
-			"Chocolate4-3": {
-				"attachment": [
-					{}
-				]
-			},
-			"Chocolate5-2": {
-				"attachment": [
-					{}
-				]
-			},
-			"Chocolate6": {
-				"attachment": [
-					{}
-				]
-			},
-			"Chocolate6-2": {
-				"attachment": [
-					{}
-				]
-			},
-			"Chocolate6-3": {
+			"Choco5-1": {
 				"attachment": [
 					{}
 				]
@@ -1283,7 +1440,42 @@
 					{}
 				]
 			},
+			"Knife": {
+				"attachment": [
+					{}
+				]
+			},
 			"Knife1": {
+				"attachment": [
+					{}
+				]
+			},
+			"Knife2": {
+				"rgba": [
+					{ "time": 1.3333, "color": "ffffffff" },
+					{ "time": 1.6667, "color": "ffffff00" }
+				],
+				"attachment": [
+					{},
+					{ "time": 0.3333, "name": "Skin" }
+				]
+			},
+			"Knife3": {
+				"attachment": [
+					{}
+				]
+			},
+			"Knife4": {
+				"attachment": [
+					{}
+				]
+			},
+			"Knife5": {
+				"attachment": [
+					{}
+				]
+			},
+			"Knife6": {
 				"attachment": [
 					{}
 				]
@@ -1330,146 +1522,116 @@
 			{
 				"time": 0.3333,
 				"offsets": [
-					{ "slot": "2", "offset": 6 }
+					{ "slot": "Knife2", "offset": 6 }
 				]
 			},
 			{
 				"time": 1,
 				"offsets": [
-					{ "slot": "2", "offset": 21 },
-					{ "slot": "Chocolate2-1", "offset": 16 }
+					{ "slot": "Knife2", "offset": 21 },
+					{ "slot": "Choco2", "offset": 16 }
 				]
 			}
 		]
 	},
 	"5_Line": {
 		"slots": {
-			"1": {
+			"C1": {
 				"attachment": [
 					{}
 				]
 			},
-			"2": {
+			"C2": {
 				"attachment": [
 					{}
 				]
 			},
-			"3": {
+			"C3": {
 				"attachment": [
 					{}
 				]
 			},
-			"4": {
+			"C4": {
 				"attachment": [
 					{}
 				]
 			},
-			"5": {
+			"C5": {
 				"attachment": [
 					{}
 				]
 			},
-			"6": {
+			"C6": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocloate5": {
+			"C7": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocloate5-3": {
+			"C8": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate0": {
+			"C9": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate1-1": {
+			"C10": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate1-2": {
+			"C11": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate1-3": {
+			"C12": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate2-2": {
+			"Choco0": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate2-3": {
+			"Choco1": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate3": {
+			"Choco3": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate3-1": {
+			"Choco3-1": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate3-2": {
+			"Choco4": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate3-3": {
+			"Choco4-1": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate4": {
+			"Choco5": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate4-1": {
-				"attachment": [
-					{}
-				]
-			},
-			"Chocolate4-2": {
-				"attachment": [
-					{}
-				]
-			},
-			"Chocolate4-3": {
-				"attachment": [
-					{}
-				]
-			},
-			"Chocolate5-2": {
-				"attachment": [
-					{}
-				]
-			},
-			"Chocolate6": {
-				"attachment": [
-					{}
-				]
-			},
-			"Chocolate6-2": {
-				"attachment": [
-					{}
-				]
-			},
-			"Chocolate6-3": {
+			"Choco5-1": {
 				"attachment": [
 					{}
 				]
@@ -1507,7 +1669,37 @@
 					{}
 				]
 			},
+			"Knife": {
+				"attachment": [
+					{}
+				]
+			},
 			"Knife1": {
+				"attachment": [
+					{}
+				]
+			},
+			"Knife2": {
+				"attachment": [
+					{}
+				]
+			},
+			"Knife3": {
+				"attachment": [
+					{}
+				]
+			},
+			"Knife4": {
+				"attachment": [
+					{}
+				]
+			},
+			"Knife5": {
+				"attachment": [
+					{}
+				]
+			},
+			"Knife6": {
 				"attachment": [
 					{}
 				]
@@ -1573,144 +1765,109 @@
 	},
 	"6_Cut": {
 		"slots": {
-			"1": {
+			"C1": {
 				"attachment": [
 					{}
 				]
 			},
-			"2": {
+			"C2": {
 				"attachment": [
 					{}
 				]
 			},
-			"3": {
-				"rgba": [
-					{ "time": 1.3333, "color": "ffffffff" },
-					{ "time": 1.6667, "color": "ffffff00" }
-				],
-				"attachment": [
-					{},
-					{ "time": 0.3333, "name": "3" }
-				]
-			},
-			"4": {
+			"C3": {
 				"attachment": [
 					{}
 				]
 			},
-			"5": {
+			"C4": {
 				"attachment": [
 					{}
 				]
 			},
-			"6": {
+			"C5": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocloate5": {
+			"C6": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocloate5-3": {
+			"C7": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate0": {
+			"C8": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate1-1": {
+			"C9": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate1-2": {
+			"C10": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate1-3": {
+			"C11": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate2-1": {
+			"C12": {
+				"attachment": [
+					{}
+				]
+			},
+			"Choco0": {
+				"attachment": [
+					{}
+				]
+			},
+			"Choco1": {
+				"attachment": [
+					{}
+				]
+			},
+			"Choco2": {
 				"attachment": [
 					{ "time": 1 }
 				]
 			},
-			"Chocolate2-2": {
-				"attachment": [
-					{}
-				]
-			},
-			"Chocolate2-3": {
-				"attachment": [
-					{}
-				]
-			},
-			"Chocolate3": {
+			"Choco3": {
 				"attachment": [
 					{},
-					{ "time": 1, "name": "Chocolate3" }
+					{ "time": 1, "name": "Skin" }
 				]
 			},
-			"Chocolate3-1": {
+			"Choco3-1": {
 				"attachment": [
 					{},
-					{ "time": 1, "name": "Chocolate3-1" }
+					{ "time": 1, "name": "Skin" }
 				]
 			},
-			"Chocolate3-2": {
+			"Choco4": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate3-3": {
+			"Choco4-1": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate4": {
+			"Choco5": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate4-1": {
-				"attachment": [
-					{}
-				]
-			},
-			"Chocolate4-2": {
-				"attachment": [
-					{}
-				]
-			},
-			"Chocolate4-3": {
-				"attachment": [
-					{}
-				]
-			},
-			"Chocolate5-2": {
-				"attachment": [
-					{}
-				]
-			},
-			"Chocolate6": {
-				"attachment": [
-					{}
-				]
-			},
-			"Chocolate6-2": {
-				"attachment": [
-					{}
-				]
-			},
-			"Chocolate6-3": {
+			"Choco5-1": {
 				"attachment": [
 					{}
 				]
@@ -1745,7 +1902,42 @@
 					{}
 				]
 			},
+			"Knife": {
+				"attachment": [
+					{}
+				]
+			},
 			"Knife1": {
+				"attachment": [
+					{}
+				]
+			},
+			"Knife2": {
+				"attachment": [
+					{}
+				]
+			},
+			"Knife3": {
+				"rgba": [
+					{ "time": 1.3333, "color": "ffffffff" },
+					{ "time": 1.6667, "color": "ffffff00" }
+				],
+				"attachment": [
+					{},
+					{ "time": 0.3333, "name": "Skin" }
+				]
+			},
+			"Knife4": {
+				"attachment": [
+					{}
+				]
+			},
+			"Knife5": {
+				"attachment": [
+					{}
+				]
+			},
+			"Knife6": {
 				"attachment": [
 					{}
 				]
@@ -1801,140 +1993,110 @@
 			{
 				"time": 0.3333,
 				"offsets": [
-					{ "slot": "3", "offset": 22 }
+					{ "slot": "Knife3", "offset": 22 }
 				]
 			},
 			{
 				"time": 1.3333,
 				"offsets": [
-					{ "slot": "3", "offset": 18 }
+					{ "slot": "Knife3", "offset": 18 }
 				]
 			}
 		]
 	},
 	"7_Line": {
 		"slots": {
-			"1": {
+			"C1": {
 				"attachment": [
 					{}
 				]
 			},
-			"2": {
+			"C2": {
 				"attachment": [
 					{}
 				]
 			},
-			"3": {
+			"C3": {
 				"attachment": [
 					{}
 				]
 			},
-			"4": {
+			"C4": {
 				"attachment": [
 					{}
 				]
 			},
-			"5": {
+			"C5": {
 				"attachment": [
 					{}
 				]
 			},
-			"6": {
+			"C6": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocloate5": {
+			"C7": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocloate5-3": {
+			"C8": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate0": {
+			"C9": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate1-1": {
+			"C10": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate1-2": {
+			"C11": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate1-3": {
+			"C12": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate2-1": {
+			"Choco0": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate2-2": {
+			"Choco1": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate2-3": {
+			"Choco2": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate3-2": {
+			"Choco4": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate3-3": {
+			"Choco4-1": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate4": {
+			"Choco5": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate4-1": {
-				"attachment": [
-					{}
-				]
-			},
-			"Chocolate4-2": {
-				"attachment": [
-					{}
-				]
-			},
-			"Chocolate4-3": {
-				"attachment": [
-					{}
-				]
-			},
-			"Chocolate5-2": {
-				"attachment": [
-					{}
-				]
-			},
-			"Chocolate6": {
-				"attachment": [
-					{}
-				]
-			},
-			"Chocolate6-2": {
-				"attachment": [
-					{}
-				]
-			},
-			"Chocolate6-3": {
+			"Choco5-1": {
 				"attachment": [
 					{}
 				]
@@ -1972,7 +2134,37 @@
 					{}
 				]
 			},
+			"Knife": {
+				"attachment": [
+					{}
+				]
+			},
 			"Knife1": {
+				"attachment": [
+					{}
+				]
+			},
+			"Knife2": {
+				"attachment": [
+					{}
+				]
+			},
+			"Knife3": {
+				"attachment": [
+					{}
+				]
+			},
+			"Knife4": {
+				"attachment": [
+					{}
+				]
+			},
+			"Knife5": {
+				"attachment": [
+					{}
+				]
+			},
+			"Knife6": {
 				"attachment": [
 					{}
 				]
@@ -2043,139 +2235,104 @@
 	},
 	"8_Cut": {
 		"slots": {
-			"1": {
+			"C1": {
 				"attachment": [
 					{}
 				]
 			},
-			"2": {
+			"C2": {
 				"attachment": [
 					{}
 				]
 			},
-			"3": {
+			"C3": {
 				"attachment": [
 					{}
 				]
 			},
-			"4": {
-				"rgba": [
-					{ "time": 1.3333, "color": "ffffffff" },
-					{ "time": 1.6667, "color": "ffffff00" }
-				],
-				"attachment": [
-					{},
-					{ "time": 0.3333, "name": "4" }
-				]
-			},
-			"5": {
+			"C4": {
 				"attachment": [
 					{}
 				]
 			},
-			"6": {
+			"C5": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocloate5": {
+			"C6": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocloate5-3": {
+			"C7": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate0": {
+			"C8": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate1-1": {
+			"C9": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate1-2": {
+			"C10": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate1-3": {
+			"C11": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate2-1": {
+			"C12": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate2-2": {
+			"Choco0": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate2-3": {
+			"Choco1": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate3-1": {
+			"Choco2": {
+				"attachment": [
+					{}
+				]
+			},
+			"Choco3": {
 				"attachment": [
 					{ "time": 1 }
 				]
 			},
-			"Chocolate3-2": {
-				"attachment": [
-					{}
-				]
-			},
-			"Chocolate3-3": {
-				"attachment": [
-					{}
-				]
-			},
-			"Chocolate4": {
+			"Choco4": {
 				"attachment": [
 					{},
-					{ "time": 1, "name": "Chocolate4" }
+					{ "time": 1, "name": "Skin" }
 				]
 			},
-			"Chocolate4-1": {
+			"Choco4-1": {
 				"attachment": [
 					{},
-					{ "time": 1, "name": "Chocolate4-1" }
+					{ "time": 1, "name": "Skin" }
 				]
 			},
-			"Chocolate4-2": {
+			"Choco5": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate4-3": {
-				"attachment": [
-					{}
-				]
-			},
-			"Chocolate5-2": {
-				"attachment": [
-					{}
-				]
-			},
-			"Chocolate6": {
-				"attachment": [
-					{}
-				]
-			},
-			"Chocolate6-2": {
-				"attachment": [
-					{}
-				]
-			},
-			"Chocolate6-3": {
+			"Choco5-1": {
 				"attachment": [
 					{}
 				]
@@ -2210,7 +2367,42 @@
 					{}
 				]
 			},
+			"Knife": {
+				"attachment": [
+					{}
+				]
+			},
 			"Knife1": {
+				"attachment": [
+					{}
+				]
+			},
+			"Knife2": {
+				"attachment": [
+					{}
+				]
+			},
+			"Knife3": {
+				"attachment": [
+					{}
+				]
+			},
+			"Knife4": {
+				"rgba": [
+					{ "time": 1.3333, "color": "ffffffff" },
+					{ "time": 1.6667, "color": "ffffff00" }
+				],
+				"attachment": [
+					{},
+					{ "time": 0.3333, "name": "Skin" }
+				]
+			},
+			"Knife5": {
+				"attachment": [
+					{}
+				]
+			},
+			"Knife6": {
 				"attachment": [
 					{}
 				]
@@ -2271,136 +2463,106 @@
 			{
 				"time": 0.3333,
 				"offsets": [
-					{ "slot": "4", "offset": 23 }
+					{ "slot": "Knife4", "offset": 23 }
 				]
 			},
 			{
 				"time": 1,
 				"offsets": [
-					{ "slot": "4", "offset": 7 },
-					{ "slot": "Chocolate4", "offset": -13 }
+					{ "slot": "Knife4", "offset": 7 },
+					{ "slot": "Choco4-1", "offset": -13 }
 				]
 			}
 		]
 	},
 	"9_Line": {
 		"slots": {
-			"1": {
+			"C1": {
 				"attachment": [
 					{}
 				]
 			},
-			"2": {
+			"C2": {
 				"attachment": [
 					{}
 				]
 			},
-			"3": {
+			"C3": {
 				"attachment": [
 					{}
 				]
 			},
-			"4": {
+			"C4": {
 				"attachment": [
 					{}
 				]
 			},
-			"5": {
+			"C5": {
 				"attachment": [
 					{}
 				]
 			},
-			"6": {
+			"C6": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocloate5": {
+			"C7": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocloate5-3": {
+			"C8": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate0": {
+			"C9": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate1-1": {
+			"C10": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate1-2": {
+			"C11": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate1-3": {
+			"C12": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate2-1": {
+			"Choco0": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate2-2": {
+			"Choco1": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate2-3": {
+			"Choco2": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate3-1": {
+			"Choco3": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate3-2": {
+			"Choco5": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate3-3": {
-				"attachment": [
-					{}
-				]
-			},
-			"Chocolate4-2": {
-				"attachment": [
-					{}
-				]
-			},
-			"Chocolate4-3": {
-				"attachment": [
-					{}
-				]
-			},
-			"Chocolate5-2": {
-				"attachment": [
-					{}
-				]
-			},
-			"Chocolate6": {
-				"attachment": [
-					{}
-				]
-			},
-			"Chocolate6-2": {
-				"attachment": [
-					{}
-				]
-			},
-			"Chocolate6-3": {
+			"Choco5-1": {
 				"attachment": [
 					{}
 				]
@@ -2438,7 +2600,37 @@
 					{}
 				]
 			},
+			"Knife": {
+				"attachment": [
+					{}
+				]
+			},
 			"Knife1": {
+				"attachment": [
+					{}
+				]
+			},
+			"Knife2": {
+				"attachment": [
+					{}
+				]
+			},
+			"Knife3": {
+				"attachment": [
+					{}
+				]
+			},
+			"Knife4": {
+				"attachment": [
+					{}
+				]
+			},
+			"Knife5": {
+				"attachment": [
+					{}
+				]
+			},
+			"Knife6": {
 				"attachment": [
 					{}
 				]
@@ -2519,136 +2711,101 @@
 	},
 	"10_Cut": {
 		"slots": {
-			"1": {
+			"C1": {
 				"attachment": [
 					{}
 				]
 			},
-			"2": {
+			"C2": {
 				"attachment": [
 					{}
 				]
 			},
-			"3": {
+			"C3": {
 				"attachment": [
 					{}
 				]
 			},
-			"4": {
+			"C4": {
 				"attachment": [
 					{}
 				]
 			},
-			"5": {
-				"rgba": [
-					{ "time": 1.3333, "color": "ffffffff" },
-					{ "time": 1.6667, "color": "ffffff00" }
-				],
-				"attachment": [
-					{},
-					{ "time": 0.3333, "name": "5" }
-				]
-			},
-			"6": {
+			"C5": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocloate5": {
-				"attachment": [
-					{},
-					{ "time": 1, "name": "Chocloate5" }
-				]
-			},
-			"Chocloate5-3": {
+			"C6": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate0": {
+			"C7": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate1-1": {
+			"C8": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate1-2": {
+			"C9": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate1-3": {
+			"C10": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate2-1": {
+			"C11": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate2-2": {
+			"C12": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate2-3": {
+			"Choco0": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate3-1": {
+			"Choco1": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate3-2": {
+			"Choco2": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate3-3": {
+			"Choco3": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate4-1": {
+			"Choco4": {
 				"attachment": [
 					{ "time": 1 }
 				]
 			},
-			"Chocolate4-2": {
-				"attachment": [
-					{}
-				]
-			},
-			"Chocolate4-3": {
-				"attachment": [
-					{}
-				]
-			},
-			"Chocolate5-2": {
-				"attachment": [
-					{}
-				]
-			},
-			"Chocolate6": {
+			"Choco5": {
 				"attachment": [
 					{},
-					{ "time": 1, "name": "Chocolate6" }
+					{ "time": 1, "name": "Skin" }
 				]
 			},
-			"Chocolate6-2": {
+			"Choco5-1": {
 				"attachment": [
-					{}
-				]
-			},
-			"Chocolate6-3": {
-				"attachment": [
-					{}
+					{},
+					{ "time": 1, "name": "Skin" }
 				]
 			},
 			"Cut1": {
@@ -2681,7 +2838,42 @@
 					{}
 				]
 			},
+			"Knife": {
+				"attachment": [
+					{}
+				]
+			},
 			"Knife1": {
+				"attachment": [
+					{}
+				]
+			},
+			"Knife2": {
+				"attachment": [
+					{}
+				]
+			},
+			"Knife3": {
+				"attachment": [
+					{}
+				]
+			},
+			"Knife4": {
+				"attachment": [
+					{}
+				]
+			},
+			"Knife5": {
+				"rgba": [
+					{ "time": 1.3333, "color": "ffffffff" },
+					{ "time": 1.6667, "color": "ffffff00" }
+				],
+				"attachment": [
+					{},
+					{ "time": 0.3333, "name": "Skin" }
+				]
+			},
+			"Knife6": {
 				"attachment": [
 					{}
 				]
@@ -2752,131 +2944,101 @@
 			{
 				"time": 0.3333,
 				"offsets": [
-					{ "slot": "5", "offset": 21 }
+					{ "slot": "Knife5", "offset": 21 }
 				]
 			},
 			{
 				"time": 1,
 				"offsets": [
-					{ "slot": "5", "offset": 7 },
-					{ "slot": "Chocloate5", "offset": -4 }
+					{ "slot": "Knife5", "offset": 7 },
+					{ "slot": "Choco5-1", "offset": -4 }
 				]
 			}
 		]
 	},
 	"11_Line": {
 		"slots": {
-			"1": {
+			"C1": {
 				"attachment": [
 					{}
 				]
 			},
-			"2": {
+			"C2": {
 				"attachment": [
 					{}
 				]
 			},
-			"3": {
+			"C3": {
 				"attachment": [
 					{}
 				]
 			},
-			"4": {
+			"C4": {
 				"attachment": [
 					{}
 				]
 			},
-			"5": {
+			"C5": {
 				"attachment": [
 					{}
 				]
 			},
-			"6": {
+			"C6": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocloate5-3": {
+			"C7": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate0": {
+			"C8": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate1-1": {
+			"C9": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate1-2": {
+			"C10": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate1-3": {
+			"C11": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate2-1": {
+			"C12": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate2-2": {
+			"Choco0": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate2-3": {
+			"Choco1": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate3-1": {
+			"Choco2": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate3-2": {
+			"Choco3": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate3-3": {
-				"attachment": [
-					{}
-				]
-			},
-			"Chocolate4-1": {
-				"attachment": [
-					{}
-				]
-			},
-			"Chocolate4-2": {
-				"attachment": [
-					{}
-				]
-			},
-			"Chocolate4-3": {
-				"attachment": [
-					{}
-				]
-			},
-			"Chocolate5-2": {
-				"attachment": [
-					{}
-				]
-			},
-			"Chocolate6-2": {
-				"attachment": [
-					{}
-				]
-			},
-			"Chocolate6-3": {
+			"Choco4": {
 				"attachment": [
 					{}
 				]
@@ -2916,7 +3078,37 @@
 					{ "time": 0.1667, "name": "Cut6" }
 				]
 			},
+			"Knife": {
+				"attachment": [
+					{}
+				]
+			},
 			"Knife1": {
+				"attachment": [
+					{}
+				]
+			},
+			"Knife2": {
+				"attachment": [
+					{}
+				]
+			},
+			"Knife3": {
+				"attachment": [
+					{}
+				]
+			},
+			"Knife4": {
+				"attachment": [
+					{}
+				]
+			},
+			"Knife5": {
+				"attachment": [
+					{}
+				]
+			},
+			"Knife6": {
 				"attachment": [
 					{}
 				]
@@ -3013,167 +3205,131 @@
 	},
 	"12_Cut": {
 		"slots": {
-			"1": {
-				"attachment": [
-					{}
-				]
-			},
-			"2": {
-				"attachment": [
-					{}
-				]
-			},
-			"3": {
-				"attachment": [
-					{}
-				]
-			},
-			"4": {
-				"attachment": [
-					{}
-				]
-			},
-			"5": {
-				"attachment": [
-					{}
-				]
-			},
-			"6": {
-				"rgba": [
-					{ "time": 1.3333, "color": "ffffffff" },
-					{ "time": 1.5, "color": "ffffff00", "curve": "stepped" },
-					{ "time": 1.6667, "color": "ffffff00" }
-				],
+			"C1": {
 				"attachment": [
 					{},
-					{ "time": 0.3333, "name": "6" }
+					{ "time": 1, "name": "Skin" }
 				]
 			},
-			"Chocloate5": {
+			"C2": {
+				"attachment": [
+					{},
+					{ "time": 1, "name": "Skin" }
+				]
+			},
+			"C3": {
+				"attachment": [
+					{},
+					{ "time": 1, "name": "Skin" }
+				]
+			},
+			"C4": {
+				"attachment": [
+					{},
+					{ "time": 1, "name": "Skin" }
+				]
+			},
+			"C5": {
+				"attachment": [
+					{},
+					{ "time": 1, "name": "Skin" }
+				]
+			},
+			"C6": {
+				"attachment": [
+					{},
+					{ "time": 1, "name": "Skin" }
+				]
+			},
+			"C7": {
+				"attachment": [
+					{},
+					{ "time": 1, "name": "Skin" }
+				]
+			},
+			"C8": {
+				"attachment": [
+					{},
+					{ "time": 1, "name": "Skin" }
+				]
+			},
+			"C9": {
+				"attachment": [
+					{},
+					{ "time": 1, "name": "Skin" }
+				]
+			},
+			"C10": {
+				"attachment": [
+					{},
+					{ "time": 1, "name": "Skin" }
+				]
+			},
+			"C11": {
+				"attachment": [
+					{},
+					{ "time": 1, "name": "Skin" }
+				]
+			},
+			"C12": {
+				"attachment": [
+					{},
+					{ "time": 1, "name": "Skin" }
+				]
+			},
+			"Choco0": {
+				"attachment": [
+					{}
+				]
+			},
+			"Choco1": {
+				"attachment": [
+					{}
+				]
+			},
+			"Choco1-1": {
 				"attachment": [
 					{ "time": 1 }
 				]
 			},
-			"Chocloate5-3": {
-				"attachment": [
-					{},
-					{ "time": 1, "name": "Chocloate5-3" }
-				]
-			},
-			"Chocolate0": {
+			"Choco2": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate1": {
+			"Choco2-1": {
 				"attachment": [
 					{ "time": 1 }
 				]
 			},
-			"Chocolate1-1": {
+			"Choco3": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate1-2": {
-				"attachment": [
-					{},
-					{ "time": 1, "name": "Chocolate1-2" }
-				]
-			},
-			"Chocolate1-3": {
-				"attachment": [
-					{},
-					{ "time": 1, "name": "Chocolate1-3" }
-				]
-			},
-			"Chocolate2": {
+			"Choco3-1": {
 				"attachment": [
 					{ "time": 1 }
 				]
 			},
-			"Chocolate2-1": {
+			"Choco4": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate2-2": {
-				"attachment": [
-					{},
-					{ "time": 1, "name": "Chocolate2-2" }
-				]
-			},
-			"Chocolate2-3": {
-				"attachment": [
-					{},
-					{ "time": 1, "name": "Chocolate2-3" }
-				]
-			},
-			"Chocolate3": {
+			"Choco4-1": {
 				"attachment": [
 					{ "time": 1 }
 				]
 			},
-			"Chocolate3-1": {
-				"attachment": [
-					{}
-				]
-			},
-			"Chocolate3-2": {
-				"attachment": [
-					{},
-					{ "time": 1, "name": "Chocolate3-2" }
-				]
-			},
-			"Chocolate3-3": {
-				"attachment": [
-					{},
-					{ "time": 1, "name": "Chocolate3-3" }
-				]
-			},
-			"Chocolate4": {
+			"Choco5": {
 				"attachment": [
 					{ "time": 1 }
 				]
 			},
-			"Chocolate4-1": {
-				"attachment": [
-					{}
-				]
-			},
-			"Chocolate4-2": {
-				"attachment": [
-					{},
-					{ "time": 1, "name": "Chocolate4-2" }
-				]
-			},
-			"Chocolate4-3": {
-				"attachment": [
-					{},
-					{ "time": 1, "name": "Chocolate4-3" }
-				]
-			},
-			"Chocolate5-2": {
-				"attachment": [
-					{},
-					{ "time": 1, "name": "Chocolate5-2" }
-				]
-			},
-			"Chocolate6": {
+			"Choco5-1": {
 				"attachment": [
 					{ "time": 1 }
-				]
-			},
-			"Chocolate6-2": {
-				"attachment": [
-					{},
-					{ "time": 1, "name": "Chocolate6-2" }
-				]
-			},
-			"Chocolate6-3": {
-				"attachment": [
-					{},
-					{ "time": 1, "name": "Chocolate6-3" }
 				]
 			},
 			"Cut1": {
@@ -3206,9 +3362,45 @@
 					{}
 				]
 			},
+			"Knife": {
+				"attachment": [
+					{}
+				]
+			},
 			"Knife1": {
 				"attachment": [
 					{}
+				]
+			},
+			"Knife2": {
+				"attachment": [
+					{}
+				]
+			},
+			"Knife3": {
+				"attachment": [
+					{}
+				]
+			},
+			"Knife4": {
+				"attachment": [
+					{}
+				]
+			},
+			"Knife5": {
+				"attachment": [
+					{}
+				]
+			},
+			"Knife6": {
+				"rgba": [
+					{ "time": 1.3333, "color": "ffffffff" },
+					{ "time": 1.5, "color": "ffffff00", "curve": "stepped" },
+					{ "time": 1.6667, "color": "ffffff00" }
+				],
+				"attachment": [
+					{},
+					{ "time": 0.3333, "name": "Skin" }
 				]
 			}
 		},
@@ -3354,106 +3546,76 @@
 			{
 				"time": 0.3333,
 				"offsets": [
-					{ "slot": "6", "offset": 22 }
+					{ "slot": "Knife6", "offset": 22 }
 				]
 			},
 			{
 				"time": 1,
 				"offsets": [
-					{ "slot": "6", "offset": 16 },
-					{ "slot": "Chocolate6-3", "offset": 10 },
-					{ "slot": "Chocloate5-3", "offset": 8 },
-					{ "slot": "Chocolate4-3", "offset": 6 },
-					{ "slot": "Chocolate3-3", "offset": 4 },
-					{ "slot": "Chocolate2-3", "offset": 2 },
-					{ "slot": "Chocolate1-3", "offset": 1 }
+					{ "slot": "Knife6", "offset": 16 },
+					{ "slot": "C2", "offset": 10 },
+					{ "slot": "C4", "offset": 8 },
+					{ "slot": "C6", "offset": 6 },
+					{ "slot": "C8", "offset": 4 },
+					{ "slot": "C10", "offset": 2 },
+					{ "slot": "C12", "offset": 1 }
 				]
 			}
 		]
 	},
 	"13_Idle": {
 		"slots": {
-			"1": {
+			"Choco0": {
 				"attachment": [
 					{}
 				]
 			},
-			"2": {
+			"Choco1": {
 				"attachment": [
 					{}
 				]
 			},
-			"3": {
+			"Choco1-1": {
 				"attachment": [
 					{}
 				]
 			},
-			"4": {
+			"Choco2": {
 				"attachment": [
 					{}
 				]
 			},
-			"5": {
+			"Choco2-1": {
 				"attachment": [
 					{}
 				]
 			},
-			"6": {
+			"Choco3": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocloate5": {
+			"Choco3-1": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate0": {
+			"Choco4": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate1": {
+			"Choco4-1": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate1-1": {
+			"Choco5": {
 				"attachment": [
 					{}
 				]
 			},
-			"Chocolate2": {
-				"attachment": [
-					{}
-				]
-			},
-			"Chocolate2-1": {
-				"attachment": [
-					{}
-				]
-			},
-			"Chocolate3": {
-				"attachment": [
-					{}
-				]
-			},
-			"Chocolate3-1": {
-				"attachment": [
-					{}
-				]
-			},
-			"Chocolate4": {
-				"attachment": [
-					{}
-				]
-			},
-			"Chocolate4-1": {
-				"attachment": [
-					{}
-				]
-			},
-			"Chocolate6": {
+			"Choco5-1": {
 				"attachment": [
 					{}
 				]
@@ -3488,7 +3650,37 @@
 					{}
 				]
 			},
+			"Knife": {
+				"attachment": [
+					{}
+				]
+			},
 			"Knife1": {
+				"attachment": [
+					{}
+				]
+			},
+			"Knife2": {
+				"attachment": [
+					{}
+				]
+			},
+			"Knife3": {
+				"attachment": [
+					{}
+				]
+			},
+			"Knife4": {
+				"attachment": [
+					{}
+				]
+			},
+			"Knife5": {
+				"attachment": [
+					{}
+				]
+			},
+			"Knife6": {
 				"attachment": [
 					{}
 				]
@@ -3612,25 +3804,25 @@
 		"drawOrder": [
 			{
 				"offsets": [
-					{ "slot": "6", "offset": 16 },
-					{ "slot": "Chocolate6-3", "offset": 10 },
-					{ "slot": "Chocloate5-3", "offset": 8 },
-					{ "slot": "Chocolate4-3", "offset": 6 },
-					{ "slot": "Chocolate3-3", "offset": 4 },
-					{ "slot": "Chocolate2-3", "offset": 2 },
-					{ "slot": "Chocolate1-3", "offset": 1 }
+					{ "slot": "Knife6", "offset": 16 },
+					{ "slot": "C2", "offset": 10 },
+					{ "slot": "C4", "offset": 8 },
+					{ "slot": "C6", "offset": 6 },
+					{ "slot": "C8", "offset": 4 },
+					{ "slot": "C10", "offset": 2 },
+					{ "slot": "C12", "offset": 1 }
 				]
 			},
 			{
 				"time": 0.3333,
 				"offsets": [
-					{ "slot": "6", "offset": 16 },
-					{ "slot": "Chocolate6-3", "offset": 10 },
-					{ "slot": "Chocloate5-3", "offset": 8 },
-					{ "slot": "Chocolate4-3", "offset": 6 },
-					{ "slot": "Chocolate3-3", "offset": 4 },
-					{ "slot": "Chocolate2-3", "offset": 2 },
-					{ "slot": "Chocolate1-3", "offset": 1 }
+					{ "slot": "Knife6", "offset": 16 },
+					{ "slot": "C2", "offset": 10 },
+					{ "slot": "C4", "offset": 8 },
+					{ "slot": "C6", "offset": 6 },
+					{ "slot": "C8", "offset": 4 },
+					{ "slot": "C10", "offset": 2 },
+					{ "slot": "C12", "offset": 1 }
 				]
 			}
 		]

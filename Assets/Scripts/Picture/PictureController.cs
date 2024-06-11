@@ -16,7 +16,6 @@ public class PictureController : MonoBehaviour
     [SerializeField] private List<int> nextNumber = new List<int>();
     private int nextIndex;
     private bool choiceStart = false;
-    [SerializeField] private TMP_Text gameClearOverText;
     [Space]
     [SerializeField] private Image frameImage;
     [SerializeField] private List<Sprite> frameSprites;
@@ -40,6 +39,9 @@ public class PictureController : MonoBehaviour
     private bool textChanageOn = false;
     private float textStartTimer;
     private bool textStartCheck = false;
+
+    [SerializeField] private List<GameObject> clearOverObject;
+    [SerializeField] private List<GameObject> gameStartObject;
 
     private void Start()
     {
@@ -75,9 +77,6 @@ public class PictureController : MonoBehaviour
         textChangeTimer = 3;
 
         frameImage.sprite = frameSprites[0];
-
-        gameClearOverText.text = "";
-        gameClearOverText.gameObject.SetActive(true);
     }
 
     private void Update()
@@ -87,10 +86,24 @@ public class PictureController : MonoBehaviour
         if (gameStart == true && textChanageOn == false)
         {
             textChangeTimer -= Time.deltaTime;
-            gameClearOverText.text = $"{(int)(textChangeTimer + 1)}";
+
+            if (textChangeTimer > 2 && gameStartObject[0].activeSelf == false)
+            {
+                gameStartObject[0].SetActive(true);
+            }
+            else if (textChangeTimer > 1 && textChangeTimer <= 2 && gameStartObject[1].activeSelf == false)
+            {
+                gameStartObject[0].SetActive(false);
+                gameStartObject[1].SetActive(true);
+            }
+            else if (textChangeTimer > 0 && textChangeTimer <= 1 && gameStartObject[2].activeSelf == false)
+            {
+                gameStartObject[1].SetActive(false);
+                gameStartObject[2].SetActive(true);
+            }
             if (textChangeTimer <= 0)
             {
-                gameClearOverText.text = $"";
+                gameStartObject[2].SetActive(false);
                 textChanageOn = true;
             }
         }
@@ -100,30 +113,27 @@ public class PictureController : MonoBehaviour
 
             if (textStartTimer < 1f)
             {
-                gameClearOverText.text = $"게임 스타트!";
+                gameStartObject[3].SetActive(true);
             }
             else
             {
-                gameClearOverText.text = $"";
-                gameClearOverText.gameObject.SetActive(false);
+                gameStartObject[3].SetActive(false);
                 textStartCheck = true;
             }
         }
 
         if (gameStart == true && textStartCheck == true)
         {
-            if (pictureManager.GameClearCheck() == true && gameClearOverText.gameObject.activeSelf == false)
+            if (pictureManager.GameClearCheck() == true && clearOverObject[0].activeSelf == false)
             {
                 gameClear = true;
-                gameClearOverText.text = "게임 클리어!";
-                gameClearOverText.gameObject.SetActive(true);
+                clearOverObject[0].SetActive(true);
                 gameEndObject.SetActive(true);
                 return;
             }
-            else if (pictureManager.GameOverCheck() == true)
+            else if (pictureManager.GameOverCheck() == true && clearOverObject[1].activeSelf == false)
             {
-                gameClearOverText.text = "게임 오버!";
-                gameClearOverText.gameObject.SetActive(true);
+                clearOverObject[1].SetActive(true);
                 gameEndObject.SetActive(true);
                 return;
             }

@@ -21,7 +21,7 @@ public class CookingMusicController : MonoBehaviour
     [SerializeField] private Image timerImage;
     [SerializeField] private List<Transform> gridTrs;
     [Space]
-    [SerializeField] private TMP_Text text;
+    [SerializeField] private List<GameObject> clearOverObject;
     private bool gameClear = false;
 
     private int nextNode;
@@ -43,7 +43,7 @@ public class CookingMusicController : MonoBehaviour
     [SerializeField] private List<Button> buttons;
     private bool retry = false;
     [Space]
-    [SerializeField] private TMP_Text gameClearOverText;
+    [SerializeField] private List<GameObject> gameStartObject;
     private float textChangeTimer;
     private bool textChanageOn = false;
     private float textStartTimer;
@@ -79,8 +79,6 @@ public class CookingMusicController : MonoBehaviour
         fadeInOutCheck = true;
 
         textChangeTimer = 3;
-        gameClearOverText.text = "";
-        gameClearOverText.gameObject.SetActive(true);
     }
 
     private void Start()
@@ -97,10 +95,24 @@ public class CookingMusicController : MonoBehaviour
         if (gameStart == true && textChanageOn == false)
         {
             textChangeTimer -= Time.deltaTime;
-            gameClearOverText.text = $"{(int)(textChangeTimer + 1)}";
+
+            if (textChangeTimer > 2 && gameStartObject[0].activeSelf == false)
+            {
+                gameStartObject[0].SetActive(true);
+            }
+            else if (textChangeTimer  > 1&& textChangeTimer <= 2 && gameStartObject[1].activeSelf == false)
+            {
+                gameStartObject[0].SetActive(false);
+                gameStartObject[1].SetActive(true);
+            }
+            else if (textChangeTimer > 0 && textChangeTimer <= 1 && gameStartObject[2].activeSelf == false)
+            {
+                gameStartObject[1].SetActive(false);
+                gameStartObject[2].SetActive(true);
+            }
             if (textChangeTimer <= 0)
             {
-                gameClearOverText.text = $"";
+                gameStartObject[2].SetActive(false);
                 textChanageOn = true;
             }
         }
@@ -110,12 +122,11 @@ public class CookingMusicController : MonoBehaviour
 
             if (textStartTimer < 1f)
             {
-                gameClearOverText.text = $"게임 스타트!";
+                gameStartObject[3].SetActive(true);
             }
             else
             {
-                gameClearOverText.text = $"";
-                gameClearOverText.gameObject.SetActive(false);
+                gameStartObject[3].SetActive(false);
                 textStartCheck = true;
             }
         }
@@ -125,17 +136,16 @@ public class CookingMusicController : MonoBehaviour
             if (gameClear == true)
             {
                 gameEndObject.SetActive(true);
-                text.gameObject.SetActive(true);
-                text.text = "게임 클리어!";
+                clearOverObject[0].gameObject.SetActive(true);
                 return;
             }
             else if (playerHeart == 0)
             {
                 gameEndObject.SetActive(true);
-                text.gameObject.SetActive(true);
-                text.text = "게임 오버!";
+                clearOverObject[1].gameObject.SetActive(true);
                 return;
             }
+
             gameTimer();
             nodeCheck();
         }
@@ -252,7 +262,11 @@ public class CookingMusicController : MonoBehaviour
 
             spineAnim.AnimationState.SetAnimation(0, spineAnim.startingAnimation, false);
 
-            heartObject[--playerHeart].SetActive(false);
+            SkeletonGraphic sc = heartObject[--playerHeart].GetComponent<SkeletonGraphic>();
+
+            sc.startingAnimation = "Lita_Life";
+
+            sc.AnimationState.SetAnimation(0, sc.startingAnimation, false);
         }
     }
 

@@ -42,7 +42,7 @@ public class PuzzleGameManager : MonoBehaviour
     [SerializeField] private List<Button> buttons;
     private bool retry = false;
     [Space]
-    [SerializeField] private TMP_Text gameClearOverText;
+    [SerializeField] private List<GameObject> gameStartObject;
     private float textChangeTimer;
     private bool textChanageOn = false;
     private float textStartTimer;
@@ -104,8 +104,6 @@ public class PuzzleGameManager : MonoBehaviour
         gameStartCheck = false;
 
         textChangeTimer = 3;
-        gameClearOverText.text = "";
-        gameClearOverText.gameObject.SetActive(true);
     }
 
     private void Update()
@@ -115,25 +113,38 @@ public class PuzzleGameManager : MonoBehaviour
         if (gameStartCheck == true && textChanageOn == false)
         {
             textChangeTimer -= Time.deltaTime;
-            gameClearOverText.text = $"{(int)(textChangeTimer + 1)}";
+
+            if (textChangeTimer > 2 && gameStartObject[0].activeSelf == false)
+            {
+                gameStartObject[0].SetActive(true);
+            }
+            else if (textChangeTimer > 1 && textChangeTimer <= 2 && gameStartObject[1].activeSelf == false)
+            {
+                gameStartObject[0].SetActive(false);
+                gameStartObject[1].SetActive(true);
+            }
+            else if (textChangeTimer > 0 && textChangeTimer <= 1 && gameStartObject[2].activeSelf == false)
+            {
+                gameStartObject[1].SetActive(false);
+                gameStartObject[2].SetActive(true);
+            }
             if (textChangeTimer <= 0)
             {
-                gameClearOverText.text = $"";
+                gameStartObject[2].SetActive(false);
                 textChanageOn = true;
             }
         }
-        else if (gameStartCheck == true && textChanageOn == true)
+        else if (gameStart == true && textChanageOn == true)
         {
             textStartTimer += Time.deltaTime;
 
             if (textStartTimer < 1f)
             {
-                gameClearOverText.text = $"게임 스타트!";
+                gameStartObject[3].SetActive(true);
             }
             else
             {
-                gameClearOverText.text = $"";
-                gameClearOverText.gameObject.SetActive(false);
+                gameStartObject[3].SetActive(false);
                 textStartCheck = true;
             }
         }

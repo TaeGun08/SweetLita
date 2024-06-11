@@ -52,6 +52,10 @@ public class ClothesManager : MonoBehaviour
     private bool timerOff = false;
     private bool nextCheck = false;
 
+    [SerializeField] private List<GameObject> clearOverObject;
+    [SerializeField] private GameObject cloudObject;
+    [SerializeField] private TMP_Text checkText;
+
     private void Awake()
     {
         if (Instance == null)
@@ -200,6 +204,22 @@ public class ClothesManager : MonoBehaviour
             buttons[2].gameObject.SetActive(false);
             scoreObject.SetActive(true);
             scoreText.text = $"{score}점";
+
+            cloudObject.SetActive(true);
+            cloudObject.transform.SetAsLastSibling();
+
+            if (score <= 79)
+            {
+                clearOverObject[1].SetActive(true);
+                clearOverObject[1].transform.SetAsLastSibling();
+                checkText.text = "마음에 들지않아..";
+            }
+            else
+            {
+                clearOverObject[0].SetActive(true);
+                clearOverObject[0].transform.SetAsLastSibling();
+                checkText.text = "고마워!";
+            }
         });
     }
 

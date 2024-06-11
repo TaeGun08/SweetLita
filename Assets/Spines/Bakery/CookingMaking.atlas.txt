@@ -1,121 +1,337 @@
 CookingMaking.png
-	size: 1237, 775
+	size: 1968, 602
 	filter: Linear, Linear
 	pma: true
 	scale: 0.5
-1
-	bounds: 1145, 563, 79, 210
-	offsets: 1, 1, 80, 211
-2
-	bounds: 2, 55, 73, 213
+BackGround
+	bounds: 2, 66, 534, 301
 	rotate: 90
-3
-	bounds: 956, 26, 69, 215
+Board
+	bounds: 305, 94, 506, 179
 	rotate: 90
-4
-	bounds: 963, 97, 65, 216
-	offsets: 0, 0, 66, 216
-	rotate: 90
-5
-	bounds: 699, 70, 59, 216
-	offsets: 0, 1, 59, 217
-	rotate: 90
-6
-	bounds: 212, 130, 203, 101
-	offsets: 0, 1, 203, 102
-Chocloate5
-	bounds: 699, 7, 61, 100
-	offsets: 0, 1, 62, 102
-	rotate: 90
-Chocloate5-3
-	bounds: 485, 2, 58, 49
-	offsets: 0, 1, 58, 50
-Chocolate0
-	bounds: 581, 131, 316, 100
-Chocolate1
-	bounds: 899, 131, 62, 100
-	offsets: 0, 1, 62, 102
-Chocolate1-1
-	bounds: 964, 164, 260, 101
-	offsets: 1, 0, 261, 101
-Chocolate1-2
-	bounds: 319, 21, 55, 52
-	offsets: 0, 0, 56, 53
-Chocolate1-3
-	bounds: 530, 53, 59, 49
-	offsets: 0, 1, 59, 50
-	rotate: 90
-Chocolate2
-	bounds: 1181, 62, 54, 100
-	offsets: 0, 0, 55, 101
-Chocolate2-1
-	bounds: 2, 130, 208, 101
-	offsets: 1, 0, 209, 102
-Chocolate2-2
-	bounds: 477, 59, 51, 53
-	offsets: 0, 0, 52, 54
-Chocolate2-3
-	bounds: 59, 4, 53, 49
-	offsets: 0, 0, 54, 49
-Chocolate3
-	bounds: 319, 75, 53, 101
-	offsets: 0, 0, 53, 102
-	rotate: 90
-Chocolate3-1
-	bounds: 417, 130, 162, 101
-	offsets: 1, 0, 163, 102
-Chocolate3-2
-	bounds: 376, 6, 51, 52
-	offsets: 0, 0, 51, 53
-	rotate: 90
-Chocolate3-3
-	bounds: 430, 7, 53, 50
-Chocolate4
-	bounds: 801, 11, 57, 101
-	offsets: 0, 1, 57, 102
-	rotate: 90
-Chocolate4-1
-	bounds: 581, 29, 116, 100
-	offsets: 0, 1, 116, 102
-Chocolate4-2
-	bounds: 422, 59, 53, 53
-Chocolate4-3
-	bounds: 2, 4, 55, 49
-	offsets: 0, 1, 55, 50
-Chocolate5-2
-	bounds: 217, 4, 54, 52
-	offsets: 0, 0, 55, 53
-Chocolate6
-	bounds: 217, 58, 70, 100
-	offsets: 1, 1, 71, 102
-	rotate: 90
-Chocolate6-2
-	bounds: 1173, 8, 61, 52
-	offsets: 0, 0, 61, 53
-Chocolate6-3
-	bounds: 1145, 275, 62, 49
-	offsets: 1, 1, 63, 50
 Cut1
-	bounds: 422, 114, 14, 119
+	bounds: 486, 95, 14, 119
 	rotate: 90
 Cut2
-	bounds: 1226, 326, 7, 120
+	bounds: 495, 275, 7, 120
+	rotate: 90
 Cut3
-	bounds: 917, 9, 11, 120
+	bounds: 545, 82, 11, 120
+	rotate: 90
 Cut4
-	bounds: 956, 7, 17, 118
+	bounds: 425, 75, 17, 118
 	rotate: 90
 Cut5
-	bounds: 930, 11, 24, 118
+	bounds: 305, 68, 24, 118
+	rotate: 90
 Cut6
-	bounds: 1226, 448, 325, 7
+	bounds: 486, 275, 325, 7
 	offsets: 1, 0, 326, 7
 	rotate: 90
-Knife1
-	bounds: 1145, 351, 79, 210
+Knife
+	bounds: 1186, 4, 79, 210
 	offsets: 1, 1, 80, 211
-Layer 1
-	bounds: 964, 267, 506, 179
 	rotate: 90
-미니게임_쿠킹_배경
-	bounds: 2, 233, 960, 540
+Skin1/MC1
+	bounds: 1041, 66, 61, 52
+	offsets: 0, 0, 61, 53
+	rotate: 90
+Skin1/MC10
+	bounds: 1911, 229, 53, 49
+	offsets: 0, 0, 54, 49
+	rotate: 90
+Skin1/MC11
+	bounds: 1690, 107, 55, 52
+	offsets: 0, 0, 56, 53
+	rotate: 90
+Skin1/MC12
+	bounds: 1041, 129, 59, 49
+	offsets: 0, 1, 59, 50
+Skin1/MC2
+	bounds: 308, 4, 62, 49
+	offsets: 1, 1, 63, 50
+	rotate: 90
+Skin1/MC3
+	bounds: 1107, 284, 54, 52
+	offsets: 0, 0, 55, 53
+	rotate: 90
+Skin1/MC4
+	bounds: 1602, 43, 58, 49
+	offsets: 0, 1, 58, 50
+	rotate: 90
+Skin1/MC5
+	bounds: 1803, 229, 53, 53
+Skin1/MC6
+	bounds: 1744, 113, 55, 49
+	offsets: 0, 1, 55, 50
+	rotate: 90
+Skin1/MC7
+	bounds: 1860, 284, 51, 52
+	offsets: 0, 0, 51, 53
+	rotate: 90
+Skin1/MC8
+	bounds: 1810, 61, 53, 50
+	rotate: 90
+Skin1/MC9
+	bounds: 1750, 284, 51, 53
+	offsets: 0, 0, 52, 54
+	rotate: 90
+Skin1/MChoco0
+	bounds: 495, 284, 316, 100
+	rotate: 90
+Skin1/MChoco1
+	bounds: 801, 340, 260, 101
+	offsets: 1, 0, 261, 101
+	rotate: 90
+Skin1/MChoco1-1
+	bounds: 2, 2, 62, 100
+	offsets: 0, 1, 62, 102
+	rotate: 90
+Skin1/MChoco2
+	bounds: 1382, 93, 208, 101
+	offsets: 1, 0, 209, 102
+	rotate: 90
+Skin1/MChoco2-1
+	bounds: 801, 284, 54, 100
+	offsets: 0, 0, 55, 101
+	rotate: 90
+Skin1/MChoco3
+	bounds: 486, 111, 162, 101
+	offsets: 1, 0, 163, 102
+	rotate: 90
+Skin1/MChoco3-1
+	bounds: 1588, 164, 53, 101
+	offsets: 0, 0, 53, 102
+Skin1/MChoco4
+	bounds: 778, 2, 116, 100
+	offsets: 0, 1, 116, 102
+	rotate: 90
+Skin1/MChoco4-1
+	bounds: 982, 77, 57, 101
+	offsets: 0, 1, 57, 102
+Skin1/MChoco5
+	bounds: 461, 3, 70, 100
+	offsets: 1, 1, 71, 102
+	rotate: 90
+Skin1/MChoco5-1
+	bounds: 982, 3, 61, 100
+	offsets: 0, 1, 62, 102
+	rotate: 90
+Skin1/MKnife1
+	bounds: 1373, 303, 79, 210
+	offsets: 1, 1, 80, 211
+	rotate: 90
+Skin1/MKnife2
+	bounds: 563, 7, 73, 213
+	rotate: 90
+Skin1/MKnife3
+	bounds: 1169, 85, 69, 215
+Skin1/MKnife4
+	bounds: 1102, 66, 65, 216
+	offsets: 0, 0, 66, 216
+Skin1/MKnife5
+	bounds: 1244, 384, 59, 216
+	offsets: 0, 1, 59, 217
+Skin1/MKnife6
+	bounds: 1761, 499, 203, 101
+	offsets: 0, 1, 203, 102
+Skin2/DC1
+	bounds: 1687, 338, 61, 52
+	offsets: 0, 0, 61, 53
+Skin2/DC10
+	bounds: 1815, 6, 53, 49
+	offsets: 0, 0, 54, 49
+	rotate: 90
+Skin2/DC11
+	bounds: 1698, 227, 55, 52
+	offsets: 0, 0, 56, 53
+	rotate: 90
+Skin2/DC12
+	bounds: 1602, 267, 59, 49
+	offsets: 0, 1, 59, 50
+Skin2/DC2
+	bounds: 359, 4, 62, 49
+	offsets: 1, 1, 63, 50
+	rotate: 90
+Skin2/DC3
+	bounds: 1759, 2, 54, 52
+	offsets: 0, 0, 55, 53
+Skin2/DC4
+	bounds: 1639, 104, 58, 49
+	offsets: 0, 1, 58, 50
+	rotate: 90
+Skin2/DC5
+	bounds: 1795, 116, 53, 53
+Skin2/DC6
+	bounds: 1759, 56, 55, 49
+	offsets: 0, 1, 55, 50
+	rotate: 90
+Skin2/DC7
+	bounds: 1914, 284, 51, 52
+	offsets: 0, 0, 51, 53
+	rotate: 90
+Skin2/DC8
+	bounds: 1850, 119, 53, 50
+	rotate: 90
+Skin2/DC9
+	bounds: 1805, 284, 51, 53
+	offsets: 0, 0, 52, 54
+	rotate: 90
+Skin2/DChoco0
+	bounds: 597, 284, 316, 100
+	rotate: 90
+Skin2/DChoco1
+	bounds: 904, 340, 260, 101
+	offsets: 1, 0, 261, 101
+	rotate: 90
+Skin2/DChoco1-1
+	bounds: 104, 2, 62, 100
+	offsets: 0, 1, 62, 102
+	rotate: 90
+Skin2/DChoco2
+	bounds: 1485, 93, 208, 101
+	offsets: 1, 0, 209, 102
+	rotate: 90
+Skin2/DChoco2-1
+	bounds: 903, 284, 54, 100
+	offsets: 0, 0, 55, 101
+	rotate: 90
+Skin2/DChoco3
+	bounds: 589, 111, 162, 101
+	offsets: 1, 0, 163, 102
+	rotate: 90
+Skin2/DChoco3-1
+	bounds: 1643, 164, 53, 101
+	offsets: 0, 0, 53, 102
+Skin2/DChoco4
+	bounds: 795, 166, 116, 100
+	offsets: 0, 1, 116, 102
+	rotate: 90
+Skin2/DChoco4-1
+	bounds: 1761, 337, 57, 101
+	offsets: 0, 1, 57, 102
+	rotate: 90
+Skin2/DChoco5
+	bounds: 1398, 21, 70, 100
+	offsets: 1, 1, 71, 102
+	rotate: 90
+Skin2/DChoco5-1
+	bounds: 1084, 3, 61, 100
+	offsets: 0, 1, 62, 102
+	rotate: 90
+Skin2/DKnife1
+	bounds: 1577, 390, 79, 210
+	offsets: 1, 1, 80, 211
+Skin2/DKnife2
+	bounds: 1427, 387, 73, 213
+Skin2/DKnife3
+	bounds: 1240, 85, 69, 215
+Skin2/DKnife4
+	bounds: 1110, 384, 65, 216
+	offsets: 0, 0, 66, 216
+Skin2/DKnife5
+	bounds: 1305, 384, 59, 216
+	offsets: 0, 1, 59, 217
+Skin2/DKnife6
+	bounds: 1761, 396, 203, 101
+	offsets: 0, 1, 203, 102
+Skin3/GC1
+	bounds: 1687, 284, 61, 52
+	offsets: 0, 0, 61, 53
+Skin3/GC10
+	bounds: 1862, 64, 53, 49
+	offsets: 0, 0, 54, 49
+	rotate: 90
+Skin3/GC11
+	bounds: 1698, 170, 55, 52
+	offsets: 0, 0, 56, 53
+	rotate: 90
+Skin3/GC12
+	bounds: 1588, 103, 59, 49
+	offsets: 0, 1, 59, 50
+	rotate: 90
+Skin3/GC2
+	bounds: 410, 4, 62, 49
+	offsets: 1, 1, 63, 50
+	rotate: 90
+Skin3/GC3
+	bounds: 1752, 171, 54, 52
+	offsets: 0, 0, 55, 53
+	rotate: 90
+Skin3/GC4
+	bounds: 1653, 44, 58, 49
+	offsets: 0, 1, 58, 50
+	rotate: 90
+Skin3/GC5
+	bounds: 1806, 174, 53, 53
+Skin3/GC6
+	bounds: 1752, 227, 55, 49
+	offsets: 0, 1, 55, 50
+	rotate: 90
+Skin3/GC7
+	bounds: 1902, 120, 51, 52
+	offsets: 0, 0, 51, 53
+Skin3/GC8
+	bounds: 1861, 174, 53, 50
+	rotate: 90
+Skin3/GC9
+	bounds: 1858, 229, 51, 53
+	offsets: 0, 0, 52, 54
+Skin3/GChoco0
+	bounds: 699, 284, 316, 100
+	rotate: 90
+Skin3/GChoco1
+	bounds: 1007, 340, 260, 101
+	offsets: 1, 0, 261, 101
+	rotate: 90
+Skin3/GChoco1-1
+	bounds: 206, 2, 62, 100
+	offsets: 0, 1, 62, 102
+	rotate: 90
+Skin3/GChoco2
+	bounds: 1658, 392, 208, 101
+	offsets: 1, 0, 209, 102
+	rotate: 90
+Skin3/GChoco2-1
+	bounds: 1005, 284, 54, 100
+	offsets: 0, 0, 55, 101
+	rotate: 90
+Skin3/GChoco3
+	bounds: 692, 120, 162, 101
+	offsets: 1, 0, 163, 102
+	rotate: 90
+Skin3/GChoco3-1
+	bounds: 1704, 4, 53, 101
+	offsets: 0, 0, 53, 102
+Skin3/GChoco4
+	bounds: 880, 48, 116, 100
+	offsets: 0, 1, 116, 102
+	rotate: 90
+Skin3/GChoco4-1
+	bounds: 1864, 337, 57, 101
+	offsets: 0, 1, 57, 102
+	rotate: 90
+Skin3/GChoco5
+	bounds: 1585, 318, 70, 100
+	offsets: 1, 1, 71, 102
+	rotate: 90
+Skin3/GChoco5-1
+	bounds: 1500, 30, 61, 100
+	offsets: 0, 1, 62, 102
+	rotate: 90
+Skin3/GKnife1
+	bounds: 1161, 302, 80, 210
+	offsets: 0, 1, 80, 211
+	rotate: 90
+Skin3/GKnife2
+	bounds: 1502, 387, 73, 213
+Skin3/GKnife3
+	bounds: 1311, 85, 69, 215
+Skin3/GKnife4
+	bounds: 1177, 384, 65, 216
+	offsets: 0, 0, 66, 216
+Skin3/GKnife5
+	bounds: 1366, 384, 59, 216
+	offsets: 0, 1, 59, 217
+Skin3/GKnife6
+	bounds: 897, 180, 203, 102

@@ -1,5 +1,6 @@
 using Newtonsoft.Json;
 using Spine.Unity;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -51,6 +52,18 @@ public class BakeryManager : MonoBehaviour
 
     [SerializeField] private TMP_Text text;
 
+    [Space]
+    [SerializeField] private List<GameObject> dishChildObject;
+    [Space]
+    [SerializeField] private GameObject whippingObjectCheck;
+    private bool whippingNextCheck = false;
+    private float nextWhippingTimer;
+
+    private bool whipCheck = false;
+    private float whipTimer;
+
+    private bool whippingEnd = false;
+
     private void Awake()
     {
         if (Instance == null)
@@ -69,6 +82,11 @@ public class BakeryManager : MonoBehaviour
                 layoutObject.SetActive(false);
             }
 
+            SkeletonGraphic sc = whippingObjectCheck.GetComponent<SkeletonGraphic>();
+            sc.startingAnimation = "1";
+            sc.AnimationState.SetAnimation(0, sc.startingAnimation, false);
+            whippingNextCheck = true;
+            whipCheck = true;
             buttons[0].gameObject.SetActive(false);
             whippingObject.SetActive(true);
             whippingCheck = 0;
@@ -135,6 +153,7 @@ public class BakeryManager : MonoBehaviour
             foodIndexCheck();
             whippingIndexCheck();
             chocoClickCheck();
+            dishObject();
         }
     }
 
@@ -161,25 +180,56 @@ public class BakeryManager : MonoBehaviour
 
     private void whippingIndexCheck()
     {
-        if (whippingCheck == 5 && choco.activeSelf == false)
+        if (whippingCheck == 5 && choco.activeSelf == false && whippingEnd == true)
         {
+            whippingCheck = 0;
             buttons[1].gameObject.SetActive(false);
             choco.SetActive(true);
             chocoCheck = true;
             return;
         }
 
+        if (whippingNextCheck == true)
+        {
+            nextWhippingTimer += Time.deltaTime;
+
+            if (nextWhippingTimer >= 4)
+            {
+                nextWhippingTimer = 0;
+                whippingNextCheck = false;
+            }
+        }
+
+        if (whipCheck == true)
+        {
+            whipTimer += Time.deltaTime;
+
+            if (whipTimer >= 2)
+            {
+                if (whippingEnd == false && whippingCheck == 5)
+                {
+                    whippingEnd = true;
+                }
+                whipTimer = 0;
+                whipCheck = false;
+            }
+        }
+
         if (whipping[0] == 1 &&
             whipping[1] == 1 &&
             whipping[2] == 1 &&
-            whipping[3] == 1)
+            whipping[3] == 1 && whipCheck == false && whippingCheck != 5)
         {
+            SkeletonGraphic sc = whippingObjectCheck.GetComponent<SkeletonGraphic>();
+            sc.startingAnimation = "2";
+            sc.AnimationState.SetAnimation(0, sc.startingAnimation, false);
             whippingCheck++;
             whippingCount.text = $"{whippingCheck}";
             whipping[0] = 0;
             whipping[1] = 0;
             whipping[2] = 0;
             whipping[3] = 0;
+            whipCheck = true;
         }
     }
 
@@ -192,6 +242,20 @@ public class BakeryManager : MonoBehaviour
                 if (choiceA == 2 &&
                     choiceB == 3 &&
                     choiceC == 8 && gameClear == false)
+                {
+                    text.text = "게임 클리어!";
+                    gameClear = true;
+                }
+                else if (choiceA == 0 &&
+                           choiceB == 3 &&
+                           choiceC == 8 && gameClear == false)
+                {
+                    text.text = "게임 클리어!";
+                    gameClear = true;
+                }
+                else if (choiceA == 1 &&
+                           choiceB == 3 &&
+                           choiceC == 8 && gameClear == false)
                 {
                     text.text = "게임 클리어!";
                     gameClear = true;
@@ -223,9 +287,42 @@ public class BakeryManager : MonoBehaviour
             }
         }
 
+        if (choiceA == 0)
+        {
+            SkeletonGraphic skeletonGraphic = choco.GetComponent<SkeletonGraphic>();
+
+            skeletonGraphic.Skeleton.SetSkin("Skin3");
+        }
+        else if (choiceA == 1)
+        {
+            SkeletonGraphic skeletonGraphic = choco.GetComponent<SkeletonGraphic>();
+
+            skeletonGraphic.Skeleton.SetSkin("Skin2");
+        }
+        else
+        {
+            SkeletonGraphic skeletonGraphic = choco.GetComponent<SkeletonGraphic>();
+
+            skeletonGraphic.Skeleton.SetSkin("Skin1");
+        }
+
+
         if (chocoCheck == true && Input.GetKeyDown(KeyCode.Mouse0) && timerOn == false)
         {
             SkeletonGraphic skeletonGraphic = choco.GetComponent<SkeletonGraphic>();
+
+            if (choiceA == 0)
+            {
+                skeletonGraphic.Skeleton.SetSkin("Skin3");
+            }
+            else if (choiceA == 1)
+            {
+                skeletonGraphic.Skeleton.SetSkin("Skin2");
+            }
+            else
+            {
+                skeletonGraphic.Skeleton.SetSkin("Skin1");
+            }
 
             if (chocoIndex == 0)
             {
@@ -262,6 +359,19 @@ public class BakeryManager : MonoBehaviour
         {
             SkeletonGraphic skeletonGraphic = choco.GetComponent<SkeletonGraphic>();
 
+            if (choiceA == 0)
+            {
+                skeletonGraphic.Skeleton.SetSkin("Skin3");
+            }
+            else if (choiceA == 1)
+            {
+                skeletonGraphic.Skeleton.SetSkin("Skin2");
+            }
+            else
+            {
+                skeletonGraphic.Skeleton.SetSkin("Skin1");
+            }
+
             if (chocoIndex == 1)
             {
                 skeletonGraphic.startingAnimation = "3_Line";
@@ -291,6 +401,75 @@ public class BakeryManager : MonoBehaviour
 
             chickCheck = true;
             nextChoco = false;
+        }
+    }
+
+    private void dishObject()
+    {
+        if (choiceA == 0)
+        {
+            dishChildObject[0].SetActive(true);
+        }
+        else if (choiceA == 1)
+        {
+            dishChildObject[1].SetActive(true);
+        }
+        else if (choiceA == 2)
+        {
+            dishChildObject[2].SetActive(true);
+        }
+        else if (choiceA == -1 &&
+            (dishChildObject[0].activeSelf == true ||
+            dishChildObject[1].activeSelf == true ||
+            dishChildObject[2].activeSelf == true))
+        {
+            dishChildObject[0].SetActive(false);
+            dishChildObject[1].SetActive(false);
+            dishChildObject[2].SetActive(false);
+        }
+
+        if (choiceB == 3 && dishChildObject[3].activeSelf == false)
+        {
+            dishChildObject[3].SetActive(true);
+        }
+        else if (choiceB == 4 && dishChildObject[4].activeSelf == false)
+        {
+            dishChildObject[4].SetActive(true);
+        }
+        else if (choiceB == 5 && dishChildObject[5].activeSelf == false)
+        {
+            dishChildObject[5].SetActive(true);
+        }
+        else if (choiceB == -1 &&
+            (dishChildObject[3].activeSelf == true ||
+            dishChildObject[4].activeSelf == true ||
+            dishChildObject[5].activeSelf == true))
+        {
+            dishChildObject[3].SetActive(false);
+            dishChildObject[4].SetActive(false);
+            dishChildObject[5].SetActive(false);
+        }
+
+        if (choiceC == 6 && dishChildObject[6].activeSelf == false)
+        {
+            dishChildObject[6].SetActive(true);
+        }
+        else if (choiceC == 7 && dishChildObject[7].activeSelf == false)
+        {
+            dishChildObject[7].SetActive(true);
+        }
+        else if (choiceC == 8 && dishChildObject[8].activeSelf == false)
+        {
+            dishChildObject[8].SetActive(true);
+        }
+        else if (choiceC == -1 && 
+            (dishChildObject[6].activeSelf == true || 
+            dishChildObject[7].activeSelf == true || 
+            dishChildObject[8].activeSelf == true))
+        {
+            dishChildObject[6].SetActive(false);
+            dishChildObject[7].SetActive(false);
+            dishChildObject[8].SetActive(false);
         }
     }
 

@@ -46,7 +46,7 @@ public class CowController : MonoBehaviour
 
     private bool moveCheck = false;
 
-    [SerializeField] private TMP_Text gameClearOverText;
+    [SerializeField] private List<GameObject> gameStartObject;
     private float textChangeTimer;
     private bool textChanageOn = false;
     private float textStartTimer;
@@ -88,8 +88,6 @@ public class CowController : MonoBehaviour
         moveCheck = true;
 
         textChangeTimer = 3;
-        gameClearOverText.text = "";
-        gameClearOverText.gameObject.SetActive(true);
     }
 
     private void Start()
@@ -104,10 +102,24 @@ public class CowController : MonoBehaviour
         if (gameStart == true && textChanageOn == false)
         {
             textChangeTimer -= Time.deltaTime;
-            gameClearOverText.text = $"{(int)(textChangeTimer + 1)}";
+
+            if (textChangeTimer > 2 && gameStartObject[0].activeSelf == false)
+            {
+                gameStartObject[0].SetActive(true);
+            }
+            else if (textChangeTimer > 1 && textChangeTimer <= 2 && gameStartObject[1].activeSelf == false)
+            {
+                gameStartObject[0].SetActive(false);
+                gameStartObject[1].SetActive(true);
+            }
+            else if (textChangeTimer > 0 && textChangeTimer <= 1 && gameStartObject[2].activeSelf == false)
+            {
+                gameStartObject[1].SetActive(false);
+                gameStartObject[2].SetActive(true);
+            }
             if (textChangeTimer <= 0)
             {
-                gameClearOverText.text = $"";
+                gameStartObject[2].SetActive(false);
                 textChanageOn = true;
             }
         }
@@ -117,12 +129,11 @@ public class CowController : MonoBehaviour
 
             if (textStartTimer < 1f)
             {
-                gameClearOverText.text = $"게임 스타트!";
+                gameStartObject[3].SetActive(true);
             }
             else
             {
-                gameClearOverText.text = $"";
-                gameClearOverText.gameObject.SetActive(false);
+                gameStartObject[3].SetActive(false);
                 textStartCheck = true;
             }
         }

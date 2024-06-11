@@ -1,0 +1,13 @@
+skeleton.png
+size:1366,408
+filter:Linear,Linear
+pma:true
+Color
+bounds:2,2,453,404
+offsets:1,0,454,405
+Cry
+bounds:912,2,452,404
+offsets:2,0,454,405
+Smile
+bounds:457,2,453,404
+offsets:1,0,454,405
