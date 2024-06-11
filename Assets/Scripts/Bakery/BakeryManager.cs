@@ -50,7 +50,7 @@ public class BakeryManager : MonoBehaviour
     [SerializeField] private bool fadeCheck = false;
     private bool fadeInOutCheck = false;
 
-    [SerializeField] private TMP_Text text;
+    [SerializeField] private List<GameObject> clearOverCheckObject;
 
     [Space]
     [SerializeField] private List<GameObject> dishChildObject;
@@ -63,6 +63,17 @@ public class BakeryManager : MonoBehaviour
     private float whipTimer;
 
     private bool whippingEnd = false;
+
+    [SerializeField] private TMP_Text cloudText;
+    [SerializeField] private List<GameObject> whippingImageObject;
+
+    private bool endChocoCheck;
+    private float endChocoTimer;
+
+    [SerializeField] private List<GameObject> chocoImage;
+    [SerializeField] private GameObject whippingObjectCheChe;
+    [SerializeField] private GameObject dishObjectCheck;
+    [SerializeField] private GameObject endCheckObjectcheck;
 
     private void Awake()
     {
@@ -82,6 +93,7 @@ public class BakeryManager : MonoBehaviour
                 layoutObject.SetActive(false);
             }
 
+            cloudText.text = "마우스를 반 시계 방향으로 크게 돌려 반죽을 잘 섞어줘";
             SkeletonGraphic sc = whippingObjectCheck.GetComponent<SkeletonGraphic>();
             sc.startingAnimation = "1";
             sc.AnimationState.SetAnimation(0, sc.startingAnimation, false);
@@ -107,6 +119,8 @@ public class BakeryManager : MonoBehaviour
                     choice[iNum].GetReset();
                 }
             }
+
+            cloudText.text = "만들고 싶은 초코쿠키의 재료를 넣어줘";
             next--;
             whippingCheck = 0;
             whippingObject.SetActive(false);
@@ -154,6 +168,47 @@ public class BakeryManager : MonoBehaviour
             whippingIndexCheck();
             chocoClickCheck();
             dishObject();
+
+            if (gameEnd == true && endChocoCheck == false)
+            {
+                endChocoTimer += Time.deltaTime;
+
+                if (endChocoTimer >= 3)
+                {
+                    endChocoTimer = 0;
+                    gameEndObject.SetActive(true);
+                    choco.SetActive(false);
+                    whippingObjectCheChe.SetActive(false);
+                    dishObjectCheck.SetActive(false);
+                    endCheckObjectcheck.SetActive(false);
+
+                    if (choiceA == 0)
+                    {
+                        chocoImage[0].SetActive(true);
+                    }
+                    else if (choiceA == 1)
+                    {
+                        chocoImage[1].SetActive(true);
+                    }
+                    else
+                    {
+                        chocoImage[2].SetActive(true);
+                    }
+
+                    if (gameClear == true)
+                    {
+                        clearOverCheckObject[0].SetActive(true);
+                        cloudText.text = "맛있는 쿠키가 완성되었어";
+                    }
+                    else
+                    {
+                        clearOverCheckObject[1].SetActive(true);
+                        cloudText.text = "재료를 잘못 선택한 것 같아";
+                    }
+
+                    endChocoCheck = true;
+                }
+            }
         }
     }
 
@@ -193,8 +248,9 @@ public class BakeryManager : MonoBehaviour
         {
             nextWhippingTimer += Time.deltaTime;
 
-            if (nextWhippingTimer >= 4)
+            if (nextWhippingTimer >= 3)
             {
+                whippingImageObject[0].SetActive(true);
                 nextWhippingTimer = 0;
                 whippingNextCheck = false;
             }
@@ -231,6 +287,25 @@ public class BakeryManager : MonoBehaviour
             whipping[3] = 0;
             whipCheck = true;
         }
+
+        if (whipping[0] == 1 && whippingImageObject[1].activeSelf == false)
+        {
+            whippingImageObject[1].SetActive(true);
+        }
+        else if (whipping[1] == 1 && whippingImageObject[2].activeSelf == false)
+        {
+            whippingImageObject[2].SetActive(true);
+        }
+        else if (whipping[2] == 1 && whippingImageObject[3].activeSelf == false)
+        {
+            whippingImageObject[3].SetActive(true);
+        }
+        else if (whipping[3] == 1)
+        {
+            whippingImageObject[1].SetActive(false);
+            whippingImageObject[2].SetActive(false);
+            whippingImageObject[3].SetActive(false);
+        }
     }
 
     private void chocoClickCheck()
@@ -243,29 +318,24 @@ public class BakeryManager : MonoBehaviour
                     choiceB == 3 &&
                     choiceC == 8 && gameClear == false)
                 {
-                    text.text = "게임 클리어!";
                     gameClear = true;
                 }
                 else if (choiceA == 0 &&
                            choiceB == 3 &&
                            choiceC == 8 && gameClear == false)
                 {
-                    text.text = "게임 클리어!";
                     gameClear = true;
                 }
                 else if (choiceA == 1 &&
                            choiceB == 3 &&
                            choiceC == 8 && gameClear == false)
                 {
-                    text.text = "게임 클리어!";
                     gameClear = true;
                 }
 
+                endCheckObjectcheck.SetActive(true);
+
                 gameEnd = true;
-
-                gameEndObject.SetActive(true);
-
-                text.gameObject.SetActive(true);
             }
             return;
         }
