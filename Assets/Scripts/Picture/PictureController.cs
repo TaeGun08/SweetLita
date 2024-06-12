@@ -42,6 +42,10 @@ public class PictureController : MonoBehaviour
 
     [SerializeField] private List<GameObject> clearOverObject;
     [SerializeField] private List<GameObject> gameStartObject;
+    [Space]
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioSource vfxAudio;
+    [SerializeField] private List<AudioClip> audioClips;
 
     private void Start()
     {
@@ -51,12 +55,16 @@ public class PictureController : MonoBehaviour
         {
             explanationWindow.SetActive(false);
             gameStart = true;
+            vfxAudio.clip = audioClips[0];
+            vfxAudio.Play();
         });
 
         buttons[0].onClick.AddListener(() =>
         {
             fadeCheck = true;
             fadeImage.gameObject.SetActive(true);
+            vfxAudio.clip = audioClips[0];
+            vfxAudio.Play();
         });
 
         buttons[1].onClick.AddListener(() =>
@@ -64,6 +72,8 @@ public class PictureController : MonoBehaviour
             fadeCheck = true;
             fadeImage.gameObject.SetActive(true);
             retry = true;
+            vfxAudio.clip = audioClips[0];
+            vfxAudio.Play();
         });
 
         timer = 2;
@@ -126,6 +136,8 @@ public class PictureController : MonoBehaviour
         {
             if (pictureManager.GameClearCheck() == true && clearOverObject[0].activeSelf == false)
             {
+                vfxAudio.clip = audioClips[1];
+                vfxAudio.Play();
                 gameClear = true;
                 clearOverObject[0].SetActive(true);
                 gameEndObject.SetActive(true);
@@ -133,6 +145,9 @@ public class PictureController : MonoBehaviour
             }
             else if (pictureManager.GameOverCheck() == true && clearOverObject[1].activeSelf == false)
             {
+                audioSource.gameObject.SetActive(false);
+                vfxAudio.clip = audioClips[2];
+                vfxAudio.Play();
                 clearOverObject[1].SetActive(true);
                 gameEndObject.SetActive(true);
                 return;
@@ -257,8 +272,15 @@ public class PictureController : MonoBehaviour
                 {
                     if (retry == true && gameClear == true)
                     {
-                        string getSaveData = JsonConvert.SerializeObject(4);
-                        PlayerPrefs.SetString("saveDataKey", getSaveData);
+                        int saveIndex = 4;
+                        string getSaveData = PlayerPrefs.GetString("saveDataKey");
+                        int saveData = JsonConvert.DeserializeObject<int>(getSaveData);
+                        if (saveIndex >= saveData)
+                        {
+                            string setSaveData = JsonConvert.SerializeObject(4);
+                            PlayerPrefs.SetString("saveDataKey", setSaveData);
+                        }
+
                         SceneManager.LoadSceneAsync("Picture");
                     }
                     else if (retry == true && gameClear == false)
@@ -271,8 +293,15 @@ public class PictureController : MonoBehaviour
                     }
                     else if (gameClear == true)
                     {
-                        string getSaveData = JsonConvert.SerializeObject(4);
-                        PlayerPrefs.SetString("saveDataKey", getSaveData);
+                        int saveIndex = 4;
+                        string getSaveData = PlayerPrefs.GetString("saveDataKey");
+                        int saveData = JsonConvert.DeserializeObject<int>(getSaveData);
+                        if (saveIndex >= saveData)
+                        {
+                            string setSaveData = JsonConvert.SerializeObject(4);
+                            PlayerPrefs.SetString("saveDataKey", setSaveData);
+                        }
+
                         SceneManager.LoadSceneAsync("Chapter1");
                     }
                 }

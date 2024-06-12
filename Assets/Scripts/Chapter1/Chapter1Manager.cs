@@ -26,6 +26,8 @@ public class Chapter1Manager : MonoBehaviour
 
     private bool backCheck = false;
 
+    [SerializeField] private AudioSource vfxAudio;
+
     private void Awake()
     {
         if (PlayerPrefs.GetString("saveDataKey") != string.Empty)
@@ -46,6 +48,7 @@ public class Chapter1Manager : MonoBehaviour
             fadeCheck = true;
             fadeImage.gameObject.SetActive(true);
             backCheck = true;
+            vfxAudio.Play();
         });
 
         buttonClick();
@@ -84,6 +87,7 @@ public class Chapter1Manager : MonoBehaviour
     {
         buttons[0].onClick.AddListener(() =>
         {
+            vfxAudio.Play();
             fadeCheck = true;
             nextSceneIndex = 0;
             fadeImage.gameObject.SetActive(true);
@@ -91,6 +95,7 @@ public class Chapter1Manager : MonoBehaviour
 
         buttons[1].onClick.AddListener(() =>
         {
+            vfxAudio.Play();
             fadeCheck = true;
             nextSceneIndex = 1;
             fadeImage.gameObject.SetActive(true);
@@ -98,6 +103,7 @@ public class Chapter1Manager : MonoBehaviour
 
         buttons[2].onClick.AddListener(() =>
         {
+            vfxAudio.Play();
             fadeCheck = true;
             nextSceneIndex = 2;
             fadeImage.gameObject.SetActive(true);
@@ -105,6 +111,7 @@ public class Chapter1Manager : MonoBehaviour
 
         buttons[3].onClick.AddListener(() =>
         {
+            vfxAudio.Play();
             fadeCheck = true;
             nextSceneIndex = 3;
             fadeImage.gameObject.SetActive(true);
@@ -112,6 +119,7 @@ public class Chapter1Manager : MonoBehaviour
 
         buttons[4].onClick.AddListener(() =>
         {
+            vfxAudio.Play();
             fadeCheck = true;
             nextSceneIndex = 4;
             fadeImage.gameObject.SetActive(true);
@@ -119,6 +127,7 @@ public class Chapter1Manager : MonoBehaviour
 
         buttons[5].onClick.AddListener(() =>
         {
+            vfxAudio.Play();
             fadeCheck = true;
             nextSceneIndex = 5;
             fadeImage.gameObject.SetActive(true);
@@ -126,13 +135,7 @@ public class Chapter1Manager : MonoBehaviour
 
         buttons[6].onClick.AddListener(() =>
         {
-            fadeCheck = true;
-            nextSceneIndex = 6;
-            fadeImage.gameObject.SetActive(true);
-        });
-
-        buttons[6].onClick.AddListener(() =>
-        {
+            vfxAudio.Play();
             fadeCheck = true;
             nextSceneIndex = 6;
             fadeImage.gameObject.SetActive(true);
@@ -140,6 +143,7 @@ public class Chapter1Manager : MonoBehaviour
 
         buttons[7].onClick.AddListener(() =>
         {
+            vfxAudio.Play();
             fadeCheck = true;
             nextSceneIndex = 7;
             fadeImage.gameObject.SetActive(true);

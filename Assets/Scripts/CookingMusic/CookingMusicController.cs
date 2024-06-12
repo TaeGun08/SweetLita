@@ -48,6 +48,12 @@ public class CookingMusicController : MonoBehaviour
     private bool textChanageOn = false;
     private float textStartTimer;
     private bool textStartCheck = false;
+    [Space]
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioSource vfxAudio;
+    [SerializeField] private List<AudioClip> audioClips;
+
+    private bool gameEndChecker = false;
 
     private void Awake()
     {
@@ -55,12 +61,17 @@ public class CookingMusicController : MonoBehaviour
         {
             explanationWindow.SetActive(false);
             gameStart = true;
+            vfxAudio.clip = audioClips[0];
+            vfxAudio.Play();
         });
 
         buttons[0].onClick.AddListener(() =>
         {
             fadeCheck = true;
             fadeImage.gameObject.SetActive(true);
+            vfxAudio.clip = audioClips[0];
+            vfxAudio.Play();
+            gameEndChecker = true;
         });
 
         buttons[1].onClick.AddListener(() =>
@@ -68,6 +79,9 @@ public class CookingMusicController : MonoBehaviour
             fadeCheck = true;
             fadeImage.gameObject.SetActive(true);
             retry = true;
+            vfxAudio.clip = audioClips[0];
+            vfxAudio.Play();
+            gameEndChecker = true;
         });
 
         timer = musicTime;
@@ -133,21 +147,38 @@ public class CookingMusicController : MonoBehaviour
 
         if (gameStart == true && textStartCheck == true)
         {
-            if (gameClear == true)
+            if (gameClear == true && vfxAudio.clip != audioClips[1] && gameEndChecker == false)
             {
+                vfxAudio.clip = audioClips[1];
+                vfxAudio.Play();
                 gameEndObject.SetActive(true);
                 clearOverObject[0].gameObject.SetActive(true);
                 return;
             }
-            else if (playerHeart == 0)
+            else if (playerHeart == 0 && vfxAudio.clip != audioClips[2] && gameEndChecker == false)
             {
+                audioSource.gameObject.SetActive(false);
+                vfxAudio.clip = audioClips[2];
+                vfxAudio.Play();
+                gameEndObject.SetActive(true);
+                clearOverObject[1].gameObject.SetActive(true);
+                return;
+            }
+            else if (timer <= 0 && vfxAudio.clip != audioClips[2] && gameEndChecker == false)
+            {
+                audioSource.gameObject.SetActive(false);
+                vfxAudio.clip = audioClips[2];
+                vfxAudio.Play();
                 gameEndObject.SetActive(true);
                 clearOverObject[1].gameObject.SetActive(true);
                 return;
             }
 
-            gameTimer();
-            nodeCheck();
+            if (vfxAudio.clip == audioClips[0] && gameEndChecker == false)
+            {
+                gameTimer();
+                nodeCheck();
+            }
         }
     }
 
@@ -324,8 +355,15 @@ public class CookingMusicController : MonoBehaviour
                 {
                     if (retry == true && gameClear == true)
                     {
-                        string getSaveData = JsonConvert.SerializeObject(3);
-                        PlayerPrefs.SetString("saveDataKey", getSaveData);
+                        int saveIndex = 3;
+                        string getSaveData = PlayerPrefs.GetString("saveDataKey");
+                        int saveData = JsonConvert.DeserializeObject<int>(getSaveData);
+                        if (saveIndex >= saveData)
+                        {
+                            string setSaveData = JsonConvert.SerializeObject(3);
+                            PlayerPrefs.SetString("saveDataKey", setSaveData);
+                        }
+
                         SceneManager.LoadSceneAsync("CookingMusic");
                     }
                     else if (retry == true && gameClear == false)
@@ -338,8 +376,15 @@ public class CookingMusicController : MonoBehaviour
                     }
                     else if (gameClear == true)
                     {
-                        string getSaveData = JsonConvert.SerializeObject(3);
-                        PlayerPrefs.SetString("saveDataKey", getSaveData);
+                        int saveIndex = 3;
+                        string getSaveData = PlayerPrefs.GetString("saveDataKey");
+                        int saveData = JsonConvert.DeserializeObject<int>(getSaveData);
+                        if (saveIndex >= saveData)
+                        {
+                            string setSaveData = JsonConvert.SerializeObject(3);
+                            PlayerPrefs.SetString("saveDataKey", setSaveData);
+                        }
+
                         SceneManager.LoadSceneAsync("Chapter1");
                     }
                 }

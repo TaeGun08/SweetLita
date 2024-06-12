@@ -55,6 +55,12 @@ public class StudyController : MonoBehaviour
     private bool textChanageOn = false;
     private float textStartTimer;
     private bool textStartCheck = false;
+    [Space]
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioSource vfxAudio;
+    [SerializeField] private List<AudioClip> audioClips;
+
+    private bool gameEndChecker = false;
 
     private void Awake()
     {
@@ -62,12 +68,17 @@ public class StudyController : MonoBehaviour
         {
             explanationWindow.SetActive(false);
             gameStart = true;
+            vfxAudio.clip = audioClips[0];
+            vfxAudio.Play();
         });
 
         buttons[0].onClick.AddListener(() =>
         {
             fadeCheck = true;
             fadeImage.gameObject.SetActive(true);
+            vfxAudio.clip = audioClips[0];
+            vfxAudio.Play();
+            gameEndChecker = true;
         });
 
         buttons[1].onClick.AddListener(() =>
@@ -75,6 +86,9 @@ public class StudyController : MonoBehaviour
             fadeCheck = true;
             fadeImage.gameObject.SetActive(true);
             retry = true;
+            vfxAudio.clip = audioClips[0];
+            vfxAudio.Play();
+            gameEndChecker = true;
         });
 
         timer = 80f;
@@ -133,17 +147,28 @@ public class StudyController : MonoBehaviour
             }
         }
 
-        if (gameStart == true && textStartCheck == true)
+        if (gameStart == true && textStartCheck == true && gameEndChecker == false)
         {
             if (round == 3)
             {
+                if (vfxAudio.clip != audioClips[1])
+                {
+                    vfxAudio.clip = audioClips[1];
+                    vfxAudio.Play();
+                }
                 gameEndObject.SetActive(true);
                 clearTextAndOverText[0].SetActive(true);
                 gameClear = true;
                 return;
             }
-            else if (life == 0)
+            else if (life == 0 || timer <= 0)
             {
+                if (vfxAudio.clip != audioClips[2])
+                {
+                    audioSource.gameObject.SetActive(false);
+                    vfxAudio.clip = audioClips[2];
+                    vfxAudio.Play();
+                }
                 gameEndObject.SetActive(true);
                 clearTextAndOverText[1].SetActive(true);
                 return;
@@ -524,6 +549,9 @@ public class StudyController : MonoBehaviour
     {
         answerButtons[0].onClick.AddListener(() =>
         {
+            vfxAudio.clip = audioClips[0];
+            vfxAudio.Play();
+
             Answer sc = answerButtons[0].GetComponent<Answer>();
 
             SkeletonGraphic spine = lifeImage[life - 1].GetComponent<SkeletonGraphic>();
@@ -545,6 +573,9 @@ public class StudyController : MonoBehaviour
 
         answerButtons[1].onClick.AddListener(() =>
         {
+            vfxAudio.clip = audioClips[0];
+            vfxAudio.Play();
+
             Answer sc = answerButtons[1].GetComponent<Answer>();
 
             SkeletonGraphic spine = lifeImage[life - 1].GetComponent<SkeletonGraphic>();
@@ -566,6 +597,9 @@ public class StudyController : MonoBehaviour
 
         answerButtons[2].onClick.AddListener(() =>
         {
+            vfxAudio.clip = audioClips[0];
+            vfxAudio.Play();
+
             Answer sc = answerButtons[2].GetComponent<Answer>();
 
             SkeletonGraphic spine = lifeImage[life - 1].GetComponent<SkeletonGraphic>();
@@ -616,8 +650,15 @@ public class StudyController : MonoBehaviour
                 {
                     if (retry == true && gameClear == true)
                     {
-                        string getSaveData = JsonConvert.SerializeObject(8);
-                        PlayerPrefs.SetString("saveDataKey", getSaveData);
+                        int saveIndex = 8;
+                        string getSaveData = PlayerPrefs.GetString("saveDataKey");
+                        int saveData = JsonConvert.DeserializeObject<int>(getSaveData);
+                        if (saveIndex >= saveData)
+                        {
+                            string setSaveData = JsonConvert.SerializeObject(8);
+                            PlayerPrefs.SetString("saveDataKey", setSaveData);
+                        }
+
                         SceneManager.LoadSceneAsync("Study");
                     }
                     else if (retry == true && gameClear == false)
@@ -630,8 +671,15 @@ public class StudyController : MonoBehaviour
                     }
                     else if (gameClear == true)
                     {
-                        string getSaveData = JsonConvert.SerializeObject(8);
-                        PlayerPrefs.SetString("saveDataKey", getSaveData);
+                        int saveIndex = 8;
+                        string getSaveData = PlayerPrefs.GetString("saveDataKey");
+                        int saveData = JsonConvert.DeserializeObject<int>(getSaveData);
+                        if (saveIndex >= saveData)
+                        {
+                            string setSaveData = JsonConvert.SerializeObject(8);
+                            PlayerPrefs.SetString("saveDataKey", setSaveData);
+                        }
+
                         SceneManager.LoadSceneAsync("Chapter1");
                     }
                 }

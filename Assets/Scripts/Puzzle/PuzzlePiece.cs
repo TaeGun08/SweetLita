@@ -14,6 +14,7 @@ public class PuzzlePiece : MonoBehaviour, IPointerClickHandler
     [SerializeField, Tooltip("퍼즐의 순서")] private int pieceIndex;
     private bool clickCheck = false;
     [SerializeField, Tooltip("퍼즐의 선택시 테두리")] private GameObject frameObj;
+    [SerializeField] private AudioClip audioClip;
 
     void IPointerClickHandler.OnPointerClick(PointerEventData eventData)
     {
@@ -26,6 +27,7 @@ public class PuzzlePiece : MonoBehaviour, IPointerClickHandler
         {
             if (clickCheck == false)
             {
+                puzzleGameManager.SetAudio(audioClip);
                 clickCheck = true;
                 puzzleGameManager.SetPiece(gameObject);
             }

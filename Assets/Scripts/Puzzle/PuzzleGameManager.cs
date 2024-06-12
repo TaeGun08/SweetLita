@@ -47,6 +47,10 @@ public class PuzzleGameManager : MonoBehaviour
     private bool textChanageOn = false;
     private float textStartTimer;
     private bool textStartCheck = false;
+    [Space]
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioSource vfxAudio;
+    [SerializeField] private List<AudioClip> audioClips;
 
     private void Awake()
     {
@@ -73,12 +77,16 @@ public class PuzzleGameManager : MonoBehaviour
         {
             explanationWindow.SetActive(false);
             gameStartCheck = true;
+            vfxAudio.clip = audioClips[0];
+            vfxAudio.Play();
         });
 
         buttons[0].onClick.AddListener(() =>
         {
             fadeCheck = true;
             fadeImage.gameObject.SetActive(true);
+            vfxAudio.clip = audioClips[0];
+            vfxAudio.Play();
         });
 
         buttons[1].onClick.AddListener(() =>
@@ -86,6 +94,8 @@ public class PuzzleGameManager : MonoBehaviour
             fadeCheck = true;
             fadeImage.gameObject.SetActive(true);
             retry = true;
+            vfxAudio.clip = audioClips[0];
+            vfxAudio.Play();
         });
 
         claerTextObj.SetActive(false);
@@ -134,7 +144,7 @@ public class PuzzleGameManager : MonoBehaviour
                 textChanageOn = true;
             }
         }
-        else if (gameStart == true && textChanageOn == true)
+        else if (gameStartCheck == true && textChanageOn == true)
         {
             textStartTimer += Time.deltaTime;
 
@@ -155,6 +165,8 @@ public class PuzzleGameManager : MonoBehaviour
             {
                 if (claerTextObj.activeSelf == false)
                 {
+                    vfxAudio.clip = audioClips[1];
+                    vfxAudio.Play();
                     claerTextObj.SetActive(true);
                 }
 
@@ -170,6 +182,9 @@ public class PuzzleGameManager : MonoBehaviour
 
                 if (gameOverTimer <= 0)
                 {
+                    audioSource.gameObject.SetActive(false);
+                    vfxAudio.clip = audioClips[2];
+                    vfxAudio.Play();
                     gameEndObject.SetActive(true);
                     gameOverObj.SetActive(true);
                     gameOver = true;
@@ -463,8 +478,15 @@ public class PuzzleGameManager : MonoBehaviour
                 {
                     if (retry == true && gameClear == true)
                     {
-                        string getSaveData = JsonConvert.SerializeObject(2);
-                        PlayerPrefs.SetString("saveDataKey", getSaveData);
+                        int saveIndex = 2;
+                        string getSaveData = PlayerPrefs.GetString("saveDataKey");
+                        int saveData = JsonConvert.DeserializeObject<int>(getSaveData);
+                        if (saveIndex >= saveData)
+                        {
+                            string setSaveData = JsonConvert.SerializeObject(2);
+                            PlayerPrefs.SetString("saveDataKey", setSaveData);
+                        }
+
                         SceneManager.LoadSceneAsync("Puzzle");
                     }
                     else if (retry == true && gameClear == false)
@@ -477,8 +499,15 @@ public class PuzzleGameManager : MonoBehaviour
                     }
                     else if (gameClear == true)
                     {
-                        string getSaveData = JsonConvert.SerializeObject(2);
-                        PlayerPrefs.SetString("saveDataKey", getSaveData);
+                        int saveIndex = 2;
+                        string getSaveData = PlayerPrefs.GetString("saveDataKey");
+                        int saveData = JsonConvert.DeserializeObject<int>(getSaveData);
+                        if (saveIndex >= saveData)
+                        {
+                            string setSaveData = JsonConvert.SerializeObject(2);
+                            PlayerPrefs.SetString("saveDataKey", setSaveData);
+                        }
+
                         SceneManager.LoadSceneAsync("Chapter1");
                     }
                 }
@@ -525,5 +554,11 @@ public class PuzzleGameManager : MonoBehaviour
     public bool GameClear()
     {
         return gameClear;
+    }
+
+    public void SetAudio(AudioClip _clip)
+    {
+        vfxAudio.clip = _clip;
+        vfxAudio.Play();
     }
 }

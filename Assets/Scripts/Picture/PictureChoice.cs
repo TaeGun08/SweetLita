@@ -13,6 +13,8 @@ public class PictureChoice : MonoBehaviour, IPointerClickHandler
     private TMP_Text numberText;
     [SerializeField] private int number;
     private bool choiceNumberCheck = false;
+    [SerializeField] private AudioSource vfxAudio;
+    [SerializeField] private AudioClip audioClip;
 
     void IPointerClickHandler.OnPointerClick(PointerEventData eventData)
     {
@@ -25,6 +27,8 @@ public class PictureChoice : MonoBehaviour, IPointerClickHandler
         {
             if (choiceNumberCheck == false)
             {
+                vfxAudio.clip = audioClip;
+                vfxAudio.Play();
                 bool numberTextOn = numberText.gameObject == numberText.gameObject.activeSelf ? false : true;
                 numberText.gameObject.SetActive(numberTextOn);
                 numberText.text = $"{pictureManager.GetChoiceNumber()+ 1}";
@@ -35,6 +39,8 @@ public class PictureChoice : MonoBehaviour, IPointerClickHandler
             }
             else if (choiceNumberCheck == true && number == (pictureManager.GetChoiceNumber() - 1))
             {
+                vfxAudio.clip = audioClip;
+                vfxAudio.Play();
                 bool numberTextOn = numberText.gameObject == numberText.gameObject.activeSelf ? false : true;
                 numberText.gameObject.SetActive(numberTextOn);
                 pictureManager.SetChoiceNumber(numberTextOn);

@@ -16,6 +16,9 @@ public class BakingChoice : MonoBehaviour
     [SerializeField] private int index;
     [SerializeField] private int indexCheck;
 
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip audioClip;
+
     private void Awake()
     {
         image = GetComponent<Image>();
@@ -33,6 +36,8 @@ public class BakingChoice : MonoBehaviour
     {
         button.onClick.AddListener(() =>
         {
+            audioSource.clip = audioClip;
+            audioSource.Play();
             if (click == false)
             {
                 if (index < 3 && bakeryManager.GetChoiceA() == -1)

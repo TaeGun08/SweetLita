@@ -92,6 +92,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pieceIndex: 0
   frameObj: {fileID: 4763759171675254712}
+  audioClip: {fileID: 8300000, guid: 9cd5ab308366a0045bd098530cc3cbb5, type: 3}
 --- !u!1 &4763759171675254712
 GameObject:
   m_ObjectHideFlags: 0

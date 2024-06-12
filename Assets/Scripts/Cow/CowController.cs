@@ -51,6 +51,12 @@ public class CowController : MonoBehaviour
     private bool textChanageOn = false;
     private float textStartTimer;
     private bool textStartCheck = false;
+    [Space]
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioSource vfxAudio;
+    [SerializeField] private List<AudioClip> audioClips;
+
+    private bool gameEndChecker = false;
 
     private void Awake()
     {
@@ -58,12 +64,17 @@ public class CowController : MonoBehaviour
         {
             explanationWindow.SetActive(false);
             gameStart = true;
+            vfxAudio.clip = audioClips[0];
+            vfxAudio.Play();
         });
 
         buttons[0].onClick.AddListener(() =>
         {
             fadeCheck = true;
             fadeImage.gameObject.SetActive(true);
+            vfxAudio.clip = audioClips[0];
+            vfxAudio.Play();
+            gameEndChecker = true;
         });
 
         buttons[1].onClick.AddListener(() =>
@@ -71,6 +82,9 @@ public class CowController : MonoBehaviour
             fadeCheck = true;
             fadeImage.gameObject.SetActive(true);
             retry = true;
+            vfxAudio.clip = audioClips[0];
+            vfxAudio.Play();
+            gameEndChecker = true;
         });
 
         changeFaceTimer = 3f;
@@ -140,14 +154,19 @@ public class CowController : MonoBehaviour
 
         if (gameStart == true && textStartCheck == true)
         {
-            if (check.ReturnChear() == true && gameClear == false)
+            if (check.ReturnChear() == true && gameClear == false && vfxAudio.clip != audioClips[1] && gameEndChecker == false)
             {
+                vfxAudio.clip = audioClips[1];
+                vfxAudio.Play();
                 gameClear = true;
                 gameClearText.SetActive(true);
                 gameEndObject.SetActive(true);
             }
-            else if (gameOver == true)
+            else if (gameOver == true && vfxAudio.clip != audioClips[2] && gameEndChecker == false)
             {
+                audioSource.gameObject.SetActive(false);
+                vfxAudio.clip = audioClips[2];
+                vfxAudio.Play();
                 cowFace[2].SetActive(true);
                 gameOverText.SetActive(true);
                 gameEndObject.SetActive(true);
@@ -172,9 +191,11 @@ public class CowController : MonoBehaviour
         {
             changeFaceTimer -= Time.deltaTime;
 
-            if (changeFaceTimer <= randomTime * 0.3f)
+            if (changeFaceTimer <= randomTime * 0.3f && faceCheck.gameObject.activeSelf == false)
             {
                 faceCheck.SetActive(true);
+                vfxAudio.clip = audioClips[3];
+                vfxAudio.Play();
             }
 
             if (changeFaceTimer <= 0)
@@ -268,8 +289,15 @@ public class CowController : MonoBehaviour
                 {
                     if (retry == true && gameClear == true)
                     {
-                        string getSaveData = JsonConvert.SerializeObject(7);
-                        PlayerPrefs.SetString("saveDataKey", getSaveData);
+                        int saveIndex = 7;
+                        string getSaveData = PlayerPrefs.GetString("saveDataKey");
+                        int saveData = JsonConvert.DeserializeObject<int>(getSaveData);
+                        if (saveIndex >= saveData)
+                        {
+                            string setSaveData = JsonConvert.SerializeObject(7);
+                            PlayerPrefs.SetString("saveDataKey", setSaveData);
+                        }
+
                         SceneManager.LoadSceneAsync("Cow");
                     }
                     else if (retry == true && gameClear == false)
@@ -282,8 +310,15 @@ public class CowController : MonoBehaviour
                     }
                     else if (gameClear == true)
                     {
-                        string getSaveData = JsonConvert.SerializeObject(7);
-                        PlayerPrefs.SetString("saveDataKey", getSaveData);
+                        int saveIndex = 7;
+                        string getSaveData = PlayerPrefs.GetString("saveDataKey");
+                        int saveData = JsonConvert.DeserializeObject<int>(getSaveData);
+                        if (saveIndex >= saveData)
+                        {
+                            string setSaveData = JsonConvert.SerializeObject(7);
+                            PlayerPrefs.SetString("saveDataKey", setSaveData);
+                        }
+
                         SceneManager.LoadSceneAsync("Chapter1");
                     }
                 }

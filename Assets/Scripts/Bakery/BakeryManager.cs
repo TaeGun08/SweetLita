@@ -75,6 +75,11 @@ public class BakeryManager : MonoBehaviour
     [SerializeField] private GameObject dishObjectCheck;
     [SerializeField] private GameObject endCheckObjectcheck;
 
+    [Space]
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioSource vfxAudio;
+    [SerializeField] private List<AudioClip> audioClips;
+
     private void Awake()
     {
         if (Instance == null)
@@ -88,6 +93,9 @@ public class BakeryManager : MonoBehaviour
 
         buttons[0].onClick.AddListener(() =>
         {
+            vfxAudio.clip = audioClips[0];
+            vfxAudio.Play();
+
             if (next == 0)
             {
                 layoutObject.SetActive(false);
@@ -107,6 +115,9 @@ public class BakeryManager : MonoBehaviour
 
         buttons[1].onClick.AddListener(() =>
         {
+            vfxAudio.clip = audioClips[0];
+            vfxAudio.Play();
+
             if (next == 1)
             {
                 layoutObject.SetActive(true);
@@ -129,18 +140,27 @@ public class BakeryManager : MonoBehaviour
 
         gameStartButton.onClick.AddListener(() =>
         {
+            vfxAudio.clip = audioClips[0];
+            vfxAudio.Play();
+
             explanationWindow.SetActive(false);
             gameStart = true;
         });
 
         endButton[0].onClick.AddListener(() =>
         {
+            vfxAudio.clip = audioClips[0];
+            vfxAudio.Play();
+
             fadeCheck = true;
             fadeImage.gameObject.SetActive(true);
         });
 
         endButton[1].onClick.AddListener(() =>
         {
+            vfxAudio.clip = audioClips[0];
+            vfxAudio.Play();
+
             fadeCheck = true;
             fadeImage.gameObject.SetActive(true);
             retry = true;
@@ -181,6 +201,8 @@ public class BakeryManager : MonoBehaviour
                     whippingObjectCheChe.SetActive(false);
                     dishObjectCheck.SetActive(false);
                     endCheckObjectcheck.SetActive(false);
+                    buttons[0].gameObject.SetActive(false);
+                    buttons[1].gameObject.SetActive(false);
 
                     if (choiceA == 0)
                     {
@@ -197,12 +219,17 @@ public class BakeryManager : MonoBehaviour
 
                     if (gameClear == true)
                     {
+                        vfxAudio.clip = audioClips[1];
+                        vfxAudio.Play();
                         clearOverCheckObject[0].SetActive(true);
                         cloudText.text = "맛있는 쿠키가 완성되었어";
                     }
                     else
                     {
+                        vfxAudio.clip = audioClips[2];
+                        vfxAudio.Play();
                         clearOverCheckObject[1].SetActive(true);
+                        audioSource.gameObject.SetActive(false);
                         cloudText.text = "재료를 잘못 선택한 것 같아";
                     }
 
@@ -220,7 +247,7 @@ public class BakeryManager : MonoBehaviour
         {
             buttons[0].gameObject.SetActive(true);
         }
-        else if (next == 1 && buttons[0].gameObject.activeSelf == false && choco.activeSelf == false)
+        else if (next == 1 && buttons[0].gameObject.activeSelf == false && choco.activeSelf == false && endChocoCheck == false)
         {
             buttons[1].gameObject.SetActive(true);
         }
@@ -260,6 +287,17 @@ public class BakeryManager : MonoBehaviour
         {
             whipTimer += Time.deltaTime;
 
+            if (whipping[0] != 0 ||
+                whipping[1] != 0 ||
+                whipping[2] != 0 ||
+                whipping[3] != 0)
+            {
+                whipping[0] = 0;
+                whipping[1] = 0;
+                whipping[2] = 0;
+                whipping[3] = 0;
+            }
+
             if (whipTimer >= 2)
             {
                 if (whippingEnd == false && whippingCheck == 5)
@@ -285,6 +323,8 @@ public class BakeryManager : MonoBehaviour
             whipping[1] = 0;
             whipping[2] = 0;
             whipping[3] = 0;
+            vfxAudio.clip = audioClips[3];
+            vfxAudio.Play();
             whipCheck = true;
         }
 
@@ -380,6 +420,9 @@ public class BakeryManager : MonoBehaviour
         if (chocoCheck == true && Input.GetKeyDown(KeyCode.Mouse0) && timerOn == false)
         {
             SkeletonGraphic skeletonGraphic = choco.GetComponent<SkeletonGraphic>();
+
+            vfxAudio.clip = audioClips[4];
+            vfxAudio.Play();
 
             if (choiceA == 0)
             {
@@ -573,8 +616,15 @@ public class BakeryManager : MonoBehaviour
                 {
                     if (retry == true && gameClear == true)
                     {
-                        string getSaveData = JsonConvert.SerializeObject(6);
-                        PlayerPrefs.SetString("saveDataKey", getSaveData);
+                        int saveIndex = 6;
+                        string getSaveData = PlayerPrefs.GetString("saveDataKey");
+                        int saveData = JsonConvert.DeserializeObject<int>(getSaveData);
+                        if (saveIndex >= saveData)
+                        {
+                            string setSaveData = JsonConvert.SerializeObject(6);
+                            PlayerPrefs.SetString("saveDataKey", setSaveData);
+                        }
+
                         SceneManager.LoadSceneAsync("Bakery");
                     }
                     else if (retry == true && gameClear == false)
@@ -587,8 +637,15 @@ public class BakeryManager : MonoBehaviour
                     }
                     else if (gameClear == true)
                     {
-                        string getSaveData = JsonConvert.SerializeObject(6);
-                        PlayerPrefs.SetString("saveDataKey", getSaveData);
+                        int saveIndex = 6;
+                        string getSaveData = PlayerPrefs.GetString("saveDataKey");
+                        int saveData = JsonConvert.DeserializeObject<int>(getSaveData);
+                        if (saveIndex >= saveData)
+                        {
+                            string setSaveData = JsonConvert.SerializeObject(6);
+                            PlayerPrefs.SetString("saveDataKey", setSaveData);
+                        }
+
                         SceneManager.LoadSceneAsync("Chapter1");
                     }
                 }

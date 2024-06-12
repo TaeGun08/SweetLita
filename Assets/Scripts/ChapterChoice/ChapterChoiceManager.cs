@@ -17,12 +17,15 @@ public class ChapterChoiceManager : MonoBehaviour
 
     private bool backCheck = false;
 
+    [SerializeField] private AudioSource vfxAudio;
+
     private void Awake()
     {
         button.onClick.AddListener(() =>
         {
             fadeCheck = true;
             fadeImage.gameObject.SetActive(true);
+            vfxAudio.Play();
         });
 
         backButton.onClick.AddListener(() =>
@@ -30,6 +33,7 @@ public class ChapterChoiceManager : MonoBehaviour
             fadeCheck = true;
             fadeImage.gameObject.SetActive(true);
             backCheck = true;
+            vfxAudio.Play();
         });
 
         fadeTimer = 2;

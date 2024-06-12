@@ -55,6 +55,10 @@ public class ClothesManager : MonoBehaviour
     [SerializeField] private List<GameObject> clearOverObject;
     [SerializeField] private GameObject cloudObject;
     [SerializeField] private TMP_Text checkText;
+    [Space]
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioSource vfxAudio;
+    [SerializeField] private List<AudioClip> audioClips;
 
     private void Awake()
     {
@@ -71,6 +75,9 @@ public class ClothesManager : MonoBehaviour
         {
             explanationWindow.SetActive(false);
             gameStart = true;
+
+            vfxAudio.clip = audioClips[0];
+            vfxAudio.Play();
         });
 
         buttonCheck();
@@ -183,6 +190,8 @@ public class ClothesManager : MonoBehaviour
     {
         buttons[0].onClick.AddListener(() =>
         {
+            vfxAudio.clip = audioClips[0];
+            vfxAudio.Play();
             fadeCheck = true;
             fadeImage.gameObject.SetActive(true);
             fadeImage.transform.SetAsLastSibling();
@@ -190,6 +199,8 @@ public class ClothesManager : MonoBehaviour
 
         buttons[1].onClick.AddListener(() =>
         {
+            vfxAudio.clip = audioClips[0];
+            vfxAudio.Play();
             fadeCheck = true;
             fadeImage.gameObject.SetActive(true);
             fadeImage.transform.SetAsLastSibling();
@@ -198,6 +209,8 @@ public class ClothesManager : MonoBehaviour
 
         buttons[2].onClick.AddListener(() =>
         {
+            vfxAudio.clip = audioClips[0];
+            vfxAudio.Play();
             type[0] = -1;
             buttons[0].gameObject.SetActive(true);
             buttons[1].gameObject.SetActive(true);
@@ -210,15 +223,20 @@ public class ClothesManager : MonoBehaviour
 
             if (score <= 79)
             {
+                audioSource.gameObject.SetActive(false);
                 clearOverObject[1].SetActive(true);
                 clearOverObject[1].transform.SetAsLastSibling();
                 checkText.text = "마음에 들지않아..";
+                vfxAudio.clip = audioClips[2];
+                vfxAudio.Play();
             }
             else
             {
                 clearOverObject[0].SetActive(true);
                 clearOverObject[0].transform.SetAsLastSibling();
                 checkText.text = "고마워!";
+                vfxAudio.clip = audioClips[1];
+                vfxAudio.Play();
             }
         });
     }
@@ -253,8 +271,15 @@ public class ClothesManager : MonoBehaviour
                 {
                     if (retry == true && gameClear == true)
                     {
-                        string getSaveData = JsonConvert.SerializeObject(5);
-                        PlayerPrefs.SetString("saveDataKey", getSaveData);
+                        int saveIndex = 5;
+                        string getSaveData = PlayerPrefs.GetString("saveDataKey");
+                        int saveData = JsonConvert.DeserializeObject<int>(getSaveData);
+                        if (saveIndex >= saveData)
+                        {
+                            string setSaveData = JsonConvert.SerializeObject(5);
+                            PlayerPrefs.SetString("saveDataKey", setSaveData);
+                        }
+
                         SceneManager.LoadSceneAsync("Clothes");
                     }
                     else if (retry == true && gameClear == false)
@@ -267,8 +292,15 @@ public class ClothesManager : MonoBehaviour
                     }
                     else if (gameClear == true)
                     {
-                        string getSaveData = JsonConvert.SerializeObject(5);
-                        PlayerPrefs.SetString("saveDataKey", getSaveData);
+                        int saveIndex = 5;
+                        string getSaveData = PlayerPrefs.GetString("saveDataKey");
+                        int saveData = JsonConvert.DeserializeObject<int>(getSaveData);
+                        if (saveIndex >= saveData)
+                        {
+                            string setSaveData = JsonConvert.SerializeObject(5);
+                            PlayerPrefs.SetString("saveDataKey", setSaveData);
+                        }
+
                         SceneManager.LoadSceneAsync("Chapter1");
                     }
                 }

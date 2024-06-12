@@ -14,21 +14,34 @@ public class MainManager : MonoBehaviour
     [SerializeField] private bool fadeCheck = false;
     private bool fadeInOutCheck = false;
 
+    [SerializeField] private AudioSource vfxAudio;
+
     private void Awake()
     {
         buttons[0].onClick.AddListener(() =>
         {
+            vfxAudio.Play();
             fadeCheck = true;
             fadeImage.gameObject.SetActive(true);
         });
 
         buttons[1].onClick.AddListener(() =>
         {
+            vfxAudio.Play();
+
 #if UNITY_EDITOR
             UnityEditor.EditorApplication.isPlaying = false;
 #else
             Application.Quit();
 #endif
+        });
+
+        buttons[2].onClick.AddListener(() =>
+        {
+            vfxAudio.Play();
+
+            string setSaveData = JsonConvert.SerializeObject(0);
+            PlayerPrefs.SetString("saveDataKey", setSaveData);
         });
 
         fadeTimer = 2;
