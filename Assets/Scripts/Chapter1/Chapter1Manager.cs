@@ -30,6 +30,8 @@ public class Chapter1Manager : MonoBehaviour
 
     private void Awake()
     {
+        Screen.SetResolution(1920, 1080, true);
+
         if (PlayerPrefs.GetString("saveDataKey") != string.Empty)
         {
             string getStringData = PlayerPrefs.GetString("saveDataKey");

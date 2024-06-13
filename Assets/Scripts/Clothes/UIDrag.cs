@@ -12,7 +12,7 @@ public class UIDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHa
     [SerializeField] private int index;
     [Space]
     [SerializeField] private RectTransform parentRectTrs; //부모 렉트트랜스폼
-    [SerializeField] private float posCheck;
+    [SerializeField] private List<float> posCheck;
     private Vector2 mousePos; //마우스 포지션
 
     private float screenWidth; //스크린의 가로 길이를 계산하기 위한 변수
@@ -38,7 +38,83 @@ public class UIDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHa
 
     void IDragHandler.OnDrag(PointerEventData eventData)
     {
-        parentRectTrs.position = eventData.position + new Vector2(0f, posCheck);
+        parentRectTrs.position = eventData.position + new Vector2(0f, posCheck[2]);
+        //if (type == 0)
+        //{
+        //    if (screenWidth == 3840 && screenHeight == 2160)
+        //    {
+        //        parentRectTrs.position = eventData.position + new Vector2(0f, posCheck[0]);
+        //    }
+        //    else if (screenWidth == 2560 && screenHeight == 1440)
+        //    {
+        //        parentRectTrs.position = eventData.position + new Vector2(0f, posCheck[1]);
+        //    }
+        //    else if (screenWidth == 1920 && screenHeight == 1080)
+        //    {
+        //        parentRectTrs.position = eventData.position + new Vector2(0f, posCheck[2]);
+        //    }
+        //    else
+        //    {
+        //        parentRectTrs.position = eventData.position;
+        //    }
+        //}
+        //else if (type == 1)
+        //{
+        //    if (screenWidth == 3840 && screenHeight == 2160)
+        //    {
+        //        parentRectTrs.position = eventData.position + new Vector2(0f, posCheck[0]);
+        //    }
+        //    else if (screenWidth == 2560 && screenHeight == 1440)
+        //    {
+        //        parentRectTrs.position = eventData.position + new Vector2(0f, posCheck[1]);
+        //    }
+        //    else if (screenWidth == 1920 && screenHeight == 1080)
+        //    {
+        //        parentRectTrs.position = eventData.position + new Vector2(0f, posCheck[2]);
+        //    }
+        //    else
+        //    {
+        //        parentRectTrs.position = eventData.position;
+        //    }
+        //}
+        //else if (type == 2)
+        //{
+        //    if (screenWidth == 3840 && screenHeight == 2160)
+        //    {
+        //        parentRectTrs.position = eventData.position + new Vector2(0f, posCheck[0]);
+        //    }
+        //    else if (screenWidth == 2560 && screenHeight == 1440)
+        //    {
+        //        parentRectTrs.position = eventData.position + new Vector2(0f, posCheck[1]);
+        //    }
+        //    else if (screenWidth == 1920 && screenHeight == 1080)
+        //    {
+        //        parentRectTrs.position = eventData.position + new Vector2(0f, posCheck[2]);
+        //    }
+        //    else
+        //    {
+        //        parentRectTrs.position = eventData.position;
+        //    }
+        //}
+        //else if (type == 3)
+        //{
+        //    if (screenWidth == 3840 && screenHeight == 2160)
+        //    {
+        //        parentRectTrs.position = eventData.position + new Vector2(0f, posCheck[0]);
+        //    }
+        //    else if (screenWidth == 2560 && screenHeight == 1440)
+        //    {
+        //        parentRectTrs.position = eventData.position + new Vector2(0f, posCheck[1]);
+        //    }
+        //    else if (screenWidth == 1920 && screenHeight == 1080)
+        //    {
+        //        parentRectTrs.position = eventData.position + new Vector2(0f, posCheck[2]);
+        //    }
+        //    else
+        //    {
+        //        parentRectTrs.position = eventData.position;
+        //    }
+        //}
     }
 
     void IEndDragHandler.OnEndDrag(PointerEventData eventData)
@@ -56,7 +132,7 @@ public class UIDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHa
 
     private void Awake()
     {
-        canvasGroup = GetComponent<CanvasGroup>();
+        canvasGroup = GetComponent<CanvasGroup>();      
     }
 
     private void Start()

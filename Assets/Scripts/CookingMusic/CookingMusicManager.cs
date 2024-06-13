@@ -21,6 +21,8 @@ public class CookingMusicManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        Screen.SetResolution(1920, 1080, true);
     }
 
     public GameObject GetNodeObject(int _nodeIndex)

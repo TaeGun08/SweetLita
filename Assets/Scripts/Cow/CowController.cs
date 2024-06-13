@@ -60,6 +60,8 @@ public class CowController : MonoBehaviour
 
     private void Awake()
     {
+        Screen.SetResolution(1920, 1080, true);
+
         gameStartButton.onClick.AddListener(() =>
         {
             explanationWindow.SetActive(false);

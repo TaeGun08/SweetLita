@@ -51,6 +51,8 @@ public class PictureController : MonoBehaviour
     {
         pictureManager = PictureManager.Instance;
 
+        Screen.SetResolution(1920, 1080, true);
+
         gameStartButton.onClick.AddListener(() => 
         {
             explanationWindow.SetActive(false);

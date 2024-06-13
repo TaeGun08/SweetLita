@@ -71,6 +71,8 @@ public class ClothesManager : MonoBehaviour
             Destroy(gameObject);
         }
 
+        Screen.SetResolution(1920, 1080, true);
+
         gameStartButton.onClick.AddListener(() =>
         {
             explanationWindow.SetActive(false);
@@ -93,6 +95,8 @@ public class ClothesManager : MonoBehaviour
         fadeCheck = true;
 
         fadeInOutCheck = true;
+
+        Screen.SetResolution(1920, 1080, true);
     }
 
     private void Update()

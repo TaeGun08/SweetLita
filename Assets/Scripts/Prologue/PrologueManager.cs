@@ -33,6 +33,8 @@ public class PrologueManager : MonoBehaviour
 
     private void Awake()
     {
+        Screen.SetResolution(1920, 1080, true);
+
         fadeTimer = 2;
 
         fadeCheck = true;

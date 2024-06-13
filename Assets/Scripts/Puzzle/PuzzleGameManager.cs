@@ -63,6 +63,8 @@ public class PuzzleGameManager : MonoBehaviour
             Destroy(gameObject);
         }
 
+        Screen.SetResolution(1920, 1080, true);
+
         for (int i = 0; i < 2; i++)
         {
             pieceObjCheck.Add(null);
@@ -112,7 +114,7 @@ public class PuzzleGameManager : MonoBehaviour
         fadeInOutCheck = true;
 
         gameStartCheck = false;
-
+        
         textChangeTimer = 3;
     }
 

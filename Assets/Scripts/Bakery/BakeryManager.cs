@@ -91,6 +91,8 @@ public class BakeryManager : MonoBehaviour
             Destroy(gameObject);
         }
 
+        Screen.SetResolution(1920, 1080, true);
+
         buttons[0].onClick.AddListener(() =>
         {
             vfxAudio.clip = audioClips[0];
@@ -101,6 +103,7 @@ public class BakeryManager : MonoBehaviour
                 layoutObject.SetActive(false);
             }
 
+            dishObjectCheck.SetActive(false);
             cloudText.text = "마우스를 반 시계 방향으로 크게 돌려 반죽을 잘 섞어줘";
             SkeletonGraphic sc = whippingObjectCheck.GetComponent<SkeletonGraphic>();
             sc.startingAnimation = "1";
@@ -131,6 +134,7 @@ public class BakeryManager : MonoBehaviour
                 }
             }
 
+            dishObjectCheck.SetActive(true);
             cloudText.text = "만들고 싶은 초코쿠키의 재료를 넣어줘";
             next--;
             whippingCheck = 0;
@@ -266,6 +270,7 @@ public class BakeryManager : MonoBehaviour
         {
             whippingCheck = 0;
             buttons[1].gameObject.SetActive(false);
+            whippingObjectCheChe.SetActive(false);
             choco.SetActive(true);
             chocoCheck = true;
             return;
@@ -326,6 +331,9 @@ public class BakeryManager : MonoBehaviour
             vfxAudio.clip = audioClips[3];
             vfxAudio.Play();
             whipCheck = true;
+            whippingImageObject[1].SetActive(false);
+            whippingImageObject[2].SetActive(false);
+            whippingImageObject[3].SetActive(false);
         }
 
         if (whipping[0] == 1 && whippingImageObject[1].activeSelf == false)
@@ -339,12 +347,6 @@ public class BakeryManager : MonoBehaviour
         else if (whipping[2] == 1 && whippingImageObject[3].activeSelf == false)
         {
             whippingImageObject[3].SetActive(true);
-        }
-        else if (whipping[3] == 1)
-        {
-            whippingImageObject[1].SetActive(false);
-            whippingImageObject[2].SetActive(false);
-            whippingImageObject[3].SetActive(false);
         }
     }
 

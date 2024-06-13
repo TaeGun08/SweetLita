@@ -11,6 +11,7 @@ public class WhippingCheck : MonoBehaviour, IPointerEnterHandler
 
     void IPointerEnterHandler.OnPointerEnter(PointerEventData eventData)
     {
+        Debug.Log(gameObject.name);
         if (bakeryManager.GetWhippingIndex(0) == 0 && index == 0)
         {
             bakeryManager.SetWhippingIndex(0, 1);
