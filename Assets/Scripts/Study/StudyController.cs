@@ -657,7 +657,7 @@ public class StudyController : MonoBehaviour
                         int saveData = JsonConvert.DeserializeObject<int>(getSaveData);
                         if (saveIndex >= saveData)
                         {
-                            string setSaveData = JsonConvert.SerializeObject(2);
+                            string setSaveData = JsonConvert.SerializeObject(8);
                             PlayerPrefs.SetString("saveDataKey", setSaveData);
                         }
 
@@ -684,7 +684,7 @@ public class StudyController : MonoBehaviour
                         int saveData = JsonConvert.DeserializeObject<int>(getSaveData);
                         if (saveIndex >= saveData)
                         {
-                            string setSaveData = JsonConvert.SerializeObject(2);
+                            string setSaveData = JsonConvert.SerializeObject(8);
                             PlayerPrefs.SetString("saveDataKey", setSaveData);
                         }
 

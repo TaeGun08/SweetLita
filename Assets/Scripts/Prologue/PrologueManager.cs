@@ -182,7 +182,9 @@ public class PrologueManager : MonoBehaviour
                         PlayerPrefs.SetString("saveDataKey", setSaveData);
                     }
 
-                    SceneManager.LoadSceneAsync("Chapter1");
+                    SceneManager.LoadSceneAsync("Loading");
+                    string setLoding = JsonConvert.SerializeObject("Chapter1");
+                    PlayerPrefs.SetString("saveScene", setLoding);
                 }
             }
         }

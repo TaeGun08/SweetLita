@@ -280,7 +280,7 @@ public class ClothesManager : MonoBehaviour
                         int saveData = JsonConvert.DeserializeObject<int>(getSaveData);
                         if (saveIndex >= saveData)
                         {
-                            string setSaveData = JsonConvert.SerializeObject(2);
+                            string setSaveData = JsonConvert.SerializeObject(5);
                             PlayerPrefs.SetString("saveDataKey", setSaveData);
                         }
 
@@ -307,7 +307,7 @@ public class ClothesManager : MonoBehaviour
                         int saveData = JsonConvert.DeserializeObject<int>(getSaveData);
                         if (saveIndex >= saveData)
                         {
-                            string setSaveData = JsonConvert.SerializeObject(2);
+                            string setSaveData = JsonConvert.SerializeObject(5);
                             PlayerPrefs.SetString("saveDataKey", setSaveData);
                         }
 
