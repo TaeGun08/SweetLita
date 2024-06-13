@@ -476,7 +476,7 @@ public class PuzzleGameManager : MonoBehaviour
                 fadeColor.a = fadeTimer;
                 fadeImage.color = fadeColor;
 
-                if (fadeColor.a >= 1 && gameClear == true)
+                if (fadeColor.a >= 1)
                 {
                     if (retry == true && gameClear == true)
                     {
@@ -489,15 +489,21 @@ public class PuzzleGameManager : MonoBehaviour
                             PlayerPrefs.SetString("saveDataKey", setSaveData);
                         }
 
-                        SceneManager.LoadSceneAsync("Puzzle");
+                        SceneManager.LoadSceneAsync("Loading");
+                        string setLoding = JsonConvert.SerializeObject("Puzzle");
+                        PlayerPrefs.SetString("saveScene", setLoding);
                     }
                     else if (retry == true && gameClear == false)
                     {
-                        SceneManager.LoadSceneAsync("Puzzle");
+                        SceneManager.LoadSceneAsync("Loading");
+                        string setLoding = JsonConvert.SerializeObject("Puzzle");
+                        PlayerPrefs.SetString("saveScene", setLoding);
                     }
                     else if (gameClear == false)
                     {
-                        SceneManager.LoadSceneAsync("Chapter1");
+                        SceneManager.LoadSceneAsync("Loading");
+                        string setLoding = JsonConvert.SerializeObject("Chapter1");
+                        PlayerPrefs.SetString("saveScene", setLoding);
                     }
                     else if (gameClear == true)
                     {
@@ -510,7 +516,9 @@ public class PuzzleGameManager : MonoBehaviour
                             PlayerPrefs.SetString("saveDataKey", setSaveData);
                         }
 
-                        SceneManager.LoadSceneAsync("Chapter1");
+                        SceneManager.LoadSceneAsync("Loading");
+                        string setLoding = JsonConvert.SerializeObject("Chapter1");
+                        PlayerPrefs.SetString("saveScene", setLoding);
                     }
                 }
             }

@@ -86,7 +86,9 @@ public class MainManager : MonoBehaviour
 
                 if (fadeColor.a >= 1)
                 {
-                    SceneManager.LoadSceneAsync("ChapterChoice");
+                    string setLoding = JsonConvert.SerializeObject("ChapterChoice");
+                    PlayerPrefs.SetString("saveScene", setLoding);
+                    SceneManager.LoadSceneAsync("Loading");
                 }
             }
         }

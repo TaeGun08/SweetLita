@@ -274,37 +274,45 @@ public class PictureController : MonoBehaviour
                 {
                     if (retry == true && gameClear == true)
                     {
-                        int saveIndex = 4;
+                        int saveIndex = 2;
                         string getSaveData = PlayerPrefs.GetString("saveDataKey");
                         int saveData = JsonConvert.DeserializeObject<int>(getSaveData);
                         if (saveIndex >= saveData)
                         {
-                            string setSaveData = JsonConvert.SerializeObject(4);
+                            string setSaveData = JsonConvert.SerializeObject(2);
                             PlayerPrefs.SetString("saveDataKey", setSaveData);
                         }
 
-                        SceneManager.LoadSceneAsync("Picture");
+                        SceneManager.LoadSceneAsync("Loading");
+                        string setLoding = JsonConvert.SerializeObject("Picture");
+                        PlayerPrefs.SetString("saveScene", setLoding);
                     }
                     else if (retry == true && gameClear == false)
                     {
-                        SceneManager.LoadSceneAsync("Picture");
+                        SceneManager.LoadSceneAsync("Loading");
+                        string setLoding = JsonConvert.SerializeObject("Picture");
+                        PlayerPrefs.SetString("saveScene", setLoding);
                     }
                     else if (gameClear == false)
                     {
-                        SceneManager.LoadSceneAsync("Chapter1");
+                        SceneManager.LoadSceneAsync("Loading");
+                        string setLoding = JsonConvert.SerializeObject("Chapter1");
+                        PlayerPrefs.SetString("saveScene", setLoding);
                     }
                     else if (gameClear == true)
                     {
-                        int saveIndex = 4;
+                        int saveIndex = 2;
                         string getSaveData = PlayerPrefs.GetString("saveDataKey");
                         int saveData = JsonConvert.DeserializeObject<int>(getSaveData);
                         if (saveIndex >= saveData)
                         {
-                            string setSaveData = JsonConvert.SerializeObject(4);
+                            string setSaveData = JsonConvert.SerializeObject(2);
                             PlayerPrefs.SetString("saveDataKey", setSaveData);
                         }
 
-                        SceneManager.LoadSceneAsync("Chapter1");
+                        SceneManager.LoadSceneAsync("Loading");
+                        string setLoding = JsonConvert.SerializeObject("Chapter1");
+                        PlayerPrefs.SetString("saveScene", setLoding);
                     }
                 }
             }

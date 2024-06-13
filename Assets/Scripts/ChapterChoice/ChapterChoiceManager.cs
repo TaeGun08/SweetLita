@@ -80,11 +80,15 @@ public class ChapterChoiceManager : MonoBehaviour
                 {
                     if (backCheck == true)
                     {
-                        SceneManager.LoadSceneAsync("Main");
+                        SceneManager.LoadSceneAsync("Loading");
+                        string setLoding = JsonConvert.SerializeObject("Main");
+                        PlayerPrefs.SetString("saveScene", setLoding);
                     }
                     else
                     {
-                        SceneManager.LoadSceneAsync("Chapter1");
+                        SceneManager.LoadSceneAsync("Loading");
+                        string setLoding = JsonConvert.SerializeObject("Chapter1");
+                        PlayerPrefs.SetString("saveScene", setLoding);
                     }
                 }
             }

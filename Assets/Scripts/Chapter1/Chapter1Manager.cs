@@ -182,7 +182,9 @@ public class Chapter1Manager : MonoBehaviour
                 {
                     if (backCheck == true)
                     {
-                        SceneManager.LoadSceneAsync("ChapterChoice");
+                        SceneManager.LoadSceneAsync("Loading");
+                        string setLoding = JsonConvert.SerializeObject("ChapterChoice");
+                        PlayerPrefs.SetString("saveScene", setLoding);
                     }
                     else
                     {
@@ -197,35 +199,51 @@ public class Chapter1Manager : MonoBehaviour
     {
         if (nextSceneIndex == 0)
         {
-            SceneManager.LoadSceneAsync("Prologue");
+            SceneManager.LoadSceneAsync("Loading");
+            string setLoding = JsonConvert.SerializeObject("Prologue");
+            PlayerPrefs.SetString("saveScene", setLoding);
         }
         else if (nextSceneIndex == 1)
         {
-            SceneManager.LoadSceneAsync("Puzzle");
+            SceneManager.LoadSceneAsync("Loading");
+            string setLoding = JsonConvert.SerializeObject("Puzzle");
+            PlayerPrefs.SetString("saveScene", setLoding);
         }
         else if (nextSceneIndex == 2)
         {
-            SceneManager.LoadSceneAsync("CookingMusic");
+            SceneManager.LoadSceneAsync("Loading");
+            string setLoding = JsonConvert.SerializeObject("CookingMusic");
+            PlayerPrefs.SetString("saveScene", setLoding);
         }
         else if (nextSceneIndex == 3)
         {
-            SceneManager.LoadSceneAsync("Picture");
+            SceneManager.LoadSceneAsync("Loading");
+            string setLoding = JsonConvert.SerializeObject("Picture");
+            PlayerPrefs.SetString("saveScene", setLoding);
         }
         else if (nextSceneIndex == 4)
         {
-            SceneManager.LoadSceneAsync("Clothes");
+            SceneManager.LoadSceneAsync("Loading");
+            string setLoding = JsonConvert.SerializeObject("Clothes");
+            PlayerPrefs.SetString("saveScene", setLoding);
         }
         else if (nextSceneIndex == 5)
         {
-            SceneManager.LoadSceneAsync("Bakery");
+            SceneManager.LoadSceneAsync("Loading");
+            string setLoding = JsonConvert.SerializeObject("Bakery");
+            PlayerPrefs.SetString("saveScene", setLoding);
         }
         else if (nextSceneIndex == 6)
         {
-            SceneManager.LoadSceneAsync("Cow");
+            SceneManager.LoadSceneAsync("Loading");
+            string setLoding = JsonConvert.SerializeObject("Cow");
+            PlayerPrefs.SetString("saveScene", setLoding);
         }
         else if (nextSceneIndex == 7)
         {
-            SceneManager.LoadSceneAsync("Study");
+            SceneManager.LoadSceneAsync("Loading");
+            string setLoding = JsonConvert.SerializeObject("Study");
+            PlayerPrefs.SetString("saveScene", setLoding);
         }
     }
 }

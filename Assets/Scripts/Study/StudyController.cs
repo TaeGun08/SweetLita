@@ -201,7 +201,7 @@ public class StudyController : MonoBehaviour
         if (check == false)
         {
             randomA = Random.Range(0, 10);
-            randomC = Random.Range(0, 4);
+            randomC = Random.Range(0, 3);
             answerCheck(randomA, randomC);
             int buttonRandom = Random.Range(0, 3);
 
@@ -652,37 +652,45 @@ public class StudyController : MonoBehaviour
                 {
                     if (retry == true && gameClear == true)
                     {
-                        int saveIndex = 8;
+                        int saveIndex = 2;
                         string getSaveData = PlayerPrefs.GetString("saveDataKey");
                         int saveData = JsonConvert.DeserializeObject<int>(getSaveData);
                         if (saveIndex >= saveData)
                         {
-                            string setSaveData = JsonConvert.SerializeObject(8);
+                            string setSaveData = JsonConvert.SerializeObject(2);
                             PlayerPrefs.SetString("saveDataKey", setSaveData);
                         }
 
-                        SceneManager.LoadSceneAsync("Study");
+                        SceneManager.LoadSceneAsync("Loading");
+                        string setLoding = JsonConvert.SerializeObject("Study");
+                        PlayerPrefs.SetString("saveScene", setLoding);
                     }
                     else if (retry == true && gameClear == false)
                     {
-                        SceneManager.LoadSceneAsync("Study");
+                        SceneManager.LoadSceneAsync("Loading");
+                        string setLoding = JsonConvert.SerializeObject("Study");
+                        PlayerPrefs.SetString("saveScene", setLoding);
                     }
                     else if (gameClear == false)
                     {
-                        SceneManager.LoadSceneAsync("Chapter1");
+                        SceneManager.LoadSceneAsync("Loading");
+                        string setLoding = JsonConvert.SerializeObject("Chapter1");
+                        PlayerPrefs.SetString("saveScene", setLoding);
                     }
                     else if (gameClear == true)
                     {
-                        int saveIndex = 8;
+                        int saveIndex = 2;
                         string getSaveData = PlayerPrefs.GetString("saveDataKey");
                         int saveData = JsonConvert.DeserializeObject<int>(getSaveData);
                         if (saveIndex >= saveData)
                         {
-                            string setSaveData = JsonConvert.SerializeObject(8);
+                            string setSaveData = JsonConvert.SerializeObject(2);
                             PlayerPrefs.SetString("saveDataKey", setSaveData);
                         }
 
-                        SceneManager.LoadSceneAsync("Chapter1");
+                        SceneManager.LoadSceneAsync("Loading");
+                        string setLoding = JsonConvert.SerializeObject("Chapter1");
+                        PlayerPrefs.SetString("saveScene", setLoding);
                     }
                 }
             }
