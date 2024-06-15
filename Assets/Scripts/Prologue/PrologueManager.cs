@@ -31,6 +31,8 @@ public class PrologueManager : MonoBehaviour
 
     private float nextCheckTimer;
 
+    private WaitForSeconds delayTime;
+
     private void Awake()
     {
         Screen.SetResolution(1920, 1080, true);
@@ -42,6 +44,7 @@ public class PrologueManager : MonoBehaviour
         fadeInOutCheck = true;
 
         delay = 0.05f;
+        delayTime = new WaitForSeconds(delay);
     }
 
     private void Update()
@@ -141,7 +144,7 @@ public class PrologueManager : MonoBehaviour
             currentText = text[nextIndex].Substring(0, iNum);
             dialogueText.text = currentText;
 
-            yield return new WaitForSeconds(delay);
+            yield return delayTime;
         }
     }
 

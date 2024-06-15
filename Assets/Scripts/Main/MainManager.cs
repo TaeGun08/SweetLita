@@ -23,8 +23,16 @@ public class MainManager : MonoBehaviour
         buttons[0].onClick.AddListener(() =>
         {
             vfxAudio.Play();
-            fadeCheck = true;
-            fadeImage.gameObject.SetActive(true);
+            //fadeCheck = true;
+            //fadeImage.gameObject.SetActive(true);
+            FunctionFade.Instance.SetActive(false, () =>
+            {
+                string setLoding = JsonConvert.SerializeObject("ChapterChoice");
+                PlayerPrefs.SetString("saveScene", setLoding);
+                SceneManager.LoadSceneAsync("Loading");
+
+                FunctionFade.Instance.SetActive(true);
+            });
         });
 
         buttons[1].onClick.AddListener(() =>
@@ -58,6 +66,7 @@ public class MainManager : MonoBehaviour
         fadeInOut();
     }
 
+    
     private void fadeInOut()
     {
         if (fadeCheck == true && fadeImage.gameObject.activeSelf == true)
