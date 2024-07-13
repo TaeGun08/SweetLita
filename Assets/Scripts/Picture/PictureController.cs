@@ -274,7 +274,7 @@ public class PictureController : MonoBehaviour
                 {
                     if (retry == true && gameClear == true)
                     {
-                        int saveIndex = 2;
+                        int saveIndex = 3;
                         string getSaveData = PlayerPrefs.GetString("saveDataKey");
                         int saveData = JsonConvert.DeserializeObject<int>(getSaveData);
                         if (saveIndex >= saveData)
@@ -301,7 +301,7 @@ public class PictureController : MonoBehaviour
                     }
                     else if (gameClear == true)
                     {
-                        int saveIndex = 2;
+                        int saveIndex = 3;
                         string getSaveData = PlayerPrefs.GetString("saveDataKey");
                         int saveData = JsonConvert.DeserializeObject<int>(getSaveData);
                         if (saveIndex >= saveData)

@@ -275,7 +275,7 @@ public class ClothesManager : MonoBehaviour
                 {
                     if (retry == true && gameClear == true)
                     {
-                        int saveIndex = 2;
+                        int saveIndex = 4;
                         string getSaveData = PlayerPrefs.GetString("saveDataKey");
                         int saveData = JsonConvert.DeserializeObject<int>(getSaveData);
                         if (saveIndex >= saveData)
@@ -302,7 +302,7 @@ public class ClothesManager : MonoBehaviour
                     }
                     else if (gameClear == true)
                     {
-                        int saveIndex = 2;
+                        int saveIndex = 4;
                         string getSaveData = PlayerPrefs.GetString("saveDataKey");
                         int saveData = JsonConvert.DeserializeObject<int>(getSaveData);
                         if (saveIndex >= saveData)

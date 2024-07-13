@@ -480,7 +480,7 @@ public class PuzzleGameManager : MonoBehaviour
                 {
                     if (retry == true && gameClear == true)
                     {
-                        int saveIndex = 2;
+                        int saveIndex = 1;
                         string getSaveData = PlayerPrefs.GetString("saveDataKey");
                         int saveData = JsonConvert.DeserializeObject<int>(getSaveData);
                         if (saveIndex >= saveData)
@@ -507,7 +507,7 @@ public class PuzzleGameManager : MonoBehaviour
                     }
                     else if (gameClear == true)
                     {
-                        int saveIndex = 2;
+                        int saveIndex = 1;
                         string getSaveData = PlayerPrefs.GetString("saveDataKey");
                         int saveData = JsonConvert.DeserializeObject<int>(getSaveData);
                         if (saveIndex >= saveData)

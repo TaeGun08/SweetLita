@@ -618,7 +618,7 @@ public class BakeryManager : MonoBehaviour
                 {
                     if (retry == true && gameClear == true)
                     {
-                        int saveIndex = 2;
+                        int saveIndex = 5;
                         string getSaveData = PlayerPrefs.GetString("saveDataKey");
                         int saveData = JsonConvert.DeserializeObject<int>(getSaveData);
                         if (saveIndex >= saveData)
@@ -645,7 +645,7 @@ public class BakeryManager : MonoBehaviour
                     }
                     else if (gameClear == true)
                     {
-                        int saveIndex = 2;
+                        int saveIndex = 5;
                         string getSaveData = PlayerPrefs.GetString("saveDataKey");
                         int saveData = JsonConvert.DeserializeObject<int>(getSaveData);
                         if (saveIndex >= saveData)

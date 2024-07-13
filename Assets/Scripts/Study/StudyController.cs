@@ -652,7 +652,7 @@ public class StudyController : MonoBehaviour
                 {
                     if (retry == true && gameClear == true)
                     {
-                        int saveIndex = 2;
+                        int saveIndex = 7;
                         string getSaveData = PlayerPrefs.GetString("saveDataKey");
                         int saveData = JsonConvert.DeserializeObject<int>(getSaveData);
                         if (saveIndex >= saveData)
@@ -679,7 +679,7 @@ public class StudyController : MonoBehaviour
                     }
                     else if (gameClear == true)
                     {
-                        int saveIndex = 2;
+                        int saveIndex = 7;
                         string getSaveData = PlayerPrefs.GetString("saveDataKey");
                         int saveData = JsonConvert.DeserializeObject<int>(getSaveData);
                         if (saveIndex >= saveData)
